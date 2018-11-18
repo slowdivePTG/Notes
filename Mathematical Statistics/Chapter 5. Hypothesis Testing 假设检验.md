@@ -78,6 +78,10 @@ $$
 
 
 
+
+
+
+
   - 为了得到一个 size-$\alpha$ 的检验
     $$
     \alpha=\sup _ { \theta \in \Theta _ { 0 } } \beta ( \theta ) = \beta \left( \theta _ { 0 } \right) = 1 - \Phi ( c )
@@ -183,6 +187,10 @@ $$
   $$
 
 
+
+
+
+
 - Cramer-Wald 定理：
   $$
   x _ { n } \stackrel { d } { \rightarrow } x\iff a ^ { T } X _ { n } \stackrel { d } { \rightarrow } a ^ { T } X \text { for all } a \in \mathcal { R } ^ { p }
@@ -237,6 +245,10 @@ $$
     $$
 
 
+
+
+
+
 - Score 检验
 
   - $\widehat\theta$ 是 $k\times1$ 的 MLE
@@ -258,7 +270,98 @@ $$
 
 
 
-### p值
+### p 值
 
-- 有效的 p 值：$P _ { \theta } ( p ( X ) \leq \alpha ) \leq \alpha$
-- 
+- p 值是我们拒绝 $H_0$ 的最小 $\alpha$（避免犯 Type II 错误），$\alpha>p$ 时我们拒绝零假设
+
+- 有效的 p 值：对于 $\theta\in\Theta_0$ 和 $0<\alpha<1$ 有 $P _ { \theta } ( p ( X ) \leq \alpha ) \leq \alpha$
+
+- p 值小给出 $H_1$ 正确的证据
+
+- 一个（通常的）定义：
+
+  - $W(X)$ 是一个统计量，大的 $W(X)$ 给出备假设正确的证据，则可以定义：
+    $$
+    p ( x ) = \sup _ { \theta \in \Theta _ { 0 } } P _ { \theta } ( W ( X ) \geq W ( x ) )
+    $$
+    此时的 p 值是有效的
+
+  - 这个定义等价于在零分布下，比样本更糟糕的情况出现的概率
+
+  - 在 $H_0$ 下，$p(X)\sim Uniform(0,1)$
+
+
+
+## 贝叶斯检验
+
+- 贝叶斯检验把样本信息和先验信息结合在一起（利用贝叶斯公式），所有推断都建立在后验分布上
+
+- 我们分别计算概率：
+  $$
+  \begin{array} { l } { P \left( \theta \in \Theta _ { 0 } | x \right) = P \left( H _ { 0 } \text { is true } | x \right) } \\ { P \left( \theta \in \Theta _ { 1 } | x \right) = P \left( H _ { 1 } \text { is true } | x \right) } \end{array}
+  $$
+
+- 贝叶斯假设检验：
+
+  如果 $P \left( \theta \in \Theta _ { 0 } | x \right) \geq P \left( \theta \in \Theta _ { 1 } | x \right)$ 就接受零假设，否则拒绝
+
+- 拒绝域：
+
+  $\mathcal{R}=\left\{ x : P \left( \theta \in \Theta _ { 1 } | x \right) > 1 / 2 \right\}$
+
+- 例：正态分布，$\theta$ 的先验分布也是正态分布，$H _ { 0 } : \theta \leq \theta _ { 0 } \text { versus }H _ { 1 } : \theta > \theta _ { 0 }$
+
+  接受零假设的条件是：
+  $$
+  \overline { X } \leq \theta _ { 0 } + \frac { \sigma ^ { 2 } \left( \theta _ { 0 } - \mu \right) } { n \tau ^ { 2 } }
+  $$
+
+
+
+
+
+## 并交检验
+
+- 零假设可能对应许多零假设的交集
+  $$
+  H _ { 0 } : \theta \in \bigcap _ { \gamma \in \Gamma } \Theta _ { \gamma }
+  $$
+
+- 设对于每一个 $\gamma$ ，$H _ { 0 \gamma } : \theta \in \Theta _ { \gamma } \text { versus } H _ { 1 \gamma } : \theta \in \Theta _ { \gamma } ^ { c }$ ，拒绝域为 $\left\{ x : T _ { \gamma } ( x ) \in \mathcal { R } _ { \gamma } \right\}$
+
+- 整体的拒绝域为每一个子拒绝域的并集：
+  $$
+  \bigcup _ { \gamma \in \Gamma } \left\{ x : T _ { \gamma } ( x ) \in R _ { \gamma } \right\}
+  $$
+
+- 如果某一个 $H_{0\gamma}$ 被拒绝了，整体的零假设就被拒绝了
+
+
+
+## 置换检验
+
+- **非参**检验，不引入任何大样本**渐近**近似
+
+- $X _ { 1 } , \ldots , X _ { n } \sim F,\quad Y _ { 1 } , \ldots , Y _ { m } \sim G$
+
+- $H _ { 0 } : F = G \text { versus } H _ { 1 } : F \neq G$
+
+- 定义 $Z = \left( X _ { 1 } , \ldots , X _ { n } , Y _ { 1 } , \ldots , Y _ { m } \right)$ 和标签 $L = ( 1 , \ldots , 1,2 , \ldots , 2 )$ ，$n$ 个 $1$ ，$m$ 个 $2$ ，可以利用它们来构造统计量，比如：
+  $$
+  T = \left| \overline { X } _ { n } - \overline { Y } _ { m } \right|=\left| \frac { \sum _ { i = 1 } ^ { N } Z _ { i } I \left( L _ { i } = 1 \right) } { \sum _ { i = 1 } ^ { N } I \left( L _ { i } = 1 \right) } - \frac { \sum _ { i = 1 } ^ { N } Z _ { i } I \left( L _ { i } = 2 \right) } { \sum _ { i = 1 } ^ { N } I \left( L _ { i } = 2 \right) } \right|
+  $$
+  $T$ 太大时拒绝零假设
+
+- p 值
+  $$
+  p = \frac { 1 } { N ! } \sum _ { \pi } I \left( T \left( L _ { \pi } \right) > T ( L , Z ) \right)
+  $$
+  $L_\pi$ 是标签的一种排序，这里对所有可能的排序求和并除以排序总数
+
+  零假设下的 $ T ( L , Z ) $ 是均匀分布，如果 p 值很小，则在零假设下我们观测到的样本出现概率非常小，考虑拒绝零假设
+
+- 对所有排列进行检验运算量太大，常用的做法是随机抽取 $K$ 组，p 值为：
+  $$
+  p=\frac { 1 } { K } \sum _ { j = 1 } ^ { K } I \left( T ^ { ( j ) } > T \right)
+  $$
+
