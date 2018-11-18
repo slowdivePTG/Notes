@@ -31,7 +31,10 @@
 - 在正则条件下，假定任取 $x$ ，$f(x|\theta)$ 对 $\theta\in\omega$ 可导，且似然方程对 $x,n$ 有唯一解 $\hat\theta_n$ ，那么 $\hat\theta_n$ 是相合的
 - 如果参数个数与 $n$ 有关，则可能不相合
 
+
+
 ## 渐近正态
+
 - Score Function & Fisher Information
 
   - Score Function
@@ -74,11 +77,12 @@
   $$
 
 
+
   - 对于向量的情况，Fisher Information 是一个矩阵
 
-  $$
+$$
   I _ { n } ( \theta ) ( r , s ) = - E \left( \frac { \partial ^ { 2 } l ( \theta ) } { \partial \theta _ { r } \partial \theta _ { s } } \right)
-  $$
+$$
 
 - 渐近正态性
 
@@ -107,16 +111,18 @@
   $$
 
 
-- 多元Delta方法
+
+- 多元 Delta 方法
+
+  - 基于泰勒展开式，用近似的方法求随机变量函数的方差
 
   - $Y _ { 1 } , \ldots , Y _ { n }$ 满足$\sqrt { n } \left( Y _ { n } - \theta \right) \stackrel { d } { \rightarrow } N _ { p } ( 0 , \Sigma )$
 
-  - 如果 $g(\theta)'$ 存在且不为 $0$ ，那么
+  - 如果向量 $g(\theta)'$ 存在且不为 $0$ ，那么
 
      $$
-     \sqrt { n } \left( g \left( Y _ { n } \right) - g ( \theta ) \right) \stackrel { d } { \rightarrow } N \left( 0 , \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) ^ { \prime } \Sigma \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) \right)
+     \sqrt { n } \left( g \left( Y _ { n } \right) - g ( \theta ) \right) \stackrel { d } { \rightarrow } N \left( 0 , \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) ^ { T } \Sigma \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) \right)
      $$
-
 
 
 
@@ -162,6 +168,7 @@
     $$
     \hat\theta-\theta_0= -\frac{S(\theta_0)}{\left[\frac{\partial S(\theta)}{\partial\theta}\right]_{\theta_0}} \stackrel { d } { \rightarrow } N \left( 0 , \frac{n\operatorname { Var }_{\theta_0}(\omega_i(\theta_0))}{\left[\frac{\partial S(\theta)}{\partial\theta}\right]^2_{\theta_0}}  \right)=N\left(0,\frac{1}{nI(\theta)}\right)
     $$
+
 
 
 

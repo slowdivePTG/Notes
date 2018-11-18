@@ -82,6 +82,8 @@ $$
 
 
 
+
+
   - 为了得到一个 size-$\alpha$ 的检验
     $$
     \alpha=\sup _ { \theta \in \Theta _ { 0 } } \beta ( \theta ) = \beta \left( \theta _ { 0 } \right) = 1 - \Phi ( c )
@@ -177,23 +179,21 @@ $$
 
 ### Wald 检验——适合无约束的模型
 
-- 对于 MLE $\hat\theta$ ，大样本下有：
+- 对于 $p$ 维的 MLE $\hat\theta$ ，大样本下有：
   $$
-  \sqrt { n } ( \widehat { \theta } - \theta ) \stackrel { d } { \rightarrow } T = N _ { p } \left( 0 , \mathcal { I } ( \theta ) ^ { - 1 } \right)
+  \sqrt { n } ( \widehat { \theta } - \theta ) \stackrel { d } { \rightarrow } T \sim N _ { p } \left( 0 , \mathcal { I } ( \theta ) ^ { - 1 } \right)
   $$
   Fisher Information Matrix 如下：
   $$
-  \mathcal { I } ( \theta ) = E \left( - \frac { \partial ^ { 2 } } { \partial \theta _ { i } \partial \theta _ { j } } \log f ( X | \theta ) \right)
+  \mathcal { I } ( \theta )_{ij} = E \left( - \frac { \partial ^ { 2 } } { \partial \theta _ { i } \partial \theta _ { j } } \log f ( X | \theta ) \right)
   $$
-
-
 
 
 
 
 - Cramer-Wald 定理：
   $$
-  x _ { n } \stackrel { d } { \rightarrow } x\iff a ^ { T } X _ { n } \stackrel { d } { \rightarrow } a ^ { T } X \text { for all } a \in \mathcal { R } ^ { p }
+  X _ { n } \stackrel { d } { \rightarrow }X\iff a ^ { T } X _ { n } \stackrel { d } { \rightarrow } a ^ { T } X \text { for all } a \in \mathcal { R } ^ { p }
   $$
 
 - Slutsky 定理：
@@ -216,8 +216,8 @@ $$
 
 - Wald 检验：
 
-  - 令 $\widehat { \mathcal { I } ( \theta ) } \stackrel { P } { \rightarrow } \mathcal { I } ( \theta )$ ，零假设 $H _ { 0 } : C \theta = h$ 为真
-  - Wald 统计量：$W _ { n } = n ( \widehat { C } \widehat { \theta } - h ) ^ { \prime } \left( \mathcal { C } \widehat { \mathcal { I } ( \theta ) } C ^ { \prime } \right) ^ { - 1 } ( C \widehat { \theta } - h )$
+  - 令 $\widehat { \mathcal { I } ( \theta ) } \stackrel { P } { \rightarrow } \mathcal { I } ( \theta )​$ ，零假设 $H _ { 0 } : C \theta = h​$ 为真
+  - Wald 统计量：$W _ { n } = n ( { C } \widehat { \theta } - h ) ^ { \prime } \left( \mathcal { C } \widehat { \mathcal { I } ( \theta ) } C ^ { \prime } \right) ^ { - 1 } ( C \widehat { \theta } - h )$
   - 零假设下：$W _ { n } \stackrel { d } { \rightarrow } \chi ^ { 2 } ( r )$
   - $W_n>\chi _ { r , 1 - \alpha } ^ { 2 }$ 时拒绝零假设
 
@@ -243,6 +243,8 @@ $$
     $$
     \mathcal { J } _ { n } ( \hat { \theta } ) \stackrel { \text { a.s. } } { \rightarrow } \mathcal { I } ( \theta )
     $$
+
+
 
 
 
@@ -290,6 +292,14 @@ $$
 
   - 在 $H_0$ 下，$p(X)\sim Uniform(0,1)$
 
+- p 值的意义：
+
+  - 我们希望在零假设错误时备假设是正确的
+  - 我们无法证明备假设是正确的，但我们可以证明备假设比零假设更靠谱
+  - 给定检验统计量的值和零分布，我们想看到这个值是在分布的中间（和零假设相符）还是在分布的尾上（备假设更可靠）
+  - 有时我们会考虑单边的尾，有时则是双侧的，这主要由检验统计量和备假设的定义决定
+  - p 值**不是零假设成立的概率**，而是在假设零假设成立的前提下计算一组新的样本的检验统计量（相同的公式，新的数据），得到的结果比原结果偏离更远
+
 
 
 ## 贝叶斯检验
@@ -315,6 +325,8 @@ $$
   $$
   \overline { X } \leq \theta _ { 0 } + \frac { \sigma ^ { 2 } \left( \theta _ { 0 } - \mu \right) } { n \tau ^ { 2 } }
   $$
+
+
 
 
 
@@ -364,4 +376,6 @@ $$
   $$
   p=\frac { 1 } { K } \sum _ { j = 1 } ^ { K } I \left( T ^ { ( j ) } > T \right)
   $$
+
+
 
