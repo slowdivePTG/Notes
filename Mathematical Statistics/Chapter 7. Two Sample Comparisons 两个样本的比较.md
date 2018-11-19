@@ -115,10 +115,12 @@
 ### Mann-Whitney 检验
 
 - $X _ { 1 } , \ldots , X _ { n }\sim F$，$Y _ { 1 } , \ldots , Y _ { m }\sim G$，$H _ { 0 } : F = G$ 
-
 - 零假设下，这 $m+n$ 个观测量的任何一种排列都是等可能的
+- 这里已经假设了不同观测之间两两不等；如果有少量的观测值相等，它们的秩全部取为平均值，对 $\alpha$ 不会有显著影响
 
-- 这里已经假设了不同观测之间没有联系；如果有少量的关联，相关的观测量的秩全部取为平均值，对 $\alpha​$ 不会有显著影响
+
+
+#### 第一种视角
 
 - 定义 $T_Y$ 为 $Y _ { 1 } , \ldots , Y _ { m }$ 的秩和
 
@@ -127,3 +129,91 @@
   E \left( T _ { Y } \right) = \frac { m ( m + n + 1 ) } { 2 } , \operatorname { Var } \left( T _ { Y } \right) = \frac { m n ( m + n + 1 ) } { 12 }
   $$
 
+
+
+- 证明：根据抽样调查理论：
+  $$
+  E \left( T _ { Y } \right) = m \mu , \operatorname { Var } \left( T _ { Y } \right) = m \sigma ^ { 2 } \frac { N - m } { N - 1 }
+  $$
+  $N=m+n$ ，$\mu，\sigma^2$ 是总体中某一个元素的均值和方差：
+  $$
+  \mu=\frac{1}{N}\sum_{k=1}^N k=\frac{N+1}{2}
+  $$
+
+  $$
+  \begin{align*}
+  \sigma^2&=\frac{1}{N}\sum_{k=1}^N (k-\mu)^2=\frac{1}{N}\sum_{k=1}^N k^2-\mu^2\\
+  &=\frac{(N+1)(2N+1)}{6}-\frac{(N+1)^2}{4}\\&
+  =\frac{(N+1)(N-1)}{12}
+  \end{align*}
+  $$
+
+  直接代入就证明了上述结果
+
+- $n$ 足够大时：
+  $$
+  \frac { T _ { Y } - E \left( T _ { Y } \right) } { \sqrt { \operatorname { Var } \left( T _ { Y } \right) } } \sim N ( 0,1 )
+  $$
+  可以据此构造检验
+
+
+
+#### 第二种视角
+
+- 考虑 $\pi=P(X<Y)$， $H_0：\pi=1/2$
+
+- 定义统计量：
+  $$
+  \widehat { \pi } = \frac { 1 } { m n } \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { n } Z _ { i j }\equiv\frac { 1 } { m n } \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { n } I(X_i<X_j)
+  $$
+
+
+
+- 容易证明：
+  $$
+  \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } Z _ { i j } = \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } V _ { i j }\equiv \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } I(X_{(1)}<X_{(j)})
+  $$
+
+  $$
+  \sum _ { j = 1 } ^ { m } V _ { i j } = T _ { Y } - \frac { m ( m + 1 ) } { 2 }
+  $$
+
+  $$
+  \Rightarrow \widehat { \pi }=\frac{1}{mn}\left(T _ { Y } - \frac { m ( m + 1 ) } { 2 }\right)
+  $$
+
+
+
+
+
+### 符号秩检验
+
+- 可以对**成对**的样本构造符号秩检验
+
+  - 计算 $D_i=Y_i-X_i$ 和 $|D_i|$ 的秩，其中如果有多个 $|D_i|$ 相等，将其秩取为平均——这样的情况不太多的时候，$\alpha$ 受的影响不大，否则要作修正
+  - 若 $D_i>0$ ，记秩的符号为正；若 $D_i<0$ ，记秩的符号为为负；若恰好为零，一般把这组数据点丢弃
+  - 记符号秩的和为 $W_+$
+
+- 零假设下 $D_i$ 对称分布在零点两侧，可以证明：
+  $$
+  E \left( W _ { + } \right) = \frac { n ( n + 1 ) } { 4 } , \operatorname { Var } \left( W _ { + } \right) = \frac { n ( n + 1 ) ( 2 n + 1 ) } { 24 }
+  $$
+
+- 证明：
+
+  - 将 $W_+$ 写成：
+    $$
+    W _ { + } = \sum _ { k = 1 } ^ { n } k I _ { k }\equiv\sum _ { k = 1 } ^ { n } k I(D_k>0)
+    $$
+    $k$ 是第 $k$ 大的 $|D_i|$ 的下标
+
+  - 零假设下，$I_k\sim Bernoulli(1/2)$ ，有：
+
+     $$
+     E \left( l _ { k } \right) = 1 / 2 , \operatorname { Var } \left( I _ { k } \right) = 1 / 4
+     $$
+
+     推出：
+     $$
+      { E \left( W _ { + } \right) = \frac { 1 } { 2 } \sum _ { k = 1 } ^ { n } k = \frac { n ( n + 1 ) } { 4 } } \\ { \operatorname { Var } \left( W _ { + } \right) = \frac { 1 } { 4 } \sum _ { k = 1 } ^ { n } k ^ { 2 } = \frac { n ( n + 1 ) ( 2 n + 1 ) } { 24 } }
+     $$
