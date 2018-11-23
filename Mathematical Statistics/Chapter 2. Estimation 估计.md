@@ -153,6 +153,7 @@
   $$
 
 
+
 > 似然函数等于条件分布 $p \left( x _ { 1 } , \ldots , x _ { n } | \theta \right)$ 而不是联合分布 $p \left( x _ { 1 } , \ldots , x _ { n } , \theta \right)$ 是因为在 贝叶斯估计中，$\theta$ 是一个随机变量，实际的 $x^n$ 的联合分布是在取定 $\theta$ 后得到的，相当于条件分布；而在极大似然估计中，$\theta$ 只是一个参数，本身是固定的，不存在这样的条件分布
 
 
@@ -181,6 +182,7 @@
   $$
   p ( \theta | x _ { 1 } , \ldots , x _ { n } )\propto\underbrace { \theta ^ { Y } ( 1 - \theta ) ^ { n - Y } } _ { \text { Likelihood } } \times \underbrace { \theta ^ { \alpha - 1 } ( 1 - \theta ) ^ { \beta - 1 } } _ { \text { Prior } } = \theta ^ { Y + \alpha - 1 } ( 1 - \theta ) ^ { n - Y + \beta - 1 }
   $$
+
 
 
 
@@ -271,7 +273,10 @@ $$
   > $$
   >
 
+  - 若参数是多维的，需要将 $\frac { \left( \tau ^ { \prime } ( \theta ) \right) ^ { 2 } } { I _ { n } ( \theta ) }\left(=\frac { \left( \tau ^ { \prime } ( \theta ) \right) ^ { 2 } } { nI ( \theta ) }\right)$ 改为 $ { \frac{1}{n} \tau ^ { \prime } ( \theta )  ^ T } { I ( \theta ) }^{-1}\tau ^ { \prime } ( \theta )$
+
 - Rao-Blackwell 定理
-  - $W$ 是 $\tau(\theta)$ 的一个无偏估计量，$T$ 是一个充分统计量
+
+  - $W​$ 是 $\tau(\theta)​$ 的一个无偏估计量，$T​$ 是一个充分统计量
   - 定义 $W'=\phi(T)=E(W|T)$ ，那么有 $E(W')=E(E(W|T))=E(W)=\tau(\theta)$ ——无偏估计量 
   - 且 $W'$ 方差不大于 $W$ 的方差（证明需要用到 $E(\theta^*-\theta)^2\ge[E(\theta^*-\theta)]^2$ ）
