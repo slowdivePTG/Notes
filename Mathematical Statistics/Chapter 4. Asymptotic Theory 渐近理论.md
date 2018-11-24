@@ -78,6 +78,7 @@
 
 
 
+
   - 对于向量的情况，Fisher Information 是一个矩阵
 
 $$
@@ -112,6 +113,7 @@ $$
 
 
 
+
 - 多元 Delta 方法
 
   - 基于泰勒展开式，用近似的方法求随机变量函数的方差
@@ -123,6 +125,7 @@ $$
      $$
      \sqrt { n } \left( g \left( Y _ { n } \right) - g ( \theta ) \right) \stackrel { d } { \rightarrow } N \left( 0 , \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) ^ { T } \Sigma \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) \right)
      $$
+
 
 
 
@@ -173,6 +176,7 @@ $$
 
 
 
+
 ## 大样本的有效性
 
 在正则条件下，对于MLE $\hat\theta$ 和一个表现良好的估计量 $\tilde{\theta}$：
@@ -198,7 +202,7 @@ A R E \left( V _ { n } , W _ { n } \right) = \sigma _ { W } ^ { 2 } / \sigma _ {
 $$
 
 
-### 强健性
+### 稳健性
 
 - MLE只在模型正确的时候有较小的方差，如果模型错误，MLE的方差可能会很糟糕
   - 可以使用非参方法

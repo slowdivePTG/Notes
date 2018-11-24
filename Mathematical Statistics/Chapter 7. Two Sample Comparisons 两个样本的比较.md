@@ -29,11 +29,11 @@
 
 - 定义：
   $$
-  U = \frac { \overline { X } - \overline { Y } - \left( \mu _ { X } - \mu _ { Y } \right) } { \sigma \sqrt { 1 / n + 1 / m } }
+  U = \frac { \overline { X } - \overline { Y } - \left( \mu _ { X } - \mu _ { Y } \right) } { \sigma \sqrt { 1 / n + 1 / m } }\sim N(0,1)
   $$
 
   $$
-  V = \sqrt { \left[ \frac { ( n - 1 ) S _ { X } ^ { 2 } } { \sigma ^ { 2 } } + \frac { ( m - 1 ) S _ { Y } ^ { 2 } } { \sigma ^ { 2 } } \right] \frac { 1 } { m + n - 2 } }
+  V = \sqrt { \left[ \frac { ( n - 1 ) S _ { X } ^ { 2 } } { \sigma ^ { 2 } } + \frac { ( m - 1 ) S _ { Y } ^ { 2 } } { \sigma ^ { 2 } } \right] \frac { 1 } { m + n - 2 } },\\\text{ where } \frac { ( n - 1 ) S _ { X } ^ { 2 } } { \sigma ^ { 2 } } + \frac { ( m - 1 ) S _ { Y } ^ { 2 } } { \sigma ^ { 2 } }\sim\chi^2(m+n-2)
   $$
 
   构造统计量为：$T=U/V\sim t_{n+m-2}$
@@ -53,7 +53,7 @@
 
   - 大样本情况下，依然可以由中心极限定理和正态分布的性质得到：
     $$
-    \overline { X } - \overline { Y } \approx N \left( \mu _ { x } - \mu _ { Y } , \frac { \sigma _ { X } ^ { 2 } } { n } + \frac { \sigma _ { Y }^2 } { m } \right)
+    \overline { X } - \overline { Y } \approx N \left( \mu _ { X } - \mu _ { Y } , \frac { \sigma _ { X } ^ { 2 } } { n } + \frac { \sigma _ { Y }^2 } { m } \right)
     $$
     进而给出 $\mu _ { X } - \mu _ { Y }$ 的 $1-\alpha$ 置信区间，$S = \sqrt { S _ { X } ^ { 2 } / n + S _ { Y } ^ { 2 } / m }$：
     $$
@@ -61,6 +61,14 @@
     $$
 
   - 如果甚至不满足大样本情况：
+    $$
+    U = \frac { \overline { X } - \overline { Y } } {  \sqrt { S_X^2 / n + S_Y^2 / m } }\sim t(v)
+    $$
+    其中 $v$ 为离 $v^*$ 最近的整数：
+    $$
+    v = \frac { \left( S _ { X } ^ { 2 } / n + S _ { Y } ^ { 2 } / m \right) ^ { 2 } } { \left( S _ { X } ^ { 2 } / n \right) ^ { 2 } / \left( n  + 1 \right) + \left( S _ { Y } ^ { 2 } / m \right) ^ { 2 } / \left( m + 1 \right) } - 2
+    $$
+
 
     - Fisher’s Fiducial approach
     - Bayesian approach
@@ -104,6 +112,7 @@
 
 
 
+
 ## 非参方法
 
 - 非参方法不假设数据服从特定的分布，很多都基于对数据顺序的改变
@@ -128,6 +137,9 @@
   $$
   E \left( T _ { Y } \right) = \frac { m ( m + n + 1 ) } { 2 } , \operatorname { Var } \left( T _ { Y } \right) = \frac { m n ( m + n + 1 ) } { 12 }
   $$
+
+
+
 
 
 
@@ -169,6 +181,9 @@
 
 
 
+
+
+
 - 容易证明：
   $$
   \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } Z _ { i j } = \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } V _ { i j }\equiv \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } I(X_{(1)}<X_{(j)})
@@ -181,6 +196,7 @@
   $$
   \Rightarrow \widehat { \pi }=\frac{1}{mn}\left(T _ { Y } - \frac { m ( m + 1 ) } { 2 }\right)
   $$
+
 
 
 
@@ -207,7 +223,7 @@
     $$
     $k$ 是第 $k$ 大的 $|D_i|$ 的下标
 
-  - 零假设下，$I_k\sim Bernoulli(1/2)$ ，有：
+  - 零假设下，$I_k\sim Bernoulli(1/2)​$ ，有：
 
      $$
      E \left( l _ { k } \right) = 1 / 2 , \operatorname { Var } \left( I _ { k } \right) = 1 / 4
@@ -215,5 +231,8 @@
 
      推出：
      $$
-      { E \left( W _ { + } \right) = \frac { 1 } { 2 } \sum _ { k = 1 } ^ { n } k = \frac { n ( n + 1 ) } { 4 } } \\ { \operatorname { Var } \left( W _ { + } \right) = \frac { 1 } { 4 } \sum _ { k = 1 } ^ { n } k ^ { 2 } = \frac { n ( n + 1 ) ( 2 n + 1 ) } { 24 } }
+     { E \left( W _ { + } \right) = \frac { 1 } { 2 } \sum _ { k = 1 } ^ { n } k = \frac { n ( n + 1 ) } { 4 } } \\ { \operatorname { Var } \left( W _ { + } \right) = \frac { 1 } { 4 } \sum _ { k = 1 } ^ { n } k ^ { 2 } = \frac { n ( n + 1 ) ( 2 n + 1 ) } { 24 } }
      $$
+
+
+

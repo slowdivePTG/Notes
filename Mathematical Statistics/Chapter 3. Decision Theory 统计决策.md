@@ -39,7 +39,6 @@
 
 
 
-
 - 随机化决策：按一定的概率取用决策空间中的决策
 
 
@@ -67,7 +66,7 @@ $$
 
   - 最优性：$\mathcal T$ 是一系列决策规则的集合，$T^*$ 是 $\mathcal T-$最优的，当且仅当 $T^*$ 和 $\mathcal T$ 中任意其他规则一样好——因为要对所有 $P$ 成立，实际不一定存在
 
-  - 可容性：$\mathcal T$ 是一系列决策规则（随机化、非随机化）的集合，$T^*$ 是 $\mathcal T-$可容的，当且仅当 $\mathcal T$ 中没有任何规则比 $T^*$ 更好——或者 $T^*$ 是 $\mathcal T-$最优的，或者不存在最优决策
+  - 可容性：$\mathcal T$ 是一系列决策规则（随机化、非随机化）的集合，$T^*$ 是 $\mathcal T-$可容的，当且仅当 $\mathcal T$ 中没有任何规则比 $T^*$ 更好（任取 $T\in\mathcal{T}$ ，都存在 $P_0$ 使 $T^*$ 的风险更小）——或者 $T^*$ 是 $\mathcal T-$最优的，或者不存在最优决策
 
   - Rao-Blackwell 定理（不可容性）：
 
@@ -150,7 +149,6 @@ $$
 
 
 
-
 - 决策理论：同样需要寻找贝叶斯统计量
 
   - 后验分布：
@@ -195,8 +193,11 @@ $$
 
 - 大样本下，方差远大于偏差，因而均方偏差近似为方差
 
-- MLE的方差近似为 $\operatorname { Var } ( \widehat { \theta } ) \approx \frac { 1 } { n I ( \theta ) }，从而：
+- MLE的方差近似为 $\operatorname { Var } ( \widehat { \theta } ) \approx \frac { 1 } { n I ( \theta ) }$，从而：
   $$
   n R ( \theta , \widehat { \theta } ) \approx \frac { 1 } { I ( \theta ) }
   $$
+
+
+
 

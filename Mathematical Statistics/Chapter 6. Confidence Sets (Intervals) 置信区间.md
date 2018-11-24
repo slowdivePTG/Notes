@@ -165,6 +165,9 @@ $$
 
 
 
+
+
+
 ### 枢轴量
 
 - 如果函数 $Q \left( X _ { 1 } , \ldots , X _ { n } , \theta \right)$ 的分布与 $\theta$ 无关，则它为枢轴量
@@ -179,6 +182,9 @@ $$
   $$
   C ( x) = \{ \theta : a \leq Q ( x , \theta ) \leq b \}
   $$
+
+
+
 
 
 - 例：均匀分布 $Uniform(0,\theta)$
@@ -198,6 +204,9 @@ $$
     $$
     \left( X _ { ( n ) } , \frac { X _ { ( n ) } } { \alpha ^ { 1 / n } } \right)
     $$
+
+
+
 
 
 
@@ -231,6 +240,9 @@ $$
 
 
 
+
+
+
 #### 基于似然函数的置信集
 
 - $H _ { 0 } : \theta = \theta _ { 0 } \text { versus }H _ { 1 } : \theta \neq \theta _ { 0 }$ ，$\theta$ 是 $k\times1$ 向量
@@ -245,6 +257,9 @@ $$
   $$
   C_n = \left\{ \theta : \lambda(x) > e ^ { - \chi _ { k , 1 - \alpha } ^ { 2 } / 2 } \right\}
   $$
+
+
+
 
 
 - 例：伯努利分布：$X _ { 1 } , \ldots , X _ { n } \sim \text { Bernoulli } ( p )$ ，记 MLE 为 $\hat p$
@@ -267,6 +282,9 @@ $$
     \end{array}
     \right.
     $$
+
+
+
 
 
   - 一维的 Wald 检验
@@ -316,3 +334,44 @@ $$
   P ( \theta \in A | x ) = \int _ { A } \pi ( \theta | x ) \text{d}\theta
   $$
   且 $A$ 是参数的一个可信集
+
+
+
+## 正态分布的区间估计补充
+
+- 已知 $\sigma^2$ 估计 $\mu$
+  $$
+  \overline{X}\sim N(\mu,\frac{\sigma^2}{n})\\
+  \Rightarrow\frac{\overline X-\mu}{\sqrt{\sigma^2/n}}\sim N(0,1)\\
+  \Rightarrow\mu\in\left[\overline X-\sqrt{\frac{\sigma^2}{n}}z_{1-\alpha/2},\overline X+\sqrt{\frac{\sigma^2}{n}}z_{1-\alpha/2}\right]
+  $$
+
+- 未知 $\sigma^2$ 估计 $\mu$ ，用无偏估计量 $S^2$ 代替 $\sigma^2$
+  $$
+  T=\frac{\overline X-\mu}{\sqrt{S^2/n}}=\frac{\sqrt{n}(\overline X-\mu)/\sigma}{\sqrt{ S ^ { 2 } / \sigma ^ { 2 }}}
+  $$
+  不服从标准正态分布
+
+  有一组有用的引理：
+
+  - 令 $X _ { 1 } , \ldots , X _ { n }$ 是来自正态分布的随机样本，则：
+    1. 均值和方差是独立随机样本
+    2. $\overline { X } \sim N \left( \mu , \sigma ^ { 2 } / n \right)$
+    3. $( n - 1 ) S ^ { 2 } / \sigma ^ { 2 }\sim\chi^2_{n-1}$
+
+  则 $T$ 的分子分母独立，且分子 $\sim N(0,1)$ ，${n-1}$ 倍的分母 $\sim{\chi^2(n-1)}$ ，则这是一个自由度为 $n-1$ 的 t 分布
+  $$
+  \Rightarrow\mu\in\left[\overline X-\sqrt{\frac{s^2}{n}}t_{n-1,\alpha/2},\overline X+\sqrt{\frac{s^2}{n}}t_{n-1,\alpha/2}\right]
+  $$
+
+- 未知 $\mu $ 估计 $\sigma^2$ ，用无偏估计量 $\overline X$ 代替 $\mu $
+  $$
+  ( n - 1 ) S ^ { 2 } / \sigma ^ { 2 }\sim\chi^2_{n-1}
+  $$
+  查 $\chi^2$ 表找到 $\lambda_1,\lambda_2$ 使得：
+  $$
+  P(Y<\lambda_1)=P(Y>\lambda_2)=\frac{\alpha}{2}\\
+  \Rightarrow \sigma^2\in\left[\frac{( n - 1 ) S ^ { 2 }} {\lambda_1},\frac{( n - 1 ) S ^ { 2 }} {\lambda_2}\right]
+  $$
+
+
