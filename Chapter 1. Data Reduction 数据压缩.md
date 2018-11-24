@@ -26,6 +26,9 @@
 
 
 
+
+
+
 ## 统计量
 
 统计量 $T$ 是随机向量$X _ { 1 } , \ldots , X _ { n } \sim p ( x ; \theta )$ 的函数，自身是一个随机变量
@@ -74,6 +77,9 @@
     $$
     p \left( x _ { 1 } , \ldots , x _ { n } | T ( x ) = t ; \theta \right) = p \left( x _ { 1 } , \ldots , x _ { n } | T ( x ) = t \right)
     $$
+
+
+
 
 
 
@@ -128,7 +134,7 @@ $$
 
 ##### 因子化定理
 
-$T(X^n)$ 是 $\theta$ 的充分统计量，如果联合pdf/pmf可以被因子化为：
+$T(X^n)$ 是 $\theta$ 的充分统计量，如果联合pdf/pmf可以被因子化为（课程PPT写的充分条件，其实是充要条件）：：
 $$
 p \left( x ^ { n } ; \theta \right) = h \left( x ^ { n } \right) \times g ( t ; \theta )
 $$
