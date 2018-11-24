@@ -14,7 +14,7 @@
   > - 如果 $E \in \mathcal { F } , E ^ { c } \in \mathcal { F }$
   > - 如果 $E _ { 1 } , E _ { 2 } , \dots , E _ { i } \in \mathcal { F },\cup _ { i = 1 } ^ { \infty } E _ { i } \in \mathcal { F }$
 
-- 决策规则：从样本空间 $\left( \mathcal { X } , \mathcal { F } _ { X } \right)$ 到行动空间 $\left( A , \mathcal { F } _ { A } \right)$ 的一个可测函数 $T$ ，如果观测到 $X$ ，则采取行动 $T(X)$ 
+- 决策规则：从样本空间 $\left( \mathcal { X } , \mathcal { F } _ { X } \right)$ 到行动空间 $\left( A , \mathcal { F } _ { A } \right)$ 的一个可测函数 $T$ ，如果观测到 $X$ ，则采取行动 $T(X)$
 
 
 
@@ -129,7 +129,7 @@ $$
       $$
       \sup _ { \theta \in \Theta } R ( \theta , \widehat { \theta } ) \between \inf _ { \tilde { \theta } } \sup _ { \theta \in \Theta } R ( \theta , \tilde { \theta } ) , \text { as } n \rightarrow \infty
       $$
-      这表示两者之比有界
+      $\between$ 表示两者之比有界
 
 
 #### 先验 $\pi$ 下的贝叶斯风险
@@ -199,4 +199,3 @@ $$
   $$
   n R ( \theta , \widehat { \theta } ) \approx \frac { 1 } { I ( \theta ) }
   $$
-

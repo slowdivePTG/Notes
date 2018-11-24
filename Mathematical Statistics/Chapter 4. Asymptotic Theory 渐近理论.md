@@ -118,7 +118,7 @@ $$
 
   - $Y _ { 1 } , \ldots , Y _ { n }$ 满足$\sqrt { n } \left( Y _ { n } - \theta \right) \stackrel { d } { \rightarrow } N _ { p } ( 0 , \Sigma )$
 
-  - 如果向量 $g(\theta)'$ 存在且不为 $0$ ，那么
+  - 如果向量 $g'(\theta)$ 存在且不为 $0$ ，那么
 
      $$
      \sqrt { n } \left( g \left( Y _ { n } \right) - g ( \theta ) \right) \stackrel { d } { \rightarrow } N \left( 0 , \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) ^ { T } \Sigma \left( \frac { \partial g ( \theta ) } { \partial \theta } \right) \right)
@@ -212,4 +212,3 @@ $$
 
 
 ## 概率不等式
-

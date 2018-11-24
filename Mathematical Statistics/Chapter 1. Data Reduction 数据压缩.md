@@ -154,7 +154,7 @@ $$
 
 - 例：泊松分布
   $$
-  p \left( y ^ { n } ; \theta \right) = \frac { e ^ { - n \theta } \theta ^{\sum  y _ { i }} } { \prod _ { i } y _ { i } ! } , \frac { p \left( y ^ { n } ; \theta \right) } { p \left( x ^ { n } ; \theta \right) } = \frac { \theta ^{\sum y _ { i } - \sum  x _ { i } }} { \prod _ { i } y _ { i } ! /\prod _ { i } x _ { i } ! }
+  p \left( y ^ { n } ; \theta \right) = \frac { e ^ { - n \theta } \theta ^{\sum  y _ { i }} } { \prod _ { i } y _ { i } ! } ,\quad \frac { p \left( y ^ { n } ; \theta \right) } { p \left( x ^ { n } ; \theta \right) } = \frac { \theta ^{\sum y _ { i } - \sum  x _ { i } }} { \prod _ { i } y _ { i } ! /\prod _ { i } x _ { i } ! }
   $$
   比例与 $\theta$ 无关当且仅当 $\sum x_i=\sum y_i$ ，所以 $T(X^n)=\sum X_i$ 是MSS
 

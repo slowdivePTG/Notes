@@ -34,7 +34,7 @@
   $$
   \begin{array} { r l } &{ m _ { 1 }= \frac { 1 } { n } \sum _ { i = 1 } ^ { n } x _ { i } , } &{ \mu _ { 1 } ( \theta )}{ = E ( X ) } \\ { } & { \vdots } &{\vdots}\\ &{ m _ { k }  = \frac { 1 } { n } \sum _ { i = 1 } ^ { n } x _ { i } ^ { k } },& { \mu _ { k } ( \theta ) = E \left( X ^ { k } \right) } \end{array}
   $$
-  矩估计量 $\widehat { \theta } = \left( \widehat { \theta } _ { 1 } , \ldots , \widehat { \theta } _ { k } \right)$ 满足 
+  矩估计量 $\widehat { \theta } = \left( \widehat { \theta } _ { 1 } , \ldots , \widehat { \theta } _ { k } \right)$ 满足
   $$
   m _ { j } = \mu _ { j } ( \widehat { \theta } ) , \quad j = 1 , \ldots , k
   $$
@@ -45,13 +45,17 @@
   \widehat { \beta } = \overline { X } , \quad \widehat { \sigma } ^ { 2 } = \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \left( X _ { i } - \overline { X } \right) ^ { 2 }
   $$
 
-- 例：二项分布（一阶矩 $kp$ ，二阶矩 $kp(1-p)+k^2p^2$）MOMs：
+- 例：二项分布（一阶矩 $kp$ ，二阶矩 $kp(1-p)+k^2p^2$）MOMs(但是看形式，先算 $\widehat{ p }$ 更方便)：
   $$
-  \widehat { p } = \frac { \overline { X } } { \widehat { k } } , \quad \widehat { k } = \frac { \overline { X } ^ { 2 } } { \overline { X } - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \left( X _ { i } - \overline { X } \right) ^ { 2 } }
+  \begin{align}
+  \widehat { p } = & \frac { \overline { X } } { \widehat { k } } , \quad \widehat { k } &= \frac { \overline { X } ^ { 2 } } { \overline { X } - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \left( X _ { i } - \overline { X } \right) ^ { 2 } }\\
+  \widehat {p} = & 1-\frac{\overline{X^2}-\overline{X}^2}
+  {\overline{X}}, \quad \widehat{k}&=\frac{\overline{X}}{\widehat{p}}
+  \end{align}
   $$
   这个估计不是最好的，因为 $\widehat{k}$ 可能是负值
 
- 
+
 
 ### 极大似然估计(MLE)
 
@@ -125,13 +129,13 @@
 
 - MLE的等价性
 
-  - $\eta=g(\theta)$ 是 $\theta$ 的函数，如果 $\theta$ 的MLE是 $\widehat\theta$ ，那么 $\eta$ 的MLE是 $g(\widehat\theta)$ 
+  - $\eta=g(\theta)$ 是 $\theta$ 的函数，如果 $\theta$ 的MLE是 $\widehat\theta$ ，那么 $\eta$ 的MLE是 $g(\widehat\theta)$
 
 
 
 ### 贝叶斯估计
 
-- 贝叶斯派将 $\theta$ 看成随机变量，其先验分布为 $p(\theta)$ 
+- 贝叶斯派将 $\theta$ 看成随机变量，其先验分布为 $p(\theta)$
 
 - $X _ { 1 } , \ldots , X _ { n } , \theta$ 的联合分布为：
   $$
@@ -167,7 +171,7 @@
 
 - 一种贝叶斯估计量是后验分布的均值
   $$
-  \begin{align*} { \widehat { \theta } }&{= E ( \theta | x _ { 1 } , \ldots , x _ { n } ) = \int \theta p ( \theta | x _ { 1 } , \ldots , x _ { n } ) d \theta } \\ &={  \frac { \int \theta p \left( x _ { 1 } , \ldots , x _ { n } | \theta \right) p ( \theta ) d \theta } { \int p \left( x _ { 1 } , \ldots , x _ { n } | \theta \right) p ( \theta ) d \theta } } 
+  \begin{align*} { \widehat { \theta } }&{= E ( \theta | x _ { 1 } , \ldots , x _ { n } ) = \int \theta p ( \theta | x _ { 1 } , \ldots , x _ { n } ) d \theta } \\ &={  \frac { \int \theta p \left( x _ { 1 } , \ldots , x _ { n } | \theta \right) p ( \theta ) d \theta } { \int p \left( x _ { 1 } , \ldots , x _ { n } | \theta \right) p ( \theta ) d \theta } }
   \end{align*}
   $$
 
@@ -179,9 +183,9 @@
   $$
   L(\theta)=p(x_1,\cdots,x_n|\theta)=\theta ^ { Y } ( 1 - \theta ) ^ { n - Y }
   $$
-  这里 $Y = \sum X _ { i }$ 
+  这里 $Y = \sum X _ { i }$
 
-  则后验分布 
+  则后验分布
   $$
   p ( \theta | x _ { 1 } , \ldots , x _ { n } )\propto\underbrace { \theta ^ { Y } ( 1 - \theta ) ^ { n - Y } } _ { \text { Likelihood } } \times \underbrace { \theta ^ { \alpha - 1 } ( 1 - \theta ) ^ { \beta - 1 } } _ { \text { Prior } } = \theta ^ { Y + \alpha - 1 } ( 1 - \theta ) ^ { n - Y + \beta - 1 }
   $$
@@ -215,10 +219,10 @@
     $$
 
     - 这里得到的是先验和样本平均的线性组合
-    
+
     - 如果先验的方差趋于无穷，$\widehat{\mu}\to\overline{X}$ ，$\widehat{\sigma}^2\to\sigma^2/n$ ，信息主要来自样本
-    
-    - 如果先验的方差趋于很小，先验信息很好，则$\widehat{\mu}\to\ m$ ，$\widehat{\sigma}^2\to\tau^2 $ ，信息主要来自先验分布 
+
+    - 如果先验的方差趋于很小，先验信息很好，则$\widehat{\mu}\to\ m$ ，$\widehat{\sigma}^2\to\tau^2 $ ，信息主要来自先验分布
 
 
 
@@ -237,7 +241,7 @@ $$
 - 均方偏差 $\mathrm { MSE } = B ^ { 2 } + V$
 - 如果偏差为 $0$ ，则一个估计量是无偏估计量，MSE=方差，但这时方差可能很大
 - MSE是 $\theta$ 的函数
-- Minimax方法是取**MSE在 $\theta$ 上的最大值**进行比较的评估估计量的方法
+- Minimax方法是取 **MSE 在 $\theta$ 上的最大值**进行比较的评估估计量的方法
 
 
 
@@ -249,12 +253,12 @@ $$
   - $E _ { \theta } ( W ) = \tau ( \theta )$ ，任取 $\theta$
   - 如果 $E _ { \theta } ( W' ) = \tau ( \theta )$ ，那么 $\operatorname { Var } _ { \theta } ( W ) \leq \operatorname { Var } _ { \theta } \left( W ^ { \prime } \right)$
 
-- Cramer-Rao 不等式给出了任何无偏估计量方差的下界：
+- Cramer-Rao 不等式给出了任何无偏估计量方差的下界(这里的 $f ( X ; \theta )$ 是联合密度)：
   $$
   \operatorname { Var } _ { \theta } ( W ) \geq \frac { \left( \frac { d } { d \theta } E _ { \theta } W \right) ^ { 2 } } { E _ { \theta } \left[ \left( \frac { \partial } { \partial \theta } \log f ( X ; \theta ) \right) ^ { 2 } \right] } = \frac { \left( \tau ^ { \prime } ( \theta ) \right) ^ { 2 } } { I _ { n } ( \theta ) }
   $$
 
-  > Cramer-Rao 不等式：
+  > Cramer-Rao 不等式(这里的 $f ( X ; \theta )$ 是单个样本的密度)：
   >
   > $X _ { 1 } , \dots , X _ { n }$ 独立同分布于 $f ( x | \theta )$ ，$T = t \left( X _ { 1 } , \dots , X _ { n } \right)$ 是 $\theta$ 的一个无偏估计量，则在光滑性假设下：
   > $$
@@ -262,11 +266,11 @@ $$
   > $$
   >
   > $$
-  > I ( \theta ) = \operatorname { Var } \left( \frac { \partial \log f ( X | \theta ) } { \partial \theta } \right)
+  > I ( \theta ) = \operatorname { Var } \left( \frac { \partial \log f ( X ; \theta ) } { \partial \theta } \right)
   > $$
   >
 
 - Rao-Blackwell 定理
   - $W$ 是 $\tau(\theta)$ 的一个无偏估计量，$T$ 是一个充分统计量
-  - 定义 $W'=\phi(T)=E(W|T)$ ，那么有 $E(W')=E(E(W|T))=E(W)=\tau(\theta)$ ——无偏估计量 
+  - 定义 $W'=\phi(T)=E(W|T)$ ，那么有 $E(W')=E(E(W|T))=E(W)=\tau(\theta)$ ——无偏估计量
   - 且 $W'$ 方差不大于 $W$ 的方差（证明需要用到 $E(\theta^*-\theta)^2\ge[E(\theta^*-\theta)]^2​$ ）
