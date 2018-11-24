@@ -155,12 +155,13 @@ $$
 
     - 单侧置信区间：
       $$
-      C (x ) = \left\{ \mu _ { 0 } : \overline { x } \geq \mu _ { 0 } - t _ { n - 1 , 1-\alpha } \frac { s } { \sqrt { n } } \right\}
+      C (x ) = \left\{ \mu _ { 0 } : \overline { x } \geq \mu _ { 0 } - t _ { n - 1 , \alpha } \frac { s } { \sqrt { n } } \right\}
       $$
 
       $$
       U(x)=\overline x+t _ { n - 1 , \alpha } \frac { s } { \sqrt { n } }
       $$
+
 
 
 
@@ -185,6 +186,7 @@ $$
 
 
 
+
 - 例：均匀分布 $Uniform(0,\theta)$
 
   - 令 $Q=X_{(n)}/\theta$ ，则：
@@ -202,6 +204,7 @@ $$
     $$
     \left( X _ { ( n ) } , \frac { X _ { ( n ) } } { \alpha ^ { 1 / n } } \right)
     $$
+
 
 
 
@@ -258,6 +261,7 @@ $$
 
 
 
+
 - 例：伯努利分布：$X _ { 1 } , \ldots , X _ { n } \sim \text { Bernoulli } ( p )$ ，记 MLE 为 $\hat p$
 
   - 分布函数：
@@ -278,6 +282,7 @@ $$
     \end{array}
     \right.
     $$
+
 
 
 
@@ -368,4 +373,5 @@ $$
   P(Y<\lambda_1)=P(Y>\lambda_2)=\frac{\alpha}{2}\\
   \Rightarrow \sigma^2\in\left[\frac{( n - 1 ) S ^ { 2 }} {\lambda_1},\frac{( n - 1 ) S ^ { 2 }} {\lambda_2}\right]
   $$
+
 
