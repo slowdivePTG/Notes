@@ -239,6 +239,7 @@ $$
 
 
 
+
 #### 基于似然函数的置信集
 
 - $H _ { 0 } : \theta = \theta _ { 0 } \text { versus }H _ { 1 } : \theta \neq \theta _ { 0 }$ ，$\theta$ 是 $k\times1$ 向量
