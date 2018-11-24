@@ -79,6 +79,7 @@ $$
 
 
 
+
   - 为了得到一个 size-$\alpha$ 的检验
     $$
     \alpha=\sup _ { \theta \in \Theta _ { 0 } } \beta ( \theta ) = \beta \left( \theta _ { 0 } \right) = 1 - \Phi ( c )
@@ -184,9 +185,6 @@ $$
   $$
 
 
-
-
-
 - Cramer-Wald 定理：
   $$
   X _ { n } \stackrel { d } { \rightarrow }X\iff a ^ { T } X _ { n } \stackrel { d } { \rightarrow } a ^ { T } X \text { for all } a \in \mathcal { R } ^ { p }
@@ -239,9 +237,6 @@ $$
     $$
     \mathcal { J } _ { n } ( \hat { \theta } ) \stackrel { \text { a.s. } } { \rightarrow } \mathcal { I } ( \theta )
     $$
-
-
-
 
 
 - Score 检验
@@ -322,6 +317,7 @@ $$
 
 
 
+
 ## 并交检验
 
 - 零假设可能对应许多零假设的交集
@@ -366,6 +362,7 @@ $$
   $$
   p=\frac { 1 } { K } \sum _ { j = 1 } ^ { K } I \left( T ^ { ( j ) } > T \right)
   $$
+
 
 
 

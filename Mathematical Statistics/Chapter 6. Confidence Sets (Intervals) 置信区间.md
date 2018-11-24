@@ -165,9 +165,6 @@ $$
 
 
 
-
-
-
 ### 枢轴量
 
 - 如果函数 $Q \left( X _ { 1 } , \ldots , X _ { n } , \theta \right)$ 的分布与 $\theta$ 无关，则它为枢轴量
@@ -182,9 +179,6 @@ $$
   $$
   C ( x) = \{ \theta : a \leq Q ( x , \theta ) \leq b \}
   $$
-
-
-
 
 
 - 例：均匀分布 $Uniform(0,\theta)$
@@ -204,9 +198,6 @@ $$
     $$
     \left( X _ { ( n ) } , \frac { X _ { ( n ) } } { \alpha ^ { 1 / n } } \right)
     $$
-
-
-
 
 
 
@@ -243,6 +234,7 @@ $$
 
 
 
+
 #### 基于似然函数的置信集
 
 - $H _ { 0 } : \theta = \theta _ { 0 } \text { versus }H _ { 1 } : \theta \neq \theta _ { 0 }$ ，$\theta$ 是 $k\times1$ 向量
@@ -257,9 +249,6 @@ $$
   $$
   C_n = \left\{ \theta : \lambda(x) > e ^ { - \chi _ { k , 1 - \alpha } ^ { 2 } / 2 } \right\}
   $$
-
-
-
 
 
 - 例：伯努利分布：$X _ { 1 } , \ldots , X _ { n } \sim \text { Bernoulli } ( p )$ ，记 MLE 为 $\hat p$
@@ -282,9 +271,6 @@ $$
     \end{array}
     \right.
     $$
-
-
-
 
 
   - 一维的 Wald 检验
@@ -373,5 +359,6 @@ $$
   P(Y<\lambda_1)=P(Y>\lambda_2)=\frac{\alpha}{2}\\
   \Rightarrow \sigma^2\in\left[\frac{( n - 1 ) S ^ { 2 }} {\lambda_1},\frac{( n - 1 ) S ^ { 2 }} {\lambda_2}\right]
   $$
+
 
 
