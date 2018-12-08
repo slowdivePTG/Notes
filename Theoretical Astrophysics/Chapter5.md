@@ -107,10 +107,14 @@ $$
 
 
 
+
+
 - 吸收系数为振幅的平方
   $$
   k_\omega=\frac{4\pi e^2}{m_e c}\frac{\gamma_0}{4(\omega-\omega_0)^2+\gamma_0^2}
   $$
+
+
 
 
 
@@ -180,6 +184,8 @@ $$
   $$
   N_k=N_k^0e^{-\gamma_kt}
   $$
+
+
 
 
 
@@ -265,16 +271,6 @@ $$
 
 
 
-
-
-
-
-
-
-
-
-
-
 #### 热运动
 
 - 一般说来，麦克斯韦分布可用：
@@ -345,6 +341,8 @@ $$
   $$
   R _ { \lambda } =  \frac { \iint R\left[ \lambda - \lambda _ { 0 }(1+x\sin iv_{eq}/c) \right] I _ { \beta } ^ { 0 } ( \lambda ) \phi(\lambda,\beta)\text{d} x \text{d} y } { \iint  { I _ { \beta } ^ { 0 } } ( \lambda )\phi(\lambda,\beta) \text{d} x \text{d} y }
   $$
+
+
 
 
 
@@ -508,7 +506,7 @@ $$
 
   - $N$ 是单位体积内的扰动粒子数
 
-  - $\overline v$ 是吸收(或辐射)原子和扰动粒子间的平均相对速度
+  - $\overline v$ 是吸收(或辐射)原子和扰动粒子间的平均相对速度，$\mu_1,\mu_2$ 分别是吸收和辐射原子的分子量
     $$
     \overline {  { v } } = \sqrt { \frac { 8 } { \pi } R T \left( \frac { 1 } { \mu _ { 1 } } + \frac { 1 } { \mu _ { 2 } } \right) }
     $$
@@ -550,6 +548,8 @@ $$
   &\equiv\frac{e^2}{mc}\cdot\delta_{jk}\cdot\frac{f}{(\nu-\nu_0)^2+\delta_{jk}^2}
   \end{align*}
   $$
+
+
 
 
 
@@ -618,10 +618,7 @@ $$
       I ( \Delta \lambda ) \text{d} ( \Delta \lambda ) = \sum _ { k } I _ { k } \Phi \left( F _ { k } \right) \text{d}F _ { k }
       $$
 
-
-
-
-    - 最后利用 $a(\Delta\lambda)\propto I(\Delta\lambda)$ 得出 $a(\Delta\lambda)$
+  - 最后利用 $a(\Delta\lambda)\propto I(\Delta\lambda)$ 得出 $a(\Delta\lambda)$
 
 
 
@@ -712,7 +709,7 @@ $$
   - 吸收公式
     $$
     \begin{align*}
-    a ( \Delta \lambda ) d ( \Delta \lambda )& = \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } W \left( \frac { \alpha } { C _ { k } } \right) \frac { \text{d} \alpha } { C _ { k } } \\&= \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } W \left( \frac { \Delta \lambda } { C _ { k } F _ { 0 } } \right) \frac { \text{d}  ( \Delta \lambda ) } { C _ { k } F _ { 0 } }
+    a ( \Delta \lambda )\text {d}( \Delta \lambda )& = \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } W \left( \frac { \alpha } { C _ { k } } \right) \frac { \text{d} \alpha } { C _ { k } } \\&= \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } W \left( \frac { \Delta \lambda } { C _ { k } F _ { 0 } } \right) \frac { \text{d}  ( \Delta \lambda ) } { C _ { k } F _ { 0 } }
     \end{align*}
     $$
 
@@ -737,8 +734,6 @@ $$
 
 
 
-
-
 - 二次斯塔克效应
 
 
@@ -753,6 +748,8 @@ $$
     S ( \Delta \lambda ) \text{d} ( \Delta \lambda )=\sum _ { k } I _ { k } \frac { W \left( \sqrt { \Delta \lambda / \left( C _ { k } F _ { 0 } ^ { 2 } \right) } \right) } { \sqrt { \Delta \lambda / \left( C _ { k } F _ { 0 } ^ { 2 } \right) } } \frac { \text{d} ( \Delta \lambda ) } { 2 C _ { k } F _ { 0 } ^ { 2 } }
     $$
     
+
+
 
 ## 碰撞理论和统计理论的应用范围
 
@@ -964,3 +961,5 @@ $$
     $$
     C = 1.496 \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } C _ { k } ^ { 3 / 2 }
     $$
+
+

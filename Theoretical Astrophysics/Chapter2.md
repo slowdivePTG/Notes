@@ -1,4 +1,9 @@
-# 引言
+# Chapter 2 恒星大气的连续不透明度
+
+
+
+## 引言
+
 ### 这些光谱为啥长这样
 1. 典型恒星光谱: 有一定减弱的连续谱（明显偏离黑体谱）和丰富的吸收线，晚型星比早型星减弱严重，O、B星温度高，辐射峰值在紫外
 2. 典型双星中矮恒星光谱:连续谱和吸收线谱变复杂、宽度变宽
@@ -19,14 +24,26 @@
 通过对天体光谱研究发现，银河系中大多数恒星的化学组成和太阳类似，有部分恒星的化学组成反常
 #### 表征化学组成的物理量
 1. 第s种元素相对于第一种元素（往往是H，因为多）按原子数目计算的相对含量:
-$$a _ { s } = \frac { N _ { s } } { N _ { 1 } }$$
+$$
+  a _ { s } = \frac { N _ { s } } { N _ { 1 } }
+$$
+
 2. 第s种元素相对于所有元素按原子数目计算的百分比含量:
-$$a _ { s }（ \%） = \frac {  { N } _ { s } } { \sum _ { j } { N } _ { j } } \times 100$$
+$$
+  a _ { s }（ \%） = \frac {  { N } _ { s } } { \sum _ { j } { N } _ { j } } \times 100
+$$
+
 3. 按质量计算的相对含量及百分比含量：
-$$\alpha _ { s } = \frac { N _ { s } m _ { s } } { N _ { 1 } m _ { 1 } }$$
-$$\alpha _ { s }（ \%） = \frac {  { N } _ { s } m _ { s } } { \sum _ { j } { N } _ { j } m _ { j } } \times 100$$
+$$
+  \alpha _ { s } = \frac { N _ { s } m _ { s } } { N _ { 1 } m _ { 1 } }
+$$
+
+$$
+  \alpha _ { s }（ \%） = \frac {  { N } _ { s } m _ { s } } { \sum _ { j } { N } _ { j } m _ { j } } \times 100
+$$
+
 4. 标准的（宇宙的）化学组成：太阳大气组成，常用 $\lg a _ { s } + 12.00$ 表示
-# 原子结构和能级
+## 原子结构和能级
 ### 原子的定态能级
 #### 四个量子数 $\left( n ， l ， m _ { l } ， m _ { s } \right)$
 1. $n$ 主量子数，电子量子化轨道半径大小
@@ -35,39 +52,51 @@ $$\alpha _ { s }（ \%） = \frac {  { N } _ { s } m _ { s } } { \sum _ { j } { 
 4. $m_s$ 自旋磁量子数，自旋角动量$z$向投影，$\pm 1/2$，共2个
 #### 类氢原子（核外只有一个电子）
 不受外磁场时，能量只由 $n$ 决定——简并，简并度只需考虑量子数的取值，为 $2n^2$，又称为统计权重，定态能量为：
-$$E _ { n } = - R _ { \infty } h c \frac { Z ^ { 2 } } { n ^ { 2 } }$$
+$$
+E _ { n } = - R _ { \infty } h c \frac { Z ^ { 2 } } { n ^ { 2 } }$$
+$$
 其中 $R _ { \infty } = 1.097 \times 10 ^ { - 5 } \mathrm { cm } ^ { - 1 }$ 是里德伯常量
+
 #### 碱金属原子（原子实 + 价层电子）
 ##### 原子实
 是由原子核和满壳层的电子组成的体系，其**总轨道角动量**和**总自旋角动量**都是零，但原子实外的价电子所受的力不再是**简单的库仑力**，要考虑**原子实的极化**以及**电子轨道在原子实中的穿透**
 
 ##### 简并打开
-原子的能量会因为价电子的轨道角动量（椭率）不同而不同（因而穿透程度不同）\
+原子的能量会因为价电子的轨道角动量（椭率）不同而不同（因而穿透程度不同）
 电子轨道角动量与自旋角动量的相互作用又使具有相同主量子数和轨道量子数
-$（n，l）$ 的能级按照总角动量量子数j的两个数值$l \pm 1/2$一分为二\
+$（n，l）$ 的能级按照总角动量量子数j的两个数值$l \pm 1/2$一分为二
 于是,描写碱金属原子定态的量子数，即价电子的量子数，可取为 $(n，l，j，m_j)$
 
 当外场不存在时,碱金属原子的能级只由量子数 $（ n，l，j ）$ 决定，因此能级简并度或统计权重为 $2j+1$
 
 #### 多电子原子
-由原子实外所有价电子的状态决定，用 $\left（ n _ { 1 } l _ { 1 } , n _ { 2 } l _ { 2 } , n _ { 3 } l _ { 3 } , \cdots \right）$来表示价电子的电子组态
+由原子实外所有价电子的状态决定，用 $\left( n _ { 1 } l _ { 1 } , n _ { 2 } l _ { 2 } , n _ { 3 } l _ { 3 } , \cdots \right)$来表示价电子的电子组态
 ##### $LS$ 耦合
-电子**自旋之间**的相互作用强，各电子**轨道运动之间**相互作用也很强，互相穿越严重\
-**轨道运动和自旋**之间相互作用弱\
+电子**自旋之间**的相互作用强，各电子**轨道运动之间**相互作用也很强，互相穿越严重
+**轨道运动和自旋**之间相互作用弱
 ——先分别合成整个体系的自旋/轨道角动量，再合成总角动量
+
 ##### $jj$ 耦合
-电子**自旋之间**，各电子**轨道运动之间**相互作用弱\
-**轨道运动和自旋**之间相互作用强\
+电子**自旋之间**，各电子**轨道运动之间**相互作用弱
+**轨道运动和自旋**之间相互作用强
 ——先分别合成各自的总角动量，再合成体系的总角动量
 
-大多数原子—— $LS$耦合\
-某些**高激发态**和**较重**的原子——$jj$耦合\
+大多数原子—— $LS$耦合
+某些**高激发态**和**较重**的原子——$jj$耦合
 一些原子的能级结构不能单独用其中一种近似而介于两种耦合之间
+
 ##### 光谱项（能级符号）
 $LS$耦合下能级 $i$ 的符号：
-$$\left(n _ { 1 } l _ { 1 } , n _ { 2 } l _ { 2 } , n _ { 3 } l _ { 3 } , \cdots \right) ^ { 2 S + 1 } L _ { J }\to ^ { 2 S + 1 } L _ { J }$$
-$$S,p,D,F,G,\cdots\sim L = 0,1,2,3,4 , \dots$$
+$$
+\left(n _ { 1 } l _ { 1 } , n _ { 2 } l _ { 2 } , n _ { 3 } l _ { 3 } , \cdots \right) ^ { 2 S + 1 } L _ { J }\to ^ { 2 S + 1 } L _ { J }
+$$
+
+$$
+S,p,D,F,G,\cdots\sim L = 0,1,2,3,4 , \dots
+$$
+
 简并度（统计权重）：$2J+1$
+
 ### 基态
 原子能量的最低状态——天体物理中习惯取为原子能量零点
 1. 氢原子：$n=1,\quad1s^1\quad^2S_{1/2}$
@@ -88,63 +117,129 @@ $$S,p,D,F,G,\cdots\sim L = 0,1,2,3,4 , \dots$$
 2. 中性Fe，一次电离Fe $^+$，两次电离Fe $^{++}$，...
 ### 电离电势和光电效应方程
 1. 电离电势 $\chi_r$：把一个处于基态的$r$次电离原子电离所需的最小能量
+
 2. 激发电势 $\varepsilon_{r,k}$：一个处于基态的$r$次电离原子激发到$k$能级所需的能量
+
 3. 结合能 $\chi_{r,k}$：把原子从某一个激发能级电离所需要的最小能量
-$$\chi _ { r } = \chi _ { r , k } + \varepsilon _ { r , k }$$
+$$
+  \chi _ { r } = \chi _ { r , k } + \varepsilon _ { r , k }
+$$
+
 4. 光电效应（基态，$k$能级）：
-$$h \nu = \chi _ { r } + \frac { 1 } { 2 } m _ { e } v ^ { 2 }$$
-$$h \nu = \chi _ { r,k } + \frac { 1 } { 2 } m _ { e } v ^ { 2 }$$
+$$
+  h \nu = \chi _ { r } + \frac { 1 } { 2 } m _ { e } v ^ { 2 }
+$$
+
+$$
+  h \nu = \chi _ { r,k } + \frac { 1 } { 2 } m _ { e } v ^ { 2 }
+$$
+
 5. 碰撞电离：第一类碰撞造成的电离
 ### 玻尔兹曼公式
 计算原子在各个能级上的数目,从而能够预测由这些能级出发的物理过程的相对重要性，如**谱线强度**、**吸收线强度**
-$$\frac { N _ { k } } { N _ { i } } = \frac { g _ { k } } { g _ { i } } e ^ { - \left( \varepsilon _ { k } - \varepsilon _ { i } \right) / k T }$$
-这是玻尔兹曼公式给出的不同能级上原子数目（单位体积内）之比\
+$$
+\frac { N _ { k } } { N _ { i } } = \frac { g _ { k } } { g _ { i } } e ^ { - \left( \varepsilon _ { k } - \varepsilon _ { i } \right) / k T }
+$$
+这是玻尔兹曼公式给出的不同能级上原子数目（单位体积内）之比
 对于同一电离级的原子：
-$$\frac {  { N } _ { r , k } } { { N } _ { r , i } } = \frac {  { g } _ { r , k } } {  { g } _ { r , i } } e ^ { - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) / k T }$$
-方便起见，改写为**对数**形式，温度单位K，注意**激发势能的单位是eV**，$1 \mathrm { eV } = 1.16 \times 10 ^ { 4 } \mathrm { K }$，由玻尔兹曼常数换算：
-$$\lg \frac { N _ { r , k } } { N _ { r , i } } = \lg \frac { g _ { r , k } } { g _ { r , i } } - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) \frac { 1 } { T } \frac { \lg e } { k }=\lg \frac { g _ { r , k } } { g _ { r , i } } - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) \frac { 5040 } { T }$$
+$$\frac {  { N } _ { r , k } } { { N } _ { r , i } } = \frac {  { g } _ { r , k } } {  { g } _ { r , i } } e ^ { - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) / k T }$$方便起见，改写为**对数**形式，温度单位K，注意**激发势能的单位是eV**，$1 \mathrm { eV } = 1.16 \times 10 ^ { 4 } \mathrm { K }$，由玻尔兹曼常数换算：
+$$
+\lg \frac { N _ { r , k } } { N _ { r , i } } = \lg \frac { g _ { r , k } } { g _ { r , i } } - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) \frac { 1 } { T } \frac { \lg e } { k }=\lg \frac { g _ { r , k } } { g _ { r , i } } - \left( \varepsilon _ { r , k } - \varepsilon _ { r , i } \right) \frac { 5040 } { T }
+$$
 原子在电离级 $r$ 上的总数目：
-$$N _ { r } = \sum _ { i } N _ { r , i } = N _ { r , 1 } \sum _ { i = 1 } ^ { \infty } \frac { N _ { r , i } } { N _ { r , 1 } } =\frac { N _ { r , 1 } } { g _ { r , 1 } } \left( g _ { r , 1 } + g _ { r , 2 } e ^ { - \varepsilon _ { r , 2 } / k T } + \cdots \right)$$
+$$
+N _ { r } = \sum _ { i } N _ { r , i } = N _ { r , 1 } \sum _ { i = 1 } ^ { \infty } \frac { N _ { r , i } } { N _ { r , 1 } } =\frac { N _ { r , 1 } } { g _ { r , 1 } } \left( g _ { r , 1 } + g _ { r , 2 } e ^ { - \varepsilon _ { r , 2 } / k T } + \cdots \right)
+$$
+
+
 态和（配分函数）：
-$$u _ { r } ( T ) = \sum _ { i = 1 } ^ { \infty } g _ { r , i } e ^ { - \varepsilon _ { r , j } / k T }$$
+$$
+u _ { r } ( T ) = \sum _ { i = 1 } ^ { \infty } g _ { r , i } e ^ { - \varepsilon _ { r , j } / k T }
+$$
 $r$ 级电离原子总数、任一能级上的原子数：
-$$N _ { r } = \frac { N _ { r , 1 } } { g _ { r , 1 } } u _ { r } ( T )$$
-$$N _ { r , 1 } = \frac { g _ { r , 1 } } { u _ { r } ( T ) } N _ { r }$$
-$$N _ { r , i } = \frac { g _ { r , i } } { u _ { r } ( T ) } N _ { r } e ^ { - \varepsilon _ { r , i } / k T }$$
+$$
+N _ { r } = \frac { N _ { r , 1 } } { g _ { r , 1 } } u _ { r } ( T )
+$$
+
+$$
+N _ { r , 1 } = \frac { g _ { r , 1 } } { u _ { r } ( T ) } N _ { r }
+$$
+
+$$
+N _ { r , i } = \frac { g _ { r , i } } { u _ { r } ( T ) } N _ { r } e ^ { - \varepsilon _ { r , i } / k T }
+$$
+
 ### 萨哈公式
 处理原子电离、以及不同电离级之间的情况——电离原子看成中性原子的连续态\
 电子能量（取基态能量为0）：
-$$E = \chi _ { 0 } + \frac { 1 } { 2 m _ { e } } \left( p _ { 1 } ^ { 2 } + p _ { 2 } ^ { 2 } + p _ { 3 } ^ { 2 } \right)$$
+$$
+E = \chi _ { 0 } + \frac { 1 } { 2 m _ { e } } \left( p _ { 1 } ^ { 2 } + p _ { 2 } ^ { 2 } + p _ { 3 } ^ { 2 } \right)$$
+$$
 由统计力学知识可得电子的态密度（ $V_0$ 为自由电子所能到达的体积，对于一次电离，$N _ { e } V _ { 0 } = 1$）
-$$\text{d}g_e=\frac{8\pi V_0p^2\text{d}p}{h^3}$$
+$$
+\text{d}g_e=\frac{8\pi V_0p^2\text{d}p}{h^3}
+$$
 原子的态密度 $\text{d}g_c$ 只需再乘上基态的简并度 $g_{1,1}$，根据玻尔兹曼公式有：
-$$\frac { \text{d}N  _ { 1,1 } } { N _ { 0,1 } } = \frac { \text{d} g _ { c } } { g _ { 0,1 } } e ^ { - E / k T } = \frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { 4 \pi V _ { 0 } p ^ { 2 } \text{d} p } { h ^ { 3 } }  e ^ { - \chi _ { 0 } / k T } e ^ { - p ^ { 2 } / 2 m _ { s } k T }$$
+$$
+\frac { \text{d}N  _ { 1,1 } } { N _ { 0,1 } } = \frac { \text{d} g _ { c } } { g _ { 0,1 } } e ^ { - E / k T } = \frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { 4 \pi V _ { 0 } p ^ { 2 } \text{d} p } { h ^ { 3 } }  e ^ { - \chi _ { 0 } / k T } e ^ { - p ^ { 2 } / 2 m _ { s } k T }
+$$
 积分即得：
-$$\frac { N _ { 1,1 } } { N _ { 0 , 1 } }=\frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } V _ { 0 } e ^ { - \chi _ { 0 } / k T }$$
+$$
+\frac { N _ { 1,1 } } { N _ { 0 , 1 } }=\frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } V _ { 0 } e ^ { - \chi _ { 0 } / k T }
+$$
 注意到利用 $\Gamma$ 函数的性质可以轻松计算：
-$$\int _ { 0 } ^ { \infty } e ^ { - p ^ { 2 } / 2 m _ { e } k T } p ^ { 2 } \text{d} p=(2m_ekT)^{3/2}\frac{\Gamma(3/2)}{2}=(2m_ekT)^{3/2}\frac{\sqrt{\pi}}{4}$$
+$$
+\int _ { 0 } ^ { \infty } e ^ { - p ^ { 2 } / 2 m _ { e } k T } p ^ { 2 } \text{d} p=(2m_ekT)^{3/2}\frac{\Gamma(3/2)}{2}=(2m_ekT)^{3/2}\frac{\sqrt{\pi}}{4}
+$$
 利用 $N_{e}$ 和 $V_0$ 的关系，得到：
-$$\frac { N _ { 1,1 } } { N _ { 0 , 1 } }N_e=\frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }$$
+$$
+\frac { N _ { 1,1 } } { N _ { 0 , 1 } }N_e=\frac { 2 g _ { 1,1 } } { g _ { 0,1 } } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }
+$$
 考虑每一个能级，则将统计权重换成态和，将单位体积基态离子数换为相应电离级的总原子数，得到：
-$$\frac { N _ { 1 } } { N _ { 0 } } N _ { e } = \frac { 2 u _ { 1 } ( T ) } { u _ { 0 } ( T ) } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }$$
-用理想气体的压强表达式代入电子压强，最终得到萨哈公式：
-$$\frac { N _ { 1 } } { N _ { 0 } } p _ { e } = \frac { 2 u _ { 1 } ( T ) } { u _ { 0 } ( T ) } \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } ( k T ) ^ { 5 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }$$
+$$
+\frac { N _ { 1 } } { N _ { 0 } } N _ { e } = \frac { 2 u _ { 1 } ( T ) } { u _ { 0 } ( T ) } \frac { \left( 2 \pi m _ { e } k T \right) ^ { 3 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }
+$$
+用理想气体的压强表达式代入电子压强，最终得到**萨哈公式**：
+$$
+\frac { N _ { 1 } } { N _ { 0 } } p _ { e } = \frac { 2 u _ { 1 } ( T ) } { u _ { 0 } ( T ) } \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } ( k T ) ^ { 5 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { 0 } / k T }
+$$
 一般形式给出 $r+1$ 次电离原子与 $r$ 次电离原子数目之比：
-$$\frac { N _ { r + 1 } } { N } p _ { e } = \frac { 2 u _ { r + 1 } ( T ) } { u _ { r } ( T ) } \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } ( k T ) ^ { 5 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { r } / k T } \equiv K _ { r } ( T )$$
+$$
+\frac { N _ { r + 1 } } { N_r } p _ { e } = \frac { 2 u _ { r + 1 } ( T ) } { u _ { r } ( T ) } \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } ( k T ) ^ { 5 / 2 } } { h ^ { 3 } } e ^ { - \chi _ { r } / k T } \equiv K _ { r } ( T )
+$$
 萨哈公式表明：
+
 1. 固定 $p_e$ ，原子电离程度随 $T$ 升高
+
 2. 固定 $T$ ，原子电离程度随 $p_e$ 降低
-对数形式：
-$$\lg \frac { N _ { r + 1 } } { N _ { r } } = \lg \frac { 2 u _ { r + 1 } ( T ) } { u _ { r } ( T ) } + \frac { 5 } { 2 } \lg T - \frac { 5040 } { T } \chi _ { r } - \lg p _ { e } - \lg \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } k ^ { 5 / 2 } } { h ^ { 3 } } ( = 0.48 )$$
+
+  对数形式：
+$$
+  \lg \frac { N _ { r + 1 } } { N _ { r } } = \lg \frac { 2 u _ { r + 1 } ( T ) } { u _ { r } ( T ) } + \frac { 5 } { 2 } \lg T - \frac { 5040 } { T } \chi _ { r } - \lg p _ { e } - \lg \frac { \left( 2 \pi m _ { e } \right) ^ { 3 / 2 } k ^ { 5 / 2 } } { h ^ { 3 } } ( = 0.48 )
+$$
+
+
 由于态和随能量增加迅速收敛，只需考虑 $\varepsilon _ { r , i } \leq k T$ 的激发项
 
-可以进一步简化方程的形式，引入电离度，即所考虑的元素原子的总数目中，$r$ 次电离原子所占的比例
-$$X _ { r } = \frac { N _ { r } } { N } = \frac { N _ { r } } { N _ { 0} + N _ { 1 } + \cdots + N _ { r } + \cdots }$$
+可以进一步简化方程的形式，引入**电离度**，即所考虑的元素原子的总数目中，$r$ 次电离原子所占的比例
+$$
+X _ { r } = \frac { N _ { r } } { N } = \frac { N _ { r } } { N _ { 0} + N _ { 1 } + \cdots + N _ { r } + \cdots }
+$$
 绝大多数的原子都位于相邻电离级：
-$$N\approx{N_r+N_{r+1}}$$
-$$N(1-X_{r+1})\approx N_{r},\quad NX_{r+1}=N_{r+1}$$
+$$
+N\approx{N_r+N_{r+1}}
+$$
+
+$$
+N(1-X_{r+1})\approx N_{r},\quad NX_{r+1}=N_{r+1}
+$$
+
 近似有：
-$$\frac{X_{r+1}}{1-X_{r+1}}p_e=K_r(T)$$
+$$
+\frac{X_{r+1}}{1-X_{r+1}}p_e=K_r(T)
+$$
+
+
 ### 原子跃迁概率系数
 自发跃迁、受激跃迁（吸收）、受激发射（诱导发射）
 #### 自发发射概率系数 $A_{ki}$
@@ -155,25 +250,55 @@ $$\frac{X_{r+1}}{1-X_{r+1}}p_e=K_r(T)$$
 受激发射的逆过程
 
 综上：
-$$n _ { k \rightarrow i } = N _ { k } \left( A _ { k i } + B _ { k i } I _ { \nu } \right) \text{d} \omega / 4 \pi$$
-$$ n _ { i \rightarrow k } = N _ { i }  B _ { ik } I _ { \nu }  \text{d} \omega / 4 \pi$$
+$$
+n _ { k \rightarrow i } = N _ { k } \left( A _ { k i } + B _ { k i } I _ { \nu } \right) \text{d} \omega / 4 \pi
+$$
+
+$$
+ n _ { i \rightarrow k } = N _ { i }  B _ { ik } I _ { \nu }  \text{d} \omega / 4 \pi
+$$
+
+
+
 由**细致平衡原理**，过程和逆过程概率相等：
-$$A _ { k i } + B _ { k i } I _ { \nu } = \frac { N _ { i } } { N _ { k } } B _ { i k } I _ { \nu }=\frac { { g } _ { i } } { { g } _ { k } } e ^ { - \left( \varepsilon _ { i } - \varepsilon _ { k } \right) / k T } B _ { i k } I _ { \nu }$$
-$$I _ { \nu } = \frac { \left( A _ { k i } / B _ { k i } \right) } { \frac { g _ { i } } { g _ { k } } \frac { B _ { i k } } { B _ { k i } } e ^ { - \left( \varepsilon _ { t } - \varepsilon _ { k } \right) / k T } - 1 }$$
+$$
+A _ { k i } + B _ { k i } I _ { \nu } = \frac { N _ { i } } { N _ { k } } B _ { i k } I _ { \nu }=\frac { { g } _ { i } } { { g } _ { k } } e ^ { - \left( \varepsilon _ { i } - \varepsilon _ { k } \right) / k T } B _ { i k } I _ { \nu }$$
+$$
+
+$$
+I _ { \nu } = \frac { \left( A _ { k i } / B _ { k i } \right) } { \frac { g _ { i } } { g _ { k } } \frac { B _ { i k } } { B _ { k i } } e ^ { - \left( \varepsilon _ { t } - \varepsilon _ { k } \right) / k T } - 1 }
+$$
+
 高温极限下辐射强度也发散，分母为0，推出：
-$$ \frac { g _ { i } } { g _ { k } } \frac { B _ { i k } } { B _ { k i } }=1$$
-$$I _ { \nu } = \frac { A _ { k i } } { B _ { k i } } \frac { 1 } { e ^ { - \left( \varepsilon _ { i } - \varepsilon _ { k } \right) / k T } - 1 }=\frac{ 2 h \nu ^ { 3 } / c ^ { 2 } } {e ^ { - h \nu / k T } - 1} $$
-$$A _ { k i } = \frac { 2 h \nu _ { i k } ^ { 3 } } { c ^ { 2 } } B _ { k i }$$
-各系数是原子的固有的物理量，上述关系与外界物理条件无关，对非热平衡态也成立\
+$$
+\frac { g _ { i } } { g _ { k } } \frac { B _ { i k } } { B _ { k i } }=1
+$$
+
+$$
+I _ { \nu } = \frac { A _ { k i } } { B _ { k i } } \frac { 1 } { e ^ { - \left( \varepsilon _ { i } - \varepsilon _ { k } \right) / k T } - 1 }=\frac{ 2 h \nu ^ { 3 } / c ^ { 2 } } {e ^ { - h \nu / k T } - 1}
+$$
+
+$$
+A _ { k i } = \frac { 2 h \nu _ { i k } ^ { 3 } } { c ^ { 2 } } B _ { k i }
+$$
+
+各系数是原子的固有的物理量，上述关系与外界物理条件无关，对非热平衡态也成立
+
 如果外界使各能级不再简并，则该关系依然对单态适用
 
-自发发射——零场发射，各向同性\
+自发发射——零场发射，各向同性
+
 受激发射、受激吸收——外场，各向异性——统一考虑，受激发射称为**负吸收**，跃迁数变为：
-$$n _ { i \rightarrow k } ^ { * } = N _ { i } B _ { i k } I _ { \nu } \left( 1 - \frac { N _ { k } } { N _ { i } } \frac { B _ { k i } } { B _ { i k } } \right) \frac { \text{d} \omega } { 4 \pi }$$
+$$
+n _ { i \rightarrow k } ^ { * } = N _ { i } B _ { i k } I _ { \nu } \left( 1 - \frac { N _ { k } } { N _ { i } } \frac { B _ { k i } } { B _ { i k } } \right) \frac { \text{d} \omega } { 4 \pi }
+$$
 局部热平衡下，利用玻尔兹曼公式和前面得到的吸收/负吸收系数的关系：
-$$\frac { n _ { i \rightarrow k } ^ { * } } { n _ { i \rightarrow k } } =  1 - \frac { N _ { k } } { N _ { i } } \frac { B _ { k i } } { B _ { i k } } = 1 - e ^ { - h \nu _ { i k } / k T } $$
+$$
+\frac { n _ { i \rightarrow k } ^ { * } } { n _ { i \rightarrow k } } =  1 - \frac { N _ { k } } { N _ { i } } \frac { B _ { k i } } { B _ { i k } } = 1 - e ^ { - h \nu _ { i k } / k T }
+$$
 对于恒星光谱，通常，紫外区 $h\nu  /  kT  \gg1$，可忽略负吸收，红外区或微波区 $h\nu  /  kT  \ll 1$，负吸收非常重要
-# 连续吸收的来源
+
+## 连续吸收的来源
 ### 连续吸收过程
 1. 原子(包括正离子和负离子)的光致电离
 2. (自由电子的)自由—自由跃迁
@@ -190,7 +315,10 @@ $r$ 次电离原子处于 $k$ 能级，可吸收任何 $\nu \geq \chi _ { r , k 
 分子吸收能量大于离解能的任何光量子后离解，多余的能量成为原子动能
 #### 分子带吸收
 分子内部运动自由度：电子激发、分子振动和转动
-$$E = E _ { e } + E _ { \nu } + E _ { r }$$
+$$
+E = E _ { e } + E _ { \nu } + E _ { r }
+$$
+
 1. 单纯转动能级改变 $\Delta E_r$ 很小——毫米、厘米波和远红外区域;
 2. 单纯振动能级变化 $\Delta E_\nu$ 略大——近红外
 3. 在ΔE中起作用最大的是电子能级跃迁 $\Delta E_e$ ——可见光区和紫外区
@@ -207,35 +335,67 @@ $$E = E _ { e } + E _ { \nu } + E _ { r }$$
 3. 分子的吸收和尘埃的吸收包含了这两种过程
 ### 原子吸收系数（微观的吸收系数）
 考虑原子吸收引起的辐射减弱
-$$\text{d} I _ { \nu } ^ { ( s ) } = - I _ { \nu } k _ { \nu } ^ { ( s ) } N _ { s } \text{d} h$$
-$$ k _ { \nu } ^ { ( s ) }= -\frac{\text{d} I _ { \nu } ^ { ( s ) }}{ \text{d} h}I _ { \nu }  N _ { s } $$
+$$
+\text{d} I _ { \nu } ^ { ( s ) } = - I _ { \nu } k _ { \nu } ^ { ( s ) } N _ { s } \text{d} h
+$$
+
+$$
+k _ { \nu } ^ { ( s ) }= -\frac{\text{d} I _ { \nu } ^ { ( s ) }}{ \text{d} h}I _ { \nu }  N _ { s }
+$$
+
 与散射截面同量纲
-# 类氢原子的吸收系数
+
+## 类氢原子的吸收系数
 ### 光致电离过程的吸收系数——在一个确定能级上
 量子力学给出：
-$$\left( k _ { \nu } ^ { \prime } \right) _ { r , n } = \frac { 32 \pi ^ { 2 } e ^ { 6 } R _ { \infty } Z ^ { 4 } g _ { n } ^ { \prime } } { 3 \sqrt { 3 } h ^ { 3 } n ^ { 5 } } \nu^ { - 3 } \left( \nu> \nu _ { n } \right)=\frac { 64 \pi ^ { 4 } Z ^ { 4 } m _ { e } e ^ { 10 } } { 3 \sqrt { 3 } c h ^ { 6 } v ^ { 3 } } \frac { g _ { n } ^ { \prime } } { n ^ { 5 } }$$
+$$
+\left( k _ { \nu } ^ { \prime } \right) _ { r , n } = \frac { 32 \pi ^ { 2 } e ^ { 6 } R _ { \infty } Z ^ { 4 } g _ { n } ^ { \prime } } { 3 \sqrt { 3 } h ^ { 3 } n ^ { 5 } } \nu^ { - 3 } \left( \nu> \nu _ { n } \right)=\frac { 64 \pi ^ { 4 } Z ^ { 4 } m _ { e } e ^ { 10 } } { 3 \sqrt { 3 } c h ^ { 6 } v ^ { 3 } } \frac { g _ { n } ^ { \prime } } { n ^ { 5 } }
+$$
 利用Kramers-Lyman极限吸收截面（ $\sim10\alpha\times$几何截面，$\alpha$ 为精细结构常数）
-$$k _ { r , 1 } = \frac { 64 } { 3 \sqrt { 3 } } \alpha \times \pi \left( \frac { a _ { 0 } } { Z } \right) ^ { 2 }$$
-$$\left( k _ { \nu } ^ { \prime } \right) _ { r , n } = k _ { r , 1 } n \left( \frac { \nu_ { n } } { \nu } \right) ^ { 3 } g _ { n } ^ { \prime } = 2.815 \times 10 ^ { 29 } Z ^ { 4 } \frac { g _ { n } ^ { \prime } } { n ^ { 5 } } \nu ^ { - 3 }$$
-可以看出带头频率处吸收系数最大，然后按 $\nu^{-3}$ 衰减；同一频率，$n$ 越大，吸收系数越小\
+$$
+k _ { r , 1 } = \frac { 64 } { 3 \sqrt { 3 } } \alpha \times \pi \left( \frac { a _ { 0 } } { Z } \right) ^ { 2 }
+$$
+
+$$
+\left( k _ { \nu } ^ { \prime } \right) _ { r , n } = k _ { r , 1 } n \left( \frac { \nu_ { n } } { \nu } \right) ^ { 3 } g _ { n } ^ { \prime } = 2.815 \times 10 ^ { 29 } Z ^ { 4 } \frac { g _ { n } ^ { \prime } } { n ^ { 5 } } \nu ^ { - 3 }
+$$
+可以看出带头频率处吸收系数最大，然后按 $\nu^{-3}$ 衰减；同一频率，$n$ 越大，吸收系数越小
+
 $g_n$ 为Gaunt因子：
-$$g _ { n } ^ { \prime } = 1 - 0.1728 \left( \frac { v } { c R _ { \infty } Z ^ { 2 } } \right) ^ { 1 / 3 } \left( \frac { 2 c R _ { \infty } Z ^ { 2 } } { n ^ { 2 } v } - 1 \right) \sim1$$
+$$
+g _ { n } ^ { \prime } = 1 - 0.1728 \left( \frac { v } { c R _ { \infty } Z ^ { 2 } } \right) ^ { 1 / 3 } \left( \frac { 2 c R _ { \infty } Z ^ { 2 } } { n ^ { 2 } v } - 1 \right) \sim1
+$$
+
 ### 恒星大气里类氢原子在任一频率上的光电吸收
 把所有吸收带配以该吸收带对应能级上的原子数目作为权重，加权叠加
-# 自由电子散射和中性原子的瑞利散射
+## 自由电子散射和中性原子的瑞利散射
 1. 散射不具有热辐射的性质，基尔霍夫定律对它不适用
 2. 也不存在负吸收
 
 谐振电子对电磁波的散射截面：
-$$S = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } \frac { \omega ^ { 4 } } { \left( \omega ^ { 2 } - \omega _ { 0 } ^ { 2 } \right) ^ { 2 } + \gamma ^ { 2 } \omega ^ { 2 } }$$
+$$
+S = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } \frac { \omega ^ { 4 } } { \left( \omega ^ { 2 } - \omega _ { 0 } ^ { 2 } \right) ^ { 2 } + \gamma ^ { 2 } \omega ^ { 2 } }
+$$
+
 ### 自由电子散射（$\omega\gg\omega_0$）
-$\omega_0=0,\gamma\ll\omega$
-$$S _ { e } = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } = \frac { 8 } { 3 } \pi r _ { e } ^ { 2 } = 6.65 \times 10 ^ { - 25 } \mathrm { cm } ^ { 2 } \Rightarrow \chi _ { e } = S _ { e } / m _ { p } = 0.40 \mathrm { cm } ^ { 2 } / \mathrm { g }$$
+$$
+\omega_0=0,\gamma\ll\omega
+$$
+
+$$
+S _ { e } = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } = \frac { 8 } { 3 } \pi r _ { e } ^ { 2 } = 6.65 \times 10 ^ { - 25 } \mathrm { cm } ^ { 2 } \Rightarrow \chi _ { e } = S _ { e } / m _ { p } = 0.40 \mathrm { cm } ^ { 2 } / \mathrm { g }
+$$
+
 散射截面与波长无关，等同地散射各个波长的辐射（在高温恒星大气中）
+
 ### 瑞利散射（$\omega\ll\omega_0$）
-$$S = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } \left( \frac { \omega } { \omega _ { 0 } } \right) ^ { 4 }=S_e\left( \frac { \omega } { \omega _ { 0 } } \right) ^ { 4 }$$
+$$
+S = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \right) ^ { 2 } \left( \frac { \omega } { \omega _ { 0 } } \right) ^ { 4 }=S_e\left( \frac { \omega } { \omega _ { 0 } } \right) ^ { 4 }
+$$
+
 与波长的四次方成反比，低温的晚型星（地球）大气中起作用，特别是在短波区
-# 负氢离子、其它原子、分子和尘埃的连续吸收
+
+## 负氢离子、其它原子、分子和尘埃的连续吸收
 ### 负氢离子的连续吸收
 ### 氦原子的连续吸收
 ### 其他原子的吸收
@@ -243,4 +403,3 @@ $$S = \frac { 8 \pi } { 3 } \left( \frac { e ^ { 2 } } { m _ { e } c ^ { 2 } } \
 ### 分子的吸收
 ### 尘埃的吸收
 ### 总吸收系数
-# 各种光谱型恒星大气里辐射的吸收
