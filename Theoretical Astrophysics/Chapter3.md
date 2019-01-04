@@ -6,10 +6,6 @@
 
 吸收系数和频率相关——非灰大气
 
-
-
-### In this chapter：
-
 1. 研究非灰大气**辐射转移方程**的解法
 
 2. 从理论上得出恒星**连续光谱能量的分布**
@@ -21,17 +17,17 @@
 
 在辐射平衡条件下求解辐射转移方程
 $$
-\cos \theta \frac { \text{d} I _ { \nu} \left( \theta , \tau _ { \nu } \right) } { \text{d} \tau _ { \nu } } = I _ {\nu} \left( \theta , \tau _ {\nu } \right) - S _ {\nu } \left( \tau _ {\nu } \right)
+\cos \theta \frac { \mathrm{d} I _ { \nu} \left( \theta , \tau _ { \nu } \right) } { \mathrm{d} \tau _ { \nu } } = I _ {\nu} \left( \theta , \tau _ {\nu } \right) - S _ {\nu } \left( \tau _ {\nu } \right)
 $$
-$\tau_{\nu}$由与频率有关的吸收系数$\chi_{\nu}$决定
+$\tau_{\nu}$ 由与频率有关的吸收系数 $\chi_{\nu}$ 决定
 
 回忆辐射转移方程的形式解(向外/内传递)，必须还要求出温度$T$和光深$\tau$的关系
 $$
-I _ { \nu} \left( { \theta } ,  { \tau } _ {\nu } \right) = \int _ { \tau _ { \nu } } ^ { \infty } S _ { \nu } e ^ { - \left( t _ { \nu} - \tau _ { \nu} \right) \sec \theta } \sec  { \theta } \text{d} t _ { \nu}
+I _ { \nu} \left( { \theta } ,  { \tau } _ {\nu } \right) = \int _ { \tau _ { \nu } } ^ { \infty } S _ { \nu } e ^ { - \left( t _ { \nu} - \tau _ { \nu} \right) \sec \theta } \sec  { \theta } \mathrm{d} t _ { \nu}
 $$
 
 $$
-I _ { \nu} ^ { \prime } \left( { \psi } ,  { \tau } _ { \nu} \right) = \int _ { 0 } ^ { \tau _ { \nu } } S _ { \nu } e ^ { - \left( \tau _ { \nu} - t _ { \nu } \right) \sec \psi } \sec \boldsymbol { \psi } \text{d} t _ { \nu }
+I _ { \nu} ^ { \prime } \left( { \psi } ,  { \tau } _ { \nu} \right) = \int _ { 0 } ^ { \tau _ { \nu } } S _ { \nu } e ^ { - \left( \tau _ { \nu} - t _ { \nu } \right) \sec \psi } \sec \boldsymbol { \psi } \mathrm{d} t _ { \nu }
 $$
 
 非灰大气下：$S_{\nu}(\tau_{\nu})=B_{\nu}(T_{\tau_{\nu}})$，温度和光深的关系和频率有关，只能采用**逐次近似法**
@@ -42,11 +38,8 @@ $$
 
 - 选择一个归一化的权重函数 $W_{\nu}(p_e,T)$ ，对吸收系数进行加权平均：
   $$
-  \overline{\chi}(p_e,T)=\int_0^\infty W_{\nu}(p_e,T)\chi_\nu(p_e,T)\text{d}\nu
+  \overline{\chi}(p_e,T)=\int_0^\infty W_{\nu}(p_e,T)\chi_\nu(p_e,T)\mathrm{d}\nu
   $$
-
-
-
 
 
 
@@ -61,67 +54,66 @@ $$
 
    回忆：Eddington在处理灰大气时引入了三个量$J,H,K$，我们可以引入相应单色量：
    $$
-   J _ { \nu } \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ( \theta ) \text{d} \omega
+   J _ { \nu } \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ( \theta ) \mathrm{d} \omega
    $$
 
    $$
-   H _ { \nu} \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ({ \theta } ) \cos  { \theta } \text{d} { \omega } = \frac { 1 } { 4 } F _ { \nu }
+   H _ { \nu} \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ({ \theta } ) \cos  { \theta } \mathrm{d} { \omega } = \frac { 1 } { 4 } F _ { \nu }
    $$
 
    $$
-   K _ { \nu } \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ( \theta ) \cos ^ { 2 } \theta \text{d} \omega = \frac { c } { 4 \pi } P _ { R , \nu }
+   K _ { \nu } \equiv \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ( \theta ) \cos ^ { 2 } \theta \mathrm{d} \omega = \frac { c } { 4 \pi } P _ { R , \nu }
    $$
 
-   以 $\cos \theta \text{d} \omega / 4 \pi$ 乘以辐射转移方程两端并对 $4\pi$ 立体角积分：
+   以 $\cos \theta \mathrm{d} \omega / 4 \pi$ 乘以辐射转移方程两端并对 $4\pi$ 立体角积分
    $$
-   \frac { 1 } { 4 \pi } \frac { \text{d} } { \text{d} \tau _ { \nu } } \int _ { 4 \pi } I _ { v } \left( \theta , \tau _ { \nu } \right) \cos ^ { 2 } \theta \text{d} \omega = \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } \left( \theta , \tau _ { \nu } \right) \cos \theta \text{d} \omega
-   $$
-
-   $$
-   \Rightarrow \frac { \text{d}K _ { \nu } } { \text{d} \tau _ { \nu } }=H_\nu=\frac{1}{4}F_\nu=\frac { \text{d}K _ { \nu } } {  \chi _ { \nu }\rho\text{d} h }
+   \frac { 1 } { 4 \pi } \frac { \mathrm{d} } { \mathrm{d} \tau _ { \nu } } \int _ { 4 \pi } I _ {\nu} \left( \theta , \tau _ { \nu } \right) \cos ^ { 2 } \theta \mathrm{d} \omega = \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } \left( \theta , \tau _ { \nu } \right) \cos \theta \mathrm{d} \omega
    $$
 
-   两端对频率积分，同乘上 $\rho$ ：
    $$
-   \frac{\rho}{4}F=\int_0^\infty\frac { \text{d}K _ { \nu } } {  \chi _ { \nu }\text{d} h }\text{d}\nu
+   \Rightarrow \frac { \mathrm{d}K _ { \nu } } { \mathrm{d} \tau _ { \nu } }=H_\nu=\frac{1}{4}F_\nu=\frac { \mathrm{d}K _ { \nu } } {  \chi _ { \nu }\rho\mathrm{d} h }
    $$
-   另一方面，在辐射平衡下，**灰大气的总辐射压**和**总辐射流**之间存在关系：
+
+   两端对频率积分，同乘上 $\rho$ 
    $$
-   \frac { \text{d} P _ { R } } { d \overline { \tau } } = \frac { \pi } { c } F \Rightarrow \frac { 1 } { \overline { \chi } \rho } \frac { d P _ { R } } { d h } = \frac { \pi } { c } F
+   \frac{\rho}{4}F=\int_0^\infty\frac { \mathrm{d}K _ { \nu } } {  \chi _ { \nu }\mathrm{d} h }\mathrm{d}\nu
    $$
-   又因为 $K=\frac{c}{4\pi}P_R$ ，我们得到：
+   另一方面，在辐射平衡下，**灰大气的总辐射压**和**总辐射流**之间存在关系
    $$
-   \frac { 1 } { \overline{\chi} \rho } \frac { 4 \pi } { c } \frac { \text{d} K } { \text{d} h } = \frac { \pi } { c } F = \frac { 1 } { \overline { \chi } } \frac {\text{d} K } { \text{d} h } = \frac { \rho } { 4 } F
+   \frac { \mathrm{d} P _ { R } } { d \overline { \tau } } = \frac { \pi } { c } F \Rightarrow \frac { 1 } { \overline { \chi } \rho } \frac { d P _ { R } } { d h } = \frac { \pi } { c } F
    $$
-   从而：
+   又因为 $K=\frac{c}{4\pi}P_R$ ，我们得到
    $$
-   \frac { 1 } { \overline { \chi } } \frac {\text{d} K } { \text{d} h } =\int_0^\infty\frac { \text{d}K _ { \nu } } {  \chi _ { \nu }\text{d} h }\text{d}\nu
+   \frac { 1 } { \overline{\chi} \rho } \frac { 4 \pi } { c } \frac { \mathrm{d} K } { \mathrm{d} h } = \frac { \pi } { c } F \Rightarrow \frac { 1 } { \overline { \chi } } \frac {\mathrm{d} K } { \mathrm{d} h } = \frac { \rho } { 4 } F
    $$
-   这也就给出了 $\overline{\chi}$ 的定义，即给出了相应的灰大气——**保证等价灰大气给出的总辐射流和非灰大气给出的辐
-   射流有同样数值**
+   从而
+   $$
+   \frac { 1 } { \overline { \chi } } \frac {\mathrm{d} K } { \mathrm{d} h } =\int_0^\infty\frac { \mathrm{d}K _ { \nu } } {  \chi _ { \nu }\mathrm{d} h }\mathrm{d}\nu
+   $$
+   这也就给出了 $\overline{\chi}$ 的定义，即给出了相应的灰大气——**保证等价灰大气给出的总辐射流和非灰大气给出的辐射流有同样数值**
 
    $K_\nu$ 仍然未知，需要进一步变换
 
-   假设辐射场对各向同性偏离很小，$J_\nu\approx B_\nu$对恒星大气**深层**是很好的近似
+   假设辐射场对各向同性偏离很小，$J_\nu\approx B_\nu$ 对恒星大气**深层**是很好的近似
    $$
-   \Rightarrow K_\nu=\frac{1}{2}\int_0^\pi I _ {\nu}(\theta,\tau_\nu)\cos ^ { 2 } \theta \sin \theta \text{d} \theta \simeq \frac { 1 } { 2 } J _ { \nu } \int_0^\pi cos ^ { 2 } \theta \sin \theta \text{d} \theta = \frac { J _ { \nu } } { 3 } \simeq \frac { 1 } { 3 } B _ { \nu }
-   $$
-
-   $$
-   \Rightarrow \frac{1}{\overline{\chi}_R}=\frac{\displaystyle{\int_0^\infty\frac { \text{d}K _ { \nu } } {  \chi _ { \nu }\text{d} h }\text{d}\nu}}{\displaystyle{\frac {\text{d} K } { \text{d} h } }}
+   \Rightarrow K_\nu=\frac{1}{2}\int_0^\pi I _ {\nu}(\theta,\tau_\nu)\cos ^ { 2 } \theta \sin \theta \mathrm{d} \theta \simeq \frac { 1 } { 2 } J _ { \nu } \int_0^\pi \cos ^ { 2 } \theta \sin \theta \mathrm{d} \theta = \frac { J _ { \nu } } { 3 } \simeq \frac { B _ { \nu } } { 3 }
    $$
 
-   $\overline{\chi}_R$ 为Rosseland平均吸收系数
+   $$
+   \Rightarrow \frac{1}{\overline{\chi}_R}=\frac{\displaystyle{\int_0^\infty\frac { \mathrm{d}K _ { \nu } } {  \chi _ { \nu }\mathrm{d} h }\mathrm{d}\nu}}{\displaystyle{\frac {\mathrm{d} K } { \mathrm{d} h } }}
+   $$
+
+   $\overline{\chi}_R$ 为 Rosseland 平均吸收系数
 
 2. 钱德拉塞卡平均 (与 $F_\nu$ 相关)
 
    钱德拉塞卡发现，在讨论非灰大气的温度分布时，如果实际的恒星大气和灰大气偏离不大，平均吸收系数用下式计算比较好：
    $$
-   \overline { \chi } _ { C } = \frac { 1 } { F } \int _ { 0 } ^ { \infty } \chi _ { \nu } F _ { \nu } ^ { ( 1 ) } \text{d} \nu
+   \overline { \chi } _ { C } = \frac { 1 } { F } \int _ { 0 } ^ { \infty } \chi _ { \nu } F _ { \nu } ^ { ( 1 ) } \mathrm{d} \nu
    $$
    其中 $F _ { \nu } ^ { ( 1 ) }$ 是(待确定的)等价灰大气的单色辐射流
 
-   ##### 确定等价灰大气的单色辐射流
+- **确定等价灰大气的单色辐射流**
 
    - 爱丁顿近似：将辐射光分解成向外和向内的两束，然后并分别用方向平均值代替。	
 
@@ -131,7 +123,7 @@ $$
      - 高斯：在这种情况下，方向积分(平均强度)可以用一个求和准确表示，只是要求第 $i$ 个方向 $μ_i =\cos{\theta}$， $\mu_i$ 是 $2n$ 阶勒让德多项式 $P _{2n} (\mu)$ 的第 $i$ 个零点
      -  $n\to\infty$ ——灰大气的精确解；$n=1$ ——爱丁顿近似解
 
-   - 结论：
+   - 结论
      $$
      T ^ { 4 } = \frac { 3 } { 4 } T _ { \mathrm { eff } } ^ { 4 } ( \tau + q ( \tau ) )
      $$
@@ -144,29 +136,29 @@ $$
      $$
      \frac { T } { T _ { \mathrm { eff } } } = \left\{ \frac { 3 } { 4 } [ \tau + q ( \tau ) ] \right\} ^ { 1 / 4 } = f ( \tau )
      $$
-     局部热动平衡假设下源函数由普朗克函数给出：
+     局部热动平衡假设下源函数由普朗克函数给出
      $$
-     S _ { v } ^ { ( 1 ) } ( \tau ) = B _ { v } ^ { ( 1 ) } ( \tau ) = \frac { 2 h v ^ { 3 } } { c ^ { 2 } } \left[ e ^ { u / f ( \tau ) } - 1 \right] ^ { - 1 }
-     $$
-
-     $$
-     u=\frac{h\nu}{kT_{\text{eff}}}
+     S _ {\nu} ^ { ( 1 ) } ( \tau ) = B _ {\nu} ^ { ( 1 ) } ( \tau ) = \frac { 2 h\nu^ { 3 } } { c ^ { 2 } } \left[ e ^ { u / f ( \tau ) } - 1 \right] ^ { - 1 }
      $$
 
-     利用辐射转移方程的形式解，得到等价灰大气的辐射流：
+     $$
+     u=\frac{h\nu}{kT_{\mathrm{eff}}}
+     $$
+
+     利用辐射转移方程的形式解，得到等价灰大气的辐射流
      $$
      \begin{align}
-     F _ { \nu } ^ { ( 1 ) } &= \frac { 1 } {  \pi } \int _ { 4 \pi } I _ { \nu }^{(1)} ({ \theta } ) \cos  { \theta } \text{d} { \omega }=2\int _ { 0 \leq \theta \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \cos \theta \sin \theta \text{d} \theta - 2 \int _ { 0 \leq \psi \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \cos ( \psi ) \sin ( \psi ) \text{d} \psi \\
-     \stackrel{代入形式解}{\Longrightarrow} &= - 2 \int _ { \tau } ^ { \infty } \int _ { 0 } ^ { \pi / 2 } B _ { \nu } ^ { ( 1 ) } ( t ) e ^ { - ( t - \tau ) \sec \theta } d \cos \theta \text{d} t + 2 \int _ { 0 } ^ { \tau } \int _ { 0 } ^ { \pi / 2 } B _ { v } ^ { ( 1 ) } ( t ) e ^ { - ( \tau - t ) \sec \psi } \text{d} \cos \psi \text{d} t\\
-     \stackrel{\mu=\cos\theta}{\Longrightarrow}& =2\int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( t - \tau ) / \mu } \text{d} \mu \right] \text{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu} ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( \tau - t ) / \mu } \text{d} \mu \right] \text{d} t\\
-     \stackrel { y = 1 / \mu } { \Longrightarrow }& = 2 \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - ( t - \tau ) y } } { y ^ { 2 } } \text{d} y \right] \text{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - ( \tau - t ) y } } { y ^ { 2 } } \text{d} y \right] \text{d} t\\
-     \stackrel { 引入记号 } { \Longrightarrow }&= 2 \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) E_2(t-\tau) \text{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t )E_2(-t+\tau)  \text{d} t\equiv{ \Phi } _ { \tau } \left\{ B _ { \nu } ^ { ( 1 ) } ( t ) \right\}
+     F _ { \nu } ^ { ( 1 ) } &= \frac { 1 } {  \pi } \int _ { 4 \pi } I _ { \nu }^{(1)} ({ \theta } ) \cos  { \theta } \mathrm{d} { \omega }=2\int _ { 0 \leq \theta \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \cos \theta \sin \theta \mathrm{d} \theta - 2 \int _ { 0 \leq \psi \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \cos ( \psi ) \sin ( \psi ) \mathrm{d} \psi \\
+     \stackrel{代入形式解}{\Longrightarrow} &= - 2 \int _ { \tau } ^ { \infty } \int _ { 0 } ^ { \pi / 2 } B _ { \nu } ^ { ( 1 ) } ( t ) e ^ { - ( t - \tau ) \sec \theta } \mathrm{d} \cos \theta \mathrm{d} t + 2 \int _ { 0 } ^ { \tau } \int _ { 0 } ^ { \pi / 2 } B _ {\nu} ^ { ( 1 ) } ( t ) e ^ { - ( \tau - t ) \sec \psi } \mathrm{d} \cos \psi \mathrm{d} t\\
+     \stackrel{\mu=\cos\theta}{\Longrightarrow}& =2\int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( t - \tau ) / \mu } \mathrm{d} \mu \right] \mathrm{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu} ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( \tau - t ) / \mu } \mathrm{d} \mu \right] \mathrm{d} t\\
+     \stackrel { y = 1 / \mu } { \Longrightarrow }& = 2 \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - ( t - \tau ) y } } { y ^ { 2 } } \mathrm{d} y \right] \mathrm{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - ( \tau - t ) y } } { y ^ { 2 } } \mathrm{d} y \right] \mathrm{d} t\\
+     \stackrel { 引入记号 } { \Longrightarrow }&= 2 \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) E_2(t-\tau) \mathrm{d} t - 2 \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t )E_2(-t+\tau)  \mathrm{d} t\equiv{ \Phi } _ { \tau } \left\{ B _ { \nu } ^ { ( 1 ) } ( t ) \right\}
      \end{align}
      $$
 
-     只能用数值积分，其中 $E_2(x)$ 是 $E _ { m } ( x ) \equiv \int _ { 1 } ^ { \infty } e ^ { - x y } y ^ { - m } \text{d} y$ 在 $m=2$ 时的情形，而作用算符$\Phi_\tau$ ：
+     只能用数值积分，其中 $E_2(x)$ 是 $E _ { m } ( x ) \equiv \int _ { 1 } ^ { \infty } e ^ { - x y } y ^ { - m } \mathrm{d} y$ 在 $m=2$ 时的情形，而作用算符$\Phi_\tau$ ：
      $$
-     \Phi _ { \tau } \{ f ( t ) \} \equiv 2 \int _ { \tau } ^ { \infty } f ( t ) E _ { 2 } ( t - \tau ) \text{d} t - 2 \int _ { 0 } ^ { \tau } f ( t ) E _ { 2 } ( \tau - t ) \text{d} t
+     \Phi _ { \tau } \{ f ( t ) \} \equiv 2 \int _ { \tau } ^ { \infty } f ( t ) E _ { 2 } ( t - \tau ) \mathrm{d} t - 2 \int _ { 0 } ^ { \tau } f ( t ) E _ { 2 } ( \tau - t ) \mathrm{d} t
      $$
      知道了 $F _ { \nu } ^ { ( 1 ) }$ ，就得到了钱德拉塞卡吸收系数
 
@@ -174,17 +166,16 @@ $$
 
    在局部热动平衡假设下，总发射等于总吸收的**辐射平衡条件**给出
    $$
-   \int_0^\infty\chi_\nu B_\nu\text{d}\nu=\int_0^\infty\chi_\nu J_\nu\text{d}\nu
+   \int_0^\infty\chi_\nu B_\nu\mathrm{d}\nu=\int_0^\infty\chi_\nu J_\nu\mathrm{d}\nu
    $$
-   定义普朗克平均吸收系数：
+   定义普朗克平均吸收系数
    $$
-   \overline { \chi } _ { P }=\frac{1}{B}\int_0^\infty\chi_\nu B_\nu\text{d}\nu
+   \overline { \chi } _ { P }=\frac{1}{B}\int_0^\infty\chi_\nu B_\nu\mathrm{d}\nu
    $$
 
 
 
-
-   这样，普朗克平均 (以普朗克函数为权重) 的平均吸收系数能给出正确的**总发射**
+这样，普朗克平均 (以普朗克函数为权重) 的平均吸收系数能给出正确的**总发射**
 
 #### 构造等价灰大气的方法
 
@@ -194,11 +185,11 @@ $$
 
    灰大气的光学深度为：
    $$
-   \tau = \int _ { 0 } ^ { h } \overline { \chi } \rho \text{d} h
+   \tau = \int _ { 0 } ^ { h } \overline { \chi } \rho \mathrm{d} h
    $$
    真实大气的光学深度和等价灰大气的光学深度的关系为：
    $$
-   \tau_\nu=\int_0^h\chi_\nu\rho\text{d}h=\int_0^h\frac{\chi_\nu}{\overline{\chi}}\overline{\chi}\rho\text{d}h=\int_0^\tau\frac{\chi_\nu}{\overline{\chi}}\text{d}t
+   \tau_\nu=\int_0^h\chi_\nu\rho\mathrm{d}h=\int_0^h\frac{\chi_\nu}{\overline{\chi}}\overline{\chi}\rho\mathrm{d}h=\int_0^\tau\frac{\chi_\nu}{\overline{\chi}}\mathrm{d}t
    $$
    $\chi _ { \nu } / \overline { \chi }$ 一般是 $P_e, T, \nu$ 的函数，从而给定 $\tau-\tau_\nu$ 关系
 
@@ -208,44 +199,44 @@ $$
 
 5. 求出单色辐射流和总辐射流
    $$
-   \pi F_\nu=\int_{4\pi}I_\nu\cos\theta\text{d}\omega,\quad \pi F=\int_{4\pi}I\cos\theta\text{d}\omega
+   \pi F_\nu=\int_{4\pi}I_\nu\cos\theta\mathrm{d}\omega,\quad \pi F=\int_{4\pi}I\cos\theta\mathrm{d}\omega
    $$
    这样就得到了**第一近似**的结果
 
 根据辐射平衡理论，总辐射流应和深度无关，但由于等价灰大气模型的近似性，在第一近似下得到的总辐射流是不会和深度无关的——必须**逐次修正**
 
-##### 逐次修正的一般准则
+**逐次修正的一般准则**
 
 - 利用灰大气近似结果
 
-- 求出新的温度分布，使得辐射平衡条件(总辐射与总吸收相等)总是得到满足，即辐射流在**所有光深 $\tau$ **上等于或最接近于给定的常数 $\sigma T _ { \text { eff } } ^ { 4 }$
+- 求出新的温度分布，使得辐射平衡条件(总辐射与总吸收相等)总是得到满足，即辐射流在**所有光深 $\tau$ **上等于或最接近于给定的常数 $\sigma T _ { \mathrm { eff } } ^ { 4 }$
 
 
 #### 逐级近似的方法
 
 1. 斯特龙根 (B. Stroemgren) 方法
 
-   利用钱德拉塞卡近似+Stefan-Boltzmann定律：
+   利用钱德拉塞卡近似+ Stefan-Boltzmann 定律：
    $$
-   B ( \tau ) = \frac { 3 } { 4 } F [ \tau + q ( \tau ) ]\Rightarrow\frac { T } { T _ { \text{eff} } } = \left[ \frac { B ( \tau ) } { F } \right] ^ { 1 / 4 } = \left\{ \frac { 3 } { 4 } [ \tau + q ( \tau ) ] \right\} ^ { 1 / 4 } = f ( \tau )
+   B ( \tau ) = \frac { 3 } { 4 } F [ \tau + q ( \tau ) ]\Rightarrow\frac { T } { T _ { \mathrm{eff} } } = \left[ \frac { B ( \tau ) } { F } \right] ^ { 1 / 4 } = \left\{ \frac { 3 } { 4 } [ \tau + q ( \tau ) ] \right\} ^ { 1 / 4 } = f ( \tau )
    $$
 
-   - 局部热动平衡下黑体辐射分布和源函数的第一次近似 $\left( u = h v / k T _ { \text { eff } } \right)$：
+   - 局部热动平衡下黑体辐射分布和源函数的第一次近似 $\left( u = h\nu/ k T _ { \mathrm { eff } } \right)$：
 
    $$
-   S _ { v } ^ { ( 1 ) } = B _ { v } ^ { ( 1 ) } = \frac { 2 h v ^ { 3 } } { c ^ { 2 } } \left[ \mathrm { e } ^ { u / f ( \tau ) } - 1 \right] ^ { - 1 }
+   S _ { \nu } ^ { ( 1 ) } = B _ { \nu } ^ { ( 1 ) } = \frac { 2 h \nu ^ { 3 } } { c ^ { 2 } } \left[ \mathrm { e } ^ { u / f ( \tau ) } - 1 \right] ^ { - 1 }
    $$
 
    - 平均单色辐射强度的第一次近似 (做法很接近求钱德拉塞卡吸收系数那一块)：
 
    $$
    \begin{align}
-   J _ { v } ^ { ( 1 ) } &= \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ^ { ( 1 ) } d \omega = \frac {1} { 2 } \int _ { 0 \leq \theta \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \sin \theta \text{d} \theta + \frac { 1} {2 } \int _ { 0 \leq \psi \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \sin \psi \text{d} \psi\\
-   &=\frac { 1 } { 2 } \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( t - \tau ) / \mu } \frac { \text{d} \mu } { \mu } \right] \text{d} t + \frac { 1 } { 2 } \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( \tau - t ) / \mu } \frac { \text{d} \mu } { \mu } \right] \text{d} t\\
-   \stackrel { y = 1 / \mu } { \Longrightarrow }&=\frac { 1 } { 2 } \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | t - \tau | y } } { y } \text{d} y \right] \text{d} t + \frac { 1 } { 2 } \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | \tau - t | y } } { y } \text{d} y \right] \text{d} t \quad(*)\\
-   &= \frac { 1 } { 2 } \int _ { 0 } ^ { \infty } B _ { v } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | t - \tau | y } } { y } \text{d} y \right] \text{d} t = \frac { 1 } { 2 } \int _ { 0 } ^ { \infty } B _ { v } ^ { ( 1 ) } ( t ) E _ { 1 } ( |t - \tau | ) \text{d} t \\
-   &\equiv \Lambda _ { \tau } \left\{ B _ { v } ^ { ( 1 ) } ( t ) \right\} 
-   = \Lambda _ { \tau } \left\{ S _ { v } ^ { ( 1 ) }\right\}
+   J _ {\nu} ^ { ( 1 ) } &= \frac { 1 } { 4 \pi } \int _ { 4 \pi } I _ { \nu } ^ { ( 1 ) } d \omega = \frac {1} { 2 } \int _ { 0 \leq \theta \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \sin \theta \mathrm{d} \theta + \frac { 1} {2 } \int _ { 0 \leq \psi \leq \pi / 2 } I _ { \nu } ^ { ( 1 ) } \sin \psi \mathrm{d} \psi\\
+   &=\frac { 1 } { 2 } \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( t - \tau ) / \mu } \frac { \mathrm{d} \mu } { \mu } \right] \mathrm{d} t + \frac { 1 } { 2 } \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 0 } ^ { 1 } e ^ { - ( \tau - t ) / \mu } \frac { \mathrm{d} \mu } { \mu } \right] \mathrm{d} t\\
+   \stackrel { y = 1 / \mu } { \Longrightarrow }&=\frac { 1 } { 2 } \int _ { \tau } ^ { \infty } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | t - \tau | y } } { y } \mathrm{d} y \right] \mathrm{d} t + \frac { 1 } { 2 } \int _ { 0 } ^ { \tau } B _ { \nu } ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | \tau - t | y } } { y } \mathrm{d} y \right] \mathrm{d} t \quad(*)\\
+   &= \frac { 1 } { 2 } \int _ { 0 } ^ { \infty } B _ {\nu} ^ { ( 1 ) } ( t ) \left[ \int _ { 1 } ^ { \infty } \frac { e ^ { - | t - \tau | y } } { y } \mathrm{d} y \right] \mathrm{d} t = \frac { 1 } { 2 } \int _ { 0 } ^ { \infty } B _ {\nu} ^ { ( 1 ) } ( t ) E _ { 1 } ( |t - \tau | ) \mathrm{d} t \\
+   &\equiv \Lambda _ { \tau } \left\{ B _ {\nu} ^ { ( 1 ) } ( t ) \right\} 
+   = \Lambda _ { \tau } \left\{ S _ {\nu} ^ { ( 1 ) }\right\}
    \end{align}
    $$
 
@@ -253,21 +244,21 @@ $$
 
    - 把由此得到的平均单色辐射强度代入辐射平衡条件的右端，得到第二次近似的普朗克函数随光深的分布：
 
-   $$
-   \int_0^\infty\chi_\nu B_\nu^{(2)}(\tau)\text{d}\nu=\int_0^\infty\chi_\nu J_\nu^{(1)}(\tau)\text{d}\nu
-   $$
+$$
+   \int_0^\infty\chi_\nu B_\nu^{(2)}(\tau)\mathrm{d}\nu=\int_0^\infty\chi_\nu J_\nu^{(1)}(\tau)\mathrm{d}\nu
+$$
 
    - 第二次近似的源函数：
 
-   $$
+$$
    S _ { \nu } ^ { ( 2 ) } = B _ { \nu} ^ { ( 2 ) }
-   $$
+$$
 
    - 再用 $\Lambda _ { \tau }$ 算符作用于第二近似下的源函数，得到第二近似下的平均辐射强度：
 
-   $$
-   J _ { v } ^ { ( 1 ) }=\Lambda _ { \tau } \left\{ S _ { v } ^ { ( 1 ) }\right\}
-   $$
+$$
+   J _ {\nu} ^ { ( 1 ) }=\Lambda _ { \tau } \left\{ S _ {\nu} ^ { ( 1 ) }\right\}
+$$
 
    以此类推，万世不竭
 
@@ -289,20 +280,20 @@ $$
 
    - 找出新的温度分布 (或源函数) ，使 $\Delta F \rightarrow 0$ ，具体方法：
 
-     - 将辐射转移方程的两端乘以 $\text { d } \omega / 4 \pi$ ，并假定 $\chi _ { v } = \overline { \chi }$ 时有 $\mathrm { d } \tau _ { \nu } = \mathrm { d } \tau$ ，即只考虑**真吸收**，然后对所有频率和立体角积分：
+     - 将辐射转移方程的两端乘以 $\mathrm { d } \omega / 4 \pi$ ，并假定 $\chi _ {\nu} = \overline { \chi }$ 时有 $\mathrm { d } \tau _ { \nu } = \mathrm { d } \tau$ ，即只考虑**真吸收**，然后对所有频率和立体角积分：
        $$
-       \frac { 1 } { 4 } \frac { \text{d} F } { \text{d} \tau } = J - B
+       \frac { 1 } { 4 } \frac { \mathrm{d} F } { \mathrm{d} \tau } = J - B
        $$
        求差分：
        $$
-       \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \text{d} \Delta F } { \text{d} \tau }
+       \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \mathrm{d} \Delta F } { \mathrm{d} \tau }
        $$
 
      - 求 $\Delta J$ ：
 
-       由爱丁顿灰大气近似，我们有总辐射压强梯度不随深度变化，以及 $K$ 和 $J$ 的关系：
+       由**爱丁顿灰大气近似**，我们有总辐射压强梯度不随深度变化，以及 $K$ 和 $J$ 的关系：
        $$
-       \frac { c } { 4 \pi } \frac { \text{d} P _ { R } } {\text{d} \tau } = \frac { \text{d} K } { \text{d}\tau } = H = \frac { 1 } { 4 } F
+       \frac { c } { 4 \pi } \frac { \mathrm{d} P _ { R } } {\mathrm{d} \tau } = \frac { \mathrm{d} K } { \mathrm{d}\tau } = H = \frac { 1 } { 4 } F
        $$
 
        $$
@@ -310,7 +301,7 @@ $$
        $$
 
        $$
-       \Rightarrow \frac{1}{3}\frac { \text{d} J } { \text{d}\tau }  = \frac { 1 } { 4 } F \Rightarrow \frac { \text{d} \Delta J } { \text{d}\tau }  = \frac { 3 } { 4 } \Delta F \Rightarrow  { \Delta } J = \frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \text{d} t + ( \Delta J ) _ { \tau = 0 }
+       \Rightarrow \frac{1}{3}\frac { \mathrm{d} J } { \mathrm{d}\tau }  = \frac { 1 } { 4 } F \Rightarrow \frac { \mathrm{d} \Delta J } { \mathrm{d}\tau }  = \frac { 3 } { 4 } \Delta F \Rightarrow  { \Delta } J = \frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \mathrm{d} t + ( \Delta J ) _ { \tau = 0 }
        $$
 
        爱丁顿近似下，零光深边界上有：
@@ -319,24 +310,20 @@ $$
        $$
 
        $$
-       \Rightarrow\Delta J = \frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \text{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }
+       \Rightarrow\Delta J = \frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \mathrm{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }
+       $$
+
+     - 把关于 $\Delta J$ 的方程代入关于 $\Delta B$ 的方程
+       $$
+       \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \mathrm{d} \Delta F } { \mathrm{d} \tau }=\frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \mathrm{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }- \frac { 1 } { 4 } \frac { \mathrm{d} \Delta F } { \mathrm{d} \tau }
        $$
 
 
+     - 只要把已知的 $\Delta-\tau$ 关系代入，就可以得到初始温度分布或者源函数的改正 $\Delta B$
 
-     - 把关于 $\Delta J$ 的方程代入关于 $\Delta B$ 的方程：
-       $$
-       \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \text{d} \Delta F } { \text{d} \tau }=\frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \text{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }- \frac { 1 } { 4 } \frac { \text{d} \Delta F } { \text{d} \tau }
-       $$
+> 温索德方法在光学深度较大处能给出较好的结果
 
-
-   只要把已知的 $\Delta-\tau$ 关系代入，就可以得到初始温度分布或者源函数的改正 $\Delta B$ 
-
-   > 温索德方法在光学深度较大处能给出较好的结果
-
-
-
-#### 以上方法的特点
+**以上方法的特点**
 
 - 先引入平均吸收系数，构造等价的灰大气
 - 用等价灰大气的解作为第一次近似
@@ -346,6 +333,91 @@ $$
 
 
 ## 计算恒星大气模型的一般方法
+
+- 任务
+  - 给定可观测量：有效温度、表面重力加速度、和恒星的化学组成
+  - 求出恒星大气内各物理量随深度的分布
+
+### 流体静力学平衡条件
+
+- 对于一个小体元
+  $$
+  \rho g\mathrm{d}h=\mathrm{d}P_R+\mathrm{d}P_g
+  $$
+  $P_g$ 是气体压力，$g$ 是恒星表面重力加速度（忽略大气的质量与厚度）
+
+- 引入平均吸收系数后上式等价于
+  $$
+  \frac{\rho}{\overline\chi}=\frac{\mathrm{d}P_R}{\mathrm{d}\tau}+\frac{\mathrm{d}P_g}{\mathrm{d}\tau}
+  $$
+
+- 辐射压的梯度前面已经求过
+  $$
+  \mathrm{d} P _ { R } = \frac { \pi \rho \mathrm{d} h } { c } \int _ { 0 } ^ { \infty } \chi _ { \nu } F _ { \nu } \mathrm{d} \nu
+  $$
+
+- 灰大气近似
+  $$
+  \mathrm{d} P _ { R } = \frac { \pi \rho\overline\chi \mathrm{d} h } { c } F= \frac { \pi F} { c } \mathrm{d} \tau=\frac {\sigma T_{eff}^4} { c } \mathrm{d} \tau
+  $$
+  这里的 $\overline\chi$ 是钱德拉塞卡平均吸收系数，是温度和电子压强的函数
+
+- 从而气体压强与光深的关系
+  $$
+  \frac{\mathrm{d}P_g}{\mathrm{d}\tau}=\frac{\rho}{\overline\chi}-\frac {\sigma T_{eff}^4} { c } 
+  $$
+
+
+### 计算恒星大气模型的一般方法
+
+依然需要在流体静力学方程的基础上做逐级近似，需要一级近似的 $T(\tau)$， 同时需要 $(T,P_e,P_g)$ 的另一个关系
+
+- 任意选取一对温度和电子压力的数值，利用萨哈公式，计算每一个元素的各级电离度以及由它贡献的自由电子数目
+  $$
+  N _ {  { e } } ^ { ( s ) } = \sum _ { r } r N _ { r } ^ { ( s ) }
+  $$
+  它由原子数 $N^{(1)}a_s$ 、温度和电子压力的函数，$N^{(1)}$ 是未知的中性氢数密度
+
+- 求和得到总自由电子数密度
+  $$
+  N _ {{ e } }(N^{(1)},T,P_e) = \sum _ { s } N _ { { e } } ^ { ( s ) } = \sum _ { s } \sum _ { r } r N _ { r } ^ { ( s ) }
+  $$
+
+- 因为我们同时有理想气体状态方程
+  $$
+  P_e=N_ekT
+  $$
+  就可以把 $N^{(1)}(P_e,T)$ 解出来
+
+- 代入气体压强公式
+  $$
+  P _ { g } = P _ { e } + \sum _ { s } a _ { s } N ^ { ( 1 ) } k T
+  $$
+
+- 这样就可以把 $\overline\chi$ 表达为 $P_g$ 和 $T$ 的函数
+
+- 利用数值积分求出 $P_g(\tau)$ ，再解出 $P_e(\tau)$ 
+
+- 也可以解出密度
+  $$
+  \rho= \sum _ { s } a _ { s } N ^ { ( 1 ) } m _ { s }
+  $$
+  从而得到了所有物理量随光深分布的第一次近似；光深和深度直接相关，也就能得到随深度分布的第一次近似
+
+- 利用非灰大气辐射平衡理论的一般解法解出单色辐射流和总辐射流，总辐射流会偏离 $\sigma T_{eff}^4$
+
+- 利用逐次近似法得到温度分布的第二次近似，重复操作
+
+### 什么是一个好的模型
+
+- 总辐射流是常数
+- 能给出与观测符合的色温度和巴尔末跳跃
+- 根据其目的而定
+  - 要解释恒星连续光谱，因为其对温度、压力等物理量的微小变化不敏感，因此对模型的精确性要求不高
+  - 如果研究线光谱、恒星的化学组成等等，就需要一个准确模型，因为线光谱通过元素的电离度和激发度敏感地依赖于恒星大气内温度和压力的分布
+- 总辐射流等于常数 (因为总辐射流是观测量,由观测确定) 这个条件对于
+  温度分布的微小变化不敏感,而这些小变化对谱线线对(波长接近的双
+  线)的强度比会带来很大影响——必须计算这些谱线线对的强度比，并和观测进行对比，已检验和调整温度等物理量分布
 
 
 
@@ -412,7 +484,7 @@ $$
 
 ——唯象理论，粗糙但物理图像清晰 (如果使用数值模拟，物理图像不清晰)
 
-#### 混合程 $l$:
+#### 混合程 $l$
 
 - 假定存在一个平均的流体元,它经过一个特征距离 $l$ 之后就完全与周围物质混合而消失
 
@@ -432,7 +504,7 @@ $$
 • 当体元与周围物质混合时(体元的温度比周围高),单位体积释放的超额能量为:$\rho \mathbf { c } _ { \mathbf { p } } \delta \mathbf { T }$，其中c p 为定压比热
 
 • 当体元以平均速度走过距离 Δr 时,转移的能流是
-$$\pi F _ { \text { conv } } = \rho c _ { p } \overline { \mathrm { v } } \delta T = \rho c _ { p } \overline { \mathrm { v } } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r$$
+$$\pi F _ { \mathrm { conv } } = \rho c _ { p } \overline { \mathrm {\nu} } \delta T = \rho c _ { p } \overline { \mathrm {\nu} } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r$$
 
 式中,有下标E的物理量是对流元的温度梯度,而无下标的物理量是辐射和对
 流同时存在时(即周围环境)的温度梯度。
@@ -455,7 +527,7 @@ $$H \equiv - \frac { P } { ( d P / d r ) } = - \left( \frac { d \ln P } { d r } 
 
 微分理想气体物态方程($P = \rho kT/\mu m H $)的对数形式并求导：
 $$
-\begin{align*} \text{d} ( \ln \rho ) & = \text{d}( \ln P ) - \text{d} ( \ln T ) + \text{d} ( \ln \mu ) = \text{d} ( \ln P ) - \text{d}( \ln T ) + \left( \frac { \partial \ln \mu } { \partial \ln T } \right) \text{d} ( \ln T ) \\ & = \text{d} ( \ln P ) - \left( 1 - \frac { \partial \ln \mu } { \partial \ln T } \right) \text{d} ( \ln T ) = \text{d} ( \ln P ) - Q \text{d} ( \ln T ) \end{align*}
+\begin{align*} \mathrm{d} ( \ln \rho ) & = \mathrm{d}( \ln P ) - \mathrm{d} ( \ln T ) + \mathrm{d} ( \ln \mu ) = \mathrm{d} ( \ln P ) - \mathrm{d}( \ln T ) + \left( \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) \\ & = \mathrm{d} ( \ln P ) - \left( 1 - \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) = \mathrm{d} ( \ln P ) - Q \mathrm{d} ( \ln T ) \end{align*}
 $$
 
 其中
@@ -474,36 +546,36 @@ $$
 浮力加速体元的同时还需要克服近邻体元的摩擦阻力。
 
 假定所作功的一半用来推动近邻的体元,也就是损失于摩擦;而另一半用来提供体元的动能,
-即$$\frac { 1 } { 2 } \boldsymbol { \rho } \overline { \mathbf { v } } ^ { 2 } = \frac { 1 } { 2 } \overline { \boldsymbol { W } }$$
+即$$\frac { 1 } { 2 } \boldsymbol { \rho } \overline { \mathbf {\nu} } ^ { 2 } = \frac { 1 } { 2 } \overline { \boldsymbol { W } }$$
 于是求得平均速度
-$$\overline { \mathbf { v } } = \left( \frac { \overline { W } } { \rho } \right) ^ { 1 / 2 } = \left( \frac { g Q H } { 8 } \right) ^ { 1 / 2 } \left( \nabla - \nabla _ { E } \right) ^ { 1 / 2 } \left( \frac { l } { H } \right)$$
+$$\overline { \mathbf {\nu} } = \left( \frac { \overline { W } } { \rho } \right) ^ { 1 / 2 } = \left( \frac { g Q H } { 8 } \right) ^ { 1 / 2 } \left( \nabla - \nabla _ { E } \right) ^ { 1 / 2 } \left( \frac { l } { H } \right)$$
 
 将平均速度代入辐射流表达式：
 
-上式中,混合程$ l$的大小未知, 通常假定经历大约\textbf{几个压力标高}后,对流元就完
+上式中,混合程$ l$的大小未知, 通常假定经历大约\mathrmbf{几个压力标高}后,对流元就完
 全与周围物质混合而消失,即
 
 • $l = n H$,其中取$n=1, 2,\cdots$
 一般$n$取1,2，最多3，bubble就消失了
 
-\noindent 对流的效率参数
+对流的效率参数
 
 在上面的分析计算中,我们忽略了对流元在上升过程中的辐射(绝热膨胀假设)，然而,对流元上升时,因其温度高于周围物质而会向周围物质辐射。
 
 • 由于对流元瓦解时,多余的能量正比于 ( ∇ − ∇ E ) ,而辐射的损失正比于 ( ∇ E − ∇ A )
 
-• 于是,我们定义对流转移能量的\textbf{效率参数}为转移能量与辐射损失能量之比,即
+• 于是,我们定义对流转移能量的\mathrmbf{效率参数}为转移能量与辐射损失能量之比,即
 $$\xi = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } }$$
 
-• 对流元的多余能量可表示为 ρ c P V δ T ,其中V为对流元体积,δT是对流元瓦解
+• 对流元的多余能量可表示为 ρ c P\nuδ T ,其中V为对流元体积,δT是对流元瓦解
 时它与周围的温度差。
 
 辐射损失依赖于对流元是光学薄还是光学厚的:
 
-• 对于\textbf{光学薄极限}，单位时间、单位体积辐射损失率($4\pi$立体角积分)为(由发射率减吸收决定)
+• 对于\mathrmbf{光学薄极限}，单位时间、单位体积辐射损失率($4\pi$立体角积分)为(由发射率减吸收决定)
 $$\Delta E _ { R } \approx 4 \pi j _ { E } \rho - 4 \pi \overline { \chi } B = 4 \pi \rho \overline { \chi } \left( B _ { E } - B \right) = 4 \pi \rho \overline { \chi } \Delta B$$
-• 假设对流元在整个路程中的平均温度差为ΔT≈δT/2,其寿命$\tau _ { \mathrm { age } } \approx l / \overline { \mathbf { v } }$,则有
-$$\xi _ { \text { thin } } = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } } = \frac { \rho c _ { p } V \delta T } { 4 \pi \rho \overline { \chi } \Delta B V \tau _ { \text { age } } } = \frac { \rho c _ { p } V \delta T } { 4 \pi \left( 4 \sigma T ^ { 3 } / \pi \right) ( \delta T / 2 ) \rho \overline { \chi } V ( l / \overline { v } ) } \approx \frac { \rho c _ { P } \overline { v } } { 8 \sigma T ^ { 3 } } \frac { 1 } { \tau _ { l } }$$
+• 假设对流元在整个路程中的平均温度差为ΔT≈δT/2,其寿命$\tau _ { \mathrm { age } } \approx l / \overline { \mathbf {\nu} }$,则有
+$$\xi _ { \mathrm { thin } } = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } } = \frac { \rho c _ { p }\nu\delta T } { 4 \pi \rho \overline { \chi } \Delta B\nu\tau _ { \mathrm { age } } } = \frac { \rho c _ { p }\nu\delta T } { 4 \pi \left( 4 \sigma T ^ { 3 } / \pi \right) ( \delta T / 2 ) \rho \overline { \chi }\nu( l / \overline {\nu} ) } \approx \frac { \rho c _ { P } \overline {\nu} } { 8 \sigma T ^ { 3 } } \frac { 1 } { \tau _ { l } }$$
 其中$\pi B=\sigma T^4,\Delta B=4\sigma T^4/\pi,\tau _ { 1 } = \overline { \chi } \rho l$是具有特征长度$l$的对流元的光学厚度
 
 • 对于光学厚,辐射通过单位面积的辐射流为(设A为体元表面积)
@@ -513,11 +585,13 @@ $$T^4=\frac{T_{eff}^4}{2}\left(1+\frac{3}{2}\tau\right)\Longrightarrow B=\frac{F
 长度l 的对流元,我们近似有 V/A= (4/3)π l 3 /4π l 2 ≈ l /3。
 
 于是效率参数变为
-$$\xi _ { \text { thick } } \approx \frac { \rho c _ { p } V \delta T } { \left( \frac { 16 \sigma T ^ { 3 } } { 3 \overline { \chi } \rho } \right) \left( \frac { \delta T } { l } \right) A \left( \frac { l } { \overline { v } } \right) } =\frac { \rho c _ { p } \overline { \mathbf { v } } } { 16 \sigma T ^ { 3 } } \cdot 3 \overline { \chi } \rho \left( \frac { V } { A } \right) \approx \frac { \left( \rho c _ { P } \overline { v } \right) } { 16 \sigma T ^ { 3 } } 3 \overline { \chi } \rho \frac { l } { 3 } = \frac { \rho c _ { p } \overline { v } } { 8 \sigma T ^ { 3 } } \frac { 1 } { 2 } \tau _ { 1 }$$
-
+$$
+\xi _ { \mathrm { thick } } \approx \frac { \rho c _ { p }\nu\delta T } { \left( \frac { 16 \sigma T ^ { 3 } } { 3 \overline { \chi } \rho } \right) \left( \frac { \delta T } { l } \right) A \left( \frac { l } { \overline {\nu} } \right) } =\frac { \rho c _ { p } \overline { \mathbf {\nu} } } { 16 \sigma T ^ { 3 } } \cdot 3 \overline { \chi } \rho \left( \frac {\nu} { A } \right) \approx \frac { \left( \rho c _ { P } \overline {\nu} \right) } { 16 \sigma T ^ { 3 } } 3 \overline { \chi } \rho \frac { l } { 3 } = \frac { \rho c _ { p } \overline {\nu} } { 8 \sigma T ^ { 3 } } \frac { 1 } { 2 } \tau _ { 1 }
+$$
 上述效率系数分别是在极端光薄和极端光厚的假设下得到的。我们可以把它们统一起来写为一个桥梁公式
-$$\xi \approx \frac { \rho c _ { P } \overline { v } } { 8 \sigma T ^ { 3 } }\frac { \left( 1 + \frac { 1 } { 2 } \tau _ { l } ^ { 2 } \right) } { \tau _ { l } }$$
-
+$$
+\xi \approx \frac { \rho c _ { P } \overline {\nu} } { 8 \sigma T ^ { 3 } }\frac { \left( 1 + \frac { 1 } { 2 } \tau _ { l } ^ { 2 } \right) } { \tau _ { l } }
+$$
 内插法，此式(桥梁公式)可近似地用于$\tau l\approx1$的情况:
 
 • 对于光学薄的对流元,光学厚度愈小,效率参数愈大;
@@ -538,18 +612,29 @@ $$\xi \approx \frac { \rho c _ { P } \overline { v } } { 8 \sigma T ^ { 3 } }\fr
 
 5. 对温度较低的晚型恒星大气,建立模型时必须考虑对流的影响。
 
+
+
 ## 其他光谱型恒星的大气模型*
+
 ### 太阳型恒星的大气模型
-• 太阳大气模型被研究最多,除理论的太阳大气模型外,还有半经验模型。这是因为太阳大气的半经验模型由观测到的太阳临边昏暗现象得到。
+- 太阳大气模型被研究最多,除理论的太阳大气模型外,还有半经验模型
+- 这是因为太阳大气的半经验模型由观测到的太阳临边昏暗现象得到
 
 观测到的太阳临边昏暗律为
-$$\varphi _ { \lambda } ( \theta ) = \frac { I _ { \lambda } ( \theta , 0 ) } { I _ { \lambda } ( 0,0 ) } = A _ { \lambda } + C _ { \lambda } \cos \theta + D _ { \lambda } \cos ^ { 2 } \theta$$
+$$
+\varphi _ { \lambda } ( \theta ) = \frac { I _ { \lambda } ( \theta , 0 ) } { I _ { \lambda } ( 0,0 ) } = A _ { \lambda } + C _ { \lambda } \cos \theta + D _ { \lambda } \cos ^ { 2 } \theta
+$$
 常数可以由观测决定。由向外传递的辐射转移方程的形式解：
-$$I _ { \lambda } ( \theta , 0 ) = \int _ { 0 } ^ { \infty } B _ { \lambda } e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }$$
-$$\varphi _ { \lambda } ( \theta ) = \frac { I _ { \lambda } ( \theta , 0 ) } { I _ { \lambda } ( 0,0 ) } = \int _ { 0 } ^ { \infty } \frac { B _ { \lambda } ( T ) } { I _ { \lambda } ( 0,0 ) } e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }$$
-由于被积函数随光深的增加而呈指数衰减,因此当我们把$B_λ /I_λ$ 展开成$\tau_λ$ 的多项
-式时,积分仍是收敛的:
-$$\mathbf { B } _ { \lambda } / \mathbf { I } _ { \lambda } = \mathbf { a } _ { \lambda } + \mathbf { c } _ { \lambda } \tau _ { \lambda } + \mathbf { d } _ { \lambda } \tau _ { \lambda } ^ { 2 } + \dots$$
+$$
+I _ { \lambda } ( \theta , 0 ) = \int _ { 0 } ^ { \infty } B _ { \lambda } e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }\\
+\Rightarrow \varphi _ { \lambda } ( \theta ) = \frac { I _ { \lambda } ( \theta , 0 ) } { I _ { \lambda } ( 0,0 ) } = \int _ { 0 } ^ { \infty } \frac { B _ { \lambda } ( T ) } { I _ { \lambda } ( 0,0 ) } e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }
+$$
+
+由于被积函数随光深的增加而呈指数衰减,因此当我们把$B_λ /I_λ$ 展开成$\tau_λ$ 的多项式时，积分仍是收敛的
+$$
+{ B } _ { \lambda } / { I } _ { \lambda } =  { a } _ { \lambda } + { c } _ { \lambda } \tau _ { \lambda } +  { d } _ { \lambda } \tau _ { \lambda } ^ { 2 } + \dots
+$$
+
 $$
 \begin{align*}
 	\varphi _ { \lambda } ( \theta ) &= \int _ { 0 } ^ { \infty } \left( a _ { \lambda } + c _ { \lambda } \tau _ { \lambda } + d _ { \lambda } \tau _ { \lambda } ^ { 2 } + \cdots \right) e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }\\
@@ -559,27 +644,21 @@ $$
 \end{align*}
 对于任意$\theta$成立，则$\frac { B _ { \lambda } ( T ) } { I _ { \lambda } ( 0,0 ) } = A _ { \lambda } + C _ { \lambda } \tau _ { \lambda } + \frac { 1 } { 2 } D _ { \lambda } \tau _ { \lambda } ^ { 2 }$
 $$
-• 由太阳邻边昏暗规律定出积分常数后,上式就给出太阳大气中温度随深度分
-布的经验规律。
-
-• 有了温度分布后,其它物理量就可用3.2介绍的“计算恒星大气模型的
-一般方法”求得。
-
-• 太阳大气的理论模型详细计算超出本课程的内容,因此这里不作介绍。
+- 由太阳邻边昏暗规律定出积分常数后,上式就给出太阳大气中温度随深度分布的经验规律
+- 有了温度分布后,其它物理量就可用3.2介绍的“计算恒星大气模型的一般方法”求得
+- 太阳大气的理论模型详细计算超出本课程的内容,因此这里不作介绍
 
 ### 太阳型恒星
 
 太阳型恒星的大气模型基本上分两类:
 
-• 一类是建立在太阳大气半经验模型基础上的比率模型,其温度分布用下式给
-出(假设温度分布规律相同)
+- 一类是建立在太阳大气半经验模型基础上的比率模型,其温度分布用下式给出(假设温度分布规律相同)
+  $$
+  T ( \tau ) = T _ { \odot } ( \tau ) \frac { T _ { e f f } } { T _ { e f f , \odot } }
+  $$
+  有了温度分布后,其它物理量的分布就由流体静力学平衡条件等导出。
 
-$$T ( \tau ) = T _ { \odot } ( \tau ) \frac { T _ { e f f } } { T _ { e f f , \odot } }$$
-
-有了温度分布后,其它物理量的分布就由流体静力学平衡条件等导出。
-
-• 另外一类和其它光谱型恒星大气模型一样,是建立在能流守恒基础上的自洽
-的理论模型。
+- 另外一类和其它光谱型恒星大气模型一样,是建立在能流守恒基础上的自洽的理论模型
 
 ### 其它晚型恒星大气模型
 
