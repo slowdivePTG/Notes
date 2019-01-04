@@ -49,6 +49,7 @@ $$
 
 
 
+
 - 有时对吸收系数的**倒数**进行加权平均
 
 
@@ -179,6 +180,7 @@ $$
    $$
    \overline { \chi } _ { P }=\frac{1}{B}\int_0^\infty\chi_\nu B_\nu\text{d}\nu
    $$
+
 
 
 
@@ -321,6 +323,7 @@ $$
        $$
 
 
+
      - 把关于 $\Delta J$ 的方程代入关于 $\Delta B$ 的方程：
        $$
        \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \text{d} \Delta F } { \text{d} \tau }=\frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \text{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }- \frac { 1 } { 4 } \frac { \text{d} \Delta F } { \text{d} \tau }
@@ -348,9 +351,7 @@ $$
 
 
 
-## 早型光谱型恒星的大气模型和连续光谱能量分布
-
-
+## 早型光谱型恒星的大气模型和连续光谱能量分布*
 
 
 
@@ -447,8 +448,7 @@ $$H \equiv - \frac { P } { ( d P / d r ) } = - \left( \frac { d \ln P } { d r } 
 
 于是,对流转移的辐射流改写为
 
-
-\noindent 平均速度
+平均速度
 要计算平均速度,令作用在体元上的上浮力(实际为浮力与重力之差)所做的功等于体元获得的动能。
 
 设 为体元与其周围物质的密度差,则浮力可表示为：
@@ -531,15 +531,15 @@ $$\xi \approx \frac { \rho c _ { P } \overline { v } } { 8 \sigma T ^ { 3 } }\fr
 2. 利用流体静力学平衡条件计算气体压力、辐射压力等物理量的分布,
 
 3. 然后计算温度的辐射梯度$\nabla_{ R }$ 和绝热梯度$\nabla_{ A }$,根据史瓦西稳定判据确定哪些层
-  存在对流(复杂性在于边界处)
+    存在对流(复杂性在于边界处)
 
 4. 在对流存在的区域把对流在能量转移中的作用考虑进去,用总能量守恒代替辐
-  射平衡,在非对流区域再重新应用辐射平衡条件;
+    射平衡,在非对流区域再重新应用辐射平衡条件;
 
 5. 对温度较低的晚型恒星大气,建立模型时必须考虑对流的影响。
 
-\section{其他光谱型恒星的大气模型}
-\subsection{太阳型恒星的大气模型}
+## 其他光谱型恒星的大气模型*
+### 太阳型恒星的大气模型
 • 太阳大气模型被研究最多,除理论的太阳大气模型外,还有半经验模型。这是因为太阳大气的半经验模型由观测到的太阳临边昏暗现象得到。
 
 观测到的太阳临边昏暗律为
@@ -550,14 +550,15 @@ $$\varphi _ { \lambda } ( \theta ) = \frac { I _ { \lambda } ( \theta , 0 ) } { 
 由于被积函数随光深的增加而呈指数衰减,因此当我们把$B_λ /I_λ$ 展开成$\tau_λ$ 的多项
 式时,积分仍是收敛的:
 $$\mathbf { B } _ { \lambda } / \mathbf { I } _ { \lambda } = \mathbf { a } _ { \lambda } + \mathbf { c } _ { \lambda } \tau _ { \lambda } + \mathbf { d } _ { \lambda } \tau _ { \lambda } ^ { 2 } + \dots$$
+$$
 \begin{align*}
-​	\varphi _ { \lambda } ( \theta ) &= \int _ { 0 } ^ { \infty } \left( a _ { \lambda } + c _ { \lambda } \tau _ { \lambda } + d _ { \lambda } \tau _ { \lambda } ^ { 2 } + \cdots \right) e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }\\
-​	&= \int _ { 0 } ^ { \infty } \left( a _ { \lambda } + \cos \theta c _ { \lambda } \sec \theta \tau _ { \lambda } + \cos ^ { 2 } \theta \mathrm { d } _ { \lambda } \sec ^ { 2 } \theta \tau _ { \lambda } ^ { 2 } + \cdots \right) e ^ { - \tau _ { 2 } \sec \theta } d \left( \sec \theta \tau _ { \lambda } \right)\\
-​	&=\int _ { 0 } ^ { \infty } \left( a _ { \lambda } + \cos \theta c _ { \lambda } x + \cos ^ { 2 } \theta d _ { \lambda } x ^ { 2 } + \cdots \right) e ^ { - x } d x = a _ { \lambda } + \cos \theta c _ { \lambda } + 2 \cos ^ { 2 } \theta d _ { \lambda } + \cdots\\
-​	&=A _ { \lambda } + C _ { \lambda } \cos \theta + D _ { \lambda } \cos ^ { 2 } \theta
+	\varphi _ { \lambda } ( \theta ) &= \int _ { 0 } ^ { \infty } \left( a _ { \lambda } + c _ { \lambda } \tau _ { \lambda } + d _ { \lambda } \tau _ { \lambda } ^ { 2 } + \cdots \right) e ^ { - \tau _ { \lambda } \sec \theta } \sec \theta d \tau _ { \lambda }\\
+	&= \int _ { 0 } ^ { \infty } \left( a _ { \lambda } + \cos \theta c _ { \lambda } \sec \theta \tau _ { \lambda } + \cos ^ { 2 } \theta \mathrm { d } _ { \lambda } \sec ^ { 2 } \theta \tau _ { \lambda } ^ { 2 } + \cdots \right) e ^ { - \tau _ { 2 } \sec \theta } d \left( \sec \theta \tau _ { \lambda } \right)\\
+	&=\int _ { 0 } ^ { \infty } \left( a _ { \lambda } + \cos \theta c _ { \lambda } x + \cos ^ { 2 } \theta d _ { \lambda } x ^ { 2 } + \cdots \right) e ^ { - x } d x = a _ { \lambda } + \cos \theta c _ { \lambda } + 2 \cos ^ { 2 } \theta d _ { \lambda } + \cdots\\
+	&=A _ { \lambda } + C _ { \lambda } \cos \theta + D _ { \lambda } \cos ^ { 2 } \theta
 \end{align*}
 对于任意$\theta$成立，则$\frac { B _ { \lambda } ( T ) } { I _ { \lambda } ( 0,0 ) } = A _ { \lambda } + C _ { \lambda } \tau _ { \lambda } + \frac { 1 } { 2 } D _ { \lambda } \tau _ { \lambda } ^ { 2 }$
-
+$$
 • 由太阳邻边昏暗规律定出积分常数后,上式就给出太阳大气中温度随深度分
 布的经验规律。
 
@@ -566,7 +567,7 @@ $$\mathbf { B } _ { \lambda } / \mathbf { I } _ { \lambda } = \mathbf { a } _ { 
 
 • 太阳大气的理论模型详细计算超出本课程的内容,因此这里不作介绍。
 
-\noindent 太阳型恒星
+### 太阳型恒星
 
 太阳型恒星的大气模型基本上分两类:
 
@@ -580,7 +581,7 @@ $$T ( \tau ) = T _ { \odot } ( \tau ) \frac { T _ { e f f } } { T _ { e f f , \o
 • 另外一类和其它光谱型恒星大气模型一样,是建立在能流守恒基础上的自洽
 的理论模型。
 
-其它晚型恒星大气模型
+### 其它晚型恒星大气模型
 
 在计算晚型恒星大气模型时,主要需注意下列两点:
 

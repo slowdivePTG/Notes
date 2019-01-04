@@ -109,10 +109,12 @@ $$
 
 
 
+
 - 吸收系数为振幅的平方
   $$
   k_\omega=\frac{4\pi e^2}{m_e c}\frac{\gamma_0}{4(\omega-\omega_0)^2+\gamma_0^2}
   $$
+
 
 
 
@@ -200,6 +202,7 @@ $$
 
 
 
+
 ​	$\gamma_k$ 被称为辐射阻尼常数
 
 - 处在能级 $k$ 的平均寿命：
@@ -266,6 +269,7 @@ $$
   $$
   a _ { \nu } \text{d} \nu \propto \text{d} n / n
   $$
+
 
 
 
@@ -341,6 +345,7 @@ $$
   $$
   R _ { \lambda } =  \frac { \iint R\left[ \lambda - \lambda _ { 0 }(1+x\sin iv_{eq}/c) \right] I _ { \beta } ^ { 0 } ( \lambda ) \phi(\lambda,\beta)\text{d} x \text{d} y } { \iint  { I _ { \beta } ^ { 0 } } ( \lambda )\phi(\lambda,\beta) \text{d} x \text{d} y }
   $$
+
 
 
 
@@ -556,6 +561,7 @@ $$
 
 
 
+
 ## 压力效应的统计理论
 
 碰撞对辐射**物理过程**的影响——只研究斯塔克效应
@@ -734,6 +740,7 @@ $$
 
 
 
+
 - 二次斯塔克效应
 
 
@@ -866,7 +873,7 @@ $\Delta\nu=C_n/r^n$
 
 
 
-## 选择散射在选择吸收中的比例
+## 选择散射在选择吸收中的比例*
 
 - 求 $1-\epsilon_\nu$ 的近似表达式
 - 低能级原子吸收了光子跃迁到高能级后，可能：
@@ -961,5 +968,6 @@ $$
     $$
     C = 1.496 \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } C _ { k } ^ { 3 / 2 }
     $$
+
 
 
