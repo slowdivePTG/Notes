@@ -43,6 +43,7 @@ $$
 
 
 
+
 - 有时对吸收系数的**倒数**进行加权平均
 
 
@@ -172,6 +173,7 @@ $$
    $$
    \overline { \chi } _ { P }=\frac{1}{B}\int_0^\infty\chi_\nu B_\nu\mathrm{d}\nu
    $$
+
 
 
 
@@ -319,6 +321,7 @@ $$
        $$
 
 
+
      - 只要把已知的 $\Delta-\tau$ 关系代入，就可以得到初始温度分布或者源函数的改正 $\Delta B$
 
 > 温索德方法在光学深度较大处能给出较好的结果
@@ -366,6 +369,7 @@ $$
   $$
   \frac{\mathrm{d}P_g}{\mathrm{d}\tau}=\frac{\rho}{\overline\chi}-\frac {\sigma T_{eff}^4} { c } 
   $$
+
 
 
 ### 计算恒星大气模型的一般方法
@@ -440,6 +444,47 @@ $$
 
 ### Schwarzchild辐射平衡稳定判据
 
+- 原理：$(\rho_1^*,P_1^*)$ 体元上升后**绝热膨胀**为 $(\rho_2^*,P_2^*)$ 体元，此时 $P_2^*=P_2$ ，即与外界压强相等；若 $\rho_2^*<\rho_2$ 则体元会继续上浮——不稳定；反之体元会开始下沉——稳定
+
+- 一系列计算后
+  $$
+  - \left( 1 - \frac { 1 } { \gamma } \right) \frac { T } { P } \frac { \mathrm{d} P } { \mathrm{d} r } > - \frac { \mathrm{d} T } { \mathrm{d} r }
+  $$
+
+- 左边是绝热的温度梯度，右边是辐射的温度梯度，记为
+  $$
+  \left| \frac { \mathrm{d} T } { \mathrm{d} r } \right| _ { A } > \left| \frac { \mathrm{d} T } { \mathrm{d} r } \right| _ { R }
+  $$
+
+- 作绝热膨胀的被扰动体积元,其绝热温度变化比周围介质的辐射温度(由辐射平衡建立)变化快(向上冷却快,向下加热快),此时对流不会存在和发展
+
+- 等价于
+  $$
+  \left( 1 - \frac { 1 } { \gamma } \right) > \frac { \mathrm{d} \ln T } { \mathrm{d} \ln P }
+  $$
+  定义
+  $$
+  \nabla _ { A } \equiv \left( \frac { \mathrm{d} \ln T } { \mathrm{d} \ln P } \right) _ { A } = \frac { \gamma - 1 } { \gamma } \quad \nabla _ { R } \equiv \left( \frac { \mathrm{d} \ln T } { \mathrm{d} \ln P } \right) _ { R }
+  $$
+  可以缩写为
+  $$
+  \nabla _ { A } > \nabla _ { R }
+  $$
+  反之不稳定，会有对流产生
+
+- 如果分子量 $\mu$ 也有梯度，则对流存在的条件一般化地写为
+  $$
+  \nabla _ { R } > \nabla _ { A } + \frac { \mathrm{d} \ln \mu } { \mathrm{d} \ln P }
+  $$
+
+- 例子
+
+  - 单原子气体，$\gamma=5/3$ ，$\nabla_A=0.4$
+  - 多原子气体，$\gamma\approx1$（自由度很多），$\nabla_A\approx0$ ——对于有大量分子存在的冷星，对流极易产生
+  - 当大气层自内而外由电离氢过渡到中性氢时，$\mu$ 增大一倍（？），$\mu$ 对 $P$ 的梯度是负的，更容易发生对流
+  - 电子和质子复合时释放能量，加热对流元中的气体使其膨胀，进一步加强对流
+  - 对于辐射压力，$\gamma=4/3$ ，$\nabla_A=0.25$ ，更容易产生对流
+
 ### 各种光谱型恒星中的对流区
 - 极早光谱型恒星大气：氢几乎完全电离，辐射平衡起决定性作用，仅存在与He I电离为He II相联系的很薄、很微弱的对流带，它在能量转移中的作用可忽略。
 
@@ -454,19 +499,17 @@ $$
 
 辐射平衡不满足，但仍满足能量守恒——对流运动本身是物质运动，这种运动会在能量转移上起作用——能量的**对流转移**
 
-在对流带：
+在对流带
 
 - 若有一向上运动的体元，运动后它与邻近物质比较起来压力相等，但密度较小
 
-- 理想气体方程 ($p = \rho k T / u m _ { H }$) 表明其温度较高，体元带着超额的热能向上运动
+- 理想气体方程 ($p = \rho k T / \mu m _ { H }$) 表明其温度较高，体元带着超额的热能向上运动
 
 - 一个向下的体元，因为运动后它与周围环境物质相比有较高的密度，因而有较低的温度，这相当于体元带着不足的热能向下运动
 
-- 总的结果是，不管是向上还是向下的对流运动，都会使能量由下向上转移，即由恒星内向恒星外转移。
+- 总的结果是，不管是向上还是向下的对流运动，都会使能量由下向上转移，即由恒星内向恒星外转移
 
-
-
-当对流存在时，辐射平衡就被破坏：
+当对流存在时，辐射平衡就被破坏
 
 - 对流把能量从热层带到冷层,使温度梯度减少。晚型星，内外温差小。
 
@@ -484,133 +527,142 @@ $$
 
 ——唯象理论，粗糙但物理图像清晰 (如果使用数值模拟，物理图像不清晰)
 
-#### 混合程 $l$
+#### 混合程
 
-- 假定存在一个平均的流体元,它经过一个特征距离 $l$ 之后就完全与周围物质混合而消失
+- 定义
+  - 假定存在一个平均的流体元,它经过一个特征距离 $l$ 之后就完全与周围物质混合而消失
+  - 这个特征距离 $l$ ，也就是对流元自形成至混合瓦解所走过的距离，称为混合程
+  - 在这个过程中，能量转移的结果是使温度梯度减小；在对流的物质运动中，向上(或向下)运动的体元带走多余(或不足)的能量至周围物质
 
-- 这个特征距离 $l$ ，也就是对流元自形成至混合瓦解所走过的距离，称为混合程。
+- 对流不存在时的辐射平衡梯度：$\nabla _ { R } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { R }$
+- 绝热梯度：$\nabla _ { A } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { A } = \frac { \gamma - 1 } { \gamma }$
+- 对流元相应的梯度：$\nabla _ { E } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { E }$
+- 对流与辐射同时存在，真实的温度梯度：$\nabla \equiv \left( \frac { d \ln T } { d \ln P } \right)$
 
-- 在这个过程中，能量转移的结果是使温度梯度减小；在对流的物质运动中，向上(或向下)运动的体元带走多余(或不足)的能量至周围物质
-
-对流不存在时的辐射平衡梯度：$\nabla _ { R } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { R }$，绝热梯度：$\nabla _ { A } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { A } = \frac { \gamma - 1 } { \gamma }$，对流元相应的梯度：$\nabla _ { E } \equiv \left( \frac { d \ln T } { d \ln P } \right) _ { E }$对流与辐射同时存在，真实的温度梯度：$\nabla \equiv \left( \frac { d \ln T } { d \ln P } \right)$
-
-• 那么,当大气层处于对流状态时,通常有
+那么，当大气层处于对流状态时，通常有 $\nabla _ { R } \geq \nabla \geq \nabla _ { E } \geq \nabla _ { A }$
 
 #### 对流转移的辐射流
 
-考虑一个上升的体元,如图:
-• 如果δT是体元与周围物质的温度差,
+考虑一个上升的体元
 
-• 当体元与周围物质混合时(体元的温度比周围高),单位体积释放的超额能量为:$\rho \mathbf { c } _ { \mathbf { p } } \delta \mathbf { T }$，其中c p 为定压比热
+- 如果 $δT$ 是体元与周围物质的温度差
 
-• 当体元以平均速度走过距离 Δr 时,转移的能流是
-$$\pi F _ { \mathrm { conv } } = \rho c _ { p } \overline { \mathrm {\nu} } \delta T = \rho c _ { p } \overline { \mathrm {\nu} } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r$$
+- 当体元与周围物质混合时(体元的温度比周围高),单位体积释放的超额能量为 $\rho { c } _ { { p } } \delta  { T }$，其中 $c_p$ 为定压比热
 
-式中,有下标E的物理量是对流元的温度梯度,而无下标的物理量是辐射和对
-流同时存在时(即周围环境)的温度梯度。
+- 当体元以平均速度走过距离 $Δr$ 时，转移的能流是
+  $$
+  \pi F _ { \mathrm { conv } } = \rho c _ { p } \overline { \mathrm {\nu} } \delta T = \rho c _ { p } \overline { \mathrm {\nu} } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r
+  $$
+  有下标 $E$ 的物理量是**对流元**的温度梯度,而无下标的物理量是辐射和对流同时存在时(即**周围环境**)的温度梯度，两者之差为体元净转移的能流
 
-• 在给定的大气层,体元所走路程(大小)是混乱分布的。对所有体元求平均,并
-取。
+- 在给定的大气层,体元所走路程(大小)是混乱分布的，对所有体元求平均，并取 $\Delta r=l/2$ ——简单认为**体元走的路程的平均值为混合程的一半**
 
-• 根据流体静力学平衡方程,$\frac { d P } { d r } = - \rho g$
-我们引入压力标高(压力发生显著变化所需要的高度，绝对值因而有负号):
-$$H \equiv - \frac { P } { ( d P / d r ) } = - \left( \frac { d \ln P } { d r } \right) ^ { - 1 } = \frac { P } { \rho g }$$
+- 根据流体静力学平衡方程$\frac { d P } { d r } = - \rho g$，我们引入压力标高(压力发生显著变化所需要的高度，绝对值因而有负号)
+  $$
+  H \equiv - \frac { P } { ( d P / d r ) } = - \left( \frac { d \ln P } { d r } \right) ^ { - 1 } = \frac { P } { \rho g }
+  $$
 
-因为梯度(压力标高与温度标高之比,或对数温度随对数压力的变化)
+- 因为梯度(压力标高与温度标高之比,或对数温度随对数压力的变化)满足
+  $$
+  - \frac { d T } { d r } = \frac { T } { H } \nabla
+  $$
 
-于是,对流转移的辐射流改写为
+- 对流转移的辐射流改写为
+  $$
+  \pi F _ { \mathrm { conv } }=\frac { 1 } { 2 } \rho c _ { p } \overline { v } T \left( \nabla - \nabla _ { E } \right) \frac { 1 } { H }
+  $$
+  我们还不知道平均速度
 
-平均速度
-要计算平均速度,令作用在体元上的上浮力(实际为浮力与重力之差)所做的功等于体元获得的动能。
+#### 平均速度
+- 要计算平均速度,令作用在体元上的**上浮力(实际为浮力与重力之差)所做的功等于体元获得的动能**
 
-设 为体元与其周围物质的密度差,则浮力可表示为：
+- 微分理想气体物态方程($P = \rho kT/\mu m H $)的对数形式并求导：
+  $$
+  \begin{align*} \mathrm{d} ( \ln \rho ) & = \mathrm{d}( \ln P ) - \mathrm{d} ( \ln T ) + \mathrm{d} ( \ln \mu ) = \mathrm{d} ( \ln P ) - \mathrm{d}( \ln T ) + \left( \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) \\ & = \mathrm{d} ( \ln P ) - \left( 1 - \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) = \mathrm{d} ( \ln P ) - Q \mathrm{d} ( \ln T ) \end{align*}
+  $$
+  其中因为在压力平衡下 $δP = 0$，浮力为
+  $$
+  \begin{align*} f _ { b } & = - g \delta \rho = g Q \rho \frac { \delta T } { T } = \frac { g Q \rho } { T } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r \\ & = \frac { g Q \rho } { T } \left( \frac { T } { H } \nabla - \frac { T } { H } \nabla _ { E } \right) \Delta r = \frac { g Q \rho } { H } \left( \nabla - \nabla _ { E } \right) \Delta r \end{align*}
+  $$
+  上式表明，浮力是 $Δr$ 的线性函数(因 $ρ$ 是典型密度, $H$的变化在高次项)
 
-微分理想气体物态方程($P = \rho kT/\mu m H $)的对数形式并求导：
-$$
-\begin{align*} \mathrm{d} ( \ln \rho ) & = \mathrm{d}( \ln P ) - \mathrm{d} ( \ln T ) + \mathrm{d} ( \ln \mu ) = \mathrm{d} ( \ln P ) - \mathrm{d}( \ln T ) + \left( \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) \\ & = \mathrm{d} ( \ln P ) - \left( 1 - \frac { \partial \ln \mu } { \partial \ln T } \right) \mathrm{d} ( \ln T ) = \mathrm{d} ( \ln P ) - Q \mathrm{d} ( \ln T ) \end{align*}
-$$
+- 对浮力做的功：作路径 $Δ$ 积分,并令 $Δ = l /2$ (即前半程加速做功，后半程物体减速，主要考虑物体与周围物质的相互作用，前半段浮力为主，后半段粘滞为主一个粗略的假设)——得到作用于体元上的功的平均值
+  $$
+  \overline { W } = \int _ { 0 } ^ { \Delta } f _ { b } \mathrm{d}( \Delta r )=\frac { g Q \rho H } { 8 } \left( \nabla - \nabla _ { E } \right) \left( \frac { l } { H } \right) ^ { 2 }
+  $$
 
-其中
+- 浮力加速体元的同时还需要克服近邻体元的摩擦阻力，假定所作功的**一半**用来推动近邻的体元,也就是损失于摩擦;而另一半用来提供体元的动能
+  $$
+  \frac { 1 } { 2 } { \rho } \overline { \mathbf {\nu} } ^ { 2 } = \frac { 1 } { 2 } \overline {  { W } }
+  $$
+  于是求得平均速度
+  $$
+  \overline { \mathbf {\nu} } = \left( \frac { \overline { W } } { \rho } \right) ^ { 1 / 2 } = \left( \frac { g Q H } { 8 } \right) ^ { 1 / 2 } \left( \nabla - \nabla _ { E } \right) ^ { 1 / 2 } \left( \frac { l } { H } \right)
+  $$
 
-因为在压力平衡下,δP = 0,于是理想气体方程给出：
-浮力改写为：
-$$
-\begin{align*} f _ { b } & = - g \delta \rho = g Q \rho \frac { \delta T } { T } = \frac { g Q \rho } { T } \left[ \left( - \frac { d T } { d r } \right) - \left( - \frac { d T } { d r } \right) _ { E } \right] \Delta r \\ & = \frac { g Q \rho } { T } \left( \frac { T } { H } \nabla - \frac { T } { H } \nabla _ { E } \right) \Delta r = \frac { g Q \rho } { H } \left( \nabla - \nabla _ { E } \right) \Delta r \end{align*}
-$$
-上式表明，浮力是 Δr 的线性函数(因ρ是典型密度,H的变化在高次项)。
+- 辐射流
+  $$
+  \pi F _ { c o n v }=\left( \frac { g Q H } { 32 } \right) ^ { 1 / 2 } \left( \rho c _ { p } T \right) \left( \nabla - \nabla _ { E } \right) ^ { 3 / 2 } \left( \frac { l } { H } \right) ^ { 2 }
+  $$
+  混合程 $ l$ 的大小未知, 通常假定经历大约**几个压力标高**后,对流元就完全与周围物质混合而消失，即$l = n H$,其中取 $n=1, 2,\cdots$——一般$n$取1,2，最多3，bubble就消失了
 
-• 对浮力做的功dW=f b dΔr: 作路径Δ积分,并令Δ = l /2(即前半程加速做功，后半程物体减速，主要考虑物体与周围物质的相互作用，前半段浮力为主，后半段粘滞为主一个粗略的假设),
+#### 对流的效率参数
 
-得到作用于体元上的功的平均值
+- 在上面的分析计算中,我们忽略了对流元在上升过程中的辐射(绝热膨胀假设)，然而,对流元上升时,因其温度高于周围物质而会向周围物质辐射
 
-浮力加速体元的同时还需要克服近邻体元的摩擦阻力。
+- 由于对流元瓦解时,多余的能量正比于 $( ∇ − ∇ E )$ ,而辐射的损失正比于 $( ∇ E − ∇ A )$
 
-假定所作功的一半用来推动近邻的体元,也就是损失于摩擦;而另一半用来提供体元的动能,
-即$$\frac { 1 } { 2 } \boldsymbol { \rho } \overline { \mathbf {\nu} } ^ { 2 } = \frac { 1 } { 2 } \overline { \boldsymbol { W } }$$
-于是求得平均速度
-$$\overline { \mathbf {\nu} } = \left( \frac { \overline { W } } { \rho } \right) ^ { 1 / 2 } = \left( \frac { g Q H } { 8 } \right) ^ { 1 / 2 } \left( \nabla - \nabla _ { E } \right) ^ { 1 / 2 } \left( \frac { l } { H } \right)$$
+- 于是,我们定义对流转移能量的**效率参数**为**转移能量与辐射损失能量**之比
+  $$
+  \xi = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } }
+  $$
 
-将平均速度代入辐射流表达式：
+- 对流元的多余能量可表示为 $ρ c_pVδ T$ ,其中 $V$ 为对流元体积，$δT$是对流元瓦解时它与周围的温度差
 
-上式中,混合程$ l$的大小未知, 通常假定经历大约\mathrmbf{几个压力标高}后,对流元就完
-全与周围物质混合而消失,即
+- 辐射损失依赖于对流元是光学薄还是光学厚的
+  - 对于**光学薄极限**，单位时间、单位体积辐射损失率($4\pi$立体角积分)为(由**发射减吸收**决定)
 
-• $l = n H$,其中取$n=1, 2,\cdots$
-一般$n$取1,2，最多3，bubble就消失了
+  $$
+  \Delta E _ { R } \approx 4 \pi j _ { E } \rho - 4 \pi \overline { \chi } B = 4 \pi \rho \overline { \chi } \left( B _ { E } - B \right) = 4 \pi \rho \overline { \chi } \Delta B
+  $$
 
-对流的效率参数
+  - 假设对流元在整个路程中的**平均温度差**为 $ΔT≈δT/2 $ ,其寿命$\tau _ { \mathrm { age } } \approx l / \overline {v}$，则有
+    $$
+    \xi _ { \mathrm { thin } } = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } } = \frac { \rho c _ { p }V\delta T } { 4 \pi \rho \overline { \chi } \Delta B\overline v\tau _ { \mathrm { age } } } = \frac { \rho c _ { p }V\delta T } { 4 \pi \left( 4 \sigma T ^ { 3 } / \pi \right) ( \delta T / 2 ) \rho \overline { \chi }\overline v( l / \overline v) } \approx \frac { \rho c _ { P } \overline v} { 8 \sigma T ^ { 3 } } \frac { 1 } { \tau _ { l } }
+    $$
+    其中 $\pi B=\sigma T^4,\Delta B=4\sigma T^3/\pi,\tau _ { l } = \overline { \chi } \rho l$ 是具有特征长度 $l$ 的对流元的光学厚度
 
-在上面的分析计算中,我们忽略了对流元在上升过程中的辐射(绝热膨胀假设)，然而,对流元上升时,因其温度高于周围物质而会向周围物质辐射。
+  - 对于光学厚,辐射通过单位面积的辐射流为(设 $A$ 为体元表面积)
+    $$
+    T^4=\frac{T_{eff}^4}{2}\left(1+\frac{3}{2}\tau\right)\Longrightarrow B=\frac{F}{2}\left(1+\frac{3}{2}\tau\right)\Longrightarrow\pi \Delta F \approx \frac {4\Delta B  } { 3 \overline { \chi } \rho } \left( - \frac { d T } { d r } \right)
+    $$
+    由于光厚，辐射流被全部吸收
 
-• 由于对流元瓦解时,多余的能量正比于 ( ∇ − ∇ E ) ,而辐射的损失正比于 ( ∇ E − ∇ A )
+  - 在现在的情况下,令 $( − dT dr ) ≈ ( δ T l )$ ,并假设对流元为球状,则对具有特征长度 $l$ 的对流元,我们近似有 $V/A= (4/3)π l^3 /4π l^2 ≈ l /3$，于是效率参数变为
+    $$
+    \xi _ { \mathrm { thick } } \approx \frac { \rho c _ { p }V\delta T } { \left( \frac { 16 \sigma T ^ { 3 } } { 3 \overline { \chi } \rho } \right) \left( \frac { \delta T } { l } \right) A \left( \frac { l } { \overline {v} } \right) } =\frac { \rho c _ { p } \overline {v } } { 16 \sigma T ^ { 3 } } \cdot 3 \overline { \chi } \rho \left( \frac {V} { A } \right) \approx \frac { \left( \rho c _ { P } \overline {\nu} \right) } { 16 \sigma T ^ { 3 } } 3 \overline { \chi } \rho \frac { l } { 3 } = \frac { \rho c _ { p } \overline {\nu} } { 8 \sigma T ^ { 3 } } \frac { 1 } { 2 } \tau _ { 1 }
+    $$
 
-• 于是,我们定义对流转移能量的\mathrmbf{效率参数}为转移能量与辐射损失能量之比,即
-$$\xi = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } }$$
 
-• 对流元的多余能量可表示为 ρ c P\nuδ T ,其中V为对流元体积,δT是对流元瓦解
-时它与周围的温度差。
+- 上述效率系数分别是在极端光薄和极端光厚的假设下得到的。我们可以把它们统一起来写为一个桥梁公式
+  $$
+  \xi \approx \frac { \rho c _ { P } \overline {v} } { 8 \sigma T ^ { 3 } }\frac { \left( 1 + \frac { 1 } { 2 } \tau _ { l } ^ { 2 } \right) } { \tau _ { l } }
+  $$
+  内插法，此式(桥梁公式)可近似地用于$\tau_l\approx1$的情况
+  - 对于光学薄的对流元,光学厚度愈小,效率参数愈大
+  -  对于光学厚的对流元,光学厚度愈大,效率参数愈大
 
-辐射损失依赖于对流元是光学薄还是光学厚的:
+把对流也考虑进去的大气模型，比只考虑辐射平衡的模型复杂得多
 
-• 对于\mathrmbf{光学薄极限}，单位时间、单位体积辐射损失率($4\pi$立体角积分)为(由发射率减吸收决定)
-$$\Delta E _ { R } \approx 4 \pi j _ { E } \rho - 4 \pi \overline { \chi } B = 4 \pi \rho \overline { \chi } \left( B _ { E } - B \right) = 4 \pi \rho \overline { \chi } \Delta B$$
-• 假设对流元在整个路程中的平均温度差为ΔT≈δT/2,其寿命$\tau _ { \mathrm { age } } \approx l / \overline { \mathbf {\nu} }$,则有
-$$\xi _ { \mathrm { thin } } = \frac { \nabla - \nabla _ { E } } { \nabla _ { E } - \nabla _ { A } } = \frac { \rho c _ { p }\nu\delta T } { 4 \pi \rho \overline { \chi } \Delta B\nu\tau _ { \mathrm { age } } } = \frac { \rho c _ { p }\nu\delta T } { 4 \pi \left( 4 \sigma T ^ { 3 } / \pi \right) ( \delta T / 2 ) \rho \overline { \chi }\nu( l / \overline {\nu} ) } \approx \frac { \rho c _ { P } \overline {\nu} } { 8 \sigma T ^ { 3 } } \frac { 1 } { \tau _ { l } }$$
-其中$\pi B=\sigma T^4,\Delta B=4\sigma T^4/\pi,\tau _ { 1 } = \overline { \chi } \rho l$是具有特征长度$l$的对流元的光学厚度
-
-• 对于光学厚,辐射通过单位面积的辐射流为(设A为体元表面积)
-$$T^4=\frac{T_{eff}^4}{2}\left(1+\frac{3}{2}\tau\right)\Longrightarrow B=\frac{F}{4}()\Longrightarrow\pi \Delta F \approx \frac { 16 \sigma T ^ { 3 } } { 3 \overline { \chi } \rho } \left( - \frac { d T } { d r } \right)$$
-
-在现在的情况下,令 ( − dT dr ) ≈ ( δ T l ) ,并假设对流元为球状,则对具有特征
-长度l 的对流元,我们近似有 V/A= (4/3)π l 3 /4π l 2 ≈ l /3。
-
-于是效率参数变为
-$$
-\xi _ { \mathrm { thick } } \approx \frac { \rho c _ { p }\nu\delta T } { \left( \frac { 16 \sigma T ^ { 3 } } { 3 \overline { \chi } \rho } \right) \left( \frac { \delta T } { l } \right) A \left( \frac { l } { \overline {\nu} } \right) } =\frac { \rho c _ { p } \overline { \mathbf {\nu} } } { 16 \sigma T ^ { 3 } } \cdot 3 \overline { \chi } \rho \left( \frac {\nu} { A } \right) \approx \frac { \left( \rho c _ { P } \overline {\nu} \right) } { 16 \sigma T ^ { 3 } } 3 \overline { \chi } \rho \frac { l } { 3 } = \frac { \rho c _ { p } \overline {\nu} } { 8 \sigma T ^ { 3 } } \frac { 1 } { 2 } \tau _ { 1 }
-$$
-上述效率系数分别是在极端光薄和极端光厚的假设下得到的。我们可以把它们统一起来写为一个桥梁公式
-$$
-\xi \approx \frac { \rho c _ { P } \overline {\nu} } { 8 \sigma T ^ { 3 } }\frac { \left( 1 + \frac { 1 } { 2 } \tau _ { l } ^ { 2 } \right) } { \tau _ { l } }
-$$
-内插法，此式(桥梁公式)可近似地用于$\tau l\approx1$的情况:
-
-• 对于光学薄的对流元,光学厚度愈小,效率参数愈大;
-
-• 对于光学厚的对流元,光学厚度愈大,效率参数愈大。
-
-把对流也考虑进去的大气模型,比只考虑辐射平衡的模型复杂得多。一般
-
-1. 首先要假设一个初始的温度分布,
+1. 首先要假设一个初始的温度分布
 
 2. 利用流体静力学平衡条件计算气体压力、辐射压力等物理量的分布,
 
-3. 然后计算温度的辐射梯度$\nabla_{ R }$ 和绝热梯度$\nabla_{ A }$,根据史瓦西稳定判据确定哪些层
-    存在对流(复杂性在于边界处)
+3. 然后计算温度的辐射梯度 $\nabla_{ R }$ 和绝热梯度 $\nabla_{ A }$，根据史瓦西稳定判据确定哪些层存在对流(复杂性在于边界处)
 
-4. 在对流存在的区域把对流在能量转移中的作用考虑进去,用总能量守恒代替辐
-    射平衡,在非对流区域再重新应用辐射平衡条件;
+4. 在对流存在的区域把对流在能量转移中的作用考虑进去,用总能量守恒代替辐射平衡,在非对流区域再重新应用辐射平衡条件
 
-5. 对温度较低的晚型恒星大气,建立模型时必须考虑对流的影响。
+5. 对温度较低的晚型恒星大气,建立模型时必须考虑对流的影响
 
 
 
