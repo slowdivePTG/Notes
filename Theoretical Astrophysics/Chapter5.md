@@ -21,32 +21,33 @@
 
 ### 原子线吸收系数 $a_\nu$
 
-考虑某一条吸收谱线，单位体积内谱线低能级原子数为 $N_j$ ；在谱线频率范围内，$\theta$ 方向的辐射的衰减满足：
-$$
-\text{d}I_\nu\equiv-I_\nu a_\nu N_j \text{d}h
-$$
-$a_\nu$ 反应辐射经过一个吸收原子后 (等效) 的减弱比率
+- 考虑某一条吸收谱线，单位体积内谱线低能级原子数为 $N_j$ ；在谱线频率范围内，$\theta$ 方向的辐射的衰减满足
+  $$
+  \text{d}I_\nu\equiv-I_\nu a_\nu N_j \text{d}h
+  $$
+  $a_\nu$ 反映辐射经过一个吸收原子后 (等效) 的减弱比率
 
-单位时间、单位体积在 $\text{d}\nu$ 内，被谱线吸收的能量为：
-$$
-N_j\cdots
-$$
-对频率积分，得到吸收总能量：
-$$
+- 单位时间、单位体积在 $\text{d}\nu$ 内，被谱线吸收的能量为
+  $$
+  N _ { j } \mathrm{d} \nu \int _ { 4 \pi } I _ { \nu } a _ { \nu } d \omega = 4 \pi N _ { j } a _ { \nu } J _ { \nu } \mathrm{d}\nu
+  $$
 
-$$
-$a_\nu$ 充分大的谱线都很窄，$J_\nu$ 的变化很小，近似为常数：
-$$
+- 对频率积分，得到吸收总能量
 
-$$
-由原子受激跃迁概率 $B_{jk}$ 定义，也可以得到吸收总能量：
-$$
-N_{j}B_{jk}J_\nu h\nu_{jk}
-$$
-两者相等，得到吸收系数的积分公式：
-$$
-\int_\nu a_\nu\text{d}\nu=\frac{h\nu_{jk}}{4\pi}B_{jk}
-$$
+- $a_\nu$ 充分大的谱线都很窄，$J_\nu$ 的变化很小，近似为常数
+  $$
+  4\pi N_j J\int a_\nu\mathrm{d}\nu
+  $$
+
+- 由原子受激跃迁概率 $B_{jk}$ 定义，也可以得到吸收总能量
+  $$
+  N_{j}B_{jk}J_\nu h\nu_{jk}
+  $$
+
+- 两者相等，得到吸收系数的积分公式
+  $$
+  \int_\nu a_\nu\text{d}\nu=\frac{h\nu_{jk}}{4\pi}B_{jk}
+  $$
 
 - 原子的吸收系数沿自己谱线的积分只依赖于**原子特性**，和谱线致宽的**物理机制**无关
 
@@ -56,10 +57,10 @@ $$
   $$
 
   $$
-  \int_\nu a_\nu'\text{d}\nu=\frac{}{}
+  \int_\nu a_\nu'\text{d}\nu=\frac { h \nu _ { j k } } { 4 \pi } B _ { j k } \left( 1 - \frac { g _ { j } } { g _ { k } } \frac { N _ { k } } { N _ { j } } \right)
   $$
 
-- 如果局部热动平衡成立，可以利用玻尔兹曼公式：
+- 如果局部热动平衡成立，可以利用玻尔兹曼公式
   $$
   \int_\nu a_\nu'\text{d}\nu=\frac{h\nu_{jk}}{4\pi}B_{jk}(1-e^{-h\nu_{jk}/kT})
   $$
@@ -88,79 +89,56 @@ $$
   $$
   \epsilon(t)=Ae^{-\gamma_0t/2}\cdot e^{-i\omega_0t}=A\int_{-\infty}^{\infty}E(\omega)e^{-i\omega_0t}\text{d}\omega
   $$
-  $E(\omega)$ 是辐射波在频率空间的分布，它不是一个 $\delta$ 函数，而有一定展宽：
+  $E(\omega)$ 是辐射波在频率空间的分布，它不是一个 $\delta$ 函数，而有一定展宽
   $$
-  E(\omega)=-\frac{1}{}
-  $$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- 吸收系数为振幅的平方
-  $$
-  k_\omega=\frac{4\pi e^2}{m_e c}\frac{\gamma_0}{4(\omega-\omega_0)^2+\gamma_0^2}
+  E(\omega)\propto- 1 / \left( i \left( \omega - \omega _ { 0 } \right) - \gamma _ { 0 } / 2 \right)
   $$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- 以**一个谐振子计算的吸收系数** $k_ω$ 为振幅的模方
+  $$
+  k_\omega=\frac { 4 \pi e ^ { 2 } } { m _ { e } c } \frac { \gamma _ { 0 } } { 4 \left( \omega - \omega _ { 0 } \right) ^ { 2 } + \gamma _ { 0 } ^ { 2 } }
+  $$
+  等价于
+  $$
+  k_\nu=\frac {  e ^ { 2 } } { m _ { e } c } \frac { \gamma _ { 0 }/4\pi } {  \left( \nu - \nu _ { 0 } \right) ^ { 2 } + (\gamma _ { 0 } /4\pi)^ { 2 } }
+  $$
 
 
 - 辐射阻尼常数 $\gamma_0$ ，依赖于辐射振子的固有频率：
   $$
   \gamma_0=\frac{8\pi^2e^2\nu_0^2}{3m_ec^3}=\frac{2}{3}\frac{r_e}{c}(2\pi\nu_0)^2
   $$
-  具有圆频率量纲，在可见光区远小于可见光光谱频率
+  具有圆频率量纲，在可见光区**远小于**可见光光谱频率
 
 - 谐振子在频率 $|\nu-\nu_0|<\gamma_0$ 范围内的吸收都较明显
 
-- 以波长为标度的辐射阻尼系数：
+- 以波长为标度的辐射阻尼系数
   $$
-  \gamma_0=\left|\frac{\text{d}\lambda}{\text{d}\nu}\right|\Delta\nu=
+  \gamma_0=\left|\frac{\text{d}\lambda}{\text{d}\nu}\right|\Delta\nu\approx\frac{4\pi}{3}r_e=1.18\times 10^{-4}\overset{\circ}{\mathrm{A}}
   $$
   和谱线波长无关——也就是和谱线无关！
 
-- 辐射阻尼常数=吸收系数的半高全宽
+- 辐射阻尼常数 $= $ 吸收系数的半高全宽
 
   - 由吸收系数公式确定
   - 谱线的这种宽度被称为**自然宽度**，这种致宽称为**自然致宽** (辐射阻尼不可避免)
 
-- 性质：
+- 性质
 
-  - 吸收系数相对谱线中心对称，中心数值最大，两侧迅速减小——洛伦兹轮廓
+  - 吸收系数相对谱线中心对称
+  - 中心数值最大，两侧迅速减小——洛伦兹轮廓
+  - 除了线心附近，$\gamma_0$ 可略
 
-- 振子强度和跃迁概率系数的关系：
+- **原子吸收系数**
+  $$
+  a_\nu=\frac { e ^ { 2 } } { m _ { e } c } \frac { \gamma _ { 0 } } { 4 \pi } \frac { f } { \left( \nu - \nu _ { 0 } \right) ^ { 2 } + \left( \gamma _ { 0 } / 4 \pi \right) ^ { 2 } }
+  $$
+  其中 $f$ 是振子强度，是原子中这样的谐振子的数密度与谱线低能级原子数密度之比
 
-  把积分上下限扩展到无穷：
-
-  与原子的线吸收系数积分公式进行比较，得到
-
+  - 振子强度和跃迁概率系数的关系
+    $$
+    \int a_\nu\mathrm{d}\nu=\frac{e^2\pi}{m_ec}f=\frac{h\nu_{jk}}{4\pi}B_{jk}
+    $$
 
 
 ### 辐射阻尼的量子理论
@@ -171,41 +149,26 @@ $$
 - 由不确定性关系：$\Delta E\Delta t\ge\hbar/2$ ，$\Delta E$ 有一定宽度
 - 两个能级之间跃迁发生在一个频率范围内，发射线或吸收线有一定的宽度
 
-
-
 #### 原子在某一能级上的平均寿命 $\tau=\Delta t$
 
-- $t=0$ 时，单位体积有 个原子处在 能级，**忽略受激跃迁**，则  减小的速度由原子自发地从 $k$ 跃迁至所有可能低能级 $j$ 的概率决定，即：
+- $t=0$ 时，单位体积有 个原子处在 $ k$ 能级，**忽略受激跃迁**，则 $k$ 能级上原子减小的速度由原子自发地从 $k$ 跃迁至所有可能低能级 $j$ 的概率决定
 
   $$
-  \frac{1}{N_k}\frac{\text{d}N_k}{\text{d}t}=
+  \frac{1}{N_k}\frac{\text{d}N_k}{\text{d}t}=- \sum _ { j = 1 } ^ { k - 1 } \int _ { 4 \pi } A _ { k j } \frac { \mathrm{d}\omega } { 4 \pi }
   $$
 
-- 对时间积分即得：
+- 对时间积分即得
 
   $$
-  N_k=N_k^0e^{-\gamma_kt}
+  N_k=N_k^0e^{-\gamma_kt}\\
+  \gamma_k= \sum _ { j = 1 } ^ { k - 1 } A _ { k j }
   $$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 ​	$\gamma_k$ 被称为辐射阻尼常数
 
-- 处在能级 $k$ 的平均寿命：
+- 处在能级 $k$ 的平均寿命
   $$
   \tau_k=\frac{1}{\gamma_k}
   $$
@@ -216,29 +179,34 @@ $$
   $$
 
   $$
-  \gamma_k=\frac{1}{\tau_k}=
+  \gamma_k=\frac{1}{\tau_k}=\sum _ { j = 1 } ^ { k - 1 } A _ { k j } + \sum _ { j = 1 } ^ { k - 1 } B _ { k j } J _ { v _ { j k } }+ \sum _ { l = k + 1 } ^ { \infty } B _ { k l } J _ { v _ { k l } } + R _ { k f }
   $$
 
   - 右端第一项：$k$ 向下的自发跃迁
-
   - 第二项：$k$ 向上的受激跃迁
-
   - 第三项：$k$ 向下的受激跃迁
+  - 第四项：光致电离
 
 - 对于忽略受激跃迁的氢原子，能级越高，对应的 $\gamma_k$ **越小**
 
   - 对于低激发态，$\gamma_k$ 相当大，能级寿命短，能级相当宽
   - 随着能级号增大，$\gamma_k$ 逐渐减小，寿命越来越长
 
-- 辐射的量子理论给出，当能级寿命有限时，位于能级 $k$ 的原子能量在 $(E,E+\text{d}E)$ 内的概率等于：
+- 辐射的量子理论给出，当能级寿命有限时，位于能级 $k$ 的原子能量在 $(E,E+\text{d}E)$ 内的概率等于
   $$
-  
+  W _ { k } ( E ) \mathrm{d} E = \frac { \gamma _ { k } } { h } \frac { \mathrm{d} E } { \left( \frac { 2 \pi } { h } \right) ^ { 2 } \left( E - E _ { k } \right) ^ { 2 } + \left( \frac { \gamma _ { k } } { 2 } \right) ^ { 2 } }
   $$
   绝大多数原子的能级都接近能级的平均能量
 
 
 
-#### 吸收系数按能级的分布
+#### 吸收系数按频率的分布
+
+$$
+a _ { \nu } = \frac { e ^ { 2 } } { m _ { e } c } \frac { \gamma } { 4 \pi } \cdot \frac { f _ { j k } } { \left( \nu - \nu _ { j k } \right) ^ { 2 } + \left( { \gamma } /{ 4 \pi } \right) ^ { 2 } }
+$$
+
+其中 $\gamma = \gamma _ { j } + \gamma _ { k }$ ，包含高能级和低能级的阻尼系数
 
 
 
@@ -263,16 +231,15 @@ $$
 
 - 视向速度为零的原子吸收 $\nu_{jk}$
 
-- 视向速度在 $(\zeta,\zeta+\text{d}\zeta)$ 内的原子所能吸收的频率及其间隔：
+- 视向速度在 $(\zeta,\zeta+\text{d}\zeta)$ 内的原子所能吸收的频率
+  $$
+  \Delta\nu=\frac{\zeta}{c}\nu_{jk},\ \nu=\nu_{jk}+\Delta\nu\\
+  $$
 
-- 这种原子的相对数目：
+- 这种原子的相对数目
   $$
   a _ { \nu } \text{d} \nu \propto \text{d} n / n
   $$
-
-
-
-
 
 
 #### 热运动
@@ -293,9 +260,41 @@ $$
 #### 湍动
 
 - 考虑微湍动——湍动元的尺度小于光子平均自由程（光薄）
+
 - 假设完全杂乱，则湍动也服从麦克斯韦分布
-- 大量微湍动存在，原子同时参与两种杂乱运动：$\zeta=v_x+\zeta_t$ ——分布为两个高斯函数的乘积 
+
+- 大量微湍动存在，原子同时参与两种杂乱运动：$\zeta=v_x+\zeta_t$ ——分布为两个高斯函数的乘积
+  $$
+  \frac{\text{d}n}{n}\text{d}\zeta=\frac { 1 } { \sqrt { \pi } } e ^ { - \left( \zeta / \zeta _ { D} \right) ^ { 2 } } \frac { d \zeta } { \zeta _ { D } }
+  $$
+  这里的 $\zeta_D$ 是总的最概然速度
+
 - 如果湍动不服从高斯分布，则分布为两个分布函数的卷积
+
+
+
+#### 微观多普勒致宽的吸收系数表达式
+
+$$
+a _ { \nu }= \frac { A } { \sqrt { \pi } } e ^ { - \left( \frac { v - v _ { \mu } } { \Delta v _ { D } } \right) ^ { 2 } } \frac { 1 } { \Delta v _ { D } }
+$$
+
+- 利用吸收系数的积分公式确定的 $A$ 为
+  $$
+  A = \frac { \pi e ^ { 2 } } { m _ { e } c } f _ { j k }
+  $$
+
+- $\Delta\nu_D$ 满足
+  $$
+  \frac { \Delta \nu _ { D } } { \nu _ { j k } } \equiv \frac { \zeta _ { D } } { c }
+  $$
+
+- 特征
+
+  - 高斯分布，中心对称
+  - 随着频率远离线心频率，吸收系数的数值迅速（指数）下降，比阻尼致宽快得多，$\Delta\nu=\Delta\nu_D$ 时下降为 $e^{-1}$
+    - $\Delta\nu_D$ 被称为多普勒宽度，表征吸收分布范围宽窄
+    - 半高全宽 $2\sqrt{\ln{2}}\Delta\nu_D$ ，实际上比辐射阻尼的全半宽大得多
 
 
 
@@ -350,8 +349,6 @@ $$
 
 
 
-
-
 ## 阻尼效应和微观多普勒效应的联合作用
 
 - 在恒星大气里,阻尼效应和原子的杂乱热运动总是同时存在
@@ -397,8 +394,6 @@ $$
 
 
 ## 压力效应的碰撞阻尼理论
-
-
 
 - 压力效应：通过粒子之间相互作用导致的谱线致宽，与气体的压力有密切关系
 - 碰撞阻尼理论（碰撞相移理论）——碰撞对辐射**结果**的影响
@@ -553,10 +548,6 @@ $$
   &\equiv\frac{e^2}{mc}\cdot\delta_{jk}\cdot\frac{f}{(\nu-\nu_0)^2+\delta_{jk}^2}
   \end{align*}
   $$
-
-
-
-
 
 
 
@@ -737,8 +728,6 @@ $$
     a ( \Delta \lambda ) = 0.299 \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \frac { \left( S _ { n } F _ { 0 } \right) ^ { 3 / 2 } } { ( \Delta \lambda ) ^ { 5 / 2 } }\\
     \text{where }S _ { n } = 0.0192 \lambda ^ { 2 } [ n ( n - 1 ) + 2 ]
     $$
-
-
 
 
 - 二次斯塔克效应
@@ -968,6 +957,4 @@ $$
     $$
     C = 1.496 \frac { \pi e ^ { 2 } } { m _ { e } c ^ { 2 } } \lambda ^ { 2 } f \sum _ { k } I _ { k } C _ { k } ^ { 3 / 2 }
     $$
-
-
 
