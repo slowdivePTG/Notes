@@ -33,7 +33,7 @@
 
 - 大气色散：大气折射率随波长的增加而减小，长波折射偏转小于短波，望远镜焦平面上的星像在高度方向上展开成一条彩色像的光带，紫端靠近天顶
 
-  ![](1_1.png)
+  ![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/1_1.png)
 
 - 大气扰动：地球大气不稳定，光波通过大气时波前发生畸变（闪烁、晃动、模糊）——大气视宁度
 
@@ -103,11 +103,11 @@
 
 ### 放大率、底片比例尺
 
-![](2_1.png)
+![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/2_1.png)
 
 - 放大率：角放大率——对目视望远镜而言
 
-  ![](2_2.png)
+  ![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/2_2.png)
   $$
   G = \left| \frac { \tan \omega ^ { \prime } } { \tan \omega } \right| = \frac { f _ { 1 } ^ { \prime } } { f _ { 2 } ^ { \prime } } = \frac { D } { d }
   $$
@@ -124,7 +124,7 @@
 
 - 底片比例尺：在**视场中央**底片上单位长度所对应的**天球上的角距**——对照相望远镜而言
 
-  ![](2_3.png)
+  ![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/2_3.png)
   $$
   \tan \omega = \frac { l } { f}\approx\omega
   $$
@@ -342,7 +342,7 @@
 
   - 反射镜：准确到 $\lambda/8$
 
-    ![](2_4.png)
+    ![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/2_4.png)
 
 - 受温度变化和镜筒弯曲的影响较小，星像较稳定
 - 仪器散射光小
@@ -368,7 +368,7 @@
 
 ### 赤道式
 
-![](2_5.png)
+![](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Techniques%20and%20Methods%20I-Optical%20and%20Infrared/2_5.png)
 
 > 轭式又称为摇篮式
 
