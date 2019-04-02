@@ -77,15 +77,16 @@ $$
 
 - Doppler Redshift is associated with a speed of recession
 
-$$
-v=cz,\ v\ll c\\
-1+z=\sqrt{\frac{1+\beta}{1-\beta}},\ \text{in general}
-$$
+  $$
+  v=cz,\ v\ll c\\
+  1+z=\sqrt{\frac{1+\beta}{1-\beta}},\ \text{in general}
+  $$
+  The SR case is used when, for example, measuring the ejection velocity of gas clouds ejected from AGNs
 
 - We will prove that
-$$
-1+z=\frac{\lambda_{obs}}{\lambda_0}=\frac{a_{obs}}{a_{em}}
-$$
+  $$
+  1+z=\frac{\lambda_{obs}}{\lambda_0}=\frac{a_{obs}}{a_{em}}
+  $$
   where $a$ is the scale factor of the universe，$em$ stands for emission
 
 ### Universal Expansion
@@ -119,6 +120,7 @@ $$
 #### Baryons
 
 - Proton + Neutron + Electron
+  - None relativistic
   - 0.5% stars
   - 4% Hydrogen/Helium
   - 0.03% heavy elements
@@ -126,10 +128,11 @@ $$
 #### 0.3% Neutrinos
 
 - mass > 0
+- Relativistic
 
 #### Radiation
 
-- $E=h\nu=hc/\lambda$
+- $E=h\nu=hc/\lambda$, 0 mass
 
 #### 21% Dark Matter
 
@@ -149,31 +152,3 @@ $$
 $$
 
 
-
-## Chapter 2 Newtonian Cosmology
-
-<img src="./fig/IMG_0619.jpg" style="zoom:30%" />
-$$
-\vec v_A=H_0 \vec r_A,\ \vec v_B=H_0 \vec r_B
-$$
-
-- Recession velocity if B as seen by A is
-
-$$
-\vec v_{BA}=\vec v_B-\vec v_A=H_0(\vec r_B-\vec r_A)
-$$
-
-### Comoving coordinates
-
-- comoving with space distance $\vec r$, comoving distance $\vec x$ (constant)
-
-$$
-\vec r_{BA} = a(t)\cdot\vec x_{BA}
-$$
-
-- Birkhoof's theorem: total energy of a particle of mass $m$ at A, B, C, D
-
-
-$$
-U=T+V=\frac{1}{2}m\dot{r}^2-\frac{GMm}{r}=\frac{1}{2}m\dot{r}^2-\frac{4\pi}{3}G\rho r^2m
-$$
