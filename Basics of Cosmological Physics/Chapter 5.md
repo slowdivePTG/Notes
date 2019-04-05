@@ -64,7 +64,7 @@ $e$ stands for the era when the photons were emitted
 
 - Friedmann equation
   $$
-  \dot{a}^{2}=H_{0}^{2} \Omega_{\mathrm{m}, 0} a^{-1}+H_{0}^{2} \Omega_{\Lambda, 0} a^{2}
+  \dot{a}^{2}=H_{0}^{2} \Omega_{\mathrm{m}, 0} a^{-1}+H_{0}^{2} \Omega_{\Lambda, 0} a^{2}-k
   $$
   The definition of $\Omega_k$
   $$
@@ -145,7 +145,7 @@ $$
 dt=0
 $$
 
-The distance between event A and B, which happens simultaneously - a universal time $t$
+The distance between event A and B, which happens **simultaneously** - a universal time $t$ - only useful when $s/c\ll1/H$
 
 - RW Metric
   $$
@@ -161,8 +161,7 @@ The distance between event A and B, which happens simultaneously - a universal t
   s(t)=a(t)\cdot\left\{\begin{array}{cc}{\frac{1}{\sqrt{k}} \sin ^{-1}(r \sqrt{k})} & {\text { for } k>0} \\ {r} & {\text { for } k=0} \\ {\frac{1}{\sqrt{|k|}} \sinh ^{-1}(r \sqrt{|k|})} & {\text { for } k<0}\end{array}\right.
   $$
 
-  - Flat universe, $k=0​$, the proper distance is the coordinate distance
-
+  - Flat universe, $k=0$, the proper distance is the coordinate distance
   - Positive curvature, $k=1$, $s(t)>a(t)\cdot r$
 
 ### The Horizon
@@ -287,7 +286,6 @@ $$
     $$
     \delta \theta_{\min }=\frac{3.375 \cdot 100 h \cdot 1}{3 \times 10^{5}} \simeq 1.13 \times 10^{-3} h \text { radians } \simeq 4 h \text { arcmin }
     $$
-    
 
 ### Luminosity Distance
 
@@ -329,5 +327,4 @@ $L$ is the absolute bolometric luminosity (all wavelengths), but is not observab
   $$
   d_{\mathrm{L}}=\frac{r_{1}}{a_1}=(1+z) r_{1}
   $$
-  
 
