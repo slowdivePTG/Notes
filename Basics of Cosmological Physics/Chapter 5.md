@@ -278,11 +278,15 @@ $$
 
 - In some cosmologies $d_A(z)$ is not monotonically increasing function of $z$, for a given proper size $D$ will subtend a minimum angle $\delta\theta$ at $z=z_{max}$
 
+  - When the light rays were emitted, the universe was smaller and certain proper diameter distance occupied a larger coordinate size
+
+  - $z_{max}$ stands for an emission distance equal to the particle horizon at the time of emission
+
   - Einstein-de Sitter cosmology - $z_{max}=1.25$
     $$
     \delta \theta_{\min }=\delta \theta\left(z_{\mathrm{m}}\right)=3.375 \frac{H_{0} D}{c}
     $$
-    A galaxy cluster of typical diameter 1 Mpc, would never subtend on the sly an angle smaller than
+    A galaxy cluster of typical diameter 1 Mpc, would never subtend on the sky an angle smaller than
     $$
     \delta \theta_{\min }=\frac{3.375 \cdot 100 h \cdot 1}{3 \times 10^{5}} \simeq 1.13 \times 10^{-3} h \text { radians } \simeq 4 h \text { arcmin }
     $$
@@ -327,4 +331,41 @@ $L$ is the absolute bolometric luminosity (all wavelengths), but is not observab
   $$
   d_{\mathrm{L}}=\frac{r_{1}}{a_1}=(1+z) r_{1}
   $$
+  or
+  $$
+  d_{\mathrm{L}}(z)=\frac{c(1+z)}{\sqrt{\left|\Omega_{\mathrm{k}, 0}\right|} H_{0}} S_{k}\left(H_{0} \sqrt{\left|\Omega_{\mathrm{k}, 0}\right|} \int_{0}^{z} \frac{d z}{H(z)}\right)=(1+z)^{2} \cdot d_{\mathrm{A}}
+  $$
 
+### The deceleration parameter
+
+- $r_1$ - radial distance
+
+- $d_P$ - proper distance
+
+- $d_A$ - angular distance
+
+- $d_L$ - luminosity distance
+
+- For small $z$ and small $r_1$
+  $$
+  d_{\mathrm{P}} \simeq d_{\mathrm{A}} \simeq d_{\mathrm{L}} \simeq r_{1}
+  $$
+
+- For small $z$, using Taylor expansion
+  $$
+  E(z)=\Omega_{\mathrm{m}, 0}(1+3 z)+\left(1-\Omega_{\mathrm{m}, 0}-\Omega_{\Lambda, 0}\right)(1+2 z)+\Omega_{\Lambda, 0}=1+2z(1+q_0)
+  $$
+  where
+  $$
+  q_0=\frac{\Omega_{\mathrm{m}, 0}}{2}-\Omega_{\Lambda, 0}
+  $$
+
+- The parameter
+  $$
+  q(t)=-\frac{1}{H^{2}} \frac{\ddot{a}}{a}=-a \frac{\ddot{a}}{\dot{a}^{2}}
+  $$
+  is called deceleration parameter
+
+  - $q<0$ , acceleration of expansion
+  - $q>0$, slowing down of expansion
+  - At present - accelerating 
