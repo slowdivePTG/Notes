@@ -220,7 +220,7 @@ $$
 - 反转情形：壳层中电子数目**多于**满壳层电子数的一半
 - $\ce{CI}$ 基态：$^3P_0$ 最低，$^3P_2$ 最高，$\ce{OI}​$ 基态则相反
 
-![以 $\ce{CI}$ 为例的示意图](/Users/chang/Desktop/天体光谱学/fig/Hund Rule.jpeg)
+![以 $\ce{CI}$ 为例的示意图](https://github.com/slowdivePTG/Notes/blob/master/Astronomical%20Spectroscopy/fig/Hund%20Rule.jpeg)
 
 ## 氦原子光谱
 
