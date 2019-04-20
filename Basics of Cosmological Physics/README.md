@@ -6,3 +6,4 @@
 3. Relativistic Cosmology
 4. World Models
 5. Redshifts and Distances
+6. Supernova Cosmology (including *Monochromatic Flux, K-correction*)
