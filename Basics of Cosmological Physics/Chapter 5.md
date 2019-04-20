@@ -368,4 +368,16 @@ $L$ is the absolute bolometric luminosity (all wavelengths), but is not observab
 
   - $q<0$ , acceleration of expansion
   - $q>0$, slowing down of expansion
-  - At present - accelerating 
+  - At present - accelerating
+  
+- The approximation of luminosity distance for small $z$
+  $$
+  \int_{0}^{z} \frac{d z}{H(z)}=\frac{1}{H_{0}} \int_{0}^{z} \frac{d z}{E(z)^{1 / 2}} \approx \frac{1}{H_{0}} \int_{0}^{z}\left[1-z\left(q_{0}+1\right)\right] d z \approx \frac{1}{H_{0}}\left[z-\left(q_{0}+1\right) \frac{z^{2}}{2}\right]
+  $$
+
+  $$
+  d_{\mathrm{L}}=(1+z) r_{1} \approx \frac{c}{H_{0}}\left[z+\frac{1}{2}\left(1-q_{0}\right) z^{2}+\cdots\right]
+  $$
+
+  
+
