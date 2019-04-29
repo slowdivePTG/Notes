@@ -166,9 +166,11 @@ $$
 
   - 波数偏移
     $$
-    \Delta\frac1\lambda=\frac{(g_2M_2-g_1M_1)\mu_BB}{4\pi cm}\equiv({g_2M_2-g_1M_1})L
+    \Delta\frac1\lambda=\frac{(g_2M_2-g_1M_1)eB}{4\pi cm}\equiv\frac{(g_2M_2-g_1M_1)\mu_BB}{hc}\equiv({g_2M_2-g_1M_1})L
     $$
     $L$ 是 Lorentz 单位
+    
+    
 
 ### 选择定则
 
