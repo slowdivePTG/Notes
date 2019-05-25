@@ -92,7 +92,7 @@
 
   - 与宇称类似
 
-    - 电子的轨道波函数对核轴的中点反射对称——偶；反射反对称——奇
+    - 电子的轨道波函数对核轴的中点反射对称——偶，电子倾向于在两核之间运动，将两核拉住；反射反对称——奇，电子倾向于在两核外围运动，将两核拉开
       $$
       \psi(\vec {R_A}, \vec {R_B})\to \psi(-\vec {R_A}, -\vec {R_B})\Rightarrow \left|\psi(\vec {R_A}, \vec {R_B})\right|^2= \left|\psi(-\vec {R_A}, -\vec {R_B})\right|^2\\
       \Rightarrow \psi(\vec {R_A}, \vec {R_B})=\pm \psi(-\vec {R_A}, -\vec {R_B})=\left\{
@@ -100,7 +100,7 @@
       -:\text{ u(ungerade) - odd}\end{array}\right.
       $$
 
-  - 针对 $\Sigma$ 态的反射对称性——波函数关于包含着两个原子核的任意平面的反射对称性
+  - 针对 $\Sigma$ 态的反射对称性——波函数关于包含着核轴的任意平面的反射对称性
 
     - $\Sigma^+$——关于反射面反射对称——绝大多数分子
     - $\Sigma^-$——关于反射面反射反对称——$\ce{O2}$ 的基态是 $^3\Sigma_\text{g}^-$
@@ -193,11 +193,126 @@
   \Psi=\varphi_{\mathrm{e}}\left(\mathbf{r}_{i}, \mathbf{R}\right) \chi_{\mathrm{N}}\left(\mathbf{R}_{\mathrm{A}}, \mathbf{R}_{\mathrm{B}}\right)
   $$
 
-##### 电子波函数求解
+##### 电子波函数
 
+- 分子轨道模型
+- 共价键模型
 
+##### 原子核波函数
 
+- 两体问题——简化为约化质量为
+  $$
+  \mu=\frac{M_{\mathrm{A}} M_{\mathrm{B}}}{M_{\mathrm{A}}+M_{\mathrm{B}}}
+  $$
+  的一体问题，对同核分子，$\mu=M_\text{A}/2$
 
+  Schrödinger 方程简化为
+  $$
+  \left[-\frac{\hbar^{2}}{2 \mu} \nabla^{2}-V(\mathbf{R})-E\right] \chi_{\mathrm{N}}(\mathbf{R})=0
+  $$
+
+- 将振动（径向运动）和转动（角运动）分开讨论
+
+- 角运动方程相当于一个零势能的 Schrödinger 方程，形式与氢原子 Schrödinger 方程角运动部分相同，具有相同的球谐函数解和能量本征值
+  $$
+  E_{\mathrm{r}}=\frac{\hbar^{2}}{2 \mu R^{2}} J(J+1)
+  $$
+
+  - 转动能级
+
+    - 将分子看成刚体，核间距固定在 $R_0$，转动惯量 $I_0=\mu R_0^2$
+      $$
+      E_{\mathrm{r}}=\frac{\hbar^{2}}{2 I_{0}} J(J+1)=B_{0} J(J+1)
+      $$
+      $B_0$ 称为分子的转动常数
+
+    - 实际上分子并不是刚体，当分子快速转动时原子核间的间距会增大，需要引入一项离心力畸变改正因子来改正
+
+    - $J=0$ 时 $E_r=0$，没有转动零点能
+
+- 径向运动
+
+  - 将势能在平衡位置附近展开，取二阶近似，得到简谐振子势
+    $$
+    V_{\mathrm{HO}}(R)=V_{0}+\frac{1}{2} k\left(R-R_{e}\right)^{2}
+    $$
+
+  - 求解谐振子运动方程得到原子核振动
+    $$
+    E_{V}=\hbar \omega\left(v+\frac{1}{2}\right),\ \text{where }v=0,1,2,\dots,\ \omega=\left(\frac{k}{\mu}\right)^{1 / 2}
+    $$
+    $v$ 是振动量子数
+
+  - 零点能
+
+    - 谐振子近似下均匀分布
+    - 分子在势能曲线的底部不能存在——零点能 $\hbar\omega/2$——不确定性关系
+    - 一般来讲，转动能级比振动能级小得多
+
+  - 分子振动零点能 (ZPE) 影响低温星际介质中的化学反应
+    $$
+    \ce{H2 + D+ <=> HD + H+}
+    $$
+
+    - 温度较高时
+      $$
+      \frac{n\left(\ce{HD}\right)}{n\left(\ce{H2}\right)}\approx \frac{n\left(\ce{D}\right)}{n\left(\ce{H}\right)}
+      $$
+      但在低温下不再成立
+
+    - 实际上，由于
+      $$
+      \omega= \left(\frac{k}{\mu}\right)^{\frac{1}{2}}
+      $$
+      我们有
+      $$
+      \frac{\omega_{\mathrm{HD}}}{\omega_{\mathrm{H}_{2}}}=\left(\frac{\mu_{\mathrm{H}_{2}}}{\mu_{\mathrm{HD}}}\right)^{1 / 2}=\left(\frac{\mu_{\mathrm{H}}/2}{2\mu_{\mathrm{H}}/3}\right)^{1 / 2}=\frac{\sqrt{3}}2
+      $$
+
+    - 从而反应物和生成物在低温下存在显著能量差
+      $$
+      \Delta E=\mathrm{ZPE}(\mathrm{HD})-\mathrm{ZPE}\left(\mathrm{H}_{2}\right)\approx-389\ \mathrm{cm}^{-1} \approx-560\ \mathrm{K}<0
+      $$
+      这里已经记入了 ZPE 中所含的电离势的改变
+
+      从而看到从左至右是一个释能反应，说明低温条件非常适合 $\ce{HD}$ 的形成，$\ce{HD}$ 的丰度常常比仅基于 $\ce{D}$ 和 $\ce{H}$ 丰度比所得的预期值高出 100-1000 ——氘分馏
+
+    - 在其它一些含 $\ce{H/D}$ 的分子对中也可能观测到，其他元素同位素中也观测到，但程度上要小很多
+
+      - 其他元素的丰度更低
+      - 同位素原子的（相对）约化质量差更小
+
+  - 非简谐振子
+
+    - 对高激发能级，低能展开得到的简谐势不再适用
+    - 真实分子中，$v$ 增大，$k$ 会随之减小（弹簧变软），能级间距越来越小，并终止于离解能处
+
+  - Morse 势
+    $$
+    V=D_{\mathrm{eq}}\left\{1-\exp \left[a\left(r_{0}-r\right)\right]\right\}^{2}
+    $$
+
+    - 振动能级
+      $$
+      E_{\mathrm{v}}=\omega_{e}\left(v+\frac{1}{2}\right)-\omega_{e} \chi_{e}\left(v+\frac{1}{2}\right)^{2}
+      $$
+      即
+      $$
+      \omega=\omega_{e}\left[1-\chi_{e}\left(v+\frac{1}{2}\right)\right]
+      $$
+      恰相当于随着 $v$ 增大，能级差减小
+
+- 振动转动能级（$^1\Sigma$ 态，势阱底部附近）
+  $$
+  E_{\mathrm{vr}}=\omega_{e}\left(v+\frac{1}{2}\right)+B_{e} J(J+1)-\omega_{e} \chi_{e}\left(v+\frac{1}{2}\right)^{2}-D_{e} J^{2}(J+1)^{2}-\alpha_{e}\left(v+\frac{1}{2}\right) J(J+1)+\cdots
+  $$
+
+  - $\omega_e$ - 谐振子频率
+  - $B_e$ - 转动常数
+  - $\omega_e\chi_e$ - 非谐振子首项改正因子
+  - $D_e$ - 离心力畸变改正
+  - $\alpha_e$ - 转动能级随振动能级的变化 $B_{\mathrm{v}} \cong B_{\mathrm{e}}-\alpha_{\mathrm{e}}(v+1 / 2) \ldots$
+  - 以上常数通常为正值，以 $\text{cm}^{-1}$ 为单位给出
 
 ## 分子的转动光谱
 
