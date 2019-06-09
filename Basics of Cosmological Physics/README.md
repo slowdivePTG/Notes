@@ -7,3 +7,4 @@
 4. World Models
 5. Redshifts and Distances
 6. Supernova Cosmology (including *Monochromatic Flux, K-correction*)
+7. Thermal History of the Universe
