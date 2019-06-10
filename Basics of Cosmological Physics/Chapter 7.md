@@ -258,9 +258,9 @@ $$
   $$
   where
   $$
-  g_{*}=\sum_{\text {bosons}} g_{i}+\frac{7}{8} \sum_{\text {fermions}} g_{j}=2+2\cdot\frac78+2\cdot\frac78+\frac78N_\nu
+  g_{*}=\sum_{\text {bosons}} g_{i}+\frac{7}{8} \sum_{\text {fermions}} g_{j}=2+\left(2\cdot\frac78+2\cdot\frac78\right)+2\cdot\frac78\mathcal N_\nu
   $$
-  $N_\nu$ is the number of neutrino families
+  $\mathcal N_\nu$ is the number of neutrino families
 
   
 
