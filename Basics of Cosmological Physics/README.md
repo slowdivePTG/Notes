@@ -8,3 +8,4 @@
 5. Redshifts and Distances
 6. Supernova Cosmology (including *Monochromatic Flux, K-correction*)
 7. Thermal History of the Universe
+8. Primordial Nucleosynthesis
