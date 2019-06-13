@@ -10,3 +10,4 @@
 7. Thermal History of the Universe
 8. Primordial Nucleosynthesis
 9. Dark Matter
+10. Recombination and CMB
