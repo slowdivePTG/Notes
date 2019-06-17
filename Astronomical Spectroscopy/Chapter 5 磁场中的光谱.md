@@ -57,7 +57,7 @@
 
   - $s=l,\ j=0\Rightarrow g_s=2$
     $$
-    \mu_s=\frac{g_l\mu_BP_l}{\hbar}
+    \mu_s=\frac{g_s\mu_BP_s}{\hbar}
     $$
 
 ### 多电子原子总磁矩
@@ -70,7 +70,7 @@
 ## 外磁场的附加能量
 
 $$
-\Delta E=\vec \mu_J\cdot \vec B=\mu_JB\cos\theta=g\cdot\frac{e}{2h}\cdot B\cdot P_J\cos\theta
+\Delta E=\vec \mu_J\cdot \vec B=\mu_JB\cos\theta=g\cdot\frac{\mu_B}{\hbar}\cdot B\cdot P_J\cos\theta
 $$
 
 - 其中 $P_J\cos\theta$ 是 $\vec P_J$ 在 z 轴的投影，满足量子化条件
@@ -81,7 +81,7 @@ $$
 
 - $\Delta E$ 分裂成 $2J+1$ 层
   $$
-  \Delta_E=gM_J\mu_BB
+  \Delta E=gM_J\mu_BB
   $$
   其中 $g$ 和 $M_J$ 是我们需要重点关注的
 
@@ -112,7 +112,7 @@ $$
 
   - 附加能量
     $$
-    \Delta E=\Delta E_S+\Delta E_L=\mu_BB(M_L+S_z)
+    \Delta E=\Delta E_S+\Delta E_L=\mu_BB(M_L+2S_z)
     $$
 
 - 例：$\ce{OI}$ 1s$^2$2s$^2$2p$^4$ 的一个态 $^3\text{P}$ 在强磁场（10 T 以上）下的情形
@@ -229,7 +229,7 @@ $$
   |   -1/3   |    1     |    -4/3     | $\sigma$ |
   |   -1/3   |    -1    |     2/3     |  $\pi$   |
   
-  共 6 种跃迁，分为 6 层，其中原位置光谱消失
+  共 4 种跃迁，分为 4s 层，其中原位置光谱消失
   
 - 应用：测量磁场
 
