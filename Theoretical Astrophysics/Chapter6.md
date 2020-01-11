@@ -4,7 +4,7 @@
 
 ## 引言
 
-介绍一种较为粗略、但简便的分析恒星吸收线光谱的方法
+近似方法对于研究谱线轮廓而言太粗糙，而用准确的轮廓方法来研究恒星的吸收线又显得相当麻烦。因此有必要介绍一种较为粗略、但简便的分析恒星吸收线光谱的方法。
 
 
 
@@ -12,12 +12,11 @@
 
 - 不讨论谱线的轮廓或形状,只研究吸收线的总吸收，即吸收线的等值宽度，避免了很多因素对结果的影响
 - 理论基础
-  - 谱线的等值宽度 $W_λ$ 和产生该谱线的低能级的振子柱密度 $\mathcal{N_j}f_{jk}$ 之间存在某种确认的关系
-- 对 S-S 模型分析
-- $W_λ-\mathcal{N_j}f_{jk}$ 关系
-  - $\mathcal{N_j}f_{jk}$ 很小时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 很快增大
-  - $\mathcal{N_j}f_{jk}$ 稍大时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 增长缓慢
-  - $\mathcal{N_j}f_{jk}$ 很大时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 又有较快地增长
+  - 谱线的等值宽度 $W_λ$ 和产生该谱线的低能级的振子柱密度 $\mathcal{N_j}f_{jk}$ 之间存在某种确定的关系
+- $S-S$ 模型给出的 $W_λ-\mathcal{N_j}f_{jk}$ 关系
+  - $\mathcal{N_j}f_{jk}$ 很小时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 很快增大，多普勒效应起主要作用
+  - $\mathcal{N_j}f_{jk}$ 稍大时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 增长缓慢，多普勒效应起主要作用
+  - $\mathcal{N_j}f_{jk}$ 很大时，$W_λ$ 随 $\mathcal{N_j}f_{jk}$ 又有较快地增长，阻尼起主要作用
 
 
 
@@ -28,10 +27,9 @@
 
 
 
-### 观测生长曲线
+### 生长曲线的观测对照
 
-- 从观测上可以获得谱线等值宽度的观测值
-- 只要同时观测到足够多的谱线，并且这些谱线的振子强度已知，我们就可以拼出一条完整的生长曲线
+- 一次观测上可以获得一条谱线的等值宽度的观测值；只要同时观测到足够多的谱线，并且这些谱线的振子强度已知，我们就可以拼出一条完整的生长曲线
 - 将理论的和观测的生长曲线匹配,可以简便地得到恒星大气的一些重要物理量
   - 恒星大气里各种元素的相对含量
   - 恒星大气的阻尼常数
@@ -43,98 +41,95 @@
 
 ### S-S 模型的理论生长曲线
 
-- 累积辐射剩余强度的一般性精确表达式
+累积辐射剩余强度的一般性精确表达式
+$$
+r _ { \nu } = \frac { F _ { \nu } } { F _ { \nu } ^ { 0 } } = \frac { H _ { \nu } } { H _ { \nu } ^ { 0 } } = \frac { 1 } { 1 + \tau _ { \nu } ^ { \sigma } \varphi \left( \tau _ { \nu } ^ { \sigma } \right) }
+$$
+采用 $\phi(\tau_\nu^\sigma)\approx1$ 近似，从而
+$$
+r_\nu=\frac{1}{1+\tau^\sigma_\nu}
+$$
+当 $\tau^\sigma_\nu>>1$ ，$r_\nu\to0$ ，但是观测显示对于某些早型星，观测的 $r_{\nu_0}$ 较大。
+
+于是考虑 $R_\nu$ 为被研究光谱中观测到的吸收线的线性深度 $R_\nu\equiv1-r_\nu$ ，$R_c$ 为最强的深度进行如下修正：
+$$
+\frac { 1 } { R _ { \nu } } = 1 + \frac { 1 } { \tau _ { \nu } ^ { \sigma } } \Rightarrow \frac { 1 } { R _ { \nu } } = \frac { 1 } { R _ { c } } + \frac { 1 } { \tau _ { \nu } ^ { \sigma } }
+$$
+
+修正后，$\tau^\sigma_\nu>>1$ ，$R_\nu\to R_c$ ，利用经验方法可以给出 $R_c$ ，对于一般的晚型星 $R_c\simeq 1$ ，对于早型星 $R_c\simeq0.5$  
+
+> 推导生长曲线
+
+在所讨论的由 $j→k$ 的跃迁产生的谱线频率处，整个反变层的光学厚度为
+$$
+\tau _ { \nu } ^ { \sigma } = \int N_j a _ { \nu }  \text{d} h
+$$
+其中 $N_j$ 是单位体积内处于谱线低能态的吸收原子数目，$a_\nu$ 是对应于 $j→k$ 跃迁的以一个处于 $j$ 态原子计算的吸收系数
+
+生长曲线理论只考虑被**(辐射、碰撞)阻尼**和**多普勒效应**加宽的谱线，不涉及(即不适用于)被**线性斯塔克效应**加宽的谱线—— $a_\nu$ 由阻尼效应和微观多普勒效应联合作用下的吸收系数表达式确定
+$$
+\frac { a _ {\nu } } { a _ {\nu _ { 0 } } } = \frac { a } { \pi } \int _ { - \infty } ^ { + \infty } \frac { e ^ { - y ^ { 2 } } } { ( P - y ) ^ { 2 } + a ^ { 2 } } \text{d} y \equiv H ( a , P )
+$$
+$a_\nu$ 是一个和深度有关的函数，因为不同深度 $ζ_D$ 和 $\delta_{jk}$ 会不同
+
+假设在反变层温度和阻尼常数变化不大，即假设 $a_\nu$ 与深度 $h$ 近似**无关** 
+$$
+\tau _ { \nu } ^ { \sigma } = a _ { \nu }\int N_j  \text{d} h= a_\nu\mathcal{N_j}
+$$
+代入闵纳特半经验公式
+$$
+\frac { 1 } { R _ { \nu } }=\frac { 1 } { R _ { c } } + \frac { 1 } { \tau _ { \nu } ^ { \sigma } }\Rightarrow R _ { \nu } = \frac { R _ { c } } { 1 + \left( a _ { \nu } \mathcal { N } _ { j } / R _ { c } \right) ^ { - 1 } }
+$$
+等值宽度
+$$
+\begin{align*}
+W _ { \nu } &= \int R _ { \nu } \text{d}\nu\\
+\Rightarrow \frac { W _ { \nu } } { R _ { c } } &= \int _ { 0 } ^ { \infty } \frac { \text{d}\nu } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }\\
+&=\int _ { -\infty } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }\\
+&=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }
+\end{align*}
+$$
+定义 $X_0\equiv a_{\nu_0}\mathcal{N_j}$，$D _ { \mathrm { 0 } } \equiv X _ { \mathrm { 0} } / R _ { c }$ 
+$$
+\begin{align*}
+\frac { W _ { \nu } } { R _ { c } } &=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } X_0 / a _ { \nu_0 }R _ { c } \right) ^ { - 1 } }\\
+&=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } D_0 / a _ { \nu_0 } \right) ^ { - 1 } }
+\end{align*}
+$$
+$D_0$ 较小，吸收较弱（$\mathcal { N } _ { { j } } f _ { j k }$ 较小），谱线轮廓由线心决定，等值宽度由微观多普勒效应决定
+
+- 微观多普勒效应
   $$
-  r _ { \nu } = \frac { F _ { \nu } } { F _ { \nu } ^ { 0 } } = \frac { H _ { \nu } } { H _ { \nu } ^ { 0 } } = \frac { 1 } { 1 + \tau _ { \nu } ^ { \sigma } \varphi \left( \tau _ { \nu } ^ { \sigma } \right) }
-  $$
-
-- $\phi(\tau_\nu^\sigma)\approx1$
-
-- 半经验公式($R_c$ 为被研究光谱中观测到的最强吸收线的线心深度)
-  $$
-  \frac { 1 } { R _ { \nu } } = 1 + \frac { 1 } { \tau _ { \nu } ^ { \sigma } } \Rightarrow \frac { 1 } { R _ { \nu } } = \frac { 1 } { R _ { c } } + \frac { 1 } { \tau _ { \nu } ^ { \sigma } }
-  $$
-
-
-
-- 在所讨论的由 $j→k$ 的跃迁产生的谱线频率处，整个反变层的光学厚度为
-  $$
-  \tau _ { \nu } ^ { \sigma } = \int N_j a _ { \nu }  \text{d} h
-  $$
-  其中 $N_j$ 是单位体积内处于谱线低能态的吸收原子数目，$a_\nu$ 是对应于 $j→k$ 跃迁的以一个处于 $j$ 态原子计算的吸收系数
-
-- 生长曲线理论只考虑被**(辐射、碰撞)阻尼**和**多普勒效应**加宽的谱线，不涉及(即不适用于)被**线性斯塔克效应**加宽的谱线—— $a_\nu$ 由阻尼效应和微观多普勒效应联合作用下的吸收系数表达式确定
-  $$
-  \frac { a _ {\nu } } { a _ {\nu _ { 0 } } } = \frac { a } { \pi } \int _ { - \infty } ^ { + \infty } \frac { e ^ { - y ^ { 2 } } } { ( P - y ) ^ { 2 } + a ^ { 2 } } \text{d} y \equiv H ( a , P )
-  $$
-
-- $a_\nu$ 是一个和深度有关的函数，因为不同深度 $ζ_D$ 和 $\delta_{jk}$ 会不同
-
-- 假设在反变层温度和阻尼常数变化不大，即假设 $a_\nu$ 与深度 $h$ 近似**无关** 
-  $$
-  \tau _ { \nu } ^ { \sigma } = a _ { \nu }\int N_j  \text{d} h= a_\nu\mathcal{N_j}
-  $$
-
-- 代入闵纳特半经验公式
-  $$
-  \frac { 1 } { R _ { \nu } }=\frac { 1 } { R _ { c } } + \frac { 1 } { \tau _ { \nu } ^ { \sigma } }\Rightarrow R _ { \nu } = \frac { R _ { c } } { 1 + \left( a _ { \nu } \mathcal { N } _ { j } / R _ { c } \right) ^ { - 1 } }
-  $$
-
-- 等值宽度
-  $$
-  \begin{align*}
-  W _ { \nu } &= \int R _ { \nu } \text{d}\nu\\
-  \Rightarrow \frac { W _ { \nu } } { R _ { c } } &= \int _ { 0 } ^ { \infty } \frac { \text{d}\nu } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }\\
-  &=\int _ { -\infty } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }\\
-  &=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } \mathcal{N} _ { j } / R _ { c } \right) ^ { - 1 } }
-  \end{align*}
-  $$
-
-- 定义 $X_0\equiv a_{\nu_0}\mathcal{N_j}$，$D _ { \mathrm { 0 } } \equiv X _ { \mathrm { 0} } / R _ { c }$ 
-  $$
-  \begin{align*}
-  \frac { W _ { \nu } } { R _ { c } } &=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } X_0 / a _ { \nu_0 }R _ { c } \right) ^ { - 1 } }\\
-  &=2\int _ { 0 } ^ { \infty } \frac { \text{d}(\nu-\nu_0) } { 1 + \left( a _ { \nu } D_0 / a _ { \nu_0 } \right) ^ { - 1 } }
-  \end{align*}
-  $$
-
-- $D_0$ 较小，吸收较弱（$\mathcal { N } _ { { j } } f _ { j k }$ 较小），谱线轮廓由线心决定，等值宽度由微观多普勒效应决定
-
-  - 微观多普勒效应
-    $$
-    a _ { \nu } / a _ { \nu _ { 0 } } \approx e ^ { - \left[ \left( \nu - \nu _ { 0 } \right) / \Delta \nu _ { D } \right] ^ { 2 } }
-    $$
-
-    - $D_0<1$ ($0<D_0<0.5$)
-    - $D_0$ 增大 ($D_0\gg1$)
-    - 否则只能数值积分
-
-- $D_0$ 进一步增大，吸收很强（$\mathcal { N } _ { { j } } f _ { j k }$ 很大），谱线线翼发达，等值宽度由线翼决定
-
-  - 阻尼(辐射阻尼+碰撞阻尼)致宽
-    $$
-    a_\nu=\frac{e^2}{mc^2}\delta_{jk}\frac{f_{jk}}{(\nu-\nu_{jk})^2+\delta_{jk}^2}\approx\frac{e^2}{mc^2}\delta_{jk}f_{jk}{(\nu-\nu_{jk})^{-2}}\\
-    a_{\nu_0}=\frac { \sqrt { \pi } e ^ { 2 } } { m _ { e } c } \frac { f _ { j k } } { \Delta \nu _ { D } }
-    $$
-
-- 对于过渡的 $D_0$ ，需要用普遍公式进行数值积分
-
-- 将 $W_\nu$ 换为更常用的 $W_\lambda$ 
-  $$
-  \frac {  { W } _ {  { \lambda } } } { \lambda } = \frac { { W } _ { \nu } } { \nu}
+  a _ { \nu } / a _ { \nu _ { 0 } } \approx e ^ { - \left[ \left( \nu - \nu _ { 0 } \right) / \Delta \nu _ { D } \right] ^ { 2 } }
   $$
 
-- 积分结果
-  - 对于弱线($D_0\ll1$ ，或吸收振子数很少)
-    - 等值宽度 $W_\lambda$ 与 $R_c$ 无关
-    - 对于给定的平均随机运动速度 $ζ_D$ , $W_λ$ 随 $X_0$ 成比例(线性)增大，即 $W_λ$ 随振子柱密度**成正比**地增加
-  - 对于中等强度的吸收线($D_0 ≥ 55$)，等值宽度 $W_λ$ 随振子柱密度变化很缓慢**(对数开方)**
-  - 对于很强的谱线($D_0$ 很大)，$W_λ$ 随振子柱密度增大，增大的速度比中等强度谱线快,但比弱线慢**（$1/2$ 次方）**
-  - 对于中等强度和强谱线,等值宽度 $W_λ$ 都和 $R_c$ 有关
+  - $D_0<1$ ($0<D_0<0.5$)
+  - $D_0$ 增大 ($D_0\gg1$)
+  - 否则只能数值积分
 
-- $D_0$ 较小时生长曲线唯一确定，较大时依赖于参数 $a= \delta _ {  { jk } } / \Delta \nu_ {  { D } }$ ，$a$ 越大，生长曲线越高
+$D_0$ 进一步增大，吸收很强（$\mathcal { N } _ { { j } } f _ { j k }$ 很大），谱线线翼发达，等值宽度由线翼决定
 
-![](6_1.png)
+- 阻尼(辐射阻尼+碰撞阻尼)致宽
+  $$
+  a_\nu=\frac{e^2}{mc^2}\delta_{jk}\frac{f_{jk}}{(\nu-\nu_{jk})^2+\delta_{jk}^2}\approx\frac{e^2}{mc^2}\delta_{jk}f_{jk}{(\nu-\nu_{jk})^{-2}}\\
+  a_{\nu_0}=\frac { \sqrt { \pi } e ^ { 2 } } { m _ { e } c } \frac { f _ { j k } } { \Delta \nu _ { D } }
+  $$
+
+对于过渡的 $D_0$ ，需要用普遍公式进行数值积分
+
+将 $W_\nu$ 换为更常用的 $W_\lambda$ 
+$$
+\frac {  { W } _ {  { \lambda } } } { \lambda } = \frac { { W } _ { \nu } } { \nu}
+$$
+积分结果
+- 对于弱线($D_0\ll1$ ，或吸收振子数很少)
+  - 等值宽度 $W_\lambda$ 与 $R_c$ 无关
+  - 对于给定的平均随机运动速度 $ζ_D$ , $W_λ$ 随 $X_0$ 成比例(线性)增大，即 $W_λ$ 随振子柱密度**成正比**地增加
+- 对于中等强度的吸收线($D_0 ≥ 55$)，等值宽度 $W_λ$ 随振子柱密度变化很缓慢**(对数开方)**
+- 对于很强的谱线($D_0$ 很大)，$W_λ$ 随振子柱密度增大，增大的速度比中等强度谱线快,但比弱线慢**（$1/2$ 次方）**
+- 对于中等强度和强谱线,等值宽度 $W_λ$ 都和 $R_c$ 有关
+
+$D_0$ 较小时生长曲线唯一确定，较大时依赖于参数 $a= \delta _ {  { jk } } / \Delta \nu_ {  { D } }$ ，$a$ 越大，生长曲线越高
 
  
 
