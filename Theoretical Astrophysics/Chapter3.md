@@ -1,8 +1,10 @@
-# Chapter 3 恒星大气模型和恒星连续光谱
+#   Chapter 3 恒星大气模型和恒星连续光谱
 
 
 
 ## 非灰大气辐射平衡理论的一般解法
+
+“灰大气”模型的问题：无法解释巴尔末跳跃和在各个波段各不相同的色温度。
 
 吸收系数和频率相关——非灰大气
 
@@ -21,7 +23,7 @@ $$
 $$
 $\tau_{\nu}$ 由与频率有关的吸收系数 $\chi_{\nu}$ 决定
 
-回忆辐射转移方程的形式解(向外/内传递)，必须还要求出温度$T$和光深$\tau$的关系
+回忆辐射转移方程的形式解(向外/内传递)，必须还要求出温度$T$和光深$\tau_\nu$的关系
 $$
 I _ { \nu} \left( { \theta } ,  { \tau } _ {\nu } \right) = \int _ { \tau _ { \nu } } ^ { \infty } S _ { \nu } e ^ { - \left( t _ { \nu} - \tau _ { \nu} \right) \sec \theta } \sec  { \theta } \mathrm{d} t _ { \nu}
 $$
@@ -101,7 +103,7 @@ $$
    $$
 
    $$
-   \Rightarrow \frac{1}{\overline{\chi}_R}=\frac{\displaystyle{\int_0^\infty\frac { \mathrm{d}K _ { \nu } } {  \chi _ { \nu }\mathrm{d} h }\mathrm{d}\nu}}{\displaystyle{\frac {\mathrm{d} K } { \mathrm{d} h } }}
+   \Rightarrow \frac{1}{\overline{\chi}_R}=\frac{\displaystyle{\int_0^\infty\frac { \mathrm{d}B _ { \nu } } {  \chi _ { \nu }\mathrm{d} h }\mathrm{d}\nu}}{\displaystyle{\frac {\mathrm{d} B } { \mathrm{d} h } }}
    $$
 
    $\overline{\chi}_R$ 为 Rosseland 平均吸收系数
@@ -319,10 +321,9 @@ $$
        $$
        \Delta B=\Delta J - \frac { 1 } { 4 } \frac { \mathrm{d} \Delta F } { \mathrm{d} \tau }=\frac { 3 } { 4 } \int _ { 0 } ^ { \tau } \Delta F \mathrm{d} t + \frac { 1 } { 2 } ( \Delta F ) _ { \tau = 0 }- \frac { 1 } { 4 } \frac { \mathrm{d} \Delta F } { \mathrm{d} \tau }
        $$
-
-
-
-     - 只要把已知的 $\Delta-\tau$ 关系代入，就可以得到初始温度分布或者源函数的改正 $\Delta B$
+       
+       
+     - 只要把已知的 $\Delta-\tau$ 关系代入，就可以得到初始温度分布或者源函数的改正 $\Delta B$ 
 
 > 温索德方法在光学深度较大处能给出较好的结果
 
@@ -419,9 +420,7 @@ $$
 - 根据其目的而定
   - 要解释恒星连续光谱，因为其对温度、压力等物理量的微小变化不敏感，因此对模型的精确性要求不高
   - 如果研究线光谱、恒星的化学组成等等，就需要一个准确模型，因为线光谱通过元素的电离度和激发度敏感地依赖于恒星大气内温度和压力的分布
-- 总辐射流等于常数 (因为总辐射流是观测量,由观测确定) 这个条件对于
-  温度分布的微小变化不敏感,而这些小变化对谱线线对(波长接近的双
-  线)的强度比会带来很大影响——必须计算这些谱线线对的强度比，并和观测进行对比，已检验和调整温度等物理量分布
+- 总辐射流等于常数 (因为总辐射流是观测量,由观测确定) 这个条件对于温度分布的微小变化不敏感,而这些小变化对谱线线对(波长接近的双线)的强度比会带来很大影响——必须计算这些谱线线对的强度比，并和观测进行对比，已检验和调整温度等物理量分布
 
 
 
