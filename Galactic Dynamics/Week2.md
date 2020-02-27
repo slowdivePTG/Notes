@@ -127,7 +127,7 @@ Typical **Polar equations** of **conic sections**!
    $$
    And it is easy to tell that throughout the scattering,
    $$
-   \Delta \theta=2\theta_{cri}-\pi
+   \delta \theta=2\theta_{cri}-\pi
    $$
    where
    $$
@@ -135,11 +135,11 @@ Typical **Polar equations** of **conic sections**!
    $$
    In this way,
    $$
-   \Delta\theta=2\arccos(-1/e)-\pi=2\arcsin(1/e),\quad e\gg1\Rightarrow\Delta\theta\ll1
+   \delta\theta=2\arccos(-1/e)-\pi=2\arcsin(1/e),\quad e\gg1\Rightarrow\Delta\theta\ll1
    $$
    In fact, when $e\gg1$, we have
    $$
-   \Delta\theta\sim1/e=\left(1+\frac{2EL^2}{G^2m^2}\right)^{-1/2}\sim\sqrt{\frac{G^2m^2}{2EL^2}}=\frac{Gm}{{v_\infty^2} b}=\frac{r_{inf}}{b}
+   \delta\theta\sim1/e=\left(1+\frac{2EL^2}{G^2m^2}\right)^{-1/2}\sim\sqrt{\frac{G^2m^2}{2EL^2}}=\frac{Gm}{{v_\infty^2} b}=\frac{r_{inf}}{b}
    $$
    $r_{inf}$ is a typical impact parameter with which $\Delta \theta$ becomes significant
    $$
@@ -148,3 +148,74 @@ Typical **Polar equations** of **conic sections**!
 
 ### Relaxation
 
+When a star moves in a cluster, the direction of the velocity will change under the impact of all other stars. We would like to estimate the timescale in which the orbit/initial velocity of a star significantly change ($\Delta\theta$ in velocity $\sim1$)
+
+- When the star moves in the cluster
+  $$
+  \left\langle\vec\theta_f^2\right\rangle=\left\langle\left(\vec\theta_0+\sum_{i}\delta\vec\theta_i\right)^2\right\rangle=
+   \left\langle\vec\theta_0^2\right\rangle
+  +\left\langle\vec\theta_0\sum_{i}\delta\vec\theta_i\right\rangle
+  +\left\langle\sum_{i}\left(\delta\vec\theta_i\right)^2\right\rangle
+  +\left\langle\sum_{i\neq j}\delta\vec\theta_i\delta\vec\theta_i\right\rangle
+  $$
+  where $\langle\rangle$ stands for taking average
+
+  Obviously, the second and the fourth terms vanish as each $\delta\vec\theta_i$ is **random** and **independent**, so we are extremely interested in the third term
+  $$
+  \left\langle\sum_{i}\left(\delta\vec\theta_i\right)^2\right\rangle=N\left\langle\left(\delta\vec\theta\right)^2\right\rangle\sim N\left(\frac{r_{inf}}{b}\right)^2\sim1
+  $$
+  where $N$ is the number of stars that have impact on the star we consider
+
+- A more realistic model
+
+  ![](impact.eps)
+
+  The number of stars lying within the ring $b\sim b+\text{d}b$ can be estimated with the surface/column density (number within an unit area) $\sigma$
+  $$
+  \delta N=2\pi b\text{d}b\cdot \sigma\sim2\pi b\text{d}b\cdot\frac{N_*}{\pi R_*^2}
+  $$
+  where $N_*$ is the total star number in the cluster and $R_*$ is the cluster's radius
+
+  So every time the star **crosses** the cluster
+  $$
+  \begin{align*}
+  \left\langle\Delta\left(\theta^2\right)\right\rangle&=\int\delta N\left\langle(\delta\theta)^2\right\rangle\\
+  &\sim\frac{2\pi N_*}{\pi R_*^2}\int_{b_{min}}^{R_*}\left(\frac{r_{inf}}{b}\right)^2 b\text{d}b
+  \end{align*}
+  $$
+  but note that the approximation
+  $$
+  \delta\theta\sim\frac{r_{inf}}{b}
+  $$
+  is valid only when $b$ is large, say, $b>r_{inf}$, so we have to rewrite the integral
+  $$
+  \begin{align*}
+  \left\langle\Delta\left(\theta^2\right)\right\rangle
+  &\sim\frac{2N_*r_{inf}^2}{R_*^2}\left[\int_{r_{inf}}^{R_*}\frac{\text{d}b}{b}+\int_{b_{min}}^{r_{inf}}\varphi(b){\text{d}b}\right]\\
+  &=\frac{2N_*r_{inf}^2}{R_*^2}\left[\ln\frac{R_*}{r_{inf}}+\int_{b_{min}}^{r_{inf}}\varphi(b){\text{d}b}\right]
+  \end{align*}
+  $$
+  It's not easy to estimate the second term. For some systems it is negligible, usually when $b_{min}$ is large ($\sim R_{\odot}$) and is comparable to $r_{inf}$, which is true for stellar clusters. Anyway, we simply drop that term...
+  $$
+  \left\langle\Delta\left(\theta^2\right)\right\rangle
+  \sim\frac{2N_*r_{inf}^2}{R_*^2}\ln\frac{R_*}{r_{inf}}\equiv \frac{2N_*r_{inf}^2}{R_*^2}\ln\Lambda
+  $$
+  The typical crossing number for that angle to become significant is
+  $$
+  N_{cross}=\frac{1}{\left\langle\Delta\left(\theta^2\right)\right\rangle}
+  $$
+  And the relaxation timescale
+  $$
+  \begin{align*}
+  T_{relax}&=t_{cross}N_{cross}\sim\frac{2R_*}{v}\cdot \frac{R_*^2}{2N_*r_{inf}^2\ln\Lambda}\\
+  &=\frac{R_*^3}{N_*v\ln\Lambda}\frac{v^4}{G^2m^2}\\
+  &\sim\frac{R_*^3}{N_*v\ln\Lambda}\frac{G^2m^2N_*^2}{G^2m^2R_*^2}\quad\left(v^2\sim\frac{GM_*}{R_*}=\frac{GmN_*}{R_*}\right)\\
+  &=\frac{N_*}{\ln\Lambda}\cdot\frac{R_*}{v}\\
+  &=\frac{N_*}{\ln N_*}\cdot\frac{R_*}{v} \quad\left(\Lambda=\frac{R_*}{r_{inf}}=\frac{R_*v^2}{Gm}=\frac{GmN_*R_*}{GmR_*}=N_*\right)
+  \end{align*}
+  $$
+  $T_{relax}\ll T_{Hubble}\Rightarrow$ Collisional - the cluster has changed a lot since it was formed
+
+  $T_{relax}\gg T_{Hubble}\Rightarrow$ Collisionless - the cluster remains what it looked like before
+
+  
