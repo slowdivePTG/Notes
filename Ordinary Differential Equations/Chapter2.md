@@ -165,4 +165,178 @@ $$
 \frac{\text{d}(r\sin\theta)}{\text{d}(r\cos\theta)}=\frac{\cos\theta+\sin\theta}{\cos\theta-\sin\theta}\Rightarrow r\text{d}\theta=\text{d}r
 $$
 
+## 一阶线性微分方程
 
+$$
+\frac{\text dy}{\text dx}+p(x)y=q(x),\quad p(x),q(x)\in C(a,b)
+$$
+
+- $q(x)\equiv0,y\neq0$ 时
+  $$
+  \frac{\text dy}{\text dx}+p(x)y=0\Rightarrow\frac{\text dy}{y}+p(x)\text dx=0\Rightarrow|y|=Ce^{-\int_{x_0}^xp(s)\text ds},\quad C>0
+  $$
+  $y=0$ 显然也是一个解，则最终
+  $$
+  y=Ce^{-\int_{x_0}^xp(s)\text ds}
+  $$
+
+- $q(x)\neq0$
+  $$
+  e^{\int_{x_0}^xp(s)\text ds}\frac{\text dy}{\text dx}+e^{\int_{x_0}^xp(s)\text ds}p(x)y=e^{\int_{x_0}^xp(s)\text ds}q(x)\\
+  \Rightarrow
+  \frac{\text d}{\text dx}\left(e^{\int_{x_0}^xp(s)\text ds}y\right)=e^{\int_{x_0}^xp(s)\text ds}q(x)\\
+  \Rightarrow 
+  e^{\int_{x_0}^xp(s)\text ds}y-y_0=\int_{x_0}^xe^{\int_{x_0}^tp(s)\text ds} q(t)\text{d}t
+  $$
+  从而
+  $$
+  y(x)=e^{-\int_{x_0}^xp(s)\text ds}\left[y_0+\int_{x_0}^xe^{\int_{x_0}^tp(s)\text ds} q(t)\text{d}t\right]
+  $$
+  通解
+  $$
+  y(x)=e^{-\int p(x)\text dx}\left[C+\int e^{\int p(x)\text dx} q(x)\text{d}x\right]
+  $$
+
+**线性方程解的性质**
+
+1. $q(x)\equiv0$ 时（齐次线性方程），解恒为零或恒不为零
+2. 所有解都为整体的（大范围的），即 $p(x)$ 和 $q(x)$ 的定义域上该解恒有意义
+3. 齐次方程任两个解的和还是解，任意解乘以常数后还是解
+4. 方程的任意一个解与对应的齐次方程的通解的和构成方程的通解
+5. 方程的初值问题的解存在且唯一
+
+**例**：
+$$
+\frac{\text dy}{\text dx}+\frac{y}{x}=x^2
+$$
+
+$$
+\Rightarrow xy'+y=x^3\Rightarrow (xy)'=x^3\Rightarrow y=\frac{x^3}{4}+\frac{C}{x}
+$$
+
+**例**：设 $f\in C^1[0,+\infty),a(x)\in C[0,\infty),a(x)\ge c_0>0$，已知
+$$
+\lim_{x\to+\infty}\left[f'(x)+a(x)f(x)\right]=0
+$$
+求证 $\lim_{x\to+\infty}f(x)=0$
+
+设 $g(x)=f'(x)+a(x)f(x)\in C[0,+\infty)$，则
+$$
+f(x)=\frac{f(0)+\int_0^x\exp\left(\int_0^sa(t)\text dt\right)g(s)\text ds}{\exp\left(\int_0^xa(s)\text ds\right)}
+$$
+则
+$$
+\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}\frac{\int_0^x\exp\left(\int_0^sa(t)\text dt\right)g(s)\text ds}{\exp\left(\int_0^xa(s)\text ds\right)}=\lim_{x\to+\infty}\frac{\exp\left(\int_0^xa(t)\text dt\right)g(x)}{\exp\left(\int_0^xa(s)\text ds\right)a(x)}=\lim_{x\to+\infty}\frac{g(x)}{a(x)}=0
+$$
+**例**：若 $p(x)$ 和 $q(x)$ 均为 $2\pi$ 周期的，且
+$$
+\frac{\text dy}{\text dx}+p(x)y=q(x)
+$$
+有唯一的有界解，求证这个有界解为 $2\pi$ 周期的
+
+设 $y(x)$ 是这个有界解，则 $y(x+2\pi)$ 仍然为有界解，由有界解的唯一性，$y(x)=y(x+2\pi)$
+
+## 可以转化为变量可分离方程的形式
+
+### 齐次方程
+
+$$
+\frac{\text dy}{\text dx}=f\left(\frac{y}{x}\right)
+$$
+
+令 $y=u(x)$，则
+$$
+\frac{\text dy}{\text dx}=x\frac{\text{d} u}{\text dx}+u\Rightarrow f(u)-u=x\frac{\text{d} u}{\text dx}\Rightarrow\int\frac{\text du}{f(u)-u}=\ln|x|+C
+$$
+
+**例**：
+$$
+\frac{\text dy}{\text dx}=\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}
+$$
+
+1. $c_1=c_2=0$，则有
+   $$
+   \frac{\text dy}{\text dx}=\frac{a_1+b_1y/x}{a_2+b_2y/x}
+   $$
+
+2. $a_1b_2-a_2b_1=0$，则有
+   $$
+   \frac{\text dy}{\text dx}=f(ax+by)\equiv f(u)\Rightarrow \frac{\text du}{\text dx}=af(u)
+   $$
+
+3. $a_1b_2-a_2b_1\neq0$，设 $\alpha,\beta$ 是
+   $$
+   \left\{
+   \begin{array}{cc}
+   a_1x+b_1y+c_1=0\\
+   a_2x+b_2y+c_2=0
+   \end{array}
+   \right.
+   $$
+   的解，则有
+   $$
+   \frac{\text dy}{\text dx}=\frac{a_1(x-\alpha)+b_1(y-\beta)}{a_2(x-\alpha)+b_2(y-\beta)}
+   $$
+   令 $X=x-\alpha,Y=y-\beta$，有
+   $$
+   \frac{\text dY}{\text dX}=\frac{a_1X+b_1Y}{a_2X+b_2Y}=\frac{a_1+b_1Y/X}{a_2+b_2Y/X}
+   $$
+   化为了齐次方程
+
+事实上，用类似的方法，形如
+$$
+\frac{\text dy}{\text dx}=f\left(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right)
+$$
+的方程我们也可以解
+
+### Bernoulli 方程
+
+$$
+\frac{\text dy}{\text dx}=P(x)y+Q(x)y^n,\quad n\neq0,1
+$$
+
+若 $n>0$，则 $y\equiv0$ 是解，下设 $y\neq0$
+$$
+y^{-n}\frac{\text dy}{\text dx}=\frac{1}{1-n}\frac{\text d}{\text dx}y^{1-n}=P(x)y^{1-n}+Q(x)
+$$
+令 $z=y^{1-n}$，则
+$$
+\frac{\text dz}{\text dx}=(1-n)zP(x)+(1-n)Q(x)
+$$
+是一阶线性微分方程
+
+### Riccati 方程
+
+$$
+\frac{\text dy}{\text dx}=P(x)y^2+Q(x)y+r(x)
+$$
+
+若 $r\equiv0$，转为 Bernoulli 方程，否则一般难以直接解出
+
+**定理**：若已知一个解 $y=\varphi(x)$，则可以求通解
+
+**证明**：令 $y=u(x)+\varphi(x)$，有
+$$
+u'+\varphi'=P(x)(u^2+2u\varphi+\varphi^2)+Q(x)(u+\varphi)+r(x)\Rightarrow u'=\left[2\varphi P(x)+Q(x)\right]u+P(x)u^2
+$$
+化为 Bernoulli 方程
+
+**定理**：$P(x)\equiv a,Q(x)\equiv0,r(x)=bx^m$ 时能化为可积分求解的方程，其中 $a,b,m$ 是常数，$m=0,-2,-4k/(2k\pm1)$，$k=1,2,\cdots$ 
+
+**证明**：不妨设 $a=1$，将方程记为 $T_m$，$T_0$ 显然是分离变量的，对于 $T_{-2}$，作变换 $z=xy$
+$$
+\frac{\text dz}{\text dx}=y+xy'=\frac{z}{x}+x\left(\frac{b}{x^2}-\frac{z^2}{x^2}\right)=\frac{b+z-z^2}{x}
+$$
+同样是变量分离的
+
+一般情形下，记 $X_k^\pm$ 对应 $m=-4k/(2k\pm1)$ 的方程，对 $X_k^+$ 作变换
+$$
+x=\xi^{1/(m+1)},\quad y=-\frac{b}{m+1}\eta^{-1}\Rightarrow\frac{\text d\eta}{\text d\xi}=\eta^2+\frac{b}{(m+1)^2}\xi^n,\quad n=-\frac{4k}{2k-1}
+$$
+再作变换
+$$
+\xi=\frac1t,\eta=t-zt^2\Rightarrow \frac{\text dz}{\text dt}+z^2=\frac{b}{(m+1)^2}t^l,\quad l=\frac{-4(k-1)}{2(k-1)+l}
+$$
+即将方程化为了一个 $X^+_{k-1}$ 的方程；如此重复 $k$ 次即可化为 $m=0$ 的方程并求解
+
+对于 $X^-_{k}$，情况完全类似
