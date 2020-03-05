@@ -409,7 +409,7 @@ $$
 $$
 **定理**：方程有形如 $\mu=f[\phi(x,y)]$ 的积分因子，当且仅当
 $$
-\frac{Q_x-P_y}{Q\phi_x-P\phi_y}=g[\phi(x,y)]
+\frac{P_y-Q_x}{Q\phi_x-P\phi_y}=g[\phi(x,y)]
 $$
 **证明**：
 $$
@@ -417,7 +417,7 @@ $$
 $$
 
 $$
-\Leftrightarrow -\frac{f'(\phi)}{f(\phi)}=\frac{Q_x-P_y}{Q\phi_x-P\phi_y}
+\Leftrightarrow \frac{f'(\phi)}{f(\phi)}=\frac{P_y-Q_x}{Q\phi_x-P\phi_y}
 $$
 
 **例**：
@@ -435,7 +435,7 @@ $$
 
 与 $y$ 无关，则 $\mu=e^{3x}$ 是个积分因子
 $$
-e^{3x}\left(x^y+\frac{y^3}{3}\right)=C
+e^{3x}\left(x^2+\frac{y^3}{3}\right)=C
 $$
 **定理**：若 $\mu(x,y)$ 是一个积分因子，使得
 $$
