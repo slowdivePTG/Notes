@@ -340,3 +340,215 @@ $$
 即将方程化为了一个 $X^+_{k-1}$ 的方程；如此重复 $k$ 次即可化为 $m=0$ 的方程并求解
 
 对于 $X^-_{k}$，情况完全类似
+
+## 积分因子法
+
+**定义**：
+$$
+P(x,y)\text dx+Q(x,y)\text dx=0
+$$
+若非零函数 $\mu(x,y)$ 满足 $\mu P\text dx+\mu Q\text dy=0$ 是恰当的，则称 $\mu$ 为原方程的一个积分因子
+
+**定理**：若 $P,Q$ 为 $C^1$ 的，则 $C^1$ 函数 $\mu$ 为积分因子，当且仅当
+$$
+\frac{\partial (\mu P)}{\partial y}=\frac{\partial (\mu Q)}{\partial x}\Leftrightarrow P\frac{\partial \mu}{\partial y}-Q\frac{\partial \mu}{\partial x}=\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mu
+$$
+即解一个一般的一阶常微分方程的难度相当于解一个一阶线性偏微分方程，一般而言解不出来
+
+**一些特殊情形**
+
+**例**：可分离变量的方程
+$$
+P_1(x)P_2(y)\text dx+Q_1(x)Q_2(y)\text dy=0
+$$
+取 $\mu=Q_1^{-1}(x)P_2^{-1}(y)$
+
+**例**：一阶线性常微分方程
+$$
+\frac{\text dy}{\text dx}+p(x)y=q(x)\Leftrightarrow \left[p(x)y-q(x)\right]\text dx+\text dy=0
+$$
+取
+$$
+\mu=\exp\left[\int p(x)\text dx\right]
+$$
+**定理**：方程 $P(x,y)\text dx+Q(x,y)\text dy=0$ 有一个只依赖于 $x$ 的 $C^1$ 积分因子，当且仅当
+$$
+G=\frac1Q\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)
+$$
+只依赖于 $x$；有一个只依赖于 $y$ 的 $C^1$ 积分因子，当且仅当
+$$
+H=\frac1P\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)
+$$
+只依赖于 $y$，并且
+$$
+\mu(x)=\exp{\left[\int G(x)\text dx\right]},\quad\text{or }\mu(y)=\exp{\left[\int H(y)\text dy\right]}
+$$
+**证明**：$\mu$ 为只依赖于 $x$ 的积分因子等价于
+$$
+\mu\frac{\partial P}{\partial y}=\mu'Q+\mu\frac{\partial Q}{\partial x}
+$$
+
+$$
+\Leftrightarrow \frac{\mu'}{\mu}=\frac1Q\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)\equiv G=G(x)
+$$
+
+$$
+\Leftrightarrow\mu(x)=\exp{\left[\int G(x)\text dx\right]}
+$$
+
+另一情况的证明完全类似
+
+**例**：回到上例中一阶线性常微分方程的情形
+$$
+P=p(x)y-q(x),\quad Q=1\\
+G=\frac1Q\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)=\frac{\partial}{\partial y}[p(x)y-q(x)]=p(x)
+$$
+积分因子为
+$$
+\mu=\exp\left[\int p(x)\text dx\right]
+$$
+**定理**：方程有形如 $\mu=f[\phi(x,y)]$ 的积分因子，当且仅当
+$$
+\frac{Q_x-P_y}{Q\phi_x-P\phi_y}=g[\phi(x,y)]
+$$
+**证明**：
+$$
+\frac{\partial (\mu P)}{\partial y}=\frac{\partial (\mu Q)}{\partial x}\Leftrightarrow f'(\phi)\phi_y P+\mu P_y=f'(\phi)\phi_x Q+\mu Q_x
+$$
+
+$$
+\Leftrightarrow -\frac{f'(\phi)}{f(\phi)}=\frac{Q_x-P_y}{Q\phi_x-P\phi_y}
+$$
+
+**例**：
+$$
+(3x^2y+2xy+y^3)\text dx+(x^2+y^2)\text dy=0
+$$
+
+$$
+P(x,y)=3x^2y+2xy+y^3,\quad Q(x,y)=x^2+y^2
+$$
+
+$$
+\frac{P_y-Q_x}{Q}=-\frac{2x-3x^2-2x-3y^2}{x^2+y^2}=3
+$$
+
+与 $y$ 无关，则 $\mu=e^{3x}$ 是个积分因子
+$$
+e^{3x}\left(x^y+\frac{y^3}{3}\right)=C
+$$
+**定理**：若 $\mu(x,y)$ 是一个积分因子，使得
+$$
+\mu P\text dx+\mu Q\text dy=\text d\Phi(x,y)
+$$
+则 $\mu(x,y)f[\Phi(x,y)]$ 也是积分因子，其中 $f$ 是任意连续函数
+
+**证明**：
+$$
+\frac{\partial\left[\mu f(\Phi )P\right]}{\partial y}-\frac{\partial\left[\mu f(\Phi )Q\right]}{\partial x}=\mu f'(\Phi)(\Phi_yP-\Phi_xQ)=\mu f'(\Phi)(\mu PQ-\mu PQ)=0
+$$
+**分组求积分因子法**
+
+假设方程左端可以分成两组，即
+$$
+\left(P_{1} \mathrm{d} x+Q_{1} \mathrm{d} y\right)+\left(P_{2} \mathrm{d} x+Q_{2} \mathrm{d} y\right)=0
+$$
+其中第一组和第二组各有积分因子 $\mu_1,\mu_2$
+$$
+\mu_{1}\left(P_{1} \mathrm{d} x+Q_{1} \mathrm{d} y\right)=\mathrm{d} \Phi_{1}, \quad \mu_{2}\left(P_{2} \mathrm{d} x+Q_{2} \mathrm{d} y\right)=\mathrm{d} \Phi_{2}
+$$
+从而如果能适当选取 $f_1$ 和 $f_2$，使得 $\mu=\mu_1f_1(\Phi_1)=\mu_1f_1(\Phi_1)$，则 $\mu$ 就是方程的一个积分因子
+
+**例**：
+$$
+(x^3y-2y^2)\text dx+x^4\text dy
+$$
+
+$$
+\Leftrightarrow (x^3y\text dx+x^4\text dy)-2y^2\text dx=0
+$$
+
+第一部分积分因子 $\mu_1=x^{-3}$，且
+$$
+y\text dx+x\text dy=\text d\left(xy\right)\Rightarrow \Phi_1=xy=C
+$$
+第二部分积分因子$\mu_2=y^{-2}$，且 $\Phi_2=x=C$
+
+从而需要寻找可微函数 $g_1$ 和 $g_2$，使得
+$$
+\frac{1}{x^3}g_1(xy)=\frac{1}{y^2}g_2(x)
+$$
+只需取 $g_1(xy)=(xy)^{-2},g_2(x)=x^{-5}$，得到原方程的积分因子
+$$
+\mu=\frac{1}{x^5y^2}
+$$
+进而得到全微分
+$$
+\text d\left(\frac1{xy}-\frac{1}{2x^4}\right) =0\Rightarrow y=\frac{2x^3}{2Cx^4+1}
+$$
+
+
+**定理**：设 $\mu_1,\mu_2$ 都为积分因子，若 $\mu_1/\mu_2$ 不为常数，则 $\mu_1/\mu_2$ 是方程的通解
+
+**证明**：设 $\mu_1P\text dx+\mu_2Q\text dy=\text d\phi_1,\ \mu_2P\text dx+\mu_2Q\text dy=\text d\phi_2$
+
+设 $\omega=P\text dx+Q\text dy$
+$$
+\mu_1\omega=\text d\phi_1,\quad \mu_2\omega=\text d\phi_2
+$$
+
+$$
+\text d\mu_1\wedge\omega+\mu_1\text d\omega=0,\quad \text d\mu_2\wedge\omega+\mu_2\text d\omega=0
+$$
+
+$$
+\Rightarrow (\mu_2\text d\mu_1-\mu_1\text d\mu_2)\wedge\omega=0\Rightarrow \mu_2\text d\mu_1-\mu_1\text d\mu_2=f\omega=0
+$$
+
+$$
+\Rightarrow \text{d}\left(\frac{\mu_1}{\mu_2}\right)=0
+$$
+
+**例**：当 $P,Q$ 为 $n$ 次齐次函数的时候，求积分因子
+
+令 $y=ux$，
+$$
+P\text dx+Q\text dy=x^nP(1,u)\text dx+x^nQ(1,u)(u\text dx+x\text du)
+$$
+有积分因子
+$$
+\mu=\frac{1}{x^{n+1}[P(1,u)+u Q(1,u)]}
+$$
+
+$$
+\Rightarrow \frac{\text dx}{x}+\frac{Q(1,u)}{P(1,u)+uQ(1,u)}=0
+$$
+
+从而原方程有积分因子
+$$
+\frac{1}{xP+yQ}
+$$
+也可直接证明它为积分因子，由齐次性
+$$
+xP_x+yP_y=nP,\quad xQ_x+yQ_y=nQ
+$$
+从而
+$$
+\frac{\partial (\mu P)}{\partial y}=\frac{\partial (\mu Q)}{\partial x}\Leftrightarrow \mu_yP+\mu P_y=\mu_xQ+\mu Q_x
+$$
+
+$$
+LHS=-\frac{xPP_y+PQ+yPQ_y}{(xP+yQ)^2}+\frac{P_y}{xP+yQ}=\frac{y(QP_y-PQ_y)-PQ}{(xP+yQ)^2}
+$$
+
+同理
+$$
+RHS=\frac{x(PQ_x-QP_x)-PQ}{(xP+yQ)^2}
+$$
+
+$$
+LHS-RHS=\frac{Q(yP_y+xP_x)-P(yQ_y+xQ_x)}{(xP+yQ)^2}=0
+$$
+
+
+
