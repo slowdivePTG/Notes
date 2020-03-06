@@ -218,4 +218,29 @@ When a star moves in a cluster, the direction of the velocity will change under 
 
   $T_{relax}\gg T_{Hubble}\Rightarrow$ Collisionless - the cluster remains what it looked like before
 
+
+
+
+#### Examples
+
+- Star clusters
+
+  ​	$N = 10^5,\ R\approx 1\,\text{pc},\ v\approx 10\,\text{km/s}$. 
+
+​	It's good to know that $1\,\text{km/s}\approx 1\,\text{pc/Myr}$, thus
+$$
+T_{\text{crossing}} \sim \frac{R_*}{v} \sim \frac{1\ \text{pc}}{10\ \text{km/s}}\sim \frac{1\ \text{pc}}{10 \text{pc/Myr}} = 10^5\ \text{yr},\\
+T_{\text{relax}} \sim \frac{10^5}{5\ln 10}\times 10^5\ \text{yr} \sim 10^9\ \text{yr} = 1\ \text{Gyr}.
+$$
+​	Hence, within the Hubble time, a star cluster can be fully relaxed. A typical star cluster is collisional. 
+
+- Galaxy
+
+  ​	$N = 10^11,\ R\approx 10\,\text{kpc},\ v\approx 100\,\text{km/s}$. 
+
+  $$
+  T_{\text{crossing}} \sim \frac{R_*}{v} \sim \frac{10\ \text{kpc}}{100\ \text{km/s}}\sim \frac{10^4\ \text{pc}}{10^2 \text{pc/Myr}} = 10^2\ \text{Myr},\\
+  T_{\text{relax}} \sim \frac{10^{11}}{11\ln 10}\times 10^2\ \text{Myr} \sim 10^{17}\ \text{yr} = 10^8\ \text{Gyr}.
+  $$
   
+  The relaxation timescale of a typical galaxy is way higher than the Hubble time.
