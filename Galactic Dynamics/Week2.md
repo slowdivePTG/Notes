@@ -216,7 +216,17 @@ When a star moves in a cluster, the direction of the velocity will change under 
   $$
   $T_{relax}\ll T_{Hubble}\Rightarrow$ Collisional - the cluster has changed a lot since it was formed
 
+  - Star cluster
+  $$
+    N_*\sim10^5,\ T_{cross}\sim\frac{R_*}{v}\sim\frac{1\text{ pc}}{10 \text{ km/s}}\sim10^5\text{ yr}
+    $$
+  
+    $$
+    T_{relax}\sim10^{8-9}\text{ yr}\ll 10^{10}\text{ yr}\sim Age
+    $$
+  
   $T_{relax}\gg T_{Hubble}\Rightarrow$ Collisionless - the cluster remains what it looked like before
+<<<<<<< HEAD
 
 
 
@@ -244,3 +254,16 @@ $$
   $$
   
   The relaxation timescale of a typical galaxy is way higher than the Hubble time.
+=======
+  
+  - Galaxy
+    $$
+    N_*\sim10^{11},\ T_{cross}\sim\frac{R_*}{v}\sim\frac{10\text{ kpc}}{100 \text{ km/s}}\sim10^8\text{ yr}
+    $$
+  
+    $$
+    T_{relax}\sim10^{17-18}\text{ yr}\gg T_{Hubble}
+    $$
+  
+    
+>>>>>>> 1800a8d81a43bcd1eb43cf9322f959ecf1bf7497
