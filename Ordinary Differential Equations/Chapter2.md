@@ -550,5 +550,163 @@ $$
 LHS-RHS=\frac{Q(yP_y+xP_x)-P(yQ_y+xQ_x)}{(xP+yQ)^2}=0
 $$
 
+## 一些例子
 
+### 等角轨线
 
+**定义**：给定一族曲线 $\phi(x,y,c)=0$ ，找一族曲线 $\psi(x,y,k)=0$，使得两组曲线之间夹角为等值；若夹角为**直角**，则称第二族曲线是第一族曲线的**正交轨线族**
+$$
+\phi(x,y,c)=0\Rightarrow \phi_x\text dx+\phi_y\text dy=0
+$$
+代入 $c=c(x,y)$
+$$
+\frac{\text dy}{\text dx}=H(x,y)\equiv-\frac{\phi_x[x, y, c(x,y)]}{\phi_y[x, y, c(x,y)]}
+$$
+设与上述曲线族夹角为 $\alpha$ 的曲线斜率为 $y'$，则若 $\alpha\neq\pi/2$
+$$
+\tan \alpha=\frac{y'-H(x,y)}{1+y'H(x,y)}\Rightarrow y'=\frac{H(x,y)+\tan\alpha}{1-H(x,y)\tan\alpha}
+$$
+若 $\alpha=\pi/2$
+$$
+y'=-\frac{1}{H(x,y)}
+$$
+**例**：求与抛物线族 $y=cx^2$ 正交的曲线族
+$$
+c=\frac{y}{x^2}\Rightarrow\frac{\text dy}{\text dx}=2cx=\frac{2y}{x}
+$$
+其正交曲线族满足的方程为
+$$
+\frac{\text dy}{\text dx}=-\frac{x}{2y}\Leftrightarrow 2y\text dy+x\text dx=0\Leftrightarrow y^2+\frac{x^2}{2}=K
+$$
+**例**：求与曲线 $y=x\ln(cx)$ 夹角为 $-\pi/4$ 的曲线族
+$$
+\frac{\text dy}{\text dx}=\ln(cx)+1=\frac{y}{x}+1
+$$
+其正交曲线族满足的方程为
+$$
+-1=\frac{y'-{y}/{x}-1}{1+y'\left({y}/{x}+1\right)}\Rightarrow y'=\frac{y}{2x+y}
+$$
+令 $y=ux$，则当 $y\neq-x$ 时
+$$
+y'=u+u'x=\frac{u}{2+u}\Rightarrow\frac{\text dx}{x}=-\frac{2+u}{u+u^2}\text du=-\frac{2}{u}\text du+\frac{1}{u+1}\text du
+$$
+
+$$
+\Rightarrow \ln |x|=-2\ln|u|+\ln|u+1|\Rightarrow |x|=\frac{k|u+1|}{u^2}
+$$
+
+$$
+\Rightarrow y^2=\pm k(x+y),\quad k\ge0
+$$
+
+同时 $y=-x$ 也是一个解
+
+### 抛物线的光学性质
+
+见习题 2-3 的第 6 题
+
+### 传染病模型
+
+记 $N(t)$ 为 $t$ 时刻病人数（足够大），有
+$$
+N(t+\Delta t)=N(t)+rN(t)\Delta t
+$$
+令 $\Delta t\to 0$，有
+$$
+\frac{N'(t)}{N(t)}=r\Rightarrow N(t)=N_0e^{r(t-t_0)},\quad N_0=N(t_0)
+$$
+$r$ 被称为传染率，若数据显示一周之内病人变为原来十倍，则可以估计 $r$
+$$
+10=e^{7r}\Rightarrow r\sim0.32
+$$
+然而由于疾病只能传播给健康人，随着健康人数的减少，传染率应该会下降，假设它是线性的
+$$
+r=r_0-r_1N\Rightarrow \frac{\text dN}{\text dt}=(r_0-r_1N)N\Rightarrow N(t)=\frac{N_0r_0e^{r_0(t-t_0)}}{r_0+N_0r_1[e^{r_0(t-t_0)-1}]}
+$$
+$$
+\lim_{t\to+\infty}N(t)=\frac{r_0}{r_1}
+$$
+
+### 生态方程
+
+食肉动物吃食草动物，食草动物吃草，可以用一组方程表现两种动物的种群大小是如何相互制约的
+
+设 $x$ 是捕食者数量，$y$ 是被捕食者数量
+
+最简单的假设：捕食者增长率与被捕食者数目线性正相关，被捕食者增长率与捕食者数目线性负相关
+$$
+\frac{\dot x}{x} = -a+by\\
+\frac{\dot y}{y} = +c-dx
+$$
+消去时间参量有
+$$
+\frac{\text dy}{\text dx}=\frac{(c-dx)y}{(-a+by)x}\Rightarrow F(x,y)=by+dx-c\ln x-a\ln y=K
+$$
+
+首先 $F$ 是一个凸函数，因为
+$$
+\frac{\partial^2F}{\partial x^2},\ \frac{\partial^2F}{\partial y^2}>0,\ \frac{\partial^2F}{\partial x\partial y}=0
+$$
+从而 $\forall K\in(F(x_0,y_0),+\infty)$，$F(x,y)=K$ 是一个闭凸曲线，绕着 $(x_0,y_0)$ 旋转
+
+很难求出 $x(t)$ 和 $y(t)$ 的具体表达式，但是可以求平均值，假设周期为 $T$
+$$
+\frac{\text dx}{x}=(-a+by)\text dt
+$$
+两边积分
+$$
+\ln x(t)\Big|_0^T=0=-aT+b\int_0^Ty(t)\text dt\Rightarrow \bar y=\frac{1}{T}\int_0^Ty(t)\text dt=\frac{a}{b}
+$$
+同理
+$$
+\bar x=\frac{c}{d}
+$$
+
+若对两种动物都进行捕杀，方程组变为
+$$
+\frac{\dot x}{x} = -(a+\epsilon)+by\\
+\frac{\dot y}{y} = +(c-\epsilon)-dx
+$$
+平均值变为
+$$
+\bar x=\frac{a-\epsilon}{b},\quad \bar y=\frac{c+\epsilon}{d}
+$$
+即捕食者数目减少，被捕食者数目增加
+
+### 最速降线
+
+从 $(0,0)$ 至 $(x,y)$
+
+*历史上，这是约翰·伯努利的证明*
+
+任意一点处满足“光的折射定律”——入射角与出射角的正弦值之比为常数，该常数为两种介质中的光速之比，当物体纵坐标为 $y$ 时，有
+
+$$
+v=\sqrt{-2gy}\Rightarrow \frac{\sin{\theta}}{\sqrt{-y}}=C
+$$
+
+这里 $\sin\theta$ 满足
+
+$$
+\sin\theta=\frac{1}{\sqrt{1+y'^2}}
+$$
+
+$$
+y(1+y'^2)=C_1\Rightarrow \text dx=\sqrt{\frac{y}{C_1-y}}\text dy
+$$
+令 $\tan \theta=\sqrt{\frac{y}{C_1-y}}$，则
+$$
+y=C_1\sin^2\theta
+$$
+
+$$
+x=\int C_1\tan\theta\cdot2\sin\theta\cos\theta\text d\theta=C_1\int2\sin^2\theta\text d\theta=C_1\left(\theta-\frac12\sin2\theta\right)
+$$
+
+令 $C=C_1/2,\ \phi=2\theta$，则
+
+$$
+x=C(1-\cos\phi),\quad y=C(\phi-\sin\phi)
+$$
+
+这是摆线的方程
