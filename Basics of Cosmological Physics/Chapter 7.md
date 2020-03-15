@@ -26,7 +26,7 @@
 ### Average density of baryons
 
 $$
-n_{\mathrm{b}, 0}=\frac{\Omega_{\mathrm{b}, 0} \cdot \rho_{\mathrm{crit}}}{\left\langle m_{\mathrm{b}}\right\rangle}=\frac{0.0488 \cdot 8.5 \times 10^{-30} \mathrm{g} \mathrm{cm}^{-3}}{1.67 \times 10^{-24} \mathrm{g}}=2.5 \times 10^{-7} \mathrm{cm}^{-3}
+n_{\mathrm{b}, 0}=\frac{\Omega_{\mathrm{b}, 0} \cdot \rho_{\mathrm{crit}}}{\left\langle m_{\mathrm{b}}\right\rangle}=\frac{0.0488 \cdot 8.5 \times 10^{-30} \mathrm{g}\cdot \mathrm{cm}^{-3}}{1.67 \times 10^{-24} \mathrm{g}}=2.5 \times 10^{-7} \mathrm{cm}^{-3}
 $$
 
 - $\Omega_{\text b,0}=0.0488$, which is a small fraction compared to the dark matter
@@ -198,7 +198,7 @@ $$
     \ce{e+ + e- <-> {\gamma} + \gamma}
     $$
 
-  - Neutron-antineutrino scattering
+  - Neutrino-antineutrino scattering
     $$
     \ce{\nu \+ \bar{\nu} <-> e+ + e-}
     $$
