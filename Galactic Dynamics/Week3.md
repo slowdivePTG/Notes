@@ -4,9 +4,11 @@ Confronted with more complex dynamics of stars and galaxies, potential theory co
 
 ## General Potential Theory
 
-The force that matter at position $\vec{x'}$ exerts on a test particle $m$ is
+### Potential-density pair $\rho\Leftrightarrow \Phi$
+
+The force that matter at position $\vec{x}'$ exerts on a test particle $m$ is
 $$
-\vec{\delta F}(\vec{x}') = \frac{Gm\, \rho(\vec{x}') \text{d}^3 \vec{x}'
+\delta\vec{ F}(\vec{x}') = \frac{Gm\, \rho(\vec{x}') \text{d}^3 \vec{x}'
 }{|\vec{x}' - \vec{x}|^3}(\vec{x}' - \vec{x}),
 $$
 Since we would like to study the gravitational field itself, a quantity without test particle involved is preferred. Thus, one can define the gravitational field (force per unit) to be:
@@ -49,10 +51,12 @@ $$
 \begin{align*}
 \nabla_{\vec{x}}\cdot \vec{g}(\vec{x}) &= G \int_{|\vec{x}'-\vec{x}|<h} \rho(\vec{x}')\, \nabla_{\vec{x}}\cdot \frac{\vec{x}' - \vec{x}}{|\vec{x}' - \vec{x}|^3}  \text{d}^3\vec{x}'\\
 &= -G \int_{|\vec{x}'-\vec{x}|<h} \rho(\vec{x}')\, \nabla_{\vec{x'}}\cdot \frac{\vec{x}' - \vec{x}}{|\vec{x}' - \vec{x}|^3}  \text{d}^3\vec{x}'\\
-&= -G \int_{|\vec{x}'-\vec{x}|<h}  \rho(\vec{x}') \frac{\vec{x}' - \vec{x}}{|\vec{x}' - \vec{x}|^3}  \text{d}^2\vec{S}'\ \quad (\lim h \to 0)\\
+&= -G\rho(\vec{x}) \int_{|\vec{x}'-\vec{x}|<h}   \frac{\vec{x}' - \vec{x}}{|\vec{x}' - \vec{x}|^3}  \text{d}^2\vec{S}'\ \quad (\lim h \to 0)\\
 &= -4\pi G\rho(\vec{x}) 
 \end{align*}
 $$
+The last integration corresponds to the total solid angle of a sphere (with radius $h$).
+
 Since $\vec{g}(\vec{x}) = -\nabla_{\vec{x}} \Phi(\vec{x})$, thus
 $$
 \text{Poisson Equation:}\\
@@ -70,6 +74,8 @@ $$
 Given a distribution of matter $\rho(\vec{x})$ and a reasonable boundary condition, the gravitational potential $\Phi$ can be solved; and vice versa, given a potential and plug it in the equation above, you can get the matter density distribution. This is called the **potential-density pair**.
 
 
+
+### Potential energy
 
 Potential is a proxy for the gravitational field. We would like to obtain the gravitational potential energy of the system (the work that is done to separate/construct the system). Assume we add an infinitesimal test particle $\delta m$ into a field $\Phi(\vec{x})$, the change of potential energy is 
 $$
@@ -124,7 +130,7 @@ For a spherical system, we have Newton's laws:
 Thus, when calculating the potential at point $\vec{x} < R$, we have:
 $$
 \begin{align*}
-\Phi(r) = &-\int_0^r \frac{G 4\pi r'^2\rho(r')\text{d}r'}{r} [\text{as if every shell is at the center}] \\&- \int_r^R \frac{G 4\pi r'^2\rho(r')\text{d}r'}{r'} [\text{the potential inside a shell is constantly }\frac{G\text{d}m}{r'}].
+\Phi(r) = &-\int_0^r \frac{G 4\pi r'^2\rho(r')\text{d}r'}{r} [\text{as if every shell is at the center}] \\&- \int_r^R \frac{G 4\pi r'^2\rho(r')\text{d}r'}{r'} [\text{the potential inside a shell is constantly }-\frac{G\text{d}m}{r'}].
 \end{align*}
 $$
 And the gravitational field is 
@@ -153,7 +159,7 @@ $$
 v_c = \sqrt{\frac{4}{3}\pi G\rho}\ r,\\
 T_c = \frac{2\pi r}{v_c} = \sqrt{\frac{3\pi}{G\rho}}.
 $$
-Another fun example is: if we dug a hole along the diameter of a homogeneous sphere, put a ball inside that hole from one end, what' the period of that ball?
+Another fun example is: if we dug a hole along the diameter of a homogeneous sphere, put a ball inside that hole from one end, what's the period of that ball?
 $$
 \ddot r = -\frac{GM(<r)}{r^2} = -\frac{4}{3}\pi G\rho \ r
 $$
@@ -171,7 +177,7 @@ The potential goes as:
 $$
 \begin{align*}
 \Phi(r>R) &= -\frac{GM(r=R)}{r},\\
-\Phi(r<R) &= -4\pi G \int_0^r \frac{r'^2\rho\ \text{d}r'}{r} - \int_r^R \frac{ r'^2\rho\ \text{d}r'}{r'}\\
+\Phi(r<R) &= -4\pi G \int_0^r \frac{r'^2\rho\ \text{d}r'}{r} - 4\pi G\int_r^R \frac{ r'^2\rho\ \text{d}r'}{r'}\\
 &= - 4\pi G \rho \frac{r^2}{3} - 4\pi G\rho \left(\frac{R^2}{2} - \frac{r^2}{2}\right)\\
 &= -2\pi G\rho \left(R^2 - \frac{r^2}{3}\right).
 \end{align*}
