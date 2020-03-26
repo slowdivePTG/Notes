@@ -166,7 +166,7 @@ $$
 
 存在 $(0,+\infty)$ 上连续函数 $F(r)>0$ 满足
 $$
-\left|f(x_1,y_2)-f(x_2,y_2)\right|\le F(|y_1-y_2|),\forall y_1\neq y_2
+\left|f(x,y_2)-f(x,y_2)\right|\le F(|y_1-y_2|),\forall y_1\neq y_2
 $$
 且
 $$
@@ -198,6 +198,8 @@ $$
 \int_0^{r_1}\frac{\text dr}{F(r)}\le x_1-\bar x
 $$
 与该积分发散矛盾
+
+
 
 ## Peano 存在定理
 
@@ -364,3 +366,154 @@ $$
 $$
 
 
+
+## 解的延伸
+
+**定理**
+
+$$
+\frac{\text dy}{\text dx}=f(x,y),\quad y(x_0)=y_0
+$$
+其中 $f$ 在区域 $G$ 上连续，$(x_0,y_0)\in G$，则方程任意一条过 $(x_0,y_0)$ 的解曲线都可以延伸到 $G$ 的边界，即对 $G$ 的任意有界闭子区域 $G_1$，解曲线可以延伸到 $G/G_1$ 中
+
+**定义**：(解的存在区间)
+
+称区间 $I$ 为解的存在区间，若存在解 $y(x),y(x_0)=y_0,x\in I$
+
+- 必定是开子区间，否则，设 $I=[x_0,b]$，则 $(b,y(b))\in G$，而 $G$ 为一个区域，则 $(b,y(b))$ 必定有一个邻域属于 $G$；进而由 Peano 定理，$\exist \delta>0$，使得解可以延伸到 $[b,b+\delta)$
+
+**定义**：(最大解区间)
+
+$J=\bigcup I$ (开区间)
+
+- 若 $J^+=J\bigcap [x_0,\infty)=[x_0,\infty)$，由于 $G_1$ 为有界闭区域，则一定存在 $x_1>x_0$，$\{x|x=x_1\}\bigcap G_1=\empty$，设 $y(x)$ 是 $[x_0,x_1]$ 上的解，则
+  $$
+  (x,y(x))\bigg|_{x\in[x_0,x_1]}\bigcap G/G_1\neq\empty
+  $$
+
+- 若 $J^+=[x_0,a)$，设 $(x,y(x))\bigg|_{x\in J^+}$ 是解曲线，且位于 $G_1$ 中，令
+  $$
+  M=\max_{G_1}|f(x,y)|\Rightarrow |y'(x)|\le M
+  $$
+  由于 $y$ 为李氏连续，$\lim_{x\to a-} y(x)=b$ 存在
+  $$
+  y(x)=y_0+\int_{x_0}^xf(s,y(s))\text ds\Rightarrow b=y(a-)=y_0+\int_{x_0}^af(s,y(s))\text ds
+  $$
+  从而解可以延伸到 $(a,b)$ 处
+  
+  由 Peano 定理，过 $(a,b)$ 有解，解区间含 $a$ 的邻域，与 $J^+$ 为最大解区间矛盾
+  
+  
+
+**定义**：(局部李氏）
+
+$G$ 是 $R^2$ 上一个区域，$f\in C(G)$，称 $f$ 关于 $y$ 局部李氏，若 $\forall (x_0,y_0)\in G$，均存在 $a,b>0,L>0$，使得
+
+$$
+Q=\left\{(x,y)\bigg | |x-x_0|<a, |y-y_0|<b\right\}<G,\quad |f(x,y_1)-f(x,y_2)|\le L|y_1-y_2|,\quad \forall (x_1, y_2)\in G
+$$
+
+**推论**
+
+设 $f\in C(G)$ 关于 $y$ 局部李氏，则方程 $y'=f$ 过 $\forall (x_0,y_0)\in G$ 都存在唯一的解曲线延伸到 $G$ 的边界 ($C^1$ 函数是局部李氏连续的)
+
+**例**
+
+$$
+\frac{\text dy}{\text dx}=x^2+y^2,\quad (x,y)\in R^2
+$$
+
+由于右端函数是 $C^1(R^2)$ 的，则过平面任意一点 $(x_0,y_0)$ 都有唯一的解曲线，设 $(x,y(x))$ 是解曲线，
+
+$$
+y'(x)=x^2+y^2(x)\ge 0\Rightarrow y(x)\uparrow
+$$
+设 $(a,b)$ 是 $y(x)$ 的最大解区间，则 $(x,y(x))\bigg|_{x\in(a,b)}$ 无界
+
+下面证明 $(a,b)$ 是 $R$ 的一个真子集
+
+$$
+y'(x)=x^2+y^2\ge x_0^2+y^2(x), x\ge x_0\Rightarrow \frac{y'(x)}{x_0^2+y^2(x)}\ge 1
+$$
+
+$$
+\int_{x_0}^x \frac{y'(s)\text ds}{x_0^2+y^2(s)}\ge x-x_0,\quad \forall x\in [x_0,b)
+$$
+
+$$
+\Rightarrow x-x_0\le\frac{1}{x_0}\arctan\frac{y(s)}{x_0}\Bigg|_{x_0}^x=\frac{1}{x_0}\arctan\frac{y(x)}{x_0}-\frac{\pi}{2x_0}\le\frac{\pi}{2x_0}
+$$
+
+从而 $b<+\infty$，同理 $a>-\infty$，这说明解曲线存在垂直渐近线，使得
+$$
+y(a+)=-\infty,\quad y(b-)=+\infty
+$$
+
+**例**
+
+$$
+\frac{\text dy}{\text dx}=(x^2+y^2+1)\sin \pi y
+$$
+
+由于右端是 $C^1(R)$ 的，则过平面上任意一点存在唯一的解，其中 $y=n\in Z$ 显然是解，那么 $\forall (x_0,y_0)$, 若 $y_0\in Z$，则解为 $y=y_0$，最大解区间为 $R$
+
+若 $y_0\notin Z$，设 $n=[y_0]$，$y(x)$ 是解，由唯一性定理，任意两条解曲线不相交，从而
+
+$$
+n<y(x)<n+1,\quad \forall x\in J
+$$
+
+此时方程右端是定号的，则 $y(x)$ 单调，$(x,y(x))\bigg|_{x\in J}$ 与 $R^2$ 边界相交，$J=(-\infty,+\infty)$
+
+**定理**：(关于 $y$ 线性增长的函数 $f$)
+
+考虑区间 $D=\left\{(x,y)\bigg|a<x<b, y\in R\right\}$ 上的连续函数 $f(x,y)$，且
+
+$$
+|f(x,y)|\le A(x)|y|+B(x),\quad A(x), B(x)\le 0, A(x), B(x)\in C(a,b)
+$$
+
+则方程的每一个解的存在区间都为 $(a,b)$  (对于线性微分方程，解的最大存在区间就是定义域)
+
+**证明**
+
+设 $y(x)$ 是过 $(x_0,y_0)$ 的解，其最大解区间是 $(a_0,b_0)$，假设 $b_0<\bar b<b$，设 
+
+$$
+A_0=\max_{[x_0,\bar b]}|A(x)|, B_0=\max_{[x_0,\bar b]}|B(x)|,
+$$
+
+则 $|f(x,y)|\le A_0|y|+B_0,\quad x\in[x_0,\bar b]$
+
+取 $x_1,x_2$ 满足 $x_0<x_1<b_0<x_2<\bar b$，且 $x_2-x_1<1/4A$，令 $y_1=y(x_1)$，作矩形
+
+$$
+R:\quad |x-x_1|\le a_1,\quad |y-y_1|\le b_1
+$$
+
+其中 $a_1= x_2-x_1$，$b_1$ 待定，由 Peano 定理，过 $(x_1,y_1)$ 有解 $y(x)$，在 $|x-x_1|\le h_1$ 上存在，其中
+
+$$
+M_1=A_0(|y_1|+b_1)+B_0+1,\quad h_1=\min\left\{a_1,\frac{b_1}{M_1}\right\}
+$$
+
+取 $b_1$ 充分大，使得 $b_1/M_1>a_1$，则 $h_1=a_1$，解 $y(x)$ 可以延伸到 $x_1+a_1=x_2$ 处，与 $b$ 为最大解区间的右端点矛盾
+$$
+\Rightarrow b_0=b,\quad a_0=a
+$$
+
+**例**
+
+$$
+\frac{\text dy}{\text dx}=(y^2-2y-3)e^{(x+y)^2},\quad y(x_0)=y_0
+$$
+
+解的最大存在区间为 $(a,b)$，则 $a=-\infty$ 或者 $b=+\infty$
+
+**证明**
+
+$y=-1,3$ 为两个常值解，方程右端是 $C^1$ 的，过任意点的解存在唯一
+
+- 当 $-1<y<3$ 时，$y'$ 恒负，$y$ 单调减，从而 $y=-1,3$ 是方程的两条水平渐近线
+- 当 $y>3$ 时，$y$ 单调增，有水平渐近线 $y=3$，$a=-\infty$，可以证明 $y$ 有垂直渐近线，$b<+\infty$
+- 当 $y>3$ 时，$y$ 单调增，有水平渐近线 $y=-1$，$b=+\infty$，可以证明 $y$ 有垂直渐近线，$a>-\infty$
