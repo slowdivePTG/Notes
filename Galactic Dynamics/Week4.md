@@ -6,7 +6,7 @@ In the spherical coordinates, the Lagrangian is
 $$
 \mathcal L=\frac12v^2-\Phi(r)=\frac12\dot r^2+\frac12\left(r\dot\theta\right)^2+\frac12\left(r\sin\theta\dot\phi\right)^2-\Phi(r)
 $$
-The corresponding generalized  momenta are
+The corresponding generalized momenta are
 $$
 p_r=\frac{\partial \mathcal L}{\partial \dot r}=\dot r\\
 p_\theta=\frac{\partial \mathcal L}{\partial \dot \theta}=r^2\dot \theta\\

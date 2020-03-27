@@ -1,4 +1,4 @@
-# Week4: Orbits
+# Week5: Orbits
 
 ## Integral and constants of motion
 
@@ -103,7 +103,7 @@ The latter is satisfied everywhere on the $z=0$ plane, assuming the symmetry of 
 $$
 \left(\frac{\partial \Phi}{\partial R}\right)_{(R_g,0)}=\frac{L_z^2}{R_g^3}=R_g\dot\phi^2
 $$
-which is simply the condition for a circular orbit with angular speed $\dot\phi$. $R_g$ is known as the **guiding-center radius**, since $(R_g,0)$ is the center of a group of closed equipotential curves.
+which is simply the condition for a circular orbit with angular speed $\dot\phi$. $R_g$ is known as the **guiding-center radius**, since $(R_g,0)$ is the center of a group of closed isopotential curves.
 
 
 
@@ -199,3 +199,34 @@ $$
 \frac{\nu^2}{\kappa^2}(R)\simeq\frac{3\rho(R)}{2\bar\rho}
 $$
 In this way, the ratio $\nu^2/\kappa^2$ reflects the degree to which the galactic material is concentrated
+
+Consider the radial motion more specifically, we have the general solution
+$$
+x(t)=X\cos(\kappa t+\alpha)
+$$
+The corresponding angular speed $\dot \phi$ is
+$$
+\dot\phi=\frac{L_z}{(R_g+x)^2}\simeq \frac{L_z}{R_g^2}\left(1-\frac{2x}{R_g}\right)= \Omega\left(1-\frac{2x}{R_g}\right)
+$$
+
+$$
+\Rightarrow\phi=\phi_0+\Omega t-\frac{2\Omega}{R_g}\cdot\frac{X}{\kappa}\sin(\kappa t+\alpha)\equiv\phi_0+\Omega t-\gamma\frac{X}{R_g}\sin(\kappa t+\alpha)
+$$
+
+where
+$$
+\gamma\equiv\frac{2\Omega}{\kappa}=-\frac{\kappa}{2B}
+$$
+Now we try to understand the shape of the **epicycle**, which, to the first order, should be an ellipse. The X-semi-axis is obviously $X$, while in the $y$ direction perpendicular to both $x$ and $z$
+$$
+y=\Delta\phi R_g=-\gamma X\sin(\kappa t+\alpha)\Rightarrow Y=\gamma X
+$$
+Thus
+$$
+\left|\frac XY\right|=\frac{\kappa}{2\Omega}
+$$
+Usually
+$$
+\frac12<\left|\frac XY\right|<1
+$$
+while $X/Y=1/2$ for Kepler potential and $X/Y=1$ for harmonic oscillator potential (homogeneous sphere).
