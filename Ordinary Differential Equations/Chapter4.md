@@ -200,7 +200,7 @@ $$
    \Rightarrow x=\int \frac{1-t^{-2}}{1-t^2}\text dt+C=\frac{1}{t}+C
    $$
 
-   当 $y'=0$ 时， $y=\equiv\pm2$ 也是解
+   当 $y'=0$ 时， $y\equiv\pm2$ 也是解
 
 6. 一般形式 $F(x,y,y')=0$，设其有一个双参数表示
    $$
@@ -231,3 +231,216 @@ $$
    \right.
    $$
    当然成功概率并不高
+
+
+
+## 奇解
+
+**定义** (奇解)
+
+设一阶微分方程
+
+$$
+F\left(x, y, \frac{\text dy}{\text dx}\right)=0
+$$
+
+有一特解 $\Gamma:\ y=\phi(x),\ x\in J$，$\Gamma$ 是其解曲线；如果 $\forall Q\in \Gamma$，方程都有一条不同于 $\Gamma$ 的解曲线与 $\Gamma$ 在 $Q$ 处相切，则 $y=\phi(x)$ 是一个奇解
+
+**定理** (奇解存在的必要条件)
+
+假设 $F(x,y,p)\in C(G)$，$G$ 是 $R^3$ 上的区域，且 $F_y, F_p\in C(G)$，假设 $y=\phi(x),\ x\in J$ 为 $F(x,y,p)$ 的一个奇解，则
+
+$$
+F(x,\phi(x),\phi'(x))=0,\ F_p(x,\phi(x),\phi'(x))=0
+$$
+
+第一个等式自然成立，假设 $\exist x_0$ 使得 $F_p(x_0,\phi(x_0),\phi'(x_0))\neq0$，则由隐函数定理，$F(x,y,p)=0$ 在 $(x_0,y_0,p_0)$ 附近可以反解出
+
+$$
+p=f(x,y),\ p_0=f(x_0,y_0)\Rightarrow \frac{\text dy}{\text dx}=f(x,y), \phi(x_0)=y_0
+$$
+
+且 $f_y(x,y)$ 是一个连续函数，则 $f(x,y)$ 必定关于 $y$ 是局部李氏连续的，所以原方程过 $(x_0,y_0)$ 有唯一解
+
+在连立两个方程
+
+$$
+F(x,\phi(x),\phi'(x))=0,\ F_p(x,\phi(x),\phi'(x))=0
+$$
+
+并消去 $y$ 之后可以得到 $\Delta(x,y)=0$，称为判别式，奇解含于 $\Delta(x,y)=0$ 中
+
+**例**
+
+$$
+y'^2+y-x=0\Rightarrow p^2+y-x,\ 2p=0\Rightarrow y=x
+$$
+
+但 $y=x$ 不是方程的解，所以原方程无奇解
+
+**例**
+
+$$
+y'^2-y^2=0\Rightarrow p^2-y^2=0,\ p=0\Rightarrow y=0
+$$
+
+$y=0$ 是方程的解，但并不是方程的奇解 (方程的通解为 $y=Ce^{\pm x}$)
+
+**定理**: (奇解存在的充分条件)
+
+假设 $F(x,y,p)\in C^2(G)$，设 $y=\psi(x),\ x\in J$ 是 $\Delta=0$ 确定出的解曲线，并且 $F_y(x,\psi(x),\psi'(x))\neq0,\ F_{pp}(x,\psi(x),\psi'(x))\neq0$ 以及 $F_p(x,\psi(x),\psi'(x))=0$，则 $y=\psi(x)$ 是奇解
+
+**例**
+
+$$
+\left[(y-1)\frac{\text dy}{\text dx}\right]^2=ye^{xy}
+$$
+
+判别式为
+
+$$
+(y-1)^2p^2=ye^{xy},\ 2p(y-1)=0\Rightarrow y=0
+$$
+
+$$
+F_y(x,0,0)=-1,\ F_{pp}(x,0,0)=-2,\ F_p(x,0,0)=0
+$$
+
+从而 $y=0$ 是一个奇解
+
+**例**
+
+$$
+y=xp+f(p),\ f''(p)\neq0
+$$
+
+令 $F(x,y,p)=xp+f(p)-y$，判别式为
+
+$$
+xp+f(p)-y=0,\ x+f'(p)=0
+$$
+
+解 $x+f'(p)=0$ 可以得到 $p=w(x)$，从而
+
+$$
+y=w(x)+f(w(x))\equiv u(x)
+$$
+
+$$
+\Rightarrow F_y(x,u(x),u'(x))=-1,\ F_{pp}(x,u(x),u'(x))=f''(p)\neq1,\ F_{p}=x+f'(w(x))=0
+$$
+
+从而 $p=w(x)$ 是方程的一个奇解
+
+
+
+
+## 包络
+
+设单参数曲线族 $K_C$ 满足 $V(x,y,C)=0,\ V\in C^1(G),\ G\subset R^2$
+
+**定义**: (包络)
+
+设 $\Gamma$ 是 $R^2$ 上一条光滑曲线，若 $\forall P\in \Gamma$，$\exist C$，$K_C$ 与 $\Gamma$ 相切于 $P$，且在 $P$ 附近与 $\Gamma$ 不重合，则称 $\Gamma$ 为 $K_C$ 的包络
+
+**定理**: (奇解与包络的关系)
+
+$F(x,y,p)=0$ 有同积分 $U(x,y,C)=0$，设其包络为 $\Gamma: y=\phi(x)$，则 $y=\phi(x)$ 是奇解
+
+**证明**
+
+只需证明 $y=\phi(x)$ 是解，$\forall (x_0,y_0)\in\Gamma$，$\exist C_0$，可以利用 $U(x,y,C_0)=0$ 解出 $y=u(x)$，其与 $\Gamma$ 切于 $(x_0,y_0)$，则
+
+$$
+y_0=u(x_0),\ u'(x_0)=\phi'(x_0)\Rightarrow F(x_0,u(x_0),u'(x_0))=0\Rightarrow F(x_0,\phi(x_0),\phi'(x_0))=0
+$$
+
+由 $x_0$ 的任意性，有 $F(x,\phi(x),\phi'(x))\equiv 0$，即 $y=\phi(x)$ 是方程的解，则它显然是奇解
+
+**定理**: (求包络的方式/包络的必要条件)
+
+设 $\Gamma$ 是曲线族 $V(x,y,C)=0$ 的包络，则 $\Gamma$ 上任意一点满足
+
+$$
+V(x,y,C)=0,\ V_C(x,y,C)=0\Rightarrow \Omega(x,y)
+$$
+
+$\Omega(x,y)$ 是连立方程消去 $C$ 后得到的判别式
+
+**证明**
+
+设 $\Gamma$ 的参数形式为 $x=f(C),\ y=g(C)$，$f,g\in C^1$，则
+
+$$
+V(f(C),g(C),C)\equiv 0\Rightarrow V_xf'(C)+V_yg(C)+V_C\equiv 0
+$$
+
+若 $(V_x,V_y)=(0,0)$ 和 $(f'(C),g'(C))=(0,0)$ 至少有一对成立，则自然有 $V_C=0$，否则由于 $\Gamma$ 在 $P(C)=(f(C),g(C))$ 处的切向量 $(f'(C),g'(C))$ 与 $V(x,y,C)=0$ 在 $P$ 处的切向量共线
+
+$$
+(f'(C),g'(C))\cdot\nabla V(f(C),g(C),C)=0\Rightarrow f'(C)V_x+g'(C)V_y=0\Rightarrow V_C=0
+$$
+
+**定理**: (包络的充分条件)
+
+设由 $\Omega(x,y)=0$ 确定了一条不含于曲线族 $V(x,y,C)=0$ 的光滑曲线
+
+$$
+\Lambda:\quad x=\phi(C),\ y=\psi(C)\quad (C\in I)
+$$
+
+若它满足非退化条件
+
+$$
+(V_x(\phi(C),\psi(C),C), V_y(\phi(C),\psi(C),C), C)\neq(0,0),\ (\phi'(C),\psi'(C))\neq (0,0)
+$$
+
+则它就是包络
+
+**例**
+
+$$
+(y-1)^2p^2=\frac49y
+$$
+
+$$
+\Rightarrow \frac{y-1}{\sqrt{y}}\text dy=\pm\frac23\text dx\Rightarrow y^{3/2}-3y^{1/2}=\pm(X+C)
+$$
+
+得到通解
+
+$$
+y(y-3)^2-(x+C)^2=0
+$$
+
+考虑 $V_C=0$，有 $x+C=0$，此时 $y=0,3$，经验证 $y=0$ 是奇解，但是 $y=3$ 不是奇解
+
+**例**
+
+求曲线，使其任意一点的切线在两个坐标轴的截距长的倒数平方和为 $1$
+
+$$
+\frac1{(y-xy')^2}+\frac1{(1-y/y')^2}=1\Leftrightarrow (xy'-y)^2=1+y'^2\Rightarrow y=xy'\pm\sqrt{1+y'^2}
+$$
+
+设 $p=y'$，对 $x$ 求导
+
+$$
+p=p+xp'\pm\frac{p}{1+p^2}p'=0\Rightarrow p=C
+$$
+
+从而方程的通解为 $V(x,y,C)=Cx-y\pm\sqrt{1+C^2}=0$
+
+又有
+
+$$
+V_C=x\pm\frac{C}{\sqrt{1+C^2}}=0
+$$
+
+从而可以解出
+
+$$
+x=\mp\frac{C}{\sqrt{1+C^2}},\ y=\pm \frac{1}{\sqrt{1+C^2}}\Rightarrow x^2+y^2=1
+$$
+
+即单位圆 (不包括与坐标轴的交点)
