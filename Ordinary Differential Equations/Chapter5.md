@@ -111,6 +111,24 @@ $$
 
 **定理**
 
+对于方程
+$$
+x''+f(x)=0
+$$
+
+$$
+f(0)=0,\ xf(x)>0,\ x\neq0\\ y=x',\ F(x)=\int_0^xf(s)\text ds
+$$
+
+考虑原点附近围绕原点的一条闭曲线
+$$
+\Gamma_h:\quad \frac12y^2+F(x)=h
+$$
+显然 $(x(t),x'(t))\in\Gamma_h$，且
+$$
+\Gamma_h\bigcap\left\{(x,y)\big|y=0\right\} = \left\{(x_+(h),0),\ (x_-(h),0)\right\}\\
+\Gamma_h\bigcap\left\{(x,y)\big|x=0\right\} = \left\{(0,-\sqrt{2h}),\ (0,\sqrt{2h})\right\}
+$$
 周期 $T_h$ 不依赖于 $h$ 的充要条件是存在 $C_0>0$，使得 $x_+(h)-x_-(h)=C_0\sqrt{h}$
 
 **证明**
@@ -145,7 +163,7 @@ $$
 
    $$
    \begin{align*}
-   \frac12\int_0^H\frac{T_h}{\sqrt{H-h}}\text dh &=\frac1{\sqrt2}\int_0^H\frac{\text dh}{\sqrt{H-h}}\int_0^h\frac1{\sqrt{h-s}}\left(\frac1{f(x_+(s))}-\frac1{f(x_-(s))}\right)\text ds\\
+   \Rightarrow\frac12\int_0^H\frac{T_h}{\sqrt{H-h}}\text dh &=\frac1{\sqrt2}\int_0^H\frac{\text dh}{\sqrt{H-h}}\int_0^h\frac1{\sqrt{h-s}}\left(\frac1{f(x_+(s))}-\frac1{f(x_-(s))}\right)\text ds\\
    &=\frac1{\sqrt2}\int_0^H\left(\frac1{f(x_+(s))}-\frac1{f(x_-(s))}\right)\text ds\int_s^h\frac1{\sqrt{(H-h)(h-s)}}\text dh
    \end{align*}
    $$
@@ -158,7 +176,11 @@ $$
    $$
    有
    $$
-   \frac12\int_0^H\frac{T_h}{\sqrt{H-h}}\text dh =\frac{\pi}{\sqrt2}\int_0^H\left(\frac1{f(x_+(s))}-\frac1{f(x_-(s))}\right)\text ds
+   \begin{align*}
+   \frac12\int_0^H\frac{T_h}{\sqrt{H-h}}\text dh &=\frac{\pi}{\sqrt2}\int_0^H\left(\frac1{f(x_+(s))}-\frac1{f(x_-(s))}\right)\text ds\\
+   &=\frac{\pi}{\sqrt2}\left[\int_0^{x_+(H)}\frac{f(x_+(s))}{f(x_+(s))}\text ds+\int_{x_-(H)}^0\frac{f(x_-(s))}{f(x_-(s))}\text ds\right]\\
+   &=\frac{\pi}{\sqrt2}[x_+(H)-x_-(H)]
+   \end{align*}
    $$
 
 2. 若 $T_h=T_0$ 与 $h$ 无关，则
