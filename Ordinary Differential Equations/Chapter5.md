@@ -248,3 +248,183 @@ $$
 x_+(h)-x_-(h)=2\sqrt2\sqrt h
 $$
 
+
+
+## $n$ 维线性空间中的微分方程
+
+$n$ 阶线性方程
+$$
+\frac{\text d^ny}{\text dx^n}=F\left(x,y,y'',\cdots,y^{(n-1)}\right)
+$$
+令 $y_1=y,\cdots, y_n=y_{n-1}'$，则微分方程可以拆成 $n$ 阶微分方程组；对于多个未知函数的情形，也可以类似地拆成微分方程组；一般地，考虑
+$$
+y_1'=f_1(x,y_1,y_2,\cdots,y_n)\\
+y_2'=f_2(x,y_1,y_2,\cdots,y_n)\\
+\cdots\\
+y_n'=f_n(x,y_1,y_2,\cdots,y_n)\\
+$$
+一些定义
+
+- $y$ 是未知函数的向量函数 $y=(y_1\ y_2\ \cdots\ y_n)^T$
+
+  - 求导
+    $$
+    \frac{\text dy}{\text dx}=\left(\frac{\text dy_1}{\text dx}\ \frac{\text dy_2}{\text dx}\ \cdots \frac{\text dy_n}{\text dx}\right)^T
+    $$
+    (类似地定义积分)
+
+  - $$
+    f(x,y)=\left(f_1(x,y_1,y_2,\cdots,y_n)\quad f_2(x,y_1,y_2,\cdots,y_n)\quad \cdots\quad f_n(x,y_1,y_2,\cdots,y_n)\right)^T
+    $$
+
+  - 形式上可以有柯西问题
+    $$
+    \frac{\text dy}{\text dx}=f(x,y),\quad y(x_0)=y_0
+    $$
+
+  - $R_n$ 中的模
+
+    1. 欧式模：$|y|_2=\sqrt{y_1^2+y^2+\cdots+y_n^2}$
+    2. $L_1$ 模：$|y|_1=\sum_{i=1}^n|y_i|$
+    3. $L_\infty$ 模：$|y|_\infty=\max_{1\le i\le n}\left\{|y_i|\right\}$
+
+    三种模是等价的，可以利用任意一种证明存在唯一性定理，形式与一维的情形完全相同
+
+**从一维到高维**
+
+- **Peano 定理**
+
+  $D:\left\{(x,y)\Big||x-x_0|\le a,|y-y_0|\le b\right\}\subset R\times R^n$，$f(x,y)\subset C(D)$，$M=\max_D|f|$，$h=\min\{a,b/M\}$，则初值问题的解在 $|x-x_0|\le h$ 上存在
+
+- **Picard 定理**
+
+  设 $f$ 满足上述定理的条件，若 $f(x,y)$ 关于 $y$ 是局部李氏的，则上述定理中的解是唯一的
+
+- **解的最大存在区间**
+
+  - 若  $|f(x,y)|\le a(x)|y|+b(x),\ x\in(\alpha,\beta),\ y\in R^n$，其中 $f,a,b$ 均为连续函数，则
+    $$
+    \frac{\text dy}{\text dx}=f(x,y)
+    $$
+    解的最大存在区间均为 $(\alpha,\beta)$
+
+    特别地，对线性微分方程组
+    $$
+    f(x,y)=A(x)y+B(x)\\
+    A(x):(\alpha,\beta)\to M_{n\times n},\ B(x):(\alpha,\beta)\to R^n
+    $$
+    $A(x),B(x)$ 连续，则其解自然可以延伸到 $(\alpha,\beta)$ 上，存在唯一性也可以保证
+
+  
+
+## 解对初值和参数的连续依赖性
+
+以谐振子方程为例，其初值问题的解为
+$$
+x=x_0\cos a(t-t_0)+\frac{v_0}{a}\sin a(t-t_0)
+$$
+显然它对参数 $a$ 和初值 $t_0,x_0,v_0$ 是连续可微的
+
+一般的 $n$ 阶微分方程
+$$
+y'=f(x,y,\lambda),\quad y(x_0)=y_0
+$$
+其解为 $y=y(x,x_0,y_0,\lambda)$，下面研究其关于 $x_0,y_0,\lambda$ 的依赖性
+
+令 $t=x-x_0,u=y-y_0$，则
+$$
+u'=f(t+x_0,u+y_0,\lambda)=\tilde f(t,u,x_0,y_0,\lambda),\quad u(0)=0
+$$
+从而初值可以转换为参数，只需考虑方程的解关于方程参数的依赖性，不妨考虑初值问题
+$$
+y'=f(x,y,\lambda),\quad y(0)=0
+$$
+
+$$
+f\in C(G),\ G:|x|\le a,|y|\le b,|\lambda-\lambda_0|\le c
+$$
+
+**定理**
+
+$f$ 关于 $y$ 李氏连续，即存在 $L>0$，使得
+$$
+|f(x,y_1,\lambda)-f(x,y_2,\lambda)|\le L|y_1-y_2|,\quad \forall (x,y_1,\lambda),(x,y_2,\lambda)\in G
+$$
+
+$$
+M=\max_G|f|,\ h=\min\left\{a,\frac{b}{M}\right\}
+$$
+
+则解 $y=\phi(x,\lambda)$ 在 $|x|\le h,|\lambda-\lambda_0|\le c$ 上连续
+
+**证明**
+
+原问题等价于
+$$
+y(x,\lambda)=\int_0^xf(s,y(s,\lambda),\lambda)\text ds
+$$
+引入 Picard 序列
+$$
+\phi_0\equiv0,\quad \phi_k(x,\lambda)=\int_0^xf(s,\phi_{k-1}(s,\lambda),\lambda)\text ds
+$$
+由定义知 $\phi_k$ 关于 $(x,\lambda)$ 连续，类似于一维的情形，可以归纳证明
+$$
+|\phi_{k+1}-\phi_k|\le\frac{M(L|x|)^{k+1}}{L(k+1)!}
+$$
+因此 $\phi_k(x,\lambda)$ 一致收敛，取 $\phi(x,\lambda)=\lim_{k\to\infty}\phi_k(x,\lambda)$，关于 $(x,\lambda)$ 连续，容易证明 $\phi(x,\lambda)$ 就是初值问题的唯一解
+
+**推论**
+
+设 $f$ 在区域 $R: |x-x_0|\le a,\ |y-y_0|\le b$ 上连续，初值问题
+$$
+y'=f(x,y),\quad y(x_0)=\eta
+$$
+的解 $y=\phi(x,x_0,y_0)$ 在区域 $Q$ 上是连续的，其中
+$$
+Q:|x-x_0|\le\frac h2,\quad |\eta-y_0|\le \frac b2
+$$
+$h$ 的定义与上面的类似
+
+**定理** (放宽李氏连续的条件)
+$$
+y'=f(x,y,\lambda),\quad y(x_0)=y_0\\
+f\in C(G),\ G\subset R\times R^n\times R^k
+$$
+设对任意的 $(x_0,y_0,\lambda)\in G$，初值问题的解 $y=\phi(x,x_0,y_0,\lambda)$ 存在唯一，则 $\phi$ 关于 $x_0,y_0,\lambda$ 连续
+
+**证明**
+
+令 $z=\lambda$，则 $z'=0$，方程扩充为
+$$
+y'=f(x,y,z)\\
+z'=0\\
+y(x_0)=y_0,\quad z(x_0)=\lambda
+$$
+即参数也可以转化为初值，下面只考虑解对初值的依赖性，假设存在 $\epsilon_0>0$，任取 $\delta_i>0$，都存在 $\xi_i,\eta_i$，当 $x_i$ 属于有界闭区间 $I$ 时，满足
+$$
+|(\xi_i,\eta_i)-(x_0,y_0)|<\delta_i,\quad |\phi(x_i,\xi_i,\eta_i)-\phi(x_i,x_0,y_0)|\ge\epsilon_0
+$$
+由于 $I$ 为有界闭区间，$\{x_i\}$ 有收敛子列，不妨设其自身收敛到 $\bar x$，则
+$$
+\phi(x,\xi,\eta)=\eta+\int_\xi^xf(s,\phi(s,\xi,\eta))\text ds
+$$
+$f$ 是一致有界的，因此由中值定理，$\phi$ 是李氏连续的，关于 $x$ 一致有界，等度连续，必有一个一致收敛的子列 $\phi(x_{i_j},\xi_{i_j},\eta_{i_j})$，则当 $j\to\infty$ 时，收敛到
+$$
+\phi(\bar x)=y_0+\int_{x_0}^{\bar x}f(s,\phi(s))\text ds
+$$
+恰好是方程的解，但是
+$$
+|\phi(x_{i_j},\xi_{i_j},\eta_{i_j})-\phi(x_{i_j},x_0,y_0)|\ge\epsilon_0
+$$
+令 $y\to\infty$，任取 $\epsilon>0$，都有
+$$
+|\phi(\bar x)-\phi(\bar x,x_0,y_0)|<\epsilon
+$$
+矛盾！
+
+据此，积分曲线可以局部拉直
+
+**定理**：(局部拉直定理)
+
+初值问题在 $(x_0,y_0)$ 邻域内的解可以局部拉直，即积分曲线族可以与一系列平行直线段一一对应
+
