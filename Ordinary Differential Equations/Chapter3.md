@@ -123,15 +123,23 @@ h(x)&\le\left|\int_{x_0}^x\left[f(s,\phi(s))-f(s,y(s))\right]\text ds\right|\\
 &=L\left|\int_{x_0}^xh(s)\text ds\right|\\
 \end{align*}
 $$
-由 **Gronwall 引理**
+若 $x<x_0$，
+$$
+h(x)\le-L\int_{x_0}^xh(s)\text ds\le 0
+$$
+若 $x>x_0$，由于 $h(x)$ 是一维的函数，Gronwall 引理显然成立，即对
+$$
+f(x)\le C+\int_a^xf(s)g(s)\text ds
+$$
+其中 $g(x)\ge 0$，有
+$$
+f(x)\le Ce^{\int_a^xg(s)\text ds}
+$$
+且这里 $C=0,g(s)=L$，即可直接推出 $h(x)\le 0$
 
-对 $x>x_0\Rightarrow C=0, g(s)=L$；对 $x<x_0\Rightarrow C=0, g(s)=-L$；无论如何
-$$
-h(x)\le 0\Rightarrow h(x)\equiv 0
-$$
+无论如何，都有 $0\ge h(x)\ge 0\Rightarrow h(x)\equiv0$
 
 ### 收敛速度
-
 $$
 \left|y_0(x)-\phi(x)\right|=\int_{x_0}^xf(s,\phi(s))\text ds\le M|x-x_0|
 $$
