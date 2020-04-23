@@ -428,3 +428,203 @@ $$
 
 初值问题在 $(x_0,y_0)$ 邻域内的解可以局部拉直，即积分曲线族可以与一系列平行直线段一一对应
 
+
+
+## 解对初值和参数的光滑性
+
+**定理**
+
+$f(x,y,\lambda)\in C(G)$，其中 $G: |x|\le a,\ |y|\le b,\ |\lambda|\le c$，$f$ 在 $[x-h,x+h]$ 上关于 $(y,\lambda)$ 是 $C^k$ 的，$1\le k\le \omega$，$C^\omega$ 代表解析函数，这里
+$$
+h=\max\left\{a,\frac{b}{\max_{(x,y,\lambda)\in G}\{f\}}\right\}
+$$
+考虑初值问题
+$$
+y'=f(x,y,\lambda),\quad y(0)=0
+$$
+设 $y=\phi(x,\lambda)$ 是其解，则 $\phi(x,\lambda)$ 关于 $\lambda$ 是 $C^k$ 的
+
+**证明**
+
+**第一种情形**：$k=1$
+
+首先将微分方程转化为等价的积分方程
+$$
+\phi(x,\lambda)=\int_0^xf(s,\phi(s,\lambda),\lambda)\text ds
+$$
+若 $\phi$ 关于 $\lambda$ 可微，则
+$$
+\partial_\lambda\phi=\int_0^x\left[\frac{\partial f(s,\phi(s,\lambda),\lambda)}{\partial y}\partial_\lambda y+\frac{\partial f(s,\phi(s,\lambda),\lambda)}{\partial \lambda}\right]\text ds
+$$
+令 $u(x,\lambda)=\partial_\lambda\phi(x,\lambda)$，则
+$$
+\frac{\text du}{\text dx}=\frac{\partial f}{\partial y}(x,\phi(x,\lambda),\lambda)u+\frac{\partial f}{\partial \lambda}(x,\phi(x,\lambda),\lambda)\\u(0,\lambda)=0
+$$
+设 $u(x,\lambda)$ 是上述问题的解，则 $u(x,\lambda)$ 关于 $\lambda$ 连续 (李氏连续性，上一节的结论)，只需证明
+$$
+\Delta (x)=|\phi(x,\lambda)-\phi(x,\lambda_0)-u(x,\lambda_0)(\lambda-\lambda_0)|=\mathcal{o}(|\lambda-\lambda_0|)
+$$
+$u(x,\lambda)$ 满足积分方程
+$$
+u(x,\lambda)=\int_0^x\left[\frac{\partial f}{\partial y}(s,\phi(s,\lambda),\lambda)u(s)+\frac{\partial f}{\partial \lambda}(s,\phi(s,\lambda),\lambda)\right]\text ds\\
+$$
+
+$$
+\Rightarrow\begin{align*}\Delta (x)=&\int_0^x\left\{f(s,\phi(s,\lambda),\lambda)-f(s,\phi(s,\lambda_0),\lambda_0)\\
+-\left[\frac{\partial f}{\partial y}(s,\phi(s,\lambda_0),\lambda_0)u_0(s)+\frac{\partial f}{\partial \lambda}(s,\phi(s,\lambda_0),\lambda_0)\right](\lambda-\lambda_0)\right\}\text ds\end{align*}
+$$
+
+又
+$$
+\begin{align*}
+&f(s,\phi(s,\lambda),\lambda)-f(s,\phi(s,\lambda_0),\lambda_0)
+
+\\=&f(s,\phi(s,\lambda),\lambda)-f(s,\phi(s,\lambda_0),\lambda)+f(s,\phi(s,\lambda_0),\lambda)-f(s,\phi(s,\lambda_0),\lambda_0)\\=&\int_0^1\frac{\partial f}{\partial y}(s,t\phi(s)+(1-t)\phi_0(s),\lambda)(\phi(s)-\phi_0(s))\text dt\\
+
+&+\int_0^1\frac{\partial f}{\partial \lambda}(s,\phi_0(s),t\lambda+(1-t)\lambda_0)(\lambda-\lambda_0)\text dt
+\end{align*}
+$$
+$$
+\frac{\partial f}{\partial y}(s,\phi(s,\lambda_0),\lambda_0)=\int_0^1\frac{\partial f}{\partial y}(s,\phi_0,\lambda_0)\text dt
+$$
+
+$$
+\frac{\partial f}{\partial \lambda}(s,\phi(s,\lambda_0),\lambda_0)=\int_0^1\frac{\partial f}{\partial \lambda}(s,\phi_0,\lambda_0)\text dt
+$$
+
+这里
+$$
+\phi(\cdot)=\phi(\cdot,\lambda),\ \phi_0(\cdot)=\phi_0(\cdot,\lambda_0)\\u(\cdot)=u(\cdot,\lambda),\ u_0(\cdot)=u_0(\cdot,\lambda_0)
+$$
+而
+$$
+\Delta(x)=|\phi(x)-\phi_0(x)-u_0(x)(\lambda-\lambda_0)|\ge |\phi(x)-\phi_0(x)|-|u_0(x)(\lambda-\lambda_0)|\\
+\Rightarrow |\phi(x)-\phi_0(x)|\le \Delta(x)+|u_0(x)(\lambda-\lambda_0)|
+$$
+
+$$
+\begin{align*}|\Delta (x)|
+
+&\le\left|\int_0^x\int_0^1\left|\frac{\partial f}{\partial y}(s,t\phi+(1-t)\phi_0,\lambda)\right|\text dt|\Delta(s)|\text ds\right|\\
+
+&+\left|\int_0^x\int_0^1\left|\frac{\partial f}{\partial y}(s,t\phi+(1-t)\phi_0,\lambda)-\frac{\partial f}{\partial y}(s,\phi_0,\lambda_0)\right||u_0(s)||\lambda-\lambda_0|\right|\text dt\text ds\\
+
+&+\left|\int_0^x\int_0^1\left|\frac{\partial f}{\partial \lambda}(s,\phi_0,t\lambda+(1-t)\lambda_0)-\frac{\partial f}{\partial \lambda}(s,\phi_0,\lambda_0)\right||\lambda-\lambda_0|\text dt\text ds\right|
+\end{align*}
+$$
+当 $\lambda\to\lambda_0$ 时，首先由 $\phi$ 的连续性，有 $\phi\to\phi_0$，那么第二、三项中的
+$$
+\frac{\partial f}{\partial y}(s,t\phi+(1-t)\phi_0,\lambda)-\frac{\partial f}{\partial y}(s,\phi_0,\lambda_0)\to0\\
+\frac{\partial f}{\partial \lambda}(s,\phi_0,t\lambda+(1-t)\lambda_0)-\frac{\partial f}{\partial \lambda}(s,\phi_0,\lambda_0)\to0
+$$
+从而第二、三项均为 $\mathcal{o}(|\lambda-\lambda_0|)$，即任给 $\epsilon>0$，存在 $\delta>0$，当 $|\lambda-\lambda_0|<\delta$ 时
+$$
+|\phi(x)-\phi_0(x)|<\epsilon\\
+\left|\frac{\partial f}{\partial y}(s,t\phi+(1-t)\phi_0,\lambda)-\frac{\partial f}{\partial y}(s,\phi_0,\lambda_0)\right|<\epsilon\\
+\left|\frac{\partial f}{\partial \lambda}(s,\phi_0,t\lambda+(1-t)\lambda_0)-\frac{\partial f}{\partial \lambda}(s,\phi_0,\lambda_0)\right|<\epsilon
+$$
+记 $M=\max\left\{|u|, |\partial_yf(s,t\phi+(1-t)\phi_o,\lambda)|\right\}$，则
+$$
+|\Delta(x)|\le M\left|\int_0^x|\Delta(s)|\text ds\right|+\epsilon(M+1)h|\lambda-\lambda_0|
+$$
+由 Gronwall 不等式
+$$
+|\Delta(x)|\le\epsilon(M+1)h|\lambda-\lambda_0|e^{Mh}=\mathcal{o}(|\lambda-\lambda_0|)
+$$
+因此 $\phi$ 关于 $\lambda$ 是 $C^1$ 的
+
+**第二种情形**：$k$ 是任意有限值
+
+对 $k$ 归纳，设当 $f(x,y,\lambda)$ 关于 $(y,\lambda)$ 是 $C^{k-1}$ 时，所得解 $\phi(x,\lambda)$ 关于 $\lambda$ 是 $C^k$ 的
+
+我们知道 $u(x,\lambda)$ 满足
+$$
+\frac{\text du}{\text dx}=\frac{\partial f}{\partial y}(x,\phi(x,\lambda),\lambda)u+\frac{\partial f}{\partial \lambda}(x,\phi(x,\lambda),\lambda)\equiv F(x,u,\lambda)\\u(0,\lambda)=0
+$$
+显然 $F(x,u,\lambda)$ 是 $C^{k-1}$ 的，由归纳法假设，$u(x,\lambda)$ 关于 $\lambda$ 是 $C^{k-1}$ 的，从而 $\phi(x,\lambda)$ 关于 $\lambda$ 是 $C^k$ 的
+
+- **注**：若 $f(x,y,\lambda)$ 关于 $x$ 是 $C^{k-1}$ 的，则其解 $\phi(x,\lambda)$ 关于 $x$ 是 $C^k$ 的
+
+**第三种情形**：$k$ 取无穷大，自然成立
+
+**第四种情形**：$f(x,y,\lambda)$ 关于 $(y,\lambda)$ 是解析函数 (幂级数收敛)
+
+$f$ 在复域 $|y|\le b$，$|\lambda|\le c$ 上解析，定义 Picard 列
+$$
+y_0(x)\equiv 0,\ y_{k+1}=\int_0^xf(s,\phi_k(x,s),\lambda)\text ds
+$$
+则 $y_k$ 关于 $\lambda$ 自然是解析的，也可以在复域上证明 $y_k(x,\lambda)$ 一致收敛到 $\phi(x,\lambda)$，由复变函数的结论，$\phi(x,\lambda)$ 关于 $\lambda$ 解析
+
+**推论**
+
+$f(x,y,\lambda)$ 关于 $(x,y,\lambda)$ 连续，关于 $(y,\lambda)$ 是 $C^k$ 的，$\phi(x,x_0,y_0,\lambda)$ 是初值问题的解，则其是 $C^1$ 的，且关于 $(x_0,\lambda)$ 是 $C^k$ 的
+$$
+\phi(x,x_0,y_0,\lambda)=y_0+\int_{x_0}^xf(s,\phi(s,x_0,y_0,\lambda),\lambda)\text ds
+$$
+可以对 $x_0,y_0,\lambda$ 求导
+$$
+\partial_{x_0}\phi=-f(x_0,y_0,\lambda)+\int_{x_0}^x\frac{\partial f}{\partial y}(s,\phi(s,x_0,y_0,\lambda),\lambda)\frac{\partial\phi}{\partial x_0}\text ds
+$$
+
+$$
+\partial_{y_0}\phi=I_n+\int_{x_0}^x\frac{\partial f}{\partial y}(s,\phi(s,x_0,y_0,\lambda),\lambda)\frac{\partial\phi}{\partial y_0}\text ds
+$$
+
+$$
+\partial_{\lambda}\phi=\int_{x_0}^x\left[\frac{\partial f}{\partial y}(s,\phi(s,x_0,y_0,\lambda),\lambda)\frac{\partial\phi}{\partial \lambda}+\frac{\partial f}{\partial \lambda}(s,\phi(s,x_0,y_0,\lambda),\lambda)\right]\text ds
+$$
+
+令
+$$
+u(x,x_0,y_0,\lambda)=\partial_{x_0}\phi\\
+v(x,x_0,y_0,\lambda)=\partial_{y_0}\phi\\
+w(x,x_0,y_0,\lambda)=\partial_{\lambda}\phi
+$$
+
+$$
+A(x,x_0,y_0,\lambda)=\partial_{y_0}f(x,x_0,y_0,\lambda)\\
+B(x,x_0,y_0,\lambda)=\partial_{\lambda}f(x,x_0,y_0,\lambda)
+$$
+
+则
+$$
+\frac{\text du}{\text dx}=A(x,x_0,y_0,\lambda)u,\ u(x_0)=-f(x_0,y_0,\lambda)
+$$
+
+$$
+\frac{\text dv}{\text dx}=A(x,x_0,y_0,\lambda)v,\ v(x_0)=E_n
+$$
+
+$$
+\frac{\text dw}{\text dx}=A(x,x_0,y_0,\lambda)w+B(x,x_0,y_0,\lambda),\ w(x_0)=0
+$$
+
+即 $u,v,w$ 满足一个线性方程组
+
+**例**
+
+设 $y=y(x,\mu)$ 是方程
+$$
+y'=y+\mu(x+y^2),\quad y(0)=1
+$$
+的解，求 $\partial_\mu y|_{\mu=0}$
+$$
+y(x,\mu)=1+\int_0^x\left[y(s,\mu)+\mu(s+y^2)\right]\text ds
+$$
+
+$$
+\Rightarrow\frac{\partial y}{\partial \mu}=\int_0^x\left[\frac{\partial y}{\partial \mu}+s+y^2+2\mu y\frac{\partial y}{\partial \mu}\right]\text ds
+$$
+
+设 $u=\partial_\mu y$，则
+$$
+u_x=x+y^2(x,\mu)+(1+2\mu y)u,\quad u(0)=0
+$$
+$\mu=0$ 时，$y(x,0)=e^x$，从而
+$$
+u_x(x,0)=x+e^{2x}+u(x,0)
+$$
+由 $\mu$ 的解析性，有
+$$
+u(x,0)=e^{2x}-x-1
+$$
