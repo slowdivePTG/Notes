@@ -252,3 +252,293 @@ $$
 $$
 y_*(x)=\Phi(x)\left(C+\int_{x_0}^x\Phi(s)^{-1}f(s)\text ds\right)
 $$
+
+
+
+### 常系数微分方程组
+
+$$
+\frac{\text dy}{\text dx}=Ay+f(x)
+$$
+
+其中 $A$ 是 $n\times n$ 的常系数矩阵
+
+其对应的齐次方程组为
+$$
+\frac{\text dy}{\text dx}=Ay
+$$
+$y=e^{Ax}$ 是一个解，因为
+$$
+\frac{\text d e^{Ax}}{\text dx}=\sum_{i=0}^\infty A^{i+1}\frac{x^i}{i!}=A\sum_{i=0}^\infty A^{i}\frac{x^i}{i!}=Ae^{Ax}
+$$
+这里已经定义了
+$$
+e^{Ax}=I_n+\frac{Ax}{1!}+\frac{A^2x^2}{2!}+\cdots
+$$
+这个级数逐项收敛，且逐项求导之后依然一致收敛，因此对级数求导的结果相当于逐项求导后的级数
+
+$e^{Ax}$ 当然是一个解矩阵，同时 $x=0$ 时，$e^{Ax}=I_n$，因此 $e^{Ax}$ 是一个基本解矩阵
+
+**定义** (矩阵的模)
+
+$M_n$ 是一切 $n$ 阶实矩阵的集合，实际上构成了一个 $n^2$ 维的完备的线性空间，定义
+$$
+||A||=\sum_{i,j}|a_{ij}|,\quad A\in M_n
+$$
+从而
+$$
+e^{Ax}=I_n+\frac{Ax}{1!}+\frac{A^2x^2}{2!}+\cdots
+$$
+在 $x$ 的任意有界区间上是绝对一致收敛的，任意阶逐项求导之后也是绝对一致收敛的，因此它是一个 $C^\infty$ 的矩阵函数，可逐项求导任意多次
+
+**矩阵函数的性质**
+
+- $A,B\in M_n$ 且 $AB=BA$，则 $e^{A+B}=e^Ae^B=e^Be^A$
+  $$
+  e^Ae^B=\sum_{i=0}^\infty\frac{A^i}{i!}\sum_{j=0}^\infty\frac{B^j}{j!}
+  $$
+  由级数的绝对收敛性，可以合并两个级数，且任意交换求和次序
+  $$
+  e^Ae^B=\sum_{k=0}^\infty\sum_{i+j=k}\frac{A^iB^j}{i!j!}=\sum_{k=0}^\infty\frac{1}{k!}\sum_{i=0}^kC_k^iA^iB^{k-i}=\sum_{k=0}^\infty\frac{1}{k!}(A+B)^k=e^{A+B}
+  $$
+  **推论**：对任意 $A\in M_n$，$(e^A)^{-1}=e^{-A}$
+
+- $P\in M_n$ 是可逆的，则
+  $$
+  e^{PAP^{-1}}=Pe^AP^{-1}
+  $$
+
+  $$
+  LHS=\sum_{i=0}^\infty\frac{\left(PAP^{-1}\right)^i}{i!}=\sum_{i=0}^\infty\frac{PA^iP^{-1}}{i!}=Pe^AP^{-1}=RHS
+  $$
+
+**命题**
+$$
+\frac{\text dy}{\text dx}=Ay
+$$
+满足 $\Phi(0)=E_n$ 的基本解矩阵为 $\Phi(x)=e^{Ax}$
+
+**推论**
+$$
+\frac{\text dy}{\text dx}=Ay+f(x)
+$$
+的通解为
+$$
+y=e^{Ax}C+\int_{x_0}^xe^{A(x-s)}f(s)\text ds
+$$
+$C\in R^n$ 为任意列向量，而满足 $y(x_0)=y_0$ 的初值问题的解为
+$$
+y=e^{A(x-x_0)}y_0+\int_{x_0}^xe^{A(x-s)}f(s)\text ds
+$$
+**如何求出 $e^{Ax}$**
+
+**例**
+
+$A=\text{diag}(a_1,a_2,\cdots,a_n)$，则 $A^k=\text{diag}(a_1^k,a_2^k,\cdots,a_n^k)$，从而
+$$
+e^{Ax}=\text{diag}(a_1^k,a_2^k,\cdots,a_n^k)\sum_{k=0}^\infty\frac{x^k}{k!}=\text{diag}(e^{a_1x},e^{a_2x},\cdots,e^{a_nx})
+$$
+**例**
+$$
+A=\left(
+\begin{array}{ccc}
+1&1&1\\
+0&1&1\\
+0&0&1
+\end{array}
+\right)=E_3+Z_3
+$$
+其中
+$$
+Z_3=\left(
+\begin{array}{ccc}
+0&1&1\\
+0&0&1\\
+0&0&0
+\end{array}
+\right)
+$$
+显然有 $E_3Z_3=Z_3E_3$，且
+$$
+Z_3^2=\left(
+\begin{array}{ccc}
+0&0&1\\
+0&0&0\\
+0&0&0
+\end{array}
+\right),\quad Z_3^3=0
+$$
+因此
+$$
+\begin{align*}
+e^{Ax}&=e^{E_3x+Z_3x}=e^{E_3x}e^{Z_3x}=e^{x}e^{Z_3x}\\
+&=e^{x}\left(E_3+Z_3x+\frac{Z_3^2x^2}{2}\right)\\
+&=e^x
+\left(
+\begin{array}{ccc}
+1&x&x+\frac{1}{2}x^2\\
+0&1&x\\
+0&0&1
+\end{array}
+\right)\\
+&=
+\left(
+\begin{array}{ccc}
+e^x&xe^x&\left(x+\frac{1}{2}x^2\right)e^x\\
+0&e^x&xe^x\\
+0&0&e^x
+\end{array}
+\right)
+\end{align*}
+$$
+**利用 Jordan 标准型**
+
+对于每一个 $n$ 阶矩阵 $A$，存在 $n$ 阶非奇异矩阵 $P$，使得
+$$
+A=PJP^{-1}
+$$
+其中
+$$
+J=\text{diag}(J_1,J_2,\cdots,J_m)
+$$
+被称为 Jordan 标准型，由 Jordan 块
+$$
+{J}_{i}=\left(\begin{array}{cccc}\lambda_{i} & 1 & & \\ & \lambda_{i} & \ddots & \\ & & \ddots & 1 \\ & & & \lambda_{i}\end{array}\right)=\lambda_iE_{n_i}+Z_{n_i}
+$$
+构成，因此
+$$
+\begin{align*}
+e^{J_ix}&=e^{\lambda_iE_{n_i}x}e^{Z_{n_i}x}=e^{\lambda_ix}e^{Z_{n_i}x}=e^{x J_{i}}\\
+&=e^{\lambda_{i} x}\left(\begin{array}{cccccc}1 & x & \frac{x^{2}}{2 !} & \cdots & \cdots & \frac{x^{n_{i}-1}}{\left(n_{i}-1\right) !} \\ & 1 & x & \cdots & \cdots & \frac{x^{n_{i}-2}}{\left(n_{i}-2\right) !} \\ & & \ddots & \ddots & & \vdots \\ & && \ddots & \ddots & \vdots \\ & & && \ddots & x \\ & & & && 1\end{array}\right)
+\end{align*}
+$$
+从而
+$$
+e^{x J}=\text{diag}(e^{xJ_1},e^{xJ_2},\cdots,e^{xJ_m})
+$$
+
+$$
+e^{Ax}=Pe^{Jx}P^{-1}
+$$
+
+事实上由 $P$ 的可逆性， $e^{Ax}P=Pe^{Jx}$ 也是方程的一个基本解矩阵
+
+但是一般来说，求 Jordan 标准型和过渡矩阵 $P$ 的计算量非常大，需要寻找替代方法
+
+**待定指数函数法**
+
+矩阵 $A$ 的 Jordan 标准型依赖于它特征根的重数
+
+- 如果 $A$ 只有实的单特征根 $\lambda_1,\cdots,\lambda_n$，则 $A$ 的 Jordan 标准型就是一个对角矩阵
+  $$
+  \Phi(x)=e^{Ax}P=Pe^{Jx}=P\cdot\text{diag}(e^{\lambda_1x}, e^{\lambda_2x},\cdots,e^{\lambda_nx})
+  $$
+  且 $\Phi(0)=P$，有 $e^{Ax}=\Phi(x)\Phi^{-1}(0)$
+
+  令 $r_i$ 表示 $P$ 的第 $i$ 列的向量，则基本解矩阵 $\Phi(x)$
+  $$
+  \Phi(x)=\left(e^{\lambda_1x}r_1,e^{\lambda_nx}r_n,\cdots,e^{\lambda_nx}r_n\right)
+  $$
+  可是要怎么求 $r_i$ 呢
+
+  **引理**
+
+  微分方程组有非零解 $y=e^{\lambda x} r$，当且仅当 $\lambda$ 是 $A$ 的特征根，而 $r$ 是与 $\lambda$ 相应的特征向量
+
+  **证明**
+  $$
+  \frac{\text dy}{\text dx}=\lambda e^{\lambda x}r=e^{\lambda x}Ar
+  $$
+
+  $$
+  \Leftrightarrow (A-\lambda E_n)r=0
+  $$
+
+  $r$ 的非零解就是 $A$ 的特征根相应的特征向量
+
+  从而有
+
+  **定理**
+
+  设 $n$ 阶矩阵 $A$ 有 $n$ 个互不相同的特征根 $\lambda_i$，则矩阵函数
+  $$
+  \Phi(x)=\left(e^{\lambda_1x}r_1,e^{\lambda_nx}r_n,\cdots,e^{\lambda_nx}r_n\right)
+  $$
+  是一个基本解矩阵，其中 $r_i$ 是与 $\lambda_i$ 相应的特征向量
+
+  **证明**
+
+  由上面的引理，$\Phi(x)$ 当然是一个解矩阵，又由 $r_i$ 之间是线性无关的，即 $\Phi(0)$ 是满秩的，$\Phi(x)$ 也是一个基本解矩阵
+
+  实际上证明过程并没有用到 $\lambda_i$ 互不相同，只要求 $r_i$ 之间线性无关，因此定理的结果可以加强 (但是不一定好用，因为不好判断相同的特征根下的特征向量是否线性无关)
+
+- $A$ 只有单特征根，但是包括复值根，从而 $\Phi(x)$ 可能是复的，虽然最终的 $e^{Ax}$ 一定是实的，但是计算 $\Phi^{-1}(0)$ 的过程计算量较大
+
+  事实上如果微分方程组有一个复值解，则由于方程的系数是实数，对方程两边取共轭之后易知该复值解的共轭也是方程的解；由于复值解的实部和虚部都可以用它与其共轭的线性表出，实部和虚部一定同时为方程的解，可以将两个复值解替换掉
+
+- $A$ 有重特征根
+
+  设 $A$ 互不相同的特征根为 $\lambda_1,\lambda_2,\cdots,\lambda_s$，相应的重数分别为 $n_1,n_2,\cdots,n_s$
+
+  在 $A$ 的 Jordan 标准型中，与 $\lambda_i$ 相对应的 Jordan 块可能不止一个，但这些 Jordan 块的阶数之和为 $n_i$
+
+  在基本解矩阵 $e^{Ax}P$ 的所有列向量中，与 $\lambda_i$ 相关的 $n_i$ 列都具有下列形式
+  $$
+  y=e^{\lambda_{i} x}\left(r_{0}+\frac{x}{1 !} r_{1}+\frac{x^{2}}{2 !} r_{2}+\cdots+\frac{x^{n_{i}-1}}{\left(n_{i}-1\right) !} r_{n_{i}-1}\right)
+  $$
+  级数截断在 $n_i-1$
+
+  **引理**
+
+  方程有如上的非零解的充要条件是，$r_0$ 是齐次线性方程组
+  $$
+  (A-\lambda_i E)^{n_i}r=0
+  $$
+  的一个非零解，而 $r_k$ 是递推定义的
+  $$
+  r_{k}=(A-\lambda_iE)r_{k-1},\quad 1\le k\le n_i-1
+  $$
+  **证明**
+
+  将上述形式代入
+  $$
+  \frac{\text dy}{\text dx}=\lambda_iy+e^{\lambda_ix}\left(r_1+\frac{x}{1 !} r_{2}+\frac{x^{2}}{2 !} r_{3}+\cdots+\frac{x^{n_{i}-2}}{\left(n_{i}-2\right) !}r_{n_{i}-1}\right)=Ay
+  $$
+
+  $$
+  \Rightarrow (A-\lambda_i E_n)\left(r_{0}+\frac{x}{1 !} r_{1}+\frac{x^{2}}{2 !} r_{2}+\cdots+\frac{x^{n_{i}-1}}{\left(n_{i}-1\right) !} r_{n_{i}-1}\right)=r_1+\frac{x}{1 !} r_{2}+\frac{x^{2}}{2 !} r_{3}+\cdots+\frac{x^{n_{i}-2}}{\left(n_{i}-2\right) !}r_{n_{i}-1}
+  $$
+
+  逐项比较系数即有上述定义
+
+  **命题**
+
+  设矩阵 $A$ 的互不相同的特征根为 $\lambda_1,\lambda_2,\cdots,\lambda_s$，相应的重数分别为 $n_1,n_2,\cdots,n_s$，记 $n$ 维常数列向量组成的线性空间为 $\mathbb{V}$，则
+
+  - $\mathbb V_i=\left\{r\in \mathbb V\left|(A-\lambda_i)^{n_i}r=0\right.\right\}$ 是矩阵 $A$ 的 $n_i$ 维不变子空间
+
+  - $\mathbb V$ 有直和分解
+    $$
+    \mathbb{V}=\mathbb{V}_{1} \oplus \mathbb{V}_{2} \oplus \cdots \oplus \mathbb{V}_{s}
+    $$
+
+  **定理**
+
+  在有重根的情形下，基本解矩阵 $\Phi(x)$ 为
+  $$
+  \left(e^{\lambda_{1} x} P_{1}^{(1)}(x), \cdots, e^{\lambda_{1} x} P_{n_{1}}^{(1)}(x) ; \cdots ; e^{\lambda_{s} x} P_{1}^{(s)}(x), \cdots, e^{\lambda_s x} P_{n_{s}}^{(s)}(x)\right)
+  $$
+  其中
+  $$
+  P_j^{(i)}(x)=r_{j0}^{(i)}+\frac{x}{1!}r_{j1}^{(i)}+\cdots+\frac{x^{n_i-1}}{(n_i-1)!}r_{jn_i-1}^{(i)}
+  $$
+  是与 $\lambda_i$ 对应的第 $j$ 个向量多项式，而 $r_{jk}^{(i)}$ 是齐次线性方程组的 $n_i$ 个线性无关的解，且 $r_{jk}^{(i)}$ 是用 $r_{j0}^{(i)}$ 代替引理中的 $r_0$ 而依次得出的 $r_k$
+
+  **证明**
+
+  $\Phi(x)$ 显然是解矩阵，只需要证明各列线性无关，而
+  $$
+  \Phi(0)=
+  \left(r_{10}^{(1)}, \cdots, r_{n_{1} 0}^{(1)} ; \cdots ; r_{10}^{(s)}, \cdots, r_{n_s 0}^{(s)}\right)
+  $$
+  则我们总可以选取解空间 $\mathbb V$ 中满足 $(A-\lambda_iE_n)^{n_i}r=0$ 的 $r$ 张成的 $n_i$ 维子空间 $\mathbb V_i$ 的基底作为 $r_{j0}^{(i)}$，同时由于 $\mathbb V$ 恰为 $s$ 个 $\mathbb V_i$ 的直和，各个子空间的基底与其他子空间的基底也是线性无关的，从而就证明了 $\Phi(x)$ 的各项是线性无关的，它是一个基本解矩阵
