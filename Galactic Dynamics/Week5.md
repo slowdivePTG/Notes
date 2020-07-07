@@ -122,7 +122,7 @@ An even simpler solution for visualizing the 4-D motion indirectly is to plot th
 
 
 
-###Nearly circular orbits
+### Nearly circular orbits
 
 Now we take a look at some nearly circular orbits. Since they are close to circles, $R$ should not be far from $R_g$ ($z=0$) and we can define $x=R-R_g$ to be the separation, with which we expand the effective potential
 $$

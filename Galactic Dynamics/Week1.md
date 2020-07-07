@@ -71,7 +71,7 @@ Typical acceleration
 
 Estimation using **hubble timescale** and **speed of light**
 $$
-a\sim{v^2}{r}\sim\frac{c^2}{10\text{ Gyr}\cdot c}\sim10^{-7}\text{cm/s/yr}
+a\sim\frac{v^2}{r}\sim\frac{c^2}{10\text{ Gyr}\cdot c}\sim10^{-7}\text{cm/s/yr}
 $$
 
 ## Two-body problem
