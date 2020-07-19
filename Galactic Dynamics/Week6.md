@@ -144,4 +144,9 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
   \Leftrightarrow \lambda^4+\lambda^2\left(\Phi_{xx}\Phi_{yy}+4\Omega_b^2\right)+\Phi_{xx}\Phi_{yy}=0
   $$
 
-  This is the **characteristic equation** for $\lambda$. If any of the four roots has non-zero real part, $\xi$ and $\eta$ will grow exponetially in time.
+  This is the **characteristic equation** for $\lambda$. If any of the four roots has non-zero real part, $\xi$ and $\eta$ will grow exponetially in time, and the Lagrangian point is said to be **unstable**. When all roots are pure imaginary, say $\lambda=\pm i\alpha$ or $\pm i\beta$, with $0\le \alpha\le \beta$ real, the general solution is
+  $$
+  \xi=X_1\cos\left(\alpha t+\phi_1\right)+X_2\cos\left(\beta t+\phi_2\right)\\
+  \eta=Y_1\sin\left(\alpha t+\phi_1\right)+Y_2\sin\left(\beta t+\phi_2\right)
+  $$
+  and the Lagrangian point is **stable** since $\xi$ and $\eta$ oscillate.
