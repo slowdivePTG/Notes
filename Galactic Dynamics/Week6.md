@@ -141,7 +141,7 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
   $$
 
   $$
-  \Leftrightarrow \lambda^4+\lambda^2\left(\Phi_{xx}\Phi_{yy}+4\Omega_b^2\right)+\Phi_{xx}\Phi_{yy}=0
+  \Leftrightarrow \left(\lambda^2+\Phi_{xx}\right)\left(\lambda^2+\Phi_{yy}\right)+4\lambda^2\Omega_b^2=0
   $$
 
   This is the **characteristic equation** for $\lambda$. If any of the four roots has non-zero real part, $\xi$ and $\eta$ will grow exponetially in time, and the Lagrangian point is said to be **unstable**. When all roots are pure imaginary, say $\lambda=\pm i\alpha$ or $\pm i\beta$, with $0\le \alpha\le \beta$ real, the general solution is
@@ -149,4 +149,54 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
   \xi=X_1\cos\left(\alpha t+\phi_1\right)+X_2\cos\left(\beta t+\phi_2\right)\\
   \eta=Y_1\sin\left(\alpha t+\phi_1\right)+Y_2\sin\left(\beta t+\phi_2\right)
   $$
-  and the Lagrangian point is **stable** since $\xi$ and $\eta$ oscillate.
+  and the Lagrangian point is **stable** since $\xi$ and $\eta$ oscillate. Since
+  $$
+  \left(\alpha^2-\Phi_{xx}\right)\left(\alpha^2-\Phi_{yy}\right)-4\alpha^2\Omega_b^2=0\\
+  \left(\beta^2-\Phi_{xx}\right)\left(\beta^2-\Phi_{yy}\right)-4\beta^2\Omega_b^2=0
+  $$
+  $X_1$ & $Y_1$, $X_2$ & $Y_2$ are related by
+  $$
+  Y_1=\frac{\Phi_{xx}-\alpha^2}{2\Omega_b\alpha}X_1=\frac{2\Omega_b\alpha}{\Phi_{yy}-\alpha^2}X_1\\
+  Y_2=\frac{\Phi_{xx}-\beta^2}{2\Omega_b\beta}X_2=\frac{2\Omega_b\beta}{\Phi_{yy}-\beta^2}X_2
+  $$
+  To ensure $\lambda^2$ to be real and negative, there are three conditions
+
+  - $$
+    \lambda_1^2\lambda_2^2=\Phi_{xx}\Phi_{yy}>0
+    $$
+
+  - $$
+    \lambda_1^2+\lambda_2^2=-\left(\Phi_{xx}+\Phi_{yy}+4\Omega_b^2\right)<0
+    $$
+
+  - $$
+    \Delta=\left(\Phi_{xx}+\Phi_{yy}+4\Omega_b^2\right)^2-4\Phi_{xx}\Phi_{yy}>0
+    $$
+
+  Now we can analyse the stability of Lagrange points.
+
+  - $L_1$ and $L_2$ - saddle points - unstable
+
+    $\Phi_{xx}\Phi_{yy}<0$
+
+  - $L_3$ - minimum of $\Phi_{eff}$ - stable
+
+    $\Phi_{xx}>0$ and $\Phi_{yy}>0$, so the first two conditions are naturally satisfied. We can rewrite the third condition
+    $$
+    \left(\Phi_{xx}-\Phi_{yy}\right)^2+8\left(\Phi_{xx}+\Phi_{yy}\right)\Omega_b^2+16\Omega_b^4>0
+    $$
+    which is also satisfied.
+
+    Without loss of generality, we let
+    $$
+    \Phi_{xx}<\Phi_{yy}
+    $$
+    since $x$-axis is the major axis of the potential.
+
+  -  $L_4,L_5$ - maximum of $\Phi_{eff}$ - depends on the details of the potential
+
+    For the Logarithmic potential
+    $$
+    \Phi_{eff}(x,y)=\frac12v_0^2\ln\left(R_c^2+x^2+\frac{y^2}{q^2}\right)-\frac12\Omega_b^2(x^2+y^2)
+    $$
+    $L_4,L_5$ Occur at $(0,\pm y_L)$, where
