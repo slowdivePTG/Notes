@@ -175,41 +175,43 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     \Delta=\left(\Phi_{xx}+\Phi_{yy}+4\Omega_b^2\right)^2-4\Phi_{xx}\Phi_{yy}>0
     $$
 
-  Now we can analyse the stability of Lagrange points.
+  Now we can analyse the **stability** of Lagrange points.
+
+  ![](./Lagrange_points.png)
 
   - $L_1$ and $L_2$ - saddle points - unstable
 
     $\Phi_{xx}\Phi_{yy}<0$
 
   - $L_3$ - minimum of $\Phi_{eff}$ - stable
-
+  
     $\Phi_{xx}>0$ and $\Phi_{yy}>0$, so the first two conditions are naturally satisfied. We can rewrite the third condition
     $$
     \left(\Phi_{xx}-\Phi_{yy}\right)^2+8\left(\Phi_{xx}+\Phi_{yy}\right)\Omega_b^2+16\Omega_b^4>0
-    $$
+  $$
     which is also satisfied.
-
+  
     Without loss of generality, we let
     $$
     \Phi_{xx}<\Phi_{yy}
-    $$
+  $$
     since $x$-axis is the major axis of the potential.
 
   -  $L_4,L_5$ - maximum of $\Phi_{eff}$ - depends on the details of the potential
-
+  
     For the Logarithmic potential
     $$
     \Phi_{eff}(x,y)=\frac12v_0^2\ln\left(R_c^2+x^2+\frac{y^2}{q^2}\right)-\frac12\Omega_b^2(x^2+y^2),\quad 0<q<1
     $$
     $L_4,L_5$ Occur at $(0,\pm y_L)$, where
     $$
-    0=\frac{\partial}{\partial y}\Phi_{eff}(0,\pm y_L)=\pm\left(\frac{v_0^2}{q^2R_c^2+y_L^2}-\Omega^2_b\right)y_L
+  0=\frac{\partial}{\partial y}\Phi_{eff}(0,\pm y_L)=\pm\left(\frac{v_0^2}{q^2R_c^2+y_L^2}-\Omega^2_b\right)y_L
     $$
-
+  
     $$
-    \Rightarrow y_L=\sqrt{\frac{v_0^2}{\Omega^2_b}-q^2R_c^2}
+  \Rightarrow y_L=\sqrt{\frac{v_0^2}{\Omega^2_b}-q^2R_c^2}
     $$
-
+  
     Thus $L_4,L_5$ are present only if $\Omega_b<v_0/(qR_c)$. Differentiating the effective potential again we find
     $$
     \Phi_{xx}(0,y_L)=-\Omega_b^2(1-q^2)\\
@@ -217,13 +219,13 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     $$
     Hence $\Phi_{xx}\Phi_{yy}>0$. Deciding whether the other stability conditions hold is tedious in the general case, but straightforward in the limit of negligible core radius,
     $$
-    \frac{\Omega_bR_c}{v_0}\ll 1
+  \frac{\Omega_bR_c}{v_0}\ll 1
     $$
-
+  
     $$
-    \Rightarrow \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2),\quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)
+  \Rightarrow \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2),\quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)
     $$
-
+  
     Hence
     $$
     \Phi_{xx}+\Phi_{yy}+4\Omega_b^2>0\\
@@ -232,18 +234,18 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     For future use we note that for small $R_c$, and to leading order in the ellipticity $\epsilon=1-q$, we have
     $$
     \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2)\approx\Omega_b^2(2-2\epsilon)\\
-    \quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)\approx 4\Omega_b^4\epsilon\\
+  \quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)\approx 4\Omega_b^4\epsilon\\
     $$
-
+  
     $$
-    \Rightarrow \Delta\approx4\Omega_b^4\left(1-6\epsilon\right),\quad \sqrt\Delta\approx2\Omega_b^2\left(1-3\epsilon\right)
+  \Rightarrow \Delta\approx4\Omega_b^4\left(1-6\epsilon\right),\quad \sqrt\Delta\approx2\Omega_b^2\left(1-3\epsilon\right)
     $$
-
+  
     $$
     \alpha^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2-\sqrt{\Delta}}{2}\approx2\epsilon\Omega_b^2\approx-\Phi_{xx}\\
-    \beta^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2+\sqrt{\Delta}}{2}\approx2(1-2\epsilon)\Omega_b^2=2\Omega_b^2+\mathcal{O}(\epsilon)
+  \beta^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2+\sqrt{\Delta}}{2}\approx2(1-2\epsilon)\Omega_b^2=2\Omega_b^2+\mathcal{O}(\epsilon)
     $$
-
+  
     In this way, when $\epsilon$ and $R_c$ are both small,
     $$
     Y_1\approx\frac{-4\epsilon\Omega_b^2}{2\sqrt{2\epsilon}\Omega_b^2}X_1\approx-\sqrt{2\epsilon}X_1\Rightarrow Y_1\gg X_1
@@ -252,7 +254,7 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     so the $\alpha-$ellipse is highly elongated in the $x-$ direction, while
     
     $$
-    Y_2\approx\frac{-\left[2\epsilon+2(1-2\epsilon)\right]\Omega_b^2}{2\sqrt{2(1-2\epsilon)}\Omega_b^2}X_2\approx-X_2/\sqrt2
+  Y_2\approx\frac{-\left[2\epsilon+2(1-2\epsilon)\right]\Omega_b^2}{2\sqrt{2(1-2\epsilon)}\Omega_b^2}X_2\approx-X_2/\sqrt2
     $$
-
+  
     
