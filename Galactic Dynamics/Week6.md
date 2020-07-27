@@ -183,20 +183,34 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
 
     $\Phi_{xx}\Phi_{yy}<0$
 
+    
+  
   - $L_3$ - minimum of $\Phi_{eff}$ - stable
   
     $\Phi_{xx}>0$ and $\Phi_{yy}>0$, so the first two conditions are naturally satisfied. We can rewrite the third condition
-    $$
-    \left(\Phi_{xx}-\Phi_{yy}\right)^2+8\left(\Phi_{xx}+\Phi_{yy}\right)\Omega_b^2+16\Omega_b^4>0
   $$
+    \left(\Phi_{xx}-\Phi_{yy}\right)^2+8\left(\Phi_{xx}+\Phi_{yy}\right)\Omega_b^2+16\Omega_b^4>0
+    $$
     which is also satisfied.
   
     Without loss of generality, we let
-    $$
+  $$
     \Phi_{xx}<\Phi_{yy}
   $$
     since $x$-axis is the major axis of the potential.
-
+  
+    Now consider the motion about $L_3$. 
+  
+    - Since $\alpha^2<\Phi_{xx}$ and $\alpha\ge 0$, we have $Y_1/X_1>0$, thus the star's motion around the $\alpha-$ellipse has the same sense as the rotation of the potential. Such an orbit is said to be **prograde** or **direct**.
+  
+      When $\Omega_b^2\ll |\Phi_{xx}|$, $\alpha^2\sim\Phi_{xx}$, so $X_1\gg Y_1$ and this prograde motion runs almost parallel to the long axis of the potential.
+  
+  - While $\beta^2>\Phi_{yy}$ and $\beta>0$, we have $Y_2/X_2<0$, and the orbital motion is known as **retrograde**. When $\Omega_b^2\ll |\Phi_{yy}|$, similarly $|X_2|\ll|Y_2|$, and the $\beta-$ellipse orbit goes over into a short-axis orbit.
+  
+    - A general **prograde** orbit around $L_3$ is made up of motion on the $\beta-$ellipse (**retrograde**) around a guiding center moving around the $\alpha-$ellipse (**prograde**), and conversely for **retrograde** orbits.
+  
+  
+  
   -  $L_4,L_5$ - maximum of $\Phi_{eff}$ - depends on the details of the potential
   
     For the Logarithmic potential
@@ -219,31 +233,31 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     $$
     Hence $\Phi_{xx}\Phi_{yy}>0$. Deciding whether the other stability conditions hold is tedious in the general case, but straightforward in the limit of negligible core radius,
     $$
-  \frac{\Omega_bR_c}{v_0}\ll 1
-    $$
+    \frac{\Omega_bR_c}{v_0}\ll 1
+  $$
   
     $$
-  \Rightarrow \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2),\quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)
-    $$
+    \Rightarrow \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2),\quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)
+  $$
   
     Hence
     $$
     \Phi_{xx}+\Phi_{yy}+4\Omega_b^2>0\\
-    \Delta=\Omega_b^4\left(q^4+10q^2-7\right)>0\iff q^2>4\sqrt{2}-5\approx0.810^2
+  \Delta=\Omega_b^4\left(q^4+10q^2-7\right)>0\iff q^2>4\sqrt{2}-5\approx0.810^2
     $$
     For future use we note that for small $R_c$, and to leading order in the ellipticity $\epsilon=1-q$, we have
     $$
     \Phi_{xx}+\Phi_{yy}+4\Omega_b^2=\Omega_b^2(1+q^2)\approx\Omega_b^2(2-2\epsilon)\\
-  \quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)\approx 4\Omega_b^4\epsilon\\
+    \quad \Phi_{xx}\Phi_{yy}=2\Omega_b^4(1-q^2)\approx 4\Omega_b^4\epsilon\\
     $$
   
     $$
-  \Rightarrow \Delta\approx4\Omega_b^4\left(1-6\epsilon\right),\quad \sqrt\Delta\approx2\Omega_b^2\left(1-3\epsilon\right)
+    \Rightarrow \Delta\approx4\Omega_b^4\left(1-6\epsilon\right),\quad \sqrt\Delta\approx2\Omega_b^2\left(1-3\epsilon\right)
     $$
-  
+
     $$
     \alpha^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2-\sqrt{\Delta}}{2}\approx2\epsilon\Omega_b^2\approx-\Phi_{xx}\\
-  \beta^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2+\sqrt{\Delta}}{2}\approx2(1-2\epsilon)\Omega_b^2=2\Omega_b^2+\mathcal{O}(\epsilon)
+    \beta^2=\frac{\Phi_{xx}+\Phi_{yy}+4\Omega_b^2+\sqrt{\Delta}}{2}\approx2(1-2\epsilon)\Omega_b^2=2\Omega_b^2+\mathcal{O}(\epsilon)
     $$
   
     In this way, when $\epsilon$ and $R_c$ are both small,
@@ -254,7 +268,7 @@ Let the frame of reference in which the potential $\Phi$ is static rotate steadi
     so the $\alpha-$ellipse is highly elongated in the $x-$ direction, while
     
     $$
-  Y_2\approx\frac{-\left[2\epsilon+2(1-2\epsilon)\right]\Omega_b^2}{2\sqrt{2(1-2\epsilon)}\Omega_b^2}X_2\approx-X_2/\sqrt2
+    Y_2\approx\frac{-\left[2\epsilon+2(1-2\epsilon)\right]\Omega_b^2}{2\sqrt{2(1-2\epsilon)}\Omega_b^2}X_2\approx-X_2/\sqrt2
     $$
   
     
