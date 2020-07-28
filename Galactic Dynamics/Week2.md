@@ -89,7 +89,7 @@ Typical **Polar equations** of **conic sections**!
 
 2. $E=0\Rightarrow e=1$ - parabola
    $$
-   E=0\Rightarrow\frac{v^2}{2}=\frac{Gm}{r}\Rightarrow v=\sqrt{\frac{2GM}{r}}
+   E=0\Rightarrow\frac{v^2}{2}=\frac{Gm}{r}\Rightarrow v=\sqrt{\frac{2Gm}{r}}
    $$
    For parabola orbits, it is easy for us to calculate the velocity!
 
@@ -154,7 +154,7 @@ When a star moves in a cluster, the direction of the velocity will change under 
   $$
   \left\langle\vec\theta_f^2\right\rangle=\left\langle\left(\vec\theta_0+\sum_{i}\delta\vec\theta_i\right)^2\right\rangle=
    \left\langle\vec\theta_0^2\right\rangle
-  +\left\langle\vec\theta_0\sum_{i}\delta\vec\theta_i\right\rangle
+  +2\left\langle\vec\theta_0\sum_{i}\delta\vec\theta_i\right\rangle
   +\left\langle\sum_{i}\left(\delta\vec\theta_i\right)^2\right\rangle
   +\left\langle\sum_{i\neq j}\delta\vec\theta_i\delta\vec\theta_i\right\rangle
   $$
