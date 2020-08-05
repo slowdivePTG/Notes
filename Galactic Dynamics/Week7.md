@@ -81,7 +81,7 @@ The equations of motion yield
   $$
   
   $$
-  \iff \ddot R_1-2R_0\Omega_0\dot\phi_1+R_1\left(\frac{\text d^2\Phi_0}{\text d R^2}-\Omega^2\right)_{R_0}\equiv-\left(\frac{\partial\Phi_1}{\partial R}\right)_{R_0}
+  \iff \ddot R_1-2R_0\Omega_0\dot\phi_1+R_1\left(\frac{\text d^2\Phi_0}{\text d R^2}-\Omega^2\right)_{R_0}=-\left(\frac{\partial\Phi_1}{\partial R}\right)_{R_0}
   $$
   
   and
@@ -104,7 +104,7 @@ The equations of motion yield
   $$
   where $m\in N^*$, since any potential that is an **even function** of $\phi$ can be expanded as a Fourier series. If $m=2$ the potential is **barred**.
   
-  At first we assume that $\phi\ll1$ and hence $\phi(t)$ always remains close to $(\Omega_0-\Omega_b)t$. With this assumption we have
+  At first we assume that $\phi_1\ll1$ and hence $\phi(t)$ always remains close to $(\Omega_0-\Omega_b)t$. With this assumption we have
   $$
   \ddot R_1-2R_0\Omega_0\dot\phi_1+R_1\left(\frac{\text d^2\Phi_0}{\text d R^2}-\Omega^2\right)_{R_0}\equiv-\left(\frac{\text d\Phi_b}{\text d R}\right)_{R_0}\cos\left[m\left(\Omega_0-\Omega_b\right)t\right]
   $$
@@ -132,7 +132,7 @@ The equations of motion yield
   $$
   and
   $$
-  \kappa_0^2=\left(\frac{\text d^2\Phi_0}{\text d R^2}+3\Omega^2\right)_{R_0}=\left(R\frac{\text d\Omega^2}{\text d R}+4\Omega^2\right)_{R_0}
+  \kappa_0^2=\left(\frac{\text d^2\Phi_0}{\text d R^2}+3\Omega^2\right)_{R_0}=\left(R\frac{\text d\Omega^2}{\text d R}+4\Omega^2\right)_{R_0}\quad\left(\kappa_0^2<4\Omega_0^2\right)
   $$
   since
   $$
@@ -164,4 +164,64 @@ The equations of motion yield
   
   The former, of which $\Omega_0=\Omega_b$, corresponds to the case of **corotation resonance**. The guiding center simply corotates with the potential.
   
-  The latter, of which $m\left(\Omega_0-\Omega_b\right)=\pm\kappa_0$, is known as **Lindblad resonances**.
+  The latter, of which $m\left(\Omega_0-\Omega_b\right)=\pm\kappa_0$, is known as **Lindblad resonances**. Radii at which such resonances occur are called **Lindblad radii**.
+  
+  - Inner Lindblad resonance - plus sign - larger $\Omega_0$
+  - Outer Lindblad resonance - minus sign - smaller $\Omega_0$
+  
+- Orbits trapped at resonance
+
+  When $R_0$ approches the radius of either a Linblad resonance or the corotation resonance, the value of $R_1$ predicted with linear approximation diverges, thus we should modify the analysis.
+
+  In the previous analysis we have assumed $\phi_1\ll1$, which is not neccessarily satisfied. If the bar strength $\Phi_1$ is proportional to some small parameter $\epsilon$, we assume $\phi_1$ is of order unity, $R_1$ is of order $\epsilon^{1/2}$, and the time derivative of any quantity is smaller than that quantity by of order $\epsilon^{1/2}$. When we further put the guiding center at $L_5$, the equations of motion go like
+  $$
+  \ddot R_1+\left(\kappa_0^2-4\Omega_0^2\right)R_1-2R_0\Omega_0\dot\phi_1=-\left(\frac{\partial\Phi_1}{\partial R}\right)_{R_0}
+  $$
+
+  $$
+  \ddot\phi_1+2\Omega_0\frac{\dot R_1}{R_0}=-\frac1{R_0^2}\left(\frac{\partial\Phi_1}{\partial \phi}\right)_{R_0}
+  $$
+
+  According to our ordering, in the first equation, $\ddot R_1$ is of order $\epsilon^{3/2}$, $\Phi_1$ is of order unity, while other terms are of order $\epsilon^{1/2}$. In the second equation, each term is of order $\epsilon^{1/2}$. Thus
+  $$
+  \left(\kappa_0^2-4\Omega_0^2\right)R_1-2R_0\Omega_0\dot\phi_1=0,\quad \ddot\phi_1+2\Omega_0\frac{\dot R_1}{R_0}=-\frac1{R_0^2}\left(\frac{\partial\Phi_1}{\partial \phi}\right)_{R_0}
+  $$
+
+  $$
+  \Rightarrow\ddot\phi_1\left(\frac{\kappa_0^2}{\kappa_0^2-4\Omega_0^2}\right)=-\frac1{R_0^2}\left(\frac{\partial\Phi_1}{\partial \phi}\right)_{\left(R_0,\phi_0+\phi_1\right)}
+  $$
+
+  Recall $\Phi_1=\Phi_1(R,\phi)=\Phi_b(R)\cos(m\phi)$ and let $m=2$
+  $$
+  \ddot\phi_1=-\frac{2\Phi_b}{R_0^2}\left(\frac{4\Omega_0^2-\kappa_0^2}{\kappa_0^2}\right)\sin\left[2\left(\phi_0+\phi_1\right)\right]
+  $$
+  where $\Phi_b<0$. At $L_5$ we have $\phi_0=\pi/2$, so
+  $$
+  \ddot\phi_1=\frac{2\Phi_b}{R_0^2}\left(\frac{4\Omega_0^2-\kappa_0^2}{\kappa_0^2}\right)\sin\left(2\phi_1\right)
+  $$
+
+  $$
+  \iff \ddot\psi=-p^2\sin\psi
+  $$
+
+  where $\psi=2\phi_1$, and
+  $$
+  p^2=-\frac{4\left|\Phi_b\right|}{R_0^2}\left(\frac{4\Omega_0^2-\kappa_0^2}{\kappa_0^2}\right)
+  $$
+  This is simply the equation of a pendulum. Here the singularity appeared at corotation ($\Omega_0=\Omega_b$) no longer exists in this more careful analysis. Also, the stable equilibrium point of the pendulum, $\phi_1 = 0$, is at the maximum, not the minimum, of the potential $\Phi_1$ (the donkey effect).
+
+  - The donkey effect - *in azimuth stars behave like donkeys, slowing down when pulled forwards and speeding up when held back* - Lynden–Bell & Kalnajs (1972)
+
+  If the integral of motion
+  $$
+  E_p=\frac12\dot\psi^2-p^2\cos\psi
+  $$
+  is less than $p^2$, the star oscillates slowly or **librates** about the Lagragian point, whereas if $E_p>p^2$, the star is not trapped by the bar but **circulates** about the center of the galaxy.
+
+  For small oscillations, the libration frequency is $p$.
+
+  We may also obtain the shape of the orbit
+  $$
+  R_1=\frac{R_0\Omega_0}{\kappa_0^2-4\Omega_0^2}\dot\psi=\pm \frac{R_0\Omega_0}{\kappa_0^2-4\Omega_0^2}\sqrt{2\left[E_p+p^2\cos\left(2\phi_1\right)\right]}
+  $$
+  
