@@ -28,6 +28,28 @@ $$
 
 We restrict our attention to bound orbits, so that $x_i$ are periodic functions of the $\theta_i$. We can scale $\theta_i$ so that $\vec x$ returns to its original value every time $\theta_i$ has increased by $2\pi$. Then we can expand $\vec x$ in a Fourier series
 $$
-\vec x\left(\vec \theta,\vec J\right)=\sum_{\vec n}\vec X_{\vec n}(\vec J)\mathrm e^{i\vec n\cdot\vec\theta}
+\vec x\left(\vec \theta,\vec J\right)=\sum_{\vec n}\vec X_{\vec n}(\vec J)\mathrm e^{i\vec n\cdot\vec\theta}=\sum_{\vec n}\vec X_{\vec n}(\vec J)\mathrm e^{i\vec n\cdot\vec\theta_0}\mathrm e^{i\vec n\cdot\vec\Omega t}
 $$
-where the sum is over all vectors $\vec n$ with integer comopents.
+where the sum is over all vectors $\vec n$ with integer components. The spatial coordinates are Fourier series in time, in which every frequency is a sum of integer multiples $(n_1,n_2,n_3)$ of the three **fundamental frequencies** $\Omega_i(\vec J)$. Such a time series is said to be **conditionally periodic** or **quasiperiodic**.
+
+>*Quasiperiodic* here is like *quasicrystal* - a structure whose Fourier transform is discrete, but in which there are more fundamental frequencies than independent variables
+
+An orbit is said to be **resonant** when its fundamental frequencies satisfy a relation of the form $\vec n \cdot\vec \Omega = 0$ for some integer triple $\vec n\neq \vec 0$. Usually this implies that two of the frequencies are commensurable, that is the ratio $ \Omega_i/ \Omega_j$ is a rational number $(−n_j/n_i)$.
+
+In fact, incrementing $\theta_1$ by $2\pi$ while leaving $\theta_2,\theta_3$ fixed brings one back to the same point in phase space, which is also true for $\theta_2$ and $\theta_3$. In this way, we can sew together each pair of opposite edges of the corresponding *rectangular* region in phase space $(\theta_1,\theta_2,\theta_3)$. Thus we generate a **three-torus**.
+
+We use the **Poincaré invariants** to label these three-tori
+$$
+J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec q\text d\vec p=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\sum_{j=1,2,3}\text d q_j\text d p_j
+$$
+where the integral is over any surface that is **bounded** by the path $\gamma_i$ on which $\theta_i$ increase from $0$ to $2\pi$ while everything else is held constant. Since angle-action variables are canonical, $\text d\vec q\text d\vec p=\text d\vec \theta\text d\vec J$, we have
+$$
+J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec \theta\text d\vec J=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\theta_i\text dJ_i
+$$
+![](./pq.png)
+
+If we rescale $\vec q$ and $\vec p$ so that $\gamma_i$ becomes a circle, $J_i'$ is in fact closely related to the area, and thus the radius, of the circle.
+$$
+J_i'=\frac{A_i}{2\pi}=\frac{r_i^2}{2}\Rightarrow r_i=\sqrt{2J_i'}
+$$
+So $(\theta_i,J_i)$ is closely analogous to plane polar coordinates (though $J_i$ is more analogous to the area)
