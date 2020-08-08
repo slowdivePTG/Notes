@@ -1,4 +1,4 @@
-# Week7: Orbits
+# Week8: Orbits
 
 ## Angular-action variables
 
@@ -52,4 +52,33 @@ If we rescale $\vec q$ and $\vec p$ so that $\gamma_i$ becomes a circle, $J_i'$ 
 $$
 J_i'=\frac{A_i}{2\pi}=\frac{r_i^2}{2}\Rightarrow r_i=\sqrt{2J_i'}
 $$
-So $(\theta_i,J_i)$ is closely analogous to plane polar coordinates (though $J_i$ is more analogous to the area)
+So $(\theta_i,J_i)$ is closely analogous to plane polar coordinates (though $J_i$ is more analogous to the area). As a result, there is a coordinate singularity within the domain of integration. With the sigularity excluded, we can derive
+$$
+J_i'=\frac{1}{2\pi}\left(\oint_{\gamma_i}J_i\text d\theta_i-\oint_{J_i=J_i^c}J_i\text d\theta_i\right)=J_i-J_i^c
+$$
+where $J_i^c$ is some definite value of a small circle around the singularity. If we set $J_i=0$ at the singularity, $J_i'=J_i$. Henceforce we assume this choice has been made.
+
+Of course in the $(\vec q,\vec p)$ phase space there is no singularity. Therefore we can simply replace the surface integral with a line integral
+$$
+J_i=\oint_{\gamma_i}\vec p\text d\vec q
+$$
+
+1. **Time averages theorem**
+
+   When a regular orbit is non-resonant, the average time that the phase point of a star on that orbit spends in any region $D$ of its torus is proportional to the integral
+   $$
+   V(D)=\int_D\text d^3\vec\theta
+   $$
+   Proof:
+
+   Let
+   $$
+   f_D(\vec\theta)=\left\{
+   \begin{array}{cc}
+   1,&\vec\theta\in D\\
+   0,&\vec\theta\notin D
+   \end{array}\right.=\sum_{\vec n}F_{\vec n}\exp\left(i\vec n\cdot\vec\theta\right)
+   $$
+   $F_\vec n$ is the Fourier coefficient.
+
+2. 
