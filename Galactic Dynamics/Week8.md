@@ -81,4 +81,47 @@ $$
    $$
    $F_\vec n$ is the Fourier coefficient.
 
-2. 
+   Now
+   $$
+   \begin{align*}
+   V(D)&\equiv \int_D\text d^3\vec\theta=\int_{\text{torus}}\text d^3\vec\theta f_D(\vec\theta)\\
+   &=\int_{\text{torus}}\text d^3\vec\theta\sum_{\vec n}F_{\vec n}\exp\left(i\vec n\cdot\vec\theta\right)\\
+   &=\sum_{\vec n}F_{\vec n}\prod_{k=1}^3\int_{0}^{2\pi}\text d\theta_k\exp\left(in_k\theta_k\right)\\
+   &=\left(2\pi\right)^3 F_{\vec 0}
+   \end{align*}
+   $$
+   On the other hand, the fraction of the interval $(0,T)$ during which the star's phase point lies in $D$ is
+   $$
+   \begin{align*}
+   \tau_T(D)&=\frac1T\int_0^Tf_D\left[\vec\theta(t)\right]\text dt\\
+   &=\frac1T\sum_{\vec n}F_{\vec n}\int_0^T\exp\left[i\vec n\cdot\left(\vec\theta_0+\vec\Omega t\right)\right]\text dt\\
+   &=\frac1T\sum_{\vec n}F_{\vec n}\exp\left(i\vec n\cdot\vec\theta_0\right)\int_0^T\exp\left(i\vec n\cdot\vec\Omega t\right)\text dt\\
+   &=F_{\vec 0}+\frac1T\sum_{\vec n\neq\vec0}F_{\vec n}\exp\left(i\vec n\cdot\vec\theta_0\right)\frac{\exp\left(i\vec n\cdot\vec\Omega T\right)-1}{i\vec n\cdot\vec\Omega}
+   \end{align*}
+   $$
+   Thus
+   $$
+   \lim_{T\to\infty}\tau_T(D)=F_{\vec0}\propto V(D)
+   $$
+   But if the orbit is resonant, $\vec n\cdot\vec \Omega$ vanishes for some $\vec n\neq\vec 0$, so the theorem cannot be proved. The star is in fact confined toa spiral on the torus.
+
+2. **Action space**
+
+   Now we regard orbits as single points in an abstract space. We define **action space** to be the imaginary space whose Cartesian coordinates are the actions.
+
+   - Points on the axes represent orbits for which only one of the integrals
+     $$
+     J'_i=\frac1{2\pi}\iint\text d\vec q\cdot\text d\vec p
+     $$
+     is non-zero, which represent closed orbits.
+
+   - The local normal to the surface of constant energy is parallel to the vector $\vec\Omega$, since
+     $$
+     \nabla_{\vec J} H=\vec\Omega
+     $$
+
+   - Every point in the positive quadrant $J_r , J_{\theta} \ge 0$, all the way to infinity, represents a bound orbit.
+
+3. **Hamilton-Jacobi equation**
+
+   
