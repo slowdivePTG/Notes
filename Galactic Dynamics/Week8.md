@@ -40,8 +40,20 @@ In fact, incrementing $\theta_1$ by $2\pi$ while leaving $\theta_2,\theta_3$ fix
 
 We use the **Poincaré invariants** to label these three-tori
 $$
-J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec q\text d\vec p=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\sum_{j=1,2,3}\text d q_j\text d p_j
+J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec q\cdot\text d\vec p=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\sum_{j=1,2,3}\text d q_j\text d p_j
 $$
+>**Poincaré invariant theorem** 
+>
+>If $S(0)$ is any two-surface in phase space, and $S(t)$ is the surface into which $S(0)$ is mapped by the time-evolution operator $\operatorname{H}_t$, then
+>
+>$$ \iint_{S(0)}\text d\vec q\cdot\text d\vec p =\iint_{S(t)}\text d\vec q\cdot\text d\vec p$$
+>
+>**Corollary** (with Green's theorem)
+>
+>If $\gamma(0)$ is any closed path through phase space, and $\gamma(t)$ is the path to which $\gamma(0)$ is mapped by the time-evolution operator, then
+>
+>$$\oint_{\gamma(0)}\text d\vec q\cdot\vec p=\oint_{\gamma(t)}\text d\vec q\cdot\vec p$$
+
 where the integral is over any surface that is **bounded** by the path $\gamma_i$ on which $\theta_i$ increase from $0$ to $2\pi$ while everything else is held constant. Since angle-action variables are canonical, $\text d\vec q\text d\vec p=\text d\vec \theta\text d\vec J$, we have
 $$
 J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec \theta\text d\vec J=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\theta_i\text dJ_i
@@ -103,7 +115,7 @@ $$
    $$
    \lim_{T\to\infty}\tau_T(D)=F_{\vec0}\propto V(D)
    $$
-   But if the orbit is resonant, $\vec n\cdot\vec \Omega$ vanishes for some $\vec n\neq\vec 0$, so the theorem cannot be proved. The star is in fact confined toa spiral on the torus.
+   But if the orbit is resonant, $\vec n\cdot\vec \Omega$ vanishes for some $\vec n\neq\vec 0$, so the theorem cannot be proved. The star is in fact confined to a spiral on the torus.
 
 2. **Action space**
 
@@ -121,6 +133,20 @@ $$
      $$
 
    - Every point in the positive quadrant $J_r , J_{\theta} \ge 0$, all the way to infinity, represents a bound orbit.
+
+   A region $R_3$ in action space represents a group of orbits. Let the volume of $R_3$ be $V_3$. The volume of the six-dimensional phase space occupied by the orbit is
+   $$
+   V_6=\int_{R_6}\text d^3\vec x\cdot \text d^3 \vec v=\int_{R_6}\text d^3\vec J\cdot \text d^3 \vec \theta
+   $$
+   where $R_6$ is the region of phase visited by stars on the orbits of $R_3$. But for any orbit the angle variables cover $(0,2\pi)$, so
+   $$
+   V_6=\left(2\pi\right)^3\int_{R_3}\text d^3\vec J=\left(2\pi\right)^3V_3
+   $$
+   Thus the **volume of a region of action space** is proportional to the **volume of phase space occupied by its orbits**
+
+   >Phase space - the six-dimensional space with coordinates $(\vec x, \vec v)$.
+
+   
 
 3. **Hamilton-Jacobi equation**
 
