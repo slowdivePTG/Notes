@@ -45,19 +45,36 @@ $$
 >**Poincaré invariant theorem** 
 >
 >If $S(0)$ is any two-surface in phase space, and $S(t)$ is the surface into which $S(0)$ is mapped by the time-evolution operator $\operatorname{H}_t$, then
->
->$$ \iint_{S(0)}\text d\vec q\cdot\text d\vec p =\iint_{S(t)}\text d\vec q\cdot\text d\vec p$$
->
->**Corollary** (with Green's theorem)
+>$$
+>\iint_{S(0)}\text d\vec q\cdot\text d\vec p =\iint_{S(t)}\text d\vec q\cdot\text d\vec p
+>$$
+>**Corollary** (by Green's theorem)
 >
 >If $\gamma(0)$ is any closed path through phase space, and $\gamma(t)$ is the path to which $\gamma(0)$ is mapped by the time-evolution operator, then
->
->$$\oint_{\gamma(0)}\text d\vec q\cdot\vec p=\oint_{\gamma(t)}\text d\vec q\cdot\vec p$$
+>$$
+>\oint_{\gamma(0)}\text d\vec q\cdot\vec p=\oint_{\gamma(t)}\text d\vec q\cdot\vec p
+>$$
 
 where the integral is over any surface that is **bounded** by the path $\gamma_i$ on which $\theta_i$ increase from $0$ to $2\pi$ while everything else is held constant. Since angle-action variables are canonical, $\text d\vec q\text d\vec p=\text d\vec \theta\text d\vec J$, we have
 $$
 J_i'\equiv\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\vec \theta\text d\vec J=\frac{1}{2\pi}\iint_{\text{interior of }\gamma_i}\text d\theta_i\text dJ_i
 $$
+>Any set of phase-space coordinates $\vec W \equiv \{W_\alpha, \alpha = 1,...,2n\}$ is said to be canonical if
+>$$
+>[W_\alpha,W_\beta]=J_{\alpha\beta}
+>$$
+>where the symplectic matrix is
+>$$
+>\begin{equation}
+>\mathbf{J} \equiv\left(\begin{array}{cc}0 & \mathbf{I} \\ -\mathbf{I} & 0\end{array}\right)
+>\end{equation}
+>$$
+>and $[\cdot]$ denotes the **Poisson bracket**
+>$$
+>[A, B] \equiv \frac{\partial A}{\partial \vec{q}} \cdot \frac{\partial B}{\partial \vec{p}}-\frac{\partial A}{\partial \vec{p}} \cdot \frac{\partial B}{\partial \vec{q}}
+>$$
+>*The phase-space volume element is the same in any canonical coordinates.*
+
 ![](./pq.png)
 
 If we rescale $\vec q$ and $\vec p$ so that $\gamma_i$ becomes a circle, $J_i'$ is in fact closely related to the area, and thus the radius, of the circle.
@@ -150,4 +167,108 @@ $$
 
 3. **Hamilton-Jacobi equation**
 
+   The transformation between any two sets of canonical coordinates can be effected with a **generating function**.
+
+   >Given any closed path $\Gamma$ in phase space, if $(\vec q,\vec p)$ and $(\vec q',\vec p')$ are canonical coordinate systems, then the conservation of Poincaré invariants in canonical transformation implies that
+   >$$
+   >\oint_{\Gamma}\left(\text d\vec q\cdot \vec p-\text d\vec q'\cdot \vec p'\right)=0
+   >$$
+   >Thus the integral does not depend on the path of integration, so for a fixed initial point $\vec w_0$ we have
+   >$$
+   >S(\vec w)=\int_{\vec w_0}^{\vec w}\left(\text d\vec q\cdot \vec p-\text d\vec q'\cdot \vec p'\right)
+   >$$
+   >or
+   >$$
+   >\text dS=\text d\vec q\cdot \vec p-\text d\vec q'\cdot \vec p'
+   >$$
+   >where $\text dS$ is an exact differential. $S(\vec q,\vec q')$ is called a **generating function** of the canonical transformation from $(\vec q,\vec p)$ to $(\vec q',\vec p')$, and
+   >$$
+   >\vec p=\frac{\partial S}{\partial\vec q},\quad \vec p'=-\frac{\partial S}{\partial\vec q'}
+   >$$
+   >Every sufficiently smooth and non-degenerate function $S(\vec q, \vec q')$ defines a canonical transformation through these relations.
+>
+   >Similarly, let $S_2(\vec q,p')\equiv \vec q'\cdot\vec p'+S$ (Legendre transformation), then
+   >$$
+   >\vec p=\frac{\partial S_2}{\partial\vec q},\quad \vec q'=\frac{\partial S}{\partial\vec p'}
+   >$$
+   >We can also define $S_3$, $S_4$. They are all generating functions for certain canonical transformation.
+   
+   Let $S(\vec q,\vec J)$ be the generation function of the transformation between the angle-action variables and ordinary phase space coordinates $(\vec q,\vec p)=(\vec x,\vec v)$, then
+   $$
+   \vec\theta=\frac{\partial S}{\partial \vec J},\quad \vec p=\frac{\partial S}{\partial \vec q}
+$$
+   where $\vec p$ and $\vec \theta$ are now considered fuctions of $\vec q$ and $\vec J$. Now we can rewrite the Hamiltonian
+   $$
+   H\left(\vec q,\frac{\partial S}{\partial \vec q}\left(\vec q,\vec J\right)\right)
+   $$
+   as a function of $\vec q$ and $\vec J$. By moving along an orbit, we can vary $q_i$ while holding $J_i$ constant. The conservation of energy gives the **Hamilton-Jacobi equation**
+   $$
+   H\left(\vec q,\frac{\partial S}{\partial \vec q}\left(\vec q,\vec J\right)\right)=E\quad\text{at fixed } \vec J
+   $$
+   If we can solve this equation, which is a one-order PDE, the solution should contain some arbitrary constants $K_i$. Then we have
+   $$
+   J_i=\frac{1}{2\pi}\oint_{\gamma_i}\frac{\partial S}{\partial\vec q}\cdot\text d\vec q=\frac{\Delta S(\vec K)}{2\pi}
+   $$
+   This equation states that $J_i$ is proportional to the increment in the generating function when one passes once around the torus on the $i$th path—$S$, like the magnetic scalar potential around a current-carrying wire, is a multivalued function.
+   
+   When $S$ is solved, we can transform between angle-action variables and ordinary phase-space coordinates.
+   
+   **Example: 2-d harmonic oscillator**
+   $$
+   H(\vec x,\vec p)=\frac12\left(p_x^2+p_y^2+\omega_x^2x^2+\omega_y^2y^2\right)
+   $$
+   Since
+   $$
+   p_x=\frac{\partial S}{\partial x},\quad p_y=\frac{\partial S}{\partial y}
+   $$
+   the Hamilton-Jacobi equation reads
+   $$
+   \left(\frac{\partial S}{\partial x}\right)^2+\left(\frac{\partial S}{\partial y}\right)^2+\omega_x^2x^2+\omega_y^2y^2=2E
+   $$
+   where $S=S(x,y,\vec J)$. We assume that 
+   $$
+   S(x,y,\vec J)=S_x(x,\vec J)+S_y(y,\vec J)
+   $$
+   thus
+   $$
+   \left(\frac{\partial S_x}{\partial x}\right)^2+\omega_x^2x^2=2E-\left(\frac{\partial S_y}{\partial y}\right)^2-\omega_y^2y^2
+   $$
+   The left part does not depend on $y$ while the right hand side does not depend on $x$. Therefore, each side should be a constant regardless of $x$ and $y$, and
+   $$
+   K^2(\vec J)\equiv\left(\frac{\partial S_x}{\partial x}\right)^2+\omega_x^2x^2=2E-\left(\frac{\partial S_y}{\partial y}\right)^2-\omega_y^2y^2
+   $$
+   Consequently
+   $$
+   \begin{align*}
+   S_x(x,\vec J)
+   &=|K|\int^x\text dx'\sqrt{1-\frac{\omega_x^2x^2}{K^2}}\\
+   &=\frac{K^2}{\omega_x}\int^\psi\text d\psi'\sin^2\psi',\quad \text{where } x=-\frac{K}{\omega_x}\cos\psi\\
+   &=\frac{K^2}{2\omega_x}\left(\psi-\frac12\sin2\psi\right)
+   \end{align*}
+   $$
+   Moreover
+   $$
+   p_x=\frac{\partial S}{\partial x}=\frac{\partial S}{\partial \psi}\frac{\partial \psi}{\partial x}=\frac{K^2}{2\omega_x}\left(1-\cos2\psi\right)\cdot\frac{\omega_x}{K}=K\sin\psi,\quad K^2=\left(\frac{\partial S_x}{\partial x}\right)^2+\omega_x^2x^2=p_x^2+\omega_x^2x^2
+   $$
+   so both $x$ and $p_x$ return to their original values when $\psi$ is incremented by $2\pi$. Thus
+   $$
+   J_x(x,p_x)=\frac{\Delta S}{2\pi}=\frac{\Delta S_x}{2\pi}=\frac{K^2}{2\omega_x}=\frac{p_x^2+\omega_x^2x^2}{2\omega_x}
+   $$
+   Similarly
+   $$
+   J_y(y,p_y)=\frac{p_y^2+\omega_y^2y^2}{2\omega_x}
+   $$
+   and
+   $$
+   H(\vec J)=\omega_xJ_x+\omega_yJ_y
+   $$
+   
+   $$
+   \Omega_x=\frac{\partial H}{\partial J_x}=\omega_x,\quad \Omega_y=\frac{\partial H}{\partial J_y}=\omega_y
+   $$
+   
+   
+   
+   
+   
    
