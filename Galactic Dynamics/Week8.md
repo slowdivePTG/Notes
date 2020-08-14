@@ -267,8 +267,22 @@ $$
    \Omega_x=\frac{\partial H}{\partial J_x}=\omega_x,\quad \Omega_y=\frac{\partial H}{\partial J_y}=\omega_y
    $$
    
+   Finally we determine the angle variables
+   $$
+   \begin{align*}
+   \theta_x&=\frac{\partial S}{\partial J_x}=\frac{\partial }{\partial J_x}\left[J_x\left(\psi-\frac12\sin 2\psi\right)\right]\\
+   &=\psi-\frac12\sin 2\psi+J_x\left(1-\cos 2\psi\right)\frac{\partial \psi}{\partial J_x}\\
+   &=\psi-\frac12\sin 2\psi+\left(1-\cos 2\psi\right)\left(\frac{\partial J_x}{\partial \psi}\right)^{-1}J_x\\
+   &=\psi
+   \end{align*}
+   $$
    
-   
-   
-   
-   
+
+### Angle-action variables for spherical potentials
+
+The Hamilton-Jacobi equation for potential $\Phi(r)$ is
+$$
+E=\frac12\left[\left(\frac{\partial S}{\partial r}\right)^2\right]
+$$
+
+
