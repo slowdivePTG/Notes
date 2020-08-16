@@ -282,7 +282,35 @@ $$
 
 The Hamilton-Jacobi equation for potential $\Phi(r)$ is
 $$
-E=\frac12\left[\left(\frac{\partial S}{\partial r}\right)^2\right]
+\begin{align*}
+E&=\frac{1}{2}\left[\left(\frac{\partial S}{\partial r}\right)^{2}+\left(\frac{1}{r} \frac{\partial S}{\partial \vartheta}\right)^{2}+\left(\frac{1}{r \sin \vartheta} \frac{\partial S}{\partial \phi}\right)^{2}\right]+\Phi(r)\\
+&=\frac{1}{2}\left[\left(\frac{\partial S_r}{\partial r}\right)^{2}+\left(\frac{1}{r} \frac{\partial S_\vartheta}{\partial \vartheta}\right)^{2}+\left(\frac{1}{r \sin \vartheta} \frac{\partial S_\phi}{\partial \phi}\right)^{2}\right]+\Phi(r)
+\end{align*}
 $$
+and the generalized momenta are
+$$
+\begin{aligned} L_{z}^{2} &=\left(\frac{\partial S_{\phi}}{\partial \phi}\right)^{2}=p_{\phi}^{2} \\ L^{2}-\frac{L_{z}^{2}}{\sin ^{2} \vartheta} &=\left(\frac{\partial S_{\vartheta}}{\partial \vartheta}\right)^{2}=p_{\vartheta}^{2} \\ 2 E-2 \Phi(r)-\frac{L^{2}}{r^{2}} &=\left(\frac{\partial S_{r}}{\partial r}\right)^{2}=p_{r}^{2} \end{aligned}
+$$
+Here we have introduced two separation constants, $L$ and $L_z$ ($L>0,L_z>0$). Then $L$ and $L_z$ prove to be the magnitude and $z$-component of the angular momentum vector. $S$ goes like
+$$
+\begin{aligned} S(\vec x, \vec J)=\int_{0}^{\phi} \mathrm{d} \phi L_{z} &+\int_{\pi / 2}^{\vartheta} \mathrm{d} \vartheta \epsilon_{\vartheta} \sqrt{L^{2}-\frac{L_{z}^{2}}{\sin ^{2} \vartheta}} \\ &+\int_{r_{\min }}^{r} \mathrm{d} r \epsilon_{r} \sqrt{2 E-2 \Phi(r)-\frac{L^{2}}{r^{2}}} \end{aligned}
+$$
+where $\epsilon_\vartheta$ and $\epsilon_r$ are chosen to be $\pm 1$ such that the integrals in which they appear increase monotonically a long a path over the orbital torus.
 
+- $J_\phi$ - **azimuthal action**
+  $$
+  J_\phi=\frac{\Delta S}{2\pi}=\frac{2\pi L_z}{2\pi}=L_z
+  $$
+
+- $J_\vartheta$ - **latitudinal action**
+
+  Let $\vartheta_{min}$ be the smallest value that $\vartheta$ attains on the orbit, given by
+  $$
+  \sin\vartheta_{min}=\frac{|L_z|}{L},\quad \vartheta_{min}\le\frac{\pi}{2}
+  $$
+  Then the integration is valid between $\pi/2$ and $\pi-\vartheta_{min}$, which is a quarter period of the integrand. Thus
+  $$
+  J_{\vartheta}=\frac{4}{2\pi}\int_{\pi / 2}^{\pi-\vartheta_{min}} \mathrm{d} \vartheta  \sqrt{L^{2}-\frac{L_{z}^{2}}{\sin ^{2} \vartheta}}=L-|L_z|
+  $$
+  
 
