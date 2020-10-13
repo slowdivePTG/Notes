@@ -306,11 +306,40 @@ where $\epsilon_\vartheta$ and $\epsilon_r$ are chosen to be $\pm 1$ such that t
 
   Let $\vartheta_{min}$ be the smallest value that $\vartheta$ attains on the orbit, given by
   $$
-  \sin\vartheta_{min}=\frac{|L_z|}{L},\quad \vartheta_{min}\le\frac{\pi}{2}
+  \sin\vartheta_{\min}=\frac{|L_z|}{L},\quad \vartheta_{\min}\le\frac{\pi}{2}
   $$
-  Then the integration is valid between $\pi/2$ and $\pi-\vartheta_{min}$, which is a quarter period of the integrand. Thus
+  Then the integration is valid between $\pi/2$ and $\pi-\vartheta_{\min}$, which is a quarter period of the integrand. Thus
   $$
-  J_{\vartheta}=\frac{4}{2\pi}\int_{\pi / 2}^{\pi-\vartheta_{min}} \mathrm{d} \vartheta  \sqrt{L^{2}-\frac{L_{z}^{2}}{\sin ^{2} \vartheta}}=L-|L_z|
+  J_{\vartheta}=\frac{4}{2\pi}\int_{\pi / 2}^{\pi-\vartheta_{\min}} \mathrm{d} \vartheta  \sqrt{L^{2}-\frac{L_{z}^{2}}{\sin ^{2} \vartheta}}=L-|L_z|
   $$
-  
 
+- $J_r$ - **radial action**
+  $$
+  J_r=\frac{2}{2\pi}\int_{r_{\min }}^{r_{\max}} \mathrm{d} r \epsilon_{r} \sqrt{2 E-2 \Phi(r)-\frac{L^{2}}{r^{2}}}
+  $$
+  **An important example** - isochrone potential
+  $$
+  \Phi=-\frac{GM}{b+\sqrt{b^2+r^2}}
+  $$
+  Thus
+  $$
+  J_{r}=\frac{G M}{\sqrt{-2 E}}-\frac{1}{2}\left(L+\frac{1}{2} \sqrt{L^{2}-4 G M b}\right)
+  $$
+  We can rewrite this expression as an equation $H_I=E$
+  $$
+  H_I(\vec J)=-\frac{(G M)^{2}}{2\left[J_{r}+\frac{1}{2}(L+\sqrt{L^{2}+4 G M b})\right]^{2}} \quad\left(L=J_{\theta}+\left|J_{\phi}\right|\right)
+  $$
+  Differentiating this expression with respect to the actions, we find the frequencies
+  $$
+  \Omega_r=\frac{(G M)^{2}}{\left[J_{r}+\frac{1}{2}(L+\sqrt{L^{2}+4 G M b})\right]^{3}}
+  $$
+
+  $$
+  \Omega_{\vartheta}=\frac{1}{2}\left(1+\frac{L}{\sqrt{L^{2}+4 G M b}}\right) \Omega_{r} \quad ; \quad \Omega_{\phi}=\operatorname{sgn}\left(J_{\phi}\right) \Omega_{\vartheta}
+  $$
+
+  In the limit $b\to0$,
+  $$
+  \Omega_r=\Omega_\vartheta=\sqrt\frac{GM}{a^3}
+  $$
+  which recovers the Keplerian orbit.
