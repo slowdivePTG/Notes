@@ -18,6 +18,10 @@ Notes on several Mathematics & Astronomy undergraduate courses in Peking Univers
 - Spring Semester in Grade 4
 1. 常微分方程 (Ordinary Differential Equations, Weigu Li)
 2. 天体物理动力学 (Galactic Dynamics, Xian Chen)
+## 学士后第一学期
+- Autumn Semester as an RA at KIAA
+1. 恒星结构与演化 (Stellar Evolution, Kohei Inayoshi)
+2. 天体物理吸积过程 (Accretion Processes, Kohei Inayoshi)
 
 ## Acknoledgement
 感谢[李嘉轩](https://astrojacobli.github.io)在我出访UCSC期间留下了天体物理观测实验的笔记！感谢[许峰玮](https://github.com/XFengwei)修改完善了理论天体物理的笔记！
