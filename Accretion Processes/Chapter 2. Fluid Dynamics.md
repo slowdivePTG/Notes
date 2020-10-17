@@ -415,5 +415,193 @@ In general, the stress tensor is not diagonal,
 $$
 T^{ij}=-p\delta^{ij}+\sigma^{ij}
 $$
-where $\sigma$ is the **viscous tensor**. 
+where $\sigma$ is the **viscous tensor**.
+
+The $i$-th component of the surface force is thus
+$$
+F_S^i=\oiint T^{ij}n_j\text dS=-\oiint pn^i\text dS+\oiint\sigma^{ij}n_j\text dS
+$$
+ and the force vector is
+$$
+\vec F_S=\iiint_V\left(\nabla\cdot \sigma-\nabla p\right)\text dV
+$$
+We claim that $\mathcal T$ is symmetric, that is, $T^{ij}=T^{ji}$. Consider a box with $\delta V=\delta x\delta y\delta z$. In the $z$-direction, the net torque caused leads to the change in angular momentum with respect to the center of $\delta S_{x,y}$
+$$
+\frac{\text dL_z}{\text dt}=\left(\vec r\times \vec F\right)_z
+$$
+
+$$
+\rho\delta V\cdot\frac{\delta x^2+\delta y^2}{6}\dot\omega_z\sim\left(T_{x,y}-T_{y,x}\right)\delta V
+$$
+
+for $\delta x\to0,\delta y\to0$, we have $T_{x,y}=T_{y,x}$, otherwise the $\dot \omega$ goes to infinite.
+
+Now that we know $\mathcal T$ is symmetric, it has 6 independent components.
+
+### Viscous Tensor for Fluid
+
+In a flow with $u_x$ that has a gradient of $\text du_x/\text dy$, the stress to the $x$-axis is well approximated as
+$$
+\sigma_{xy}=\eta\frac{\text d u_x}{\text dy}
+$$
+where $\eta$ is the **viscous coefficient** determined by microscopic processes of particles. Fluid that satisfies such approximation is known as **Nowton fluid**.
+
+### Construction of Stress Tensor
+
+1. $\sigma_{ij}$ is symmetric since $T_{ij}$ is symmetric, but the original definition.
+   $$
+   \sigma_{ij}=\eta\frac{\partial u_i}{\partial x^j}
+   $$
+   is not. In this way, we expand it into symmetric and anti-symmetric parts, as we can do to any second-order tensor
+   $$
+   \sigma_{ij}=\frac{\eta}{2}\left(\frac{\partial u_i}{\partial x^j}+\frac{\partial u_j}{\partial x^i}\right)+\frac{\eta}{2}\left(\frac{\partial u_i}{\partial x^j}-\frac{\partial u_j}{\partial x^i}\right)
+   $$
+   The second (anti-symmetric) term corresponds to the rotation. It has no viscosity, so we will consider a linear relation between $\sigma_{ij}$ and $E_{ij}$, which is defined as
+   $$
+   E_{ij}\equiv\frac{1}{2}\left(\frac{\partial u_i}{\partial x^j}+\frac{\partial u_j}{\partial x^i}\right)
+   $$
+
+2. Fluid doesn't have a preferred direction.
+
+   Intuitionally, we write down the (multi-)linear relation as
+   $$
+   \sigma_{ij}=\alpha_{ijkl}E^{kl}
+   $$
+   We don't have any information of $\alpha$, but since fluid is **isotropic**, we would like to believe the tensor itself is isotropic, which means it has the same components in all rotated coordinate systems. There are only three basic 4-order isotropic tensors, all of which are the combination of the famous Kronecker delta $\delta_{ij}$.
+   $$
+   A_{ijkl}=\delta_{ij}\delta_{kj},\ \delta_{ik}\delta_{jl},\ \delta_{il}\delta_{jk}
+   $$
+   So we assume $\alpha_{ijkl}$ is simply their linear combination
+   $$
+   \begin{align*}
+   \sigma_{ij}&=\left(B\delta_{ij}\delta_{kj}+C\delta_{ik}\delta_{jl}+D\delta_{il}\delta_{jk}\right)E^{kl}\\
+   &=B\delta_{ij}E^k_k+CE_{ij}+DE_{ji}\\
+   &=B\left(\nabla\cdot \vec u\right)\delta_{ij}+(C+D)E_{ij}
+   \end{align*}
+   $$
+
+3. Decompose $\sigma_{ij}$ into trace part and traceless part
+   $$
+   \text{tr}\left(\sigma\right)=\delta^{ij}\sigma_{ij}=(3B+C+D)\nabla\cdot \vec u
+   $$
+   Thus
+   $$
+   \sigma_{ij}^{\text{tr}}=\frac{1}3(3B+C+D)\left(\nabla\cdot \vec u\right)\delta_{ij}
+   $$
+
+   $$
+   \sigma_{ij}^\text{trf}=-\frac{C+D}3\left(\nabla\cdot \vec u\right)\delta_{ij}+\frac{C+D}2\left(\frac{\partial u_i}{\partial x^j}+\frac{\partial u_j}{\partial x^i}\right)
+   $$
+
+4. Redefine $\eta$ and $\zeta$ as
+   $$
+   \eta\equiv \frac12(C+D),\quad\zeta\equiv\frac13(3B+C+D)
+   $$
+   Finally, with only two free parameters, we may obtain
+   $$
+   \sigma_{ij}=\eta\left[\frac{\partial u_i}{\partial x^j}+\frac{\partial u_j}{\partial x^i}-\frac23\left(\nabla\cdot \vec u\right)\delta_{ij}\right]+\zeta\left(\nabla\cdot \vec u\right)\delta_{ij}
+   $$
+
+   - First term - traceless, pure **shear viscosity**
+
+   - Second term - **bulk viscosity**
+
+     >When Stokes first derived this formula, he believed the **bulk viscosity** vanished. In fact this term is usually close to 0.
+
+### Navier-Stokes Equation
+
+Right now,
+$$
+T^{ij}=-p\delta^{ij}+\sigma^{ij}
+$$
+and we can rewrite the momentum tensor by adding the viscous tensor
+$$
+\Pi^{ij}=\rho u^iu^j+\delta^{ij}p-\sigma^{ij}
+$$
+From this correction, the conservation of momentum (Euler equation) gives
+$$
+\frac{\text D\vec u}{\text Dt}=\frac1\rho\vec f+\frac1\rho\nabla\cdot\mathcal T=-\frac1\rho\nabla p+\frac1\rho\vec f+\frac1\rho\nabla\cdot\sigma
+$$
+Since
+$$
+\begin{align*}
+(\nabla\cdot\sigma)_i&=\eta\partial^j\left[\partial_ju_i+\partial_iu_j-\frac23\partial_ku^k\delta_{ij}\right]+\zeta\partial^j\partial_ku^k\delta_{ij}\\
+&=\eta\left[\nabla^2u_i+\frac13\partial_i(\nabla\cdot\vec u)\right]+\zeta\partial_i(\nabla\cdot\vec u)
+\end{align*}
+$$
+
+$$
+\iff \nabla\cdot\sigma=\eta\nabla^2\vec u+\left(\zeta+\frac13\eta\right)\nabla\left(\nabla\cdot\vec u\right)
+$$
+
+Finally we derive the **Navier-Stokes equation**
+$$
+\frac{\partial \vec u}{\partial t}+\left(\vec u\cdot \nabla\right)\vec u=-\frac1\rho\nabla p+\frac1\rho\vec f+\frac1\rho\eta\nabla^2\vec u+\frac1\rho\left(\zeta+\frac13\eta\right)\nabla\left(\nabla\cdot\vec u\right)
+$$
+In the end, let us consider the energy conservation in the viscous situation
+$$
+\frac{\text D}{\text D t}\iiint_{V(t)}\rho\left(e+\frac12 u^2\right)\text dV=\iiint_{V(t)}\vec f\cdot\vec u\text dV+\oiint_{S(t)}\vec t\cdot\vec u\text dS
+$$
+
+$$
+\iff \iiint_{V(t)}\rho\frac{\text D}{\text D t}\left(e+\frac12 u^2\right)\text dV=\iiint_{V(t)}\vec f\cdot\vec u\text dV+\iiint_{V(t)}\nabla\cdot\left(\mathcal T\cdot\vec u\right)\text dV
+$$
+
+$$
+\iff\rho\frac{\text D}{\text D t}\left(e+\frac12 u^2\right)=\vec f\cdot\vec u+\nabla\cdot\left(\mathcal T\cdot\vec u\right)
+$$
+
+By multiplying N-S equation with $\rho\vec u$, we have
+$$
+\rho\frac{\text D}{\text Dt}\left(\frac12u^2\right)=\vec f\cdot\vec u+\vec u\cdot\left(\nabla\cdot\mathcal T\right)
+$$
+
+$$
+\Rightarrow \rho\frac{\text De}{\text D t}=\left(\mathcal T\cdot\nabla\right)\cdot \vec u
+$$
+
+Now we expand the RHS
+$$
+\begin{align*}
+\left(\mathcal T\cdot\nabla\right)\cdot \vec u&=(\partial_iu_j)T^{ij}\\
+&=-\partial_iu^ip+(\partial_iu_j)\sigma^{ij}\\
+&=-p(\nabla\cdot\vec u)+\eta(\partial_iu_j)\left[2E^{ij}-\frac23\left(\nabla\cdot \vec u\right)\delta_{ij}\right]+\zeta(\partial_iu^i)\left(\nabla\cdot \vec u\right)\\
+&=-p(\nabla\cdot\vec u)+\eta(\partial_iu_j)(\partial^ju^i+\partial^iu^j)+\left(\zeta-\frac23\eta\right)\left(\nabla\cdot \vec u\right)^2
+\end{align*}
+$$
+where
+$$
+\begin{align*}
+(\partial_iu_j)(\partial^ju^i+\partial^iu^j)&=\frac12(\partial_iu_j+\partial_ju_i)(\partial^ju^i+\partial^iu^j)\\
+&-\frac12(\partial_iu_j-\partial_ju_i)(\partial^ju^i+\partial^iu^j)\\
+&=2E_{ij}E^{ij}
+\end{align*}
+$$
+as the second term obviously vanishes. Finally,
+$$
+\left(\mathcal T\cdot\nabla\right)\cdot \vec u=-p(\nabla\cdot\vec u)+2\eta E_{ij}E^{ij}+\left(\zeta-\frac23\eta\right)\left(\nabla\cdot \vec u\right)^2
+$$
+Define
+$$
+\Phi_\text{vis}=2\eta E_{ij}E^{ij}+\left(\zeta-\frac23\eta\right)\left(\nabla\cdot \vec u\right)^2
+$$
+we have
+$$
+\rho\left[\frac{\text De}{\text D t}+p\frac{\text D}{\text Dt}\left(\frac1\rho\right)\right]=\Phi_\text{vis}=\rho T\frac{\text Ds}{\text Dt}
+$$
+Thus,
+$$
+\frac{\text DS}{\text Dt}=\frac{\text D}{\text Dt}\iiint_{V}\rho s\text dV=\iiint_{V}\rho \frac{\text Ds}{\text Dt}\text dV=\iiint_{V}\frac{\Phi_\text{vis}}{T}\text dV
+$$
+The second law of thermaldynamics tells us
+$$
+\frac{\text DS}{\text Dt}\ge0
+$$
+In fact, we can prove
+$$
+\Phi_\text{vis}\ge0
+$$
+
+
+
 
