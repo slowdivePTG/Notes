@@ -601,7 +601,3 @@ In fact, we can prove
 $$
 \Phi_\text{vis}\ge0
 $$
-
-
-
-
