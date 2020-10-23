@@ -444,7 +444,37 @@ In a flow with $u_x$ that has a gradient of $\text du_x/\text dy$, the stress to
 $$
 \sigma_{xy}=\eta\frac{\text d u_x}{\text dy}
 $$
-where $\eta$ is the **viscous coefficient** determined by microscopic processes of particles. Fluid that satisfies such approximation is known as **Nowton fluid**.
+where $\eta$ is the **(dynamic) viscosity** determined by microscopic processes of particles. Fluid that satisfies such approximation is known as **Nowton fluid**.
+
+In astrophysics, a more frequently applied viscosity is the **kinematic viscosity** $\nu$, defined as
+$$
+\nu=\frac{\eta}{\rho}
+$$
+**$\nu$ in a microscopic perspective**
+
+Consider a flow with coherent bulk velocity $u_x(y)$ along the $x$-axis, we try to count how much momentum is exchanged at the surface of $y=y_0$ per unit area per unit time, that is, the shear stress.
+
+For simplicity, all we need to consider is a thin layer within $[y-l_\text{mfp},y+l_\text{mfp}]$, since we assume mometum is fully exchanged in the first collision. In this way, statistically, particles outside this layer cannot transport momentum to the surface $y=y_0$.
+
+The number flux of particles hitting $y=y_0$ from one side can be estimated as
+$$
+N=\frac13 n\bar c\times\frac12
+$$
+where $n$ is the number density of particles and $\bar c$ is the **average velocity dispersion** ($\sim c_s$). We introduce a factor of $1/3$ because particles move in all three dimensions and $1/2$ further distinguish motion upwards and downwards. As a result, the shear stress is given by
+$$
+\sigma_{xy}=\frac16n\bar cm\left[u_x(y_0+l_\text{mfp})-u_x(y_0-l_\text{mfp})\right]=\frac13\rho\bar cl_\text{mfp}\frac{\partial u_x(y_0)}{\partial x}
+$$
+Thus
+$$
+\nu=\frac13\bar cl_\text{mfp}
+$$
+Unfortunately, momentum transition through collisions of particles is not the main cause of viscosity in astrophysics, and this formula is useless... In fact we can estimate the **viscous timescale**, in which viscosity drives materials to fall into the accretor.
+$$
+t_\text{vis}=\frac{r^2}{\nu}\sim\frac{r^2}{\bar cl_\text{mfp}}
+$$
+For the supermassive black hole (SMBH), this assumption gives a $t_\text{vis}$ if 10 Gyr, which is orders of magtitude longer than the typical AGN timescale ($\sim$ Myr). At present, it is widely agreed that the [**Magneto-Rotational Instability (MRI)**](https://en.wikipedia.org/wiki/Magnetorotational_instability) causes the viscosity in accretion disks. In this case, the $l_\text{mfp}$ is given by the **thickness of the disk** $H\sim0.01 r$, and the viscous timescale is quite satistying.
+
+
 
 ### Construction of Stress Tensor
 
@@ -601,3 +631,58 @@ In fact, we can prove
 $$
 \Phi_\text{vis}\ge0
 $$
+
+
+### The Reynolds Number
+
+**The Reynolds number** is defined as
+$$
+\text{Re}=\frac{UL}{\nu}
+$$
+where $U$ is the flow speed, $L$ is a characteristic linear dimension, and $\nu$ is the kinematic viscosity. It is naturally connected with the Navier-Stokes equation when we try to derive a dimensionless form of the equation.
+
+By assuming incompressible fluid ($\nabla\cdot \vec u=0$) and neglecting the external force, the Navier-Stokes equation goes like
+$$
+\frac{\partial \vec u}{\partial t}+\left(\vec u\cdot \nabla\right)\vec u=-\frac1\rho\nabla p+\nu\nabla^2\vec u
+$$
+Define several dimensionless quantities,
+$$
+r'=\frac rL,\quad \vec u'=\frac{\vec u}{U},\quad t'=\frac{t}{L/u},\quad \rho'=\frac{\rho}{\rho_0},\quad p'=\frac{p}{\rho_0u^2}
+$$
+We have
+$$
+\frac{\partial \vec u'}{\partial t'}+\left(\vec u'\cdot \nabla'\right)\vec u'=-\frac1\rho'\nabla' p'+\frac\nu{UL}\nabla'^2\vec u'\equiv -\frac1\rho'\nabla' p'+\frac1{\text{Re}}\nabla'^2\vec u'
+$$
+The Reynolds number is simply there.
+
+If $\text{Re}\to\infty$, the equation goes back to the Euler equation (ideal fluid).
+
+Small $\text{Re}$ corresponds to **laminar flow**, a fluid flowing in parallel layers with no disruption between the layers, while large $\text{Re}$ introduces annoying **turbulence**, a fluid motion characterized by chaotic changes in pressure and flow velocity. In astrophysics, $\text{Re}$ is usually large.
+
+**Notes**
+
+1. Dimensionless Navier-Stokes equation does not depend on $\rho_0$ - **scale-free**. Once a hydrodynamical simulation is done with certain density, it is done with any other density. This beautiful scale-free law breaks when
+
+   - $P-\rho$ relation is not a simple power-law, and has certain breaks.
+   - the simulation has to take opacity/cooling/heating into account, none of which is scale-free.
+
+2. If we introduce gravity as the external force
+   $$
+   \vec f_\text{ext}=-\frac{GM}{r^2}\hat{\vec r}
+   $$
+   the corresponding term in the dimensionless Naiver-Stokes equation is
+   $$
+   -\frac{1}{LU^2}\frac{GM}{r'^2}
+   $$
+   It seems to have dependence on $M$, however, if we set
+   $$
+   U=c,\quad L=r_\text{g}\equiv\frac{GM}{c^2}
+   $$
+   where $r_\text g$ is the Schiwarzchild radius. This term is simply
+   $$
+   -\frac1{r'^2}
+   $$
+   Around a black hole, Navier-Stokes equation is again scale-free, this time for the mass of the accretor.
+
+   
+
