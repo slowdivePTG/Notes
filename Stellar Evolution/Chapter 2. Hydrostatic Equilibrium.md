@@ -39,39 +39,39 @@ $$
 
 The force onto a this mass shell per unit area $\text dS$ due to pressure is
 $$
-\vec f_p=-p\vec n\text dS
+\vec f_P=-P\vec n\text dS
 $$
 Thus the pressure gradient force onto a unit volume is given by
 $$
-\vec F_p=-\oint p\vec n\text dS=-\int\nabla p\text dV
+\vec F_P=-\oint P\vec n\text dS=-\int\nabla P\text dV
 $$
 
 
 ## Hydrostatic Equilibrium
 
 $$
-0=\vec F_G+\vec F_p=\int\left(\rho \vec g-\nabla p\right)\text dV\Rightarrow -\frac1\rho \nabla p+\vec g=0
+0=\vec F_G+\vec F_p=\int\left(\rho \vec g-\nabla P\right)\text dV\Rightarrow -\frac1\rho \nabla P+\vec g=0
 $$
 
 Again, in a spherical system.
 $$
-\frac1\rho\frac{\partial p}{\partial r}=-\frac{Gm}{r^2}\iff\frac{\partial p}{\partial m}=-\frac{Gm}{4\pi r^4}
+\frac1\rho\frac{\partial P}{\partial r}=-\frac{Gm}{r^2}\iff\frac{\partial P}{\partial m}=-\frac{Gm}{4\pi r^4}
 $$
 This is known as the **hydrostatic equlibrium**, **one of the most important equations in astrophysics**.
 
 - Estimate the central temperature of the Sun ($M_\odot=2\times 10^{33}$ g, $R_\odot=7\times10^{10}$ cm)
 
-  First we estimate the central pressure $p_c$, by assuming
+  First we estimate the central pressure $P_c$, by assuming
   $$
-  \frac{\partial p}{\partial m}\sim\frac{p_0-p_c}{M_\odot}\sim -\frac{G\left(M_\odot/2\right)}{4\pi \left(R_\odot/2\right)^4}
+  \frac{\partial P}{\partial m}\sim\frac{P_0-P_c}{M_\odot}\sim -\frac{G\left(M_\odot/2\right)}{4\pi \left(R_\odot/2\right)^4}
   $$
   Here we adopt the median values of $m$ and $r$. $p_0\sim 0$ is the surface pressure. Thus
   $$
-  p_c\sim\frac{2GM_\odot^2}{\pi R_\odot^4}
+  P_c\sim\frac{2GM_\odot^2}{\pi R_\odot^4}
   $$
   Further assuming the ideal gas EoS
   $$
-  p_c=\frac{\rho_ck_BT_c}{\mu m_p}
+  P_c=\frac{\rho_ck_BT_c}{\mu m_p}
   $$
   where $\mu\approx 0.5$ is the mean molecular weight (ionized Hydrogen), thus the central temperature is
   $$
@@ -89,7 +89,7 @@ So far, the acceleration of mass shells is neglected.
 
 The EoM (only radial motion is considered) is give by
 $$
-\frac{\partial^2 r}{\partial t^2}=-\frac1\rho\frac{\partial p}{\partial r}-\frac{Gm}{r^2}
+\frac{\partial^2 r}{\partial t^2}=-\frac1\rho\frac{\partial P}{\partial r}-\frac{Gm}{r^2}
 $$
 
 - If there is no pressure
@@ -100,7 +100,7 @@ $$
 
 - If there is no gravity
   $$
-  \frac{r}{t_\text{sc}^2}\equiv\frac{1}{\rho}\frac{p}{r}\Rightarrow t_\text{sc}\equiv\frac{r}{\sqrt{p/\rho}}\sim \frac{r}{c_s}
+  \frac{r}{t_\text{sc}^2}\equiv\frac{1}{\rho}\frac{P}{r}\Rightarrow t_\text{sc}\equiv\frac{r}{\sqrt{P/\rho}}\sim \frac{r}{c_s}
   $$
   $t_\text{sc}$ is known as the **sound-crossing timescale**, since $c_s$ is the **sound speed**.
 
