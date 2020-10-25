@@ -218,16 +218,14 @@ $$
 
 ## Solar Model
 
-![](./6_1.jpeg)
+<img src="./6_1.jpeg" alt="z" style="zoom:67%;" />
 
 - Why does $\nabla_\text{rad}$ behave like this as $T$ decreases?
   $$
   \nabla_\text{rad}=\frac{3}{16\pi ac G}\frac{P}{T^4}\cdot\frac{L}{m}\cdot\kappa
   $$
 
-  - $L/m$ is of the same order as $\varepsilon_\text{nuc}$, which has high dependency on temperature
-
-    ![](./6_2.gif)
+  - $L/m$ is of the same order as $\varepsilon_\text{nuc}$, which has high dependency on temperature.
 
     As a result, in the core region, $\nabla_\text{rad}$ decreases as the temperature falls.
 
@@ -235,15 +233,26 @@ $$
 
     We will revisit $\varepsilon_\text{nuc}$ in [Chapter 9]().
 
-  - The $\kappa-T$ relation has already been shown in [Chapter 5](./Chapter 2. Hydrostatic Equilibrium), and will be discussed in detail in [Chapter 8](Chapter 8. Opacity). 
+![](./6_2.gif)
 
-    In general,
 
-    - when $T\lesssim 10^4$ K, the photo-dissociation of $\ce{H^-}$ leads $\kappa$ to fall drastically as $T$ goes down;
-    - when $T\gtrsim 10^4$ K, the free-free transition dominates the $\kappa$, which promotes $\kappa$  in a cooler region.
+
+- The $\kappa-T$ relation has already been shown in [Chapter 5](./Chapter 2. Hydrostatic Equilibrium), and will be discussed in detail in [Chapter 8](Chapter 8. Opacity). 
+
+  In general,
+
+  - when $T\lesssim 10^4$ K, the photo-dissociation of $\ce{H^-}$ leads $\kappa$ to fall drastically as $T$ goes down;
+  - when $T\gtrsim 10^4$ K, the free-free transition dominates the $\kappa$, which promotes $\kappa$  in a cooler region.
 
 - Why is $\nabla_\text{ad}$ slightly lower than $2/5$ around $10^{4-5}$ K?
 
   At this temperature ($T\sim 1-10$ eV), $\ce{He}^{2+},\ \ce{He}^{+},\ \ce{H}^{+}$ start to recombine. The recombination changes 'adiabaticity' due to the release of chemical energy.
 
 - Why does $\nabla$ look like this?
+
+  - In the innermost region with the highest temperature, $\nabla_\text{rad}<\nabla_\text{ad}$ - stable!
+  - As the temeperature goes down, $\nabla_\text{rad}$ exceeds $\nabla_\text{ad}$ and the convection starts. Note that convection tends to sweep up the gradient difference so that $\nabla\simeq\nabla_\text{ad}$ is quickly achieved within sound-cross time $t_\text{sc}\lesssim 1$ hr.
+  - In the outermost layer, $\nabla\neq\nabla_\text{ad}$, and $\nabla$ is again dominated by radiation.
+  - Finally, the sun can be divided into three regions of different stabilities.
+
+<img src="./6_3.jpeg" style="zoom:50%;" />
