@@ -1,9 +1,15 @@
 # Chapter 7. Equation of State
 
-Here we discuss two effects producing pressure. Above all, for ideal gas, the EoS gives
+Here we discuss two effects producing pressure. 
+
+## Ideal Gas
+
+Above all, for ideal gas, the EoS gives
 $$
 P_\text{gas}=\frac{\rho k_BT}{\mu m_p}
 $$
+
+
 
 ## Radiation Pressure
 
@@ -99,3 +105,87 @@ This fact is extremely important for the stability of a star.
 
 ## Degenerate Electron Gas
 
+For cold and dense gas, quantum effects cause **degenerate pressure**.
+
+For zero-temperature Fermions such as electrons, in the phase space, they all lie beneath a **Fermi momentum**. The total number of electrons $N$ is given by
+$$
+N=2\int\frac{\text dx\text dy\text dz\text dp_x\text dp_y\text dp_z}{h^3}=\frac{2V}{h^3}\int_0^{p_\text F}4\pi p^2\text dp
+$$
+where the factor of 2 comes from the electron spin. Thus the number density $n_e$ is given by
+$$
+n_e=\frac NV=\frac{8\pi p_\text F^3}{3h^3}
+$$
+Note that pressure is simply the surface integral of **momentum flux crossing each surface element** $\Omega_s$
+$$
+P_e=\frac1{4\pi}\int_{2\pi}\int_0^\infty f(p)u(p)p\cos^2\theta\text dp\text d\Omega_s
+$$
+where $f(p)$ is the distribution function
+$$
+f(p)=\left\{
+\begin{array}{c}
+\frac{8\pi p^2}{h^3},\quad p>p_\text F\\
+0,\quad p>p_\text F
+\end{array}
+\right.
+$$
+thus
+$$
+P_e=\frac{8\pi}{3h^3}\int_0^{p_\text F}p^3u(p)\text dp
+$$
+Since special relativity gives
+$$
+p=\frac{m_eu}{\sqrt{1-{u^2}/{c^2}}}\iff u=\frac{p}{\sqrt{m_e^2+p^2/c^2}}
+$$
+Let $\xi=p/m_ec,\ x=p_\text F/m_ec$, we have
+$$
+P_e=\frac{8\pi c^5m_e^4}{3h^3}\int_0^x\frac{\xi^4}{\left(1+\xi^2\right)^{1/2}}\text d\xi
+$$
+Define
+$$
+f(x)=\int_0^x\frac{\xi^4}{\left(1+\xi^2\right)^{1/2}}\text d\xi=\frac18\left\{x\left(2x^2-3\right)\left(1+x^2\right)^{1/2}+3\ln\left[x+\left(1+x^2\right)^{1/2}\right]\right\}
+$$
+For non-relativistic case, $x\to 0$
+$$
+f(x)\sim\int_0^x\xi^4\text d\xi=\frac15x^5
+$$
+
+$$
+\Rightarrow P_e=\frac1{20}\left(\frac3\pi\right)^{2/3}\frac{h^2}{m_e}n_e^{5/3}\sim10^{13}\left(\frac{\rho}{\mu_e}\right)^{5/3}\text{ g/cm/s}^{-2}
+$$
+
+For extreme relativistic case, $x\to \infty$
+$$
+f(x)\sim\int_0^x\xi^3\text d\xi=\frac14x^4
+$$
+
+$$
+\Rightarrow P_e=\left(\frac3\pi\right)^{1/3}\frac{hc}{8}n_e^{4/3}\sim10^{15}\left(\frac{\rho}{\mu_e}\right)^{4/3}\text{ g/cm/s}^{-2}
+$$
+
+
+
+## EoS in a Star
+
+In our discussion above, we see that
+$$
+P_\text{gas}\propto \rho T
+$$
+
+$$
+P_\text{rad}\propto T^4
+$$
+
+$$
+P_e\propto\rho^{4/3-5/3}
+$$
+
+Therefore, radiation pressure dominates when $T$ is high and $\rho$ is low, while the degenerate pressure dominates in the exact opposite. So the $T-\rho$ plane can be divided into three
+
+![](./7_1.png)
+
+**Notes:**
+
+1. Our Sun generally lies in the region of ideal gas.
+   - Increase the mass - the stellar center may become radiation dominated (e.g., maassive stars);
+   - Decrease the mass - the stellar center may fall into the electron degenerate region (e.g., brown dwarfs).
+2. For white dwarfs in non-relativistic region, $E_\text{tot}<0$, even if nuclear burning is lighted somewhere, the star itself is still stable - **helium flash**. For white dwarfs in relativistic regions, however, since $E_\text{tot}$ is only slightly below 0, any nuclear fusion may lead to destructive explosions, such as **Type Ia SN**.
