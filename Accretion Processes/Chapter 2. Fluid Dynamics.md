@@ -222,7 +222,7 @@ Two independent quantities are necessary to characterize thermal states.
 
 - Ideal gas
   $$
-  p=\frac{\rho k_BT}{\mu m_p}
+  p=\frac{\rho k_BT}{\mu m_\text{p}}
   $$
 
 - Adiabatic gas

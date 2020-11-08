@@ -41,7 +41,7 @@ which are both in the form of **wave equations**.
 
 - For ideal gas
   $$
-  c_s=\sqrt{\gamma\frac P\rho}=\sqrt{\gamma\frac {k_BT}{\mu m_p}}
+  c_s=\sqrt{\gamma\frac P\rho}=\sqrt{\gamma\frac {k_BT}{\mu m_\text{p}}}
   $$
 
   - In HI gas ($\sim 10^2$ K), $c_s\sim2$ km/s.
@@ -219,12 +219,12 @@ $$
 $$
 
 $$
-\iff T_2\sim\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{u_1^2T_1}{P_1/\rho_1}=\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{\mu m_p}{k_B}u_1^2
+\iff T_2\sim\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{u_1^2T_1}{P_1/\rho_1}=\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{\mu m_\text{p}}{k_B}u_1^2
 $$
 
 Again, for $\gamma=5/3$, the post-shock temperature is simply
 $$
-T_2\sim\frac3{16}\frac{\mu m_p}{k_B}u_1^2
+T_2\sim\frac3{16}\frac{\mu m_\text{p}}{k_B}u_1^2
 $$
 This temperature is important for virialization in galaxy formation, since it gives the cooling timescale
 $$
