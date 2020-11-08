@@ -71,15 +71,15 @@ This is known as the **hydrostatic equlibrium**, **one of the most important equ
   $$
   Further assuming the ideal gas EoS
   $$
-  P_c=\frac{\rho_ck_BT_c}{\mu m_p}
+  P_c=\frac{\rho_ck_BT_c}{\mu m_\text{p}}
   $$
   where $\mu\approx 0.5$ is the mean molecular weight (ionized Hydrogen), thus the central temperature is
   $$
-  k_BT_c\sim\frac{2\mu m_pGM_\odot^2}{\pi \rho_c R_\odot^4}
+  k_BT_c\sim\frac{2\mu m_\text{p}GM_\odot^2}{\pi \rho_c R_\odot^4}
   $$
   Since $\rho_c>\bar\rho$, we have
   $$
-  k_BT_c<\frac{8 GM_\odot}{3 R_\odot}\mu m_p\sim 3\text{ keV}
+  k_BT_c<\frac{8 GM_\odot}{3 R_\odot}\mu m_\text{p}\sim 3\text{ keV}
   $$
   which means $T_c<3\times10^7$ K.
 

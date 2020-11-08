@@ -60,11 +60,11 @@ without considering any detail of the gas.
 
 If we further assume **ideal gas EoS**
 $$
-P=\frac{\rho k_BT}{\mu m_p}
+P=\frac{\rho k_BT}{\mu m_\text{p}}
 $$
 
 $$
-\Rightarrow \frac{P}{\rho}=\frac{k_B T}{\mu m_p}=\left(c_P-c_V\right)T=\left(\gamma-1\right)c_VT
+\Rightarrow \frac{P}{\rho}=\frac{k_B T}{\mu m_\text{p}}=\left(c_P-c_V\right)T=\left(\gamma-1\right)c_VT
 $$
 
 where $c_P$ and $c_V$ are **specific heat capacity at constant pressure** and **volume**, respectively. For ideal gas, the second equation was derived by *Julius von Mayer* and is known as [Mayer's relation](https://en.wikipedia.org/wiki/Mayer%27s_relation). $c_P$ and $c_V$ are related by
@@ -97,12 +97,12 @@ Virial theorem directly links the total gravitational energy to the total intern
   $$
 
   $$
-  E_\text{int}=\frac32\frac{k_B}{\mu m_p}\int_0^MT\text dm\equiv \frac32\frac{k_B}{\mu m_p}\bar T
+  E_\text{int}=\frac32\frac{k_B}{\mu m_\text{p}}\int_0^MT\text dm\equiv \frac32\frac{k_B}{\mu m_\text{p}}\bar T
   $$
 
   So the **mean** temperature of the Sun is
   $$
-  \bar T=-\frac{2}{3}\frac{\mu m_p}{k_B}\frac{E_\text g}{3(\gamma-1)}=\frac{2\alpha}{9(\gamma-1)}\frac{\mu m_p}{k_B}\frac{GM_\odot}{R_\odot^2}
+  \bar T=-\frac{2}{3}\frac{\mu m_\text{p}}{k_B}\frac{E_\text g}{3(\gamma-1)}=\frac{2\alpha}{9(\gamma-1)}\frac{\mu m_\text{p}}{k_B}\frac{GM_\odot}{R_\odot^2}
   $$
   Given $\gamma=5/3$ and $\alpha\sim1$, $\bar T\sim4\times10^6$ K.
 
@@ -140,7 +140,7 @@ $$
 $$
 So **half** of the **gravitational energy loss** is used for **providing luminosity $L$**. The other half is used to **increase the internal energy (temperature)**. In other words, energy loss promotes $T$.
 $$
-\Rightarrow \Delta E_\text{tot}=-\Delta E_\text{int}=-\frac32\frac{k_B}{\mu m_p}M\Delta T\equiv C\Delta T
+\Rightarrow \Delta E_\text{tot}=-\Delta E_\text{int}=-\frac32\frac{k_B}{\mu m_\text{p}}M\Delta T\equiv C\Delta T
 $$
 The heat capacity is **negative**!
 
@@ -160,6 +160,6 @@ This timescale is known as the **Kelvin-Helmholtz timescale**.
 
   Originally we have a molecular cloud with typical number density $\bar n\sim 10^4$ cm$^{-3}$.
   $$
-  t_\text{ff}=\frac{1}{\sqrt{G\rho}}=\frac{1}{\sqrt{G\bar nm_p}}\sim1\text{ Myr}
+  t_\text{ff}=\frac{1}{\sqrt{G\rho}}=\frac{1}{\sqrt{G\bar nm_\text{p}}}\sim1\text{ Myr}
   $$
   So mostly within the free-fall time, the molecular cloud is dominated by hydrodynamics, until it reaches a stage where the density gets higher and the contraction slows down. It then becomes **quasi-hydrostatic**, when the Kelvin-Helmholtz mechanism starts to dominate. The KH timescale is about $10^7$ yr. As the contraction goes on, the temperature keeps rising. This quasi-hydrostatic state halts when the central temperature $T_c\sim10^7$ K, high enough to trigger nuclear burning.

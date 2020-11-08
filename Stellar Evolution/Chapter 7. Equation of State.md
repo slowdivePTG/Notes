@@ -6,7 +6,7 @@ Here we discuss two effects producing pressure.
 
 Above all, for ideal gas, the EoS gives
 $$
-P_\text{gas}=\frac{\rho k_BT}{\mu m_p}
+P_\text{gas}=\frac{\rho k_BT}{\mu m_\text{p}}
 $$
 
 
@@ -19,7 +19,7 @@ $$
 
 Let us consider gas-radiation mixed fluid
 $$
-P=P_\text{gas}+P_\text{rad}=\frac{\rho k_BT}{\mu m_p}+\frac13aT^4
+P=P_\text{gas}+P_\text{rad}=\frac{\rho k_BT}{\mu m_\text{p}}+\frac13aT^4
 $$
 Define
 $$
@@ -33,7 +33,7 @@ $$
 
 Since the density
 $$
-\rho=\frac{\mu m_p}{k_BT}\left(P-\frac a3T^4\right)=\rho(P,T)
+\rho=\frac{\mu m_\text{p}}{k_BT}\left(P-\frac a3T^4\right)=\rho(P,T)
 $$
 We can define two derivatives
 $$
@@ -41,28 +41,28 @@ $$
 $$
 The specific internal energy is
 $$
-e(\rho,T)=e_\text{gas}+e_\text{rad}=\frac{3}{2}\frac{k_B}{\mu m_p}T+\frac1\rho aT^4
+e(\rho,T)=e_\text{gas}+e_\text{rad}=\frac{3}{2}\frac{k_B}{\mu m_\text{p}}T+\frac1\rho aT^4
 $$
 Thus the specific heat capacity (when the pressure is a constant) is
 $$
 \begin{align*}
 c_P&\equiv\left(\frac{\text d e}{\text d T}\right)_P=\left(\frac{\partial e}{\partial T}\right)_P+P\left[\frac{\partial (1/\rho)}{\partial T}\right]_P\\
 &=\left(\frac{\partial e}{\partial T}\right)_\rho+\left(\frac{\partial e}{\partial \rho}\right)_T\left(\frac{\partial \rho}{\partial T}\right)_P-\frac{P}{\rho^2}\left(\frac{\partial \rho}{\partial T}\right)_P\\
-&=\frac{k_B}{\mu m_p}\left[\frac{3}{2}+(4+\delta)\frac{3P_\text{rad}}{P_\text{gas}}\right]+\frac{k_B}{\mu m_p}\frac{\delta P}{P_\text{gas}}\\
-&=\frac{k_B}{\mu m_p}\left[\frac{3}{2}+\left(4+\frac{4-3\beta}{\beta}\right)\frac{3(1-\beta)}{\beta}+\frac{4-3\beta}{\beta^2}\right]\\
-&=\frac{k_B}{\mu m_p}\left[\frac{3}{2}+\frac{3(4+\beta)(1-\beta)}{\beta^2}+\frac{4-3\beta}{\beta^2}\right]
+&=\frac{k_B}{\mu m_\text{p}}\left[\frac{3}{2}+(4+\delta)\frac{3P_\text{rad}}{P_\text{gas}}\right]+\frac{k_B}{\mu m_\text{p}}\frac{\delta P}{P_\text{gas}}\\
+&=\frac{k_B}{\mu m_\text{p}}\left[\frac{3}{2}+\left(4+\frac{4-3\beta}{\beta}\right)\frac{3(1-\beta)}{\beta}+\frac{4-3\beta}{\beta^2}\right]\\
+&=\frac{k_B}{\mu m_\text{p}}\left[\frac{3}{2}+\frac{3(4+\beta)(1-\beta)}{\beta^2}+\frac{4-3\beta}{\beta^2}\right]
 \end{align*}
 $$
 When gas pressure dominates, $\beta=1$, thus
 $$
-c_P=\frac52\frac{k_B}{\mu m_p}
+c_P=\frac52\frac{k_B}{\mu m_\text{p}}
 $$
 When radiation dominates, $\beta=0$, and $c_P$ diverges.
 
 The adiabatic temperature gradient
 $$
 \begin{align*}
-\nabla_\text{ad}&=\frac{\delta}{\rho c_P}\frac PT=\frac{k_B}{\mu m_pc_P}\frac{\delta}{\beta}\\
+\nabla_\text{ad}&=\frac{\delta}{\rho c_P}\frac PT=\frac{k_B}{\mu m_\text{p}c_P}\frac{\delta}{\beta}\\
 &=\left[\frac{3}{2}+\frac{3(4+\beta)(1-\beta)}{\beta^2}+\frac{4-3\beta}{\beta^2}\right]^{-1}\frac{4-3\beta}{\beta^2}\\
 &=\frac{8-6\beta}{32-24\beta-3\beta^2}
 \end{align*}

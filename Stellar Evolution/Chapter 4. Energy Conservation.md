@@ -127,7 +127,7 @@ t_\text{nuc}=\frac{E_\text{nuc}}{L}
 $$
 is the timescale of continuous, stable nuclear burning in a star. Considering the hydrogen fusion
 $$
-\ce{4 ^1H->^4He}\Rightarrow Q=\frac{\Delta mc^2}{4m_p}=6.3\times10^{18}\text{ erg/g}
+\ce{4 ^1H->^4He}\Rightarrow Q=\frac{\Delta mc^2}{4m_\text{p}}=6.3\times10^{18}\text{ erg/g}
 $$
 where $Q$ stands for the available energy per unit mass.
 
@@ -163,7 +163,7 @@ According to radioactive elements in comets, the age of our system is at least $
 
    For hydrogen atoms, $E\sim13.6$ eV, so
    $$
-   Q\sim \frac{13.6\text{ eV}}{m_p}=10^{13}\text{ erg}/g\Rightarrow t_\text{chem}<1\text{ Myr}
+   Q\sim \frac{13.6\text{ eV}}{m_\text{p}}=10^{13}\text{ erg}/g\Rightarrow t_\text{chem}<1\text{ Myr}
    $$
    Not enough!
 
