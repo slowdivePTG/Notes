@@ -279,7 +279,7 @@ which are simply the velocities on the boundary.
 
 At the center of the shock layer, $x_0$, due to the symmetry, $u_0=(u_1+u_2)/2$. Thus
 $$
-\frac{\text du}{\text dx}\Bigg|_{x_0}=\frac{(u_1-u_2)^2}{4u_0\nu}\frac{\gamma+1}2u_1=\frac{(\gamma+1)(u_1-u_2)^2u_1}{4(u_1+u_2)\nu}
+\frac{\text du}{\text dx}\Bigg|_{x_0}=-\frac{(u_1-u_2)^2}{4u_0\nu}\frac{\gamma+1}2u_1=-\frac{(\gamma+1)(u_1-u_2)^2u_1}{4(u_1+u_2)\nu}
 $$
 where $\nu\equiv \eta/\rho_1$.
 
@@ -301,5 +301,9 @@ $$
   $$
   \delta \sim \frac\gamma{\gamma+1}\frac{l_\text{mfp}}{M_1}
   $$
-  
 
+This scale is in fact beyond the picture of our assumption before, where
+$$
+l\gg l_\text{mfp}
+$$
+At this scale, Navier-Stokes equation is no longer valid. We have to apply **Boltzmann equation**, which degenerates into Naiver-Stokes equation through Chapmann-Enskog expasion, instead. Fortunately, the results obtained before are in general correct.
