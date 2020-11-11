@@ -40,7 +40,7 @@ $$
 $$
 where $r_\text e$ is the classical electron radius. Thus the opacity is
 $$
-\kappa_\nu=\frac{8\pi}{3}\frac{r_\text e^2}{\mu_em_\text p}\simeq0.35\text{ cm}^2\text{/g}
+\kappa^\text{es}_\nu=\frac{8\pi}{3}\frac{r_\text e^2}{\mu_em_\text p}\simeq0.35\text{ cm}^2\text{/g}
 $$
 This opacity is $\nu$-independent, but when $T>10^8$ K, $\kappa_\nu$ slightly decreases ($\sim20\%$ at $10^8$ K) for higher $T$. At that time the kinetic energy of electron is over $\sim10$ keV, $\gtrsim1\%$ of $m_\text{e}c^2$. Therefore relativistic corrections (**Compton scattering**) become important.
 
@@ -125,3 +125,50 @@ $$
 \kappa^{\ce{H-}}\simeq2.5\times10^{-31}\left(\frac{Z}{Z_\odot}\right)\left(\frac{\rho}{\text{g}\cdot\text{cm}^3}\right)\left(\frac{T}{\text K}\right)^{9}\text{ cm}^2\text{/g}
 $$
 when $3000<T\text{ [K]}<6000$ and $10^{-10}<\rho \text{ [g/cm}^3]<10^{-5}$.
+
+
+
+## An Example: Stellar Pulsation
+
+Consider that in an atmosphere, the energy is transported via radiation, then a small perturbation in the luminosity is given by
+$$
+L\propto\frac{T^4}{\kappa}\Rightarrow\frac{\delta L}{L}=4\frac{\delta T}{T}-\frac{\delta \kappa}{\kappa}
+$$
+Define
+$$
+\kappa_\rho\equiv\frac{\partial\ln\kappa}{\partial\ln \rho}\Bigg|_T,\quad \kappa_T\equiv\frac{\partial\ln\kappa}{\partial\ln T}\Bigg|_\rho
+$$
+Then we have
+$$
+\frac{\delta L}{L}=\left(4-\kappa_T\right)\frac{\delta T}{T}-\kappa_\rho\frac{\delta \rho}{\rho}
+$$
+For simplicity, let us consider adiabatic perturbation for ideal gas
+$$
+P\propto\rho T\propto\rho^{5/3}\Rightarrow T\propto\rho^{2/3}\Rightarrow\frac{\delta T}T=\frac23\frac{\delta \rho}{\rho}
+$$
+As a result,
+$$
+\frac{\delta L}{L}=\left(4-\kappa_T-\frac32\kappa_\rho\right)\frac{\delta T}{T}
+$$
+
+- **Case 1**: $\kappa=\kappa^\text{es}\Rightarrow \kappa_\rho=0,\ \kappa_T=0$
+  $$
+  \Rightarrow\frac{\delta L}{L}=4\frac{\delta T}{T}
+  $$
+  When the temperature slightly increases, more energy will be radiated outwards within unit time. Thus the star is stable.
+
+- **Case 2**: $\kappa=\kappa^\text{ff}\Rightarrow \kappa_\rho=1,\ \kappa_T=-7/2$
+  $$
+  \Rightarrow\frac{\delta L}{L}=6\frac{\delta T}{T}
+  $$
+  Similarly, the star is stable.
+
+- **Case 3**: $\kappa=\kappa^\ce{H-}\Rightarrow \kappa_\rho=1/2,\ \kappa_T=9$
+  $$
+  \Rightarrow\frac{\delta L}{L}=-\frac{23}4\frac{\delta T}{T}
+  $$
+  The star is unstable and will excite pulsation. This happens for Cepheids, whose envelops are relatively cool.
+
+In fact, given certain stellar mass and metallicity, each star has a $\log\kappa-\log T$ profile. The temperature regions with negative slope are vulnerable of pulsation.
+
+![](./opacity_cooling.pdf)
