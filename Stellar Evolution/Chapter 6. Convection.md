@@ -231,13 +231,13 @@ $$
 
     Note that in more massive stars when CNO cycle dominates the core, $\varepsilon_\text{nuc}$ is much higher than that when p-p chain mechanism dominates, with much stronger dependency on $T$. In this way, $\nabla_\text{rad}>\nabla_\text{ad}$ can be achieved throughout the core. Thus convection in the core is possible.
 
-    We will revisit $\varepsilon_\text{nuc}$ in [Chapter 9]().
+    We will revisit $\varepsilon_\text{nuc}$ in [Chapter 9](./Chapter 9. Nuclear Reactions.md).
 
 ![](./6_2.gif)
 
 
 
-- The $\kappa-T$ relation has already been shown in [Chapter 5](./Chapter 2. Hydrostatic Equilibrium), and will be discussed in detail in [Chapter 8](Chapter 8. Opacity). 
+- The $\kappa-T$ relation has already been shown in [Chapter 5](./Chapter 2. Hydrostatic Equilibrium.md), and will be discussed in detail in [Chapter 8](Chapter 8. Opacity.md). 
 
   In general,
 
