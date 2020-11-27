@@ -4,25 +4,25 @@
 
 Compressible fluid satisfies
 $$
-\frac{D\rho}{D t}\neq0\iff\nabla\cdot\vec u\neq0
+\frac{D\rho}{D t}\neq0\iff\nabla\cdot\vec v\neq0
 $$
-Consider small perturbation in the uniform, static background with constant $\rho_0,\ P_0$ and bulk velocity $\vec u_0$.
+Consider small perturbation in the uniform, static background with constant $\rho_0,\ P_0$ and bulk velocity $\vec v_0$.
 $$
 \left\{
 \begin{array}{c}
 \rho=\rho_0+\rho_1\left(\vec r,t\right)\\
 P=P_0+P_1\left(\vec r,t\right)\\
-\vec u=\vec u_0+\vec u_1\left(\vec r,t\right)
+\vec v=\vec v_0+\vec v_1\left(\vec r,t\right)
 \end{array}
 \right.
 $$
 Thus the leading orders of the EoC and EoM are
 $$
-\partial_t\rho_1+\rho_0\nabla\cdot\vec u_1=0
+\partial_t\rho_1+\rho_0\nabla\cdot\vec v_1=0
 $$
 and
 $$
-\partial_t\vec u_1+\frac1{\rho_0}\nabla P_1=0
+\partial_t\vec v_1+\frac1{\rho_0}\nabla P_1=0
 $$
 Let's consider adiabatic perturbation
 $$
@@ -30,14 +30,14 @@ $$
 $$
 Then
 $$
-\partial^2_{tt}\vec u_1-c_s^2\nabla^2\vec u_1=0\\
+\partial^2_{tt}\vec v_1-c_s^2\nabla^2\vec v_1=0\\
 \partial^2_{tt}\rho_1-c_s^2\nabla^2\rho_1=0
 $$
 which are both in the form of **wave equations**.
 
 - The propogation speed is the adiabatic sound speed $c_s$.
 
-- The velocity of the perturbation $\vec u_1$ is parallel to its density gradient $\nabla\rho_1$ - **longitudinal wave**.
+- The velocity of the perturbation $\vec v_1$ is parallel to its density gradient $\nabla\rho_1$ - **longitudinal wave**.
 
 - For ideal gas
   $$
@@ -53,7 +53,7 @@ $$
 \left\{
 \begin{array}{l}
 \rho_1=f\left(\vec k\cdot\vec r-\omega t\right),\quad \text{where } \omega=c_s\left|\vec k\right|\\
-\vec u_1=\frac{\rho_1}{\rho_0}c_s\hat{\vec k},\quad \text{where }\hat{\vec k}=\vec k/\left|\vec k\right|
+\vec v_1=\frac{\rho_1}{\rho_0}c_s\hat{\vec k},\quad \text{where }\hat{\vec k}=\vec k/\left|\vec k\right|
 \end{array}
 \right.
 $$
@@ -63,15 +63,15 @@ $\vec k$ is the wave vector. Since $f$ is a fixed function, the wave shape is co
 
 ## Waves with Finite Amplitude
 
-In a linear region, we note that the amplitude of $\vec u_1$ is proportional to the density $\rho_1$, so for waves with finite amplitudes, the density peaks tend to move faster. Is it true?
+In a linear region, we note that the amplitude of $\vec v_1$ is proportional to the density $\rho_1$, so for waves with finite amplitudes, the density peaks tend to move faster. Is it true?
 
 Now we consider a 1-D, finite-perturbation system. The EoC and EoM now give
 $$
-\partial_t\rho+\rho\partial_x u+u\partial_x\rho=0
+\partial_t\rho+\rho\partial_x u+v\partial_x\rho=0
 $$
 
 $$
-\partial_t u+u\partial_x u=-\frac{c_s^2}{\rho}\partial_x\rho
+\partial_t u+v\partial_x u=-\frac{c_s^2}{\rho}\partial_x\rho
 $$
 
 To explore some possible solutions, we assume **simple wave**, so that
@@ -80,44 +80,44 @@ $$
 $$
 In this way,
 $$
-\rho'\partial_tu+(\rho+u\rho')\partial_xu=0
+\rho'\partial_tu+(\rho+v\rho')\partial_xu=0
 $$
 
 $$
-\rho'\partial_t u+\left(u\rho'+\frac{c_s^2}{\rho}\rho'^2\right)\partial_xu=0
+\rho'\partial_t u+\left(v\rho'+\frac{c_s^2}{\rho}\rho'^2\right)\partial_xu=0
 $$
 
 $$
-\Rightarrow\left[\rho-\frac{c_s^2}{\rho}\left(\frac{\text d\rho}{\text du}\right)^2\right]\partial_xu=0
+\Rightarrow\left[\rho-\frac{c_s^2}{\rho}\left(\frac{\text d\rho}{\text dv}\right)^2\right]\partial_xu=0
 $$
 
 So there are two solutions,
 $$
-\frac{\text du}{\text d\rho}=\pm\frac{c_s}{\rho}\Rightarrow u=\pm\int\frac{c_s}{\rho}\text d\rho
+\frac{\text dv}{\text d\rho}=\pm\frac{c_s}{\rho}\Rightarrow u=\pm\int\frac{c_s}{\rho}\text d\rho
 $$
 With $\rho'=\pm \rho/c_s$, we can rewrite the initial EoC,
 $$
-\partial_tu+(u\pm c_s)\partial_xu=0
+\partial_tu+(v\pm c_s)\partial_xu=0
 $$
 and in the mean time
 $$
-\partial_t\rho+(u\pm c_s)\partial_x\rho=0
+\partial_t\rho+(v\pm c_s)\partial_x\rho=0
 $$
 They yield general solutions of the form
 $$
-u=F_1[x-(u\pm c_s)t],\quad \rho=F_2[x-(u\pm c_s)t]
+u=F_1[x-(v\pm c_s)t],\quad \rho=F_2[x-(v\pm c_s)t]
 $$
 where $F_1$ and $F_2$ are arbitrary functions. They are known as **simple waves**.
 
 So when
 $$
-\frac{\text dx}{\text dt}=u\pm c_s
+\frac{\text dx}{\text dt}=v\pm c_s
 $$
 the time derivative
 $$
-\frac{\text d}{\text dt}\left(\begin{array}{c}\rho\\u\end{array}\right)=\left[\partial_t+(u\pm c_s)\partial_x\right]\left(\begin{array}{c}\rho\\u\end{array}\right)=0
+\frac{\text d}{\text dt}\left(\begin{array}{c}\rho\\v\end{array}\right)=\left[\partial_t+(v\pm c_s)\partial_x\right]\left(\begin{array}{c}\rho\\v\end{array}\right)=0
 $$
-As a result, $\rho$ and $u$ are constant along the curves ${\text dx}/{\text dt}=u\pm c_s$ in the $x-t$ plane. In other word, a perticular value of $\rho$ or $u$ propogates through the ambient medium with phase speed $v_\text p=u\pm c_s$.
+As a result, $\rho$ and $u$ are constant along the curves ${\text dx}/{\text dt}=v\pm c_s$ in the $x-t$ plane. In other word, a perticular value of $\rho$ or $u$ propogates through the ambient medium with phase speed $v_\text p=v\pm c_s$.
 
 - For polytropic EoS,
   $$
@@ -136,12 +136,12 @@ As a result, $\rho$ and $u$ are constant along the curves ${\text dx}/{\text dt}
   $$
   This equation plainly shows that more compressed parts in a pulse have a larger fluid velocity $u$.
 
->When $u=u_1\ll c_0$, we have
-  >$$
->\frac{\rho}{\rho_0}\sim1\pm\frac{u_1}{c_0}\iff \frac{\rho_1}{\rho_0}=\pm\frac{u_1}{c_0}
-  >$$
-  >
-  >We recover the small perturbation solution.  
+>When $u=v_1\ll c_0$, we have
+>$$
+>\frac{\rho}{\rho_0}\sim1\pm\frac{v_1}{c_0}\iff \frac{\rho_1}{\rho_0}=\pm\frac{v_1}{c_0}
+>$$
+>
+>We recover the small perturbation solution.  
 
 Consider a finite pulse having an initial sinusoidal shape, as in the figure below, moving to the right. The most compressed regions move faster than any other part and, as shown in the figure, the crest of the pulse continuously gains on the front and the wave front steepens.
 
@@ -153,17 +153,17 @@ Eventually, the wave crest overtakes the wave front. This is definitely unphysic
 
 ## Shocks & Rankine - Hugoniot Equations
 
-To understand the discontinuity crossing a shock, we consider a 1-D shock frame, in which the shock front is at rest. Materials, initially in the **pre-shock region** ($\rho_1,\ P_1,\ u_1$), cross the shock front and enter the **post-shock region** ($\rho_2,\ P_2,\ u_2$). Consider a steady state without any external force, viscosity or conduction, the conservations laws give
+To understand the discontinuity crossing a shock, we consider a 1-D shock frame, in which the shock front is at rest. Materials, initially in the **pre-shock region** ($\rho_1,\ P_1,\ v_1$), cross the shock front and enter the **post-shock region** ($\rho_2,\ P_2,\ v_2$). Consider a steady state without any external force, viscosity or conduction, the conservations laws give
 $$
-\nabla\cdot\left(\rho\vec u\right)=0\Rightarrow\frac{\text d}{\text dx}\left(\rho u\right)=0\Rightarrow \rho_1u_2=\rho_2u_2
-$$
-
-$$
-\left(\vec u\cdot \nabla\right)\vec u=-\frac1\rho\nabla P\Rightarrow\rho u\frac{\text du}{\text dx}+\frac{\text dP}{\text dx}=0\Rightarrow \rho_1u_1^2+P_1=\rho_2u_2^2+P_2
+\nabla\cdot\left(\rho\vec v\right)=0\Rightarrow\frac{\text d}{\text dx}\left(\rho v\right)=0\Rightarrow \rho_1v_2=\rho_2v_2
 $$
 
 $$
-\nabla\cdot\left[\rho\vec u\left( e+\frac12 u^2+\frac{P}{\rho}\right)\right]=0\Rightarrow\frac{\text d}{\text dx}\left[\rho u\left( e+\frac12 u^2+\frac{P}{\rho}\right)\right]=0\Rightarrow \frac12 u_1^2+e_1+\frac{P_1}{\rho_1}= \frac12 u_2^2+e_2+\frac{P_2}{\rho_2}
+\left(\vec v\cdot \nabla\right)\vec v=-\frac1\rho\nabla P\Rightarrow\rho v\frac{\text dv}{\text dx}+\frac{\text dP}{\text dx}=0\Rightarrow \rho_1v_1^2+P_1=\rho_2v_2^2+P_2
+$$
+
+$$
+\nabla\cdot\left[\rho\vec v\left( e+\frac12 v^2+\frac{P}{\rho}\right)\right]=0\Rightarrow\frac{\text d}{\text dx}\left[\rho v\left( e+\frac12 v^2+\frac{P}{\rho}\right)\right]=0\Rightarrow \frac12 v_1^2+e_1+\frac{P_1}{\rho_1}= \frac12 v_2^2+e_2+\frac{P_2}{\rho_2}
 $$
 
 For ideal gas, the specific enthalpy
@@ -172,11 +172,11 @@ h=e+\frac P\rho=\frac{\gamma}{\gamma-1}\frac P\rho
 $$
 Let us introduce
 $$
-x\equiv\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2},\quad y\equiv \frac{P_2}{P_1}
+x\equiv\frac{\rho_2}{\rho_1}=\frac{v_1}{v_2},\quad y\equiv \frac{P_2}{P_1}
 $$
 and define the **Mach number**
 $$
-\mathcal M=\frac u{c_s}=\frac{u}{\sqrt{\gamma P/\rho}}\Rightarrow \rho u^2=\gamma \mathcal M^2P
+\mathcal M=\frac u{c_s}=\frac{v}{\sqrt{\gamma P/\rho}}\Rightarrow \rho v^2=\gamma \mathcal M^2P
 $$
 In this way, the equations can be written as
 $$
@@ -203,7 +203,7 @@ which are known as the **Rankine-Hugonoit equations**.
 
 We can also derive the Mach number in the post-shock region,
 $$
-\frac{\mathcal{M}_2^2}{\mathcal{M}_1^2}=\frac{u_2}{u_1}\frac{P_1}{P_2}=\frac1{xy}\Rightarrow \mathcal{M}_2^2=\frac{(\gamma-1)\mathcal{M}_1^2+2}{2\gamma \mathcal{M}_1^2-(\gamma-1)}=\frac{(\gamma-1)(\mathcal{M}_1^2-1)+(\gamma+1)}{2\gamma (\mathcal{M}_1^2-1)+(\gamma+1)}
+\frac{\mathcal{M}_2^2}{\mathcal{M}_1^2}=\frac{v_2}{v_1}\frac{P_1}{P_2}=\frac1{xy}\Rightarrow \mathcal{M}_2^2=\frac{(\gamma-1)\mathcal{M}_1^2+2}{2\gamma \mathcal{M}_1^2-(\gamma-1)}=\frac{(\gamma-1)(\mathcal{M}_1^2-1)+(\gamma+1)}{2\gamma (\mathcal{M}_1^2-1)+(\gamma+1)}
 $$
 
 - When $\mathcal{M}_1^2>1$ (**supersonic**), we have $\mathcal{M}_2<1$ (**subsonic**).
@@ -219,12 +219,12 @@ $$
 $$
 
 $$
-\iff T_2\sim\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{u_1^2T_1}{P_1/\rho_1}=\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{\mu m_p}{k_B}u_1^2
+\iff T_2\sim\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{v_1^2T_1}{P_1/\rho_1}=\frac{2(\gamma-1)}{(\gamma+1)^2}\frac{\mu m_p}{k_B}v_1^2
 $$
 
 Again, for $\gamma=5/3$, the post-shock temperature is simply
 $$
-T_2\sim\frac3{16}\frac{\mu m_p}{k_B}u_1^2
+T_2\sim\frac3{16}\frac{\mu m_p}{k_B}v_1^2
 $$
 This temperature is important for virialization in galaxy formation, since it gives the cooling timescale
 $$
@@ -243,51 +243,51 @@ $$
 
 In the shock layer ($\rho,\ P,\ u$), there must be viscosity, thus
 $$
-\rho u=\rho_1 u_1
+\rho u=\rho_1 v_1
 $$
 
 $$
-\rho u^2+P-\eta\frac{\text du}{\text dx}=\rho_1u_1^2+P_1
+\rho v^2+P-\eta\frac{\text dv}{\text dx}=\rho_1v_1^2+P_1
 $$
 
 $$
-\rho u\left(\frac12u^2+\frac{\gamma}{\gamma-1}\frac P\rho\right)-\eta u\frac{\text du}{\text dx}=\rho_1 u_1\left(\frac12u_1^2+\frac{\gamma}{\gamma-1}\frac {P_1}{\rho_1}\right)
+\rho v\left(\frac12v^2+\frac{\gamma}{\gamma-1}\frac P\rho\right)-\eta v\frac{\text dv}{\text dx}=\rho_1 v_1\left(\frac12v_1^2+\frac{\gamma}{\gamma-1}\frac {P_1}{\rho_1}\right)
 $$
 
 When we combine these equations,
 
 $$
-\Rightarrow \frac{\gamma+1}{\gamma-1}\rho_1u_1 u^2-\frac{2}{\gamma-1}\eta u\frac{\text du}{\text dx}=\rho_1u_1^2\left(\frac{2\gamma}{\gamma-1}u-u_1\right)+\frac{2\gamma}{\gamma-1}\left(u-u_1\right)P_1
+\Rightarrow \frac{\gamma+1}{\gamma-1}\rho_1v_1 v^2-\frac{2}{\gamma-1}\eta v\frac{\text dv}{\text dx}=\rho_1v_1^2\left(\frac{2\gamma}{\gamma-1}u-v_1\right)+\frac{2\gamma}{\gamma-1}\left(u-v_1\right)P_1
 $$
 
 $$
 \begin{align*}
-\Rightarrow -\frac\eta{\rho_1} u\frac{\text du}{\text dx}&=(u-u_1)c_{s1}^2+u_1^2\left(\gamma u-\frac{\gamma-1}{2}u_1\right)-\frac{\gamma+1}{2}u_1u^2\\
-&=(u-u_1)\left[u_1\left(\frac{\gamma-1}2u_1-\frac{\gamma+1}2u\right)+c_{s1}^2\right]
+\Rightarrow -\frac\eta{\rho_1} v\frac{\text dv}{\text dx}&=(u-v_1)c_{s1}^2+v_1^2\left(\gamma u-\frac{\gamma-1}{2}v_1\right)-\frac{\gamma+1}{2}v_1v^2\\
+&=(u-v_1)\left[v_1\left(\frac{\gamma-1}2v_1-\frac{\gamma+1}2v\right)+c_{s1}^2\right]
 \end{align*}
 $$
 
 The RHS has two zero-points,
 $$
-u=u_1
+u=v_1
 $$
 and
 $$
-u=\frac{(\gamma-1)u_1^2+2c_{s1}^2}{(\gamma+1)u_1}=\frac{(\gamma-1)\mathcal{M}_1^2+2}{(\gamma+1)\mathcal{M}_1^2}u_1=u_2
+u=\frac{(\gamma-1)v_1^2+2c_{s1}^2}{(\gamma+1)v_1}=\frac{(\gamma-1)\mathcal{M}_1^2+2}{(\gamma+1)\mathcal{M}_1^2}v_1=v_2
 $$
 which are simply the velocities on the boundary.
 
-At the center of the shock layer, $x_0$, due to the symmetry, $u_0=(u_1+u_2)/2$. Thus
+At the center of the shock layer, $x_0$, due to the symmetry, $v_0=(v_1+v_2)/2$. Thus
 $$
-\frac{\text du}{\text dx}\Bigg|_{x_0}=-\frac{(u_1-u_2)^2}{4u_0\nu}\frac{\gamma+1}2u_1=-\frac{(\gamma+1)(u_1-u_2)^2u_1}{4(u_1+u_2)\nu}
+\frac{\text dv}{\text dx}\Bigg|_{x_0}=-\frac{(v_1-v_2)^2}{4v_0\nv}\frac{\gamma+1}2v_1=-\frac{(\gamma+1)(v_1-v_2)^2v_1}{4(v_1+v_2)\nv}
 $$
-where $\nu\equiv \eta/\rho_1$.
+where $\nv\equiv \eta/\rho_1$.
 
 The width of the shock layer can be estimated as
 $$
-\delta\simeq\left|\frac{u_1-u_2}{({\text du}/{\text dx})|_{x_0}}\right|=\frac{4\nu}{u_1(\gamma+1)}\frac{u_1+u_2}{u_1-u_2}=\frac{4\nu}{c_s}\frac{\gamma \mathcal{M}_1^2+1}{(\gamma+1)\mathcal{M}_1(\mathcal{M}_1^2-1)}
+\delta\simeq\left|\frac{v_1-v_2}{({\text dv}/{\text dx})|_{x_0}}\right|=\frac{4\nv}{v_1(\gamma+1)}\frac{v_1+v_2}{v_1-v_2}=\frac{4\nv}{c_s}\frac{\gamma \mathcal{M}_1^2+1}{(\gamma+1)\mathcal{M}_1(\mathcal{M}_1^2-1)}
 $$
-Since $\nu\sim c_sl_\text{mfp}$,
+Since $\nv\sim c_sl_\text{mfp}$,
 $$
 \delta\sim l_\text{mfp}\cdot \frac{\gamma \mathcal{M}_1^2+1}{(\gamma+1)\mathcal{M}_1(\mathcal{M}_1^2-1)}
 $$
@@ -324,11 +324,11 @@ where $L$ is the typical size of the system, and $u$ is the velocity of the shoc
 
 The simpliest situation is that after cooling, the post-shock region recovers its original temperature $T_1$. The mass and momentum conservation laws are always held, thus
 $$
-\rho_1u_2=\rho_2u_2
+\rho_1v_2=\rho_2v_2
 $$
 
 $$
-\rho_1u_1^2+P_1=\rho_2u_2^2+P_2
+\rho_1v_1^2+P_1=\rho_2v_2^2+P_2
 $$
 
 $$
@@ -352,9 +352,9 @@ Comparing to the adiabatic strong shock, the density enhancement is proportional
 
 For non-isothermal case, still, mass and momentum conserve. For simplicity we only study strong shocks. In other word, $\mathcal M_1\gg1$. As a result,
 $$
-\frac{\rho_1 u_1^2}{P_1}=\gamma \mathcal M_1^2\gg1
+\frac{\rho_1 v_1^2}{P_1}=\gamma \mathcal M_1^2\gg1
 $$
-So $P_1$ is negligible comparing to $\rho_1u_2^2$.
+So $P_1$ is negligible comparing to $\rho_1v_2^2$.
 
 First let us consider the region between the pre-shock & the region just behind the shock front. More specifically, we define $x_\text{cool}\equiv ut_\text{cool}$. Within $x_\text{cool}$ from the shock front, the post-shock materials have not undergone cooling yet, so the physical properties should simply be characterized by the Rankine-Hogoniot equations
 $$
@@ -362,21 +362,21 @@ $$
 $$
 and pressure is given by the conservation of momentum
 $$
-P_2=\rho_1u_1^2\left(1-\frac{u_2}{u_1}\right)+P_1\simeq\frac2{\gamma+1}\rho_1u_1^2+P_1\simeq\frac34\rho_1u_1^2+P_1
+P_2=\rho_1v_1^2\left(1-\frac{v_2}{v_1}\right)+P_1\simeq\frac2{\gamma+1}\rho_1v_1^2+P_1\simeq\frac34\rho_1v_1^2+P_1
 $$
 And during the radiative cooling, the pressure and density are still related by the conservations laws
 $$
-P=\rho_1u_1^2\left(1-\frac{\rho_1}{\rho}\right)+P_1=P(\rho)
+P=\rho_1v_1^2\left(1-\frac{\rho_1}{\rho}\right)+P_1=P(\rho)
 $$
 As long as $t_\text{cool}<t_\text{dyn}$, the cooling process goes on and the temperature decreases, so that
 $$
 \frac{\text dT}{\text dt}<0\iff\frac{\text d}{\text dt}\left(\frac P\rho\right)<0
 $$
-Neglecting $P_1$, this is only true when $\rho>2\rho_1,\ \dot\rho>0$, or $\rho<2\rho_1,\ \dot\rho<0$. At $x=x_\text{cool}$, $\rho=4\rho_1>2\rho_1$, so as $x$ increases and $T$ falls down, $\rho$ continues to go up. When $\rho\gg\rho_1$, $P\lesssim\rho_1u_1^2+P_1$, when the total pressure is balanced with the incoming flow.
+Neglecting $P_1$, this is only true when $\rho>2\rho_1,\ \dot\rho>0$, or $\rho<2\rho_1,\ \dot\rho<0$. At $x=x_\text{cool}$, $\rho=4\rho_1>2\rho_1$, so as $x$ increases and $T$ falls down, $\rho$ continues to go up. When $\rho\gg\rho_1$, $P\lesssim\rho_1v_1^2+P_1$, when the total pressure is balanced with the incoming flow.
 
-In a $P-x$ diagram, directly after the shock at $x=0$, the pressure jumps from $P_1$ to $P_1+\frac34\rho_1u_1^2$. From $x=0$ to $x=x_\text{cool}$, the pressure stays essentially the same, while after $x_\text{cool}$, the pressure continuously rises to approching its asymptote $P=P_1+\rho_1u_1^2$.
+In a $P-x$ diagram, directly after the shock at $x=0$, the pressure jumps from $P_1$ to $P_1+\frac34\rho_1v_1^2$. From $x=0$ to $x=x_\text{cool}$, the pressure stays essentially the same, while after $x_\text{cool}$, the pressure continuously rises to approching its asymptote $P=P_1+\rho_1v_1^2$.
 
-In a $T-\rho$ diagram, in the shock $(\rho_1,T_1)$ suddenly jumps to $(\rho_2,T_2)$. Then during the radiation cooling, again the evolution in the phase space gradually approches th asymptote $P=P_1+\rho_1u_1^2$. For isothermal shock, the evolution is halted at $T=T_1$, when the density is promoted roughly by a factor of $\mathcal M_1^2$. The termination of cooling varies case by case. Here we discuss $\ce{H2}$ cooling, which is essential for star formation in high redshift.
+In a $T-\rho$ diagram, in the shock $(\rho_1,T_1)$ suddenly jumps to $(\rho_2,T_2)$. Then during the radiation cooling, again the evolution in the phase space gradually approches th asymptote $P=P_1+\rho_1v_1^2$. For isothermal shock, the evolution is halted at $T=T_1$, when the density is promoted roughly by a factor of $\mathcal M_1^2$. The termination of cooling varies case by case. Here we discuss $\ce{H2}$ cooling, which is essential for star formation in high redshift.
 
 <img src="./3_2.jpeg" style="zoom:50%;" />
 

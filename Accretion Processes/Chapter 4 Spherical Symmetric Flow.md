@@ -6,25 +6,25 @@ Let us consider systems in steady state (**Parker's wind & Bondi accretion**)
 
 The EoC requires that $\dot M=4\pi r^2\rho u$ is a constant, which gives out the relation
 $$
-\frac1\rho\frac{\text d\rho}{\text dr}+\frac2r+\frac1u\frac{\text du}{\text dr}=0
+\frac1\rho\frac{\text d\rho}{\text dr}+\frac2r+\frac1v\frac{\text dv}{\text dr}=0
 $$
 The EoM gives
 $$
 \begin{align*}
-u\frac{\text du}{\text dr}&=-\frac1\rho\frac{\text dP}{\text dr}-\frac{GM_*}{r^2}\\
+v\frac{\text dv}{\text dr}&=-\frac1\rho\frac{\text dP}{\text dr}-\frac{GM_*}{r^2}\\
 &=-\frac{c_s^2}\rho\frac{\text d\rho}{\text dr}-\frac{GM_*}{r^2}
 \end{align*}
 $$
 Combine EoC and EoM to eliminate the density gradient $\text d\rho/\text dr$, we find
 $$
-u\frac{\text du}{\text dr}=\frac{2c_s^2}r+\frac{c_s^2}u\frac{\text du}{\text dr}-\frac{GM_*}{r^2}
+v\frac{\text dv}{\text dr}=\frac{2c_s^2}r+\frac{c_s^2}v\frac{\text dv}{\text dr}-\frac{GM_*}{r^2}
 $$
 
 $$
-\Rightarrow \frac12\left(1-\frac{c_s^2}{u^2}\right)\frac{\text du^2}{\text dr}=-\frac{GM_*}{r^2}\left(1-\frac{2c_s^2r}{GM_*}\right)
+\Rightarrow \frac12\left(1-\frac{c_s^2}{u^2}\right)\frac{\text dv^2}{\text dr}=-\frac{GM_*}{r^2}\left(1-\frac{2c_s^2r}{GM_*}\right)
 $$
 
-To solve this ODE, we apply the so-called **trans-sonic condition**, that is, $u=c_s$ at $r=r_\text c\equiv GM_*/2c_s^2$.
+To solve this ODE, we apply the so-called **trans-sonic condition**, that is, $v=c_s$ at $r=r_\text c\equiv GM_*/2c_s^2$.
 
 ### Isothermal Solution
 
@@ -52,15 +52,15 @@ h(p)\equiv\int\frac{\text dp}{\rho(p)}=\frac K{\gamma-1}\gamma\rho^{\gamma-1}=\f
 $$
 and $\phi$ is the gravitational potential. Thus at radius $r$,
 $$
-\frac12u^2+\frac{c_s^2}{\gamma-1}-\frac{GM_*}{r}=\frac{c_\infty^2}{\gamma-1}
+\frac12v^2+\frac{c_s^2}{\gamma-1}-\frac{GM_*}{r}=\frac{c_\infty^2}{\gamma-1}
 $$
-where $c_\infty$ is the adiabatic sound speed at infinity. Here we have applied the boundary condition, that is, $u\to0$ as $r\to\infty$.
+where $c_\infty$ is the adiabatic sound speed at infinity. Here we have applied the infinite boundary condition, that is, $v\to0$ as $r\to\infty$.
 
 Setting $v=c_s$ at
 $$
 r=r_c\equiv\frac{GM_*}{2c_{s,\text c}},\quad c_{s,\text c}\equiv c_s(r_\text c)
 $$
-since we are only interested in the trans-sonic solution. As a result,
+as we are only interested in the trans-sonic solution. Consequently,
 $$
 \begin{align*}
 r_\text c&=\frac{5-3\gamma}2\frac{GM_*}{2c_\infty^2}\\
@@ -78,7 +78,7 @@ Obviously, for $\gamma\ge5/3$, $r_\text c\le0$, so there is no trans-sonic solut
 
 $$
 \begin{align*}
-\dot M_B&=4\pi\rho r^2u=4\pi\rho_\text c r_\text c^2u_{s,\text c}\\
+\dot M_B&=4\pi\rho r^2v=4\pi\rho_\text c r_\text c^2v_{s,\text c}\\
 &=4\pi\left(\frac2{5-3\gamma}\right)^{\frac{5-3\gamma}{2(\gamma-1)}}\left(\frac{GM_*}{2c_\infty^2}\right)^2\rho_\infty c_\infty\quad\left(\propto \rho M_*^2T^{-3/2}\right)\\
 &\equiv4\pi q(\gamma)R_B^2\rho_\infty c_\infty
 \end{align*}
@@ -115,9 +115,8 @@ $$
 
   In this way, the accretion timescale is quite interesting, as it only takes several million years for a sun-like object to double its mass. For a SMBH $\sim10^6M_\odot$, the timescale to reach double mass is only 0.3 yr.
 
-We note that in reality, BH feedback suppresses the accretion somehow. Thus, $\dot M_B$ is the upper limit of the actual accretion rate.
+We note that in reality, BH feedback suppresses the accretion somehow. Thus, $\dot M_B$ is the upper limit of the actual accretion rate. In this case,
 
-For Bondi case,
 $$
 \frac{\text dM_*}{\text dt}=AM_*^2
 $$
@@ -126,7 +125,7 @@ $$
 \Rightarrow\frac1{M_*}-\frac1{M_0}=-A(t-t_0)\Rightarrow M_*=\frac{M_0}{1-AM_0(t-t_0)}
 $$
 
-The growth of $M_*$ is so rapid that before $t$ goes to infinity, $M_*$ diverges within **Bondi timescale** $t_B$.
+The growth of $M_*$ is so rapid that before $t$ goes to infinity, $M_*$ diverges within **Bondi timescale** $t_B$
 $$
 t_B\equiv\frac1{AM_0}
 $$
