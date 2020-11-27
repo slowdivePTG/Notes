@@ -51,17 +51,17 @@ R\propto M^{1/2}\mu^{1/8},\quad L\propto M^3\mu^4
 $$
 More precisely, $R\propto M^{0.57-0.8}$, $L\propto M^{3.2-3.9}$.
 
-<img src="./11_1.pdf" style="zoom:50%;" />
+<img src="./11_1.pdf" style="zoom:66%;" />
 
 For massive stars, the luminosity is asymptotically Eddington luminosity, which is proportional to $M$. For low-mass stars, free-free transition dominates the opacity, and $\kappa$ is given by Krammer's law $\kappa\propto \rho T^{-7/2}$, so that $\alpha=1$ and $r=7/2$. This gives $L\propto M^{5.4}$.
 
-<img src="./11_2.pdf" style="zoom:50%;" />
+<img src="./11_2.pdf" style="zoom:66%;" />
 
 Fix $\mu$, $L\propto R^6$. On the other hand, 
 $$
 L\propto R^2T_\text{eff}^4\propto L^{1/3}T_\text{eff}^4\Rightarrow L\propto T_\text{eff}^6
 $$
-<img src="./11_3.pdf" style="zoom:50%;" />
+<img src="./11_3.pdf" style="zoom:66%;" />
 
 
 
@@ -69,7 +69,7 @@ $$
 
 ### Radial Distribution
 
-<img src="./11_4.pdf" style="zoom:100%;" />
+<img src="./11_4.pdf" style="zoom:75%;" />
 
 **Subplot (a)** - $\rho$ v.s. normalized $m$
 $$
@@ -100,7 +100,7 @@ The luminosity generation is more concentrated in massive stars, since the tempe
 
 ### $T_\text c$ v.s. $\rho_\text c$
 
-<img src="./11_5.pdf" style="zoom:50%;" />
+<img src="./11_5.pdf" style="zoom:66%;" />
 
 In the $\rho-T$ plane, we know that at high $T$, low $\rho$ region, radiation pressure dominates; at low $T$, high $\rho$ region, electron degenerate pressure dominates. For all the other region, gas pressure dominates.
 
@@ -112,4 +112,28 @@ $\Psi$ denotes the **fraction of the degenerate electrons**. The $T_\text c$-$\r
 
 ### Kippenhahn Diagram
 
-<img src="./11_6.pdf" style="zoom:50%;" />
+<img src="./11_6.pdf" style="zoom:66%;" />
+
+- Blank region - convectively stable, radiation dominated
+- Shaded region - convective unstable
+  - Convection starts when the temperature gradient is unbearablily high and radiation itself cannot sufficiently take energy away. The temperature gradient is proportional to the opacity and the luminosity.
+  - Low-mass stars tend to develop **convective envelopes**. Below certain temperature, free-free transition dominated the opacity, where $\kappa\propto \rho T^{-7/2}$. So for stars with lower mass, the opacity will increase dramatically, leading to a rapid grow in the size of convective envelope. Finally, extremely low-mass stars can be fully convective.
+  - High-mass stars tend to develop **convective cores** because of the high energy generation rate in the center.
+- Solid curves - given a stellar mass, describe how much mass is within a certain radius, say, $0.25/0.5 R$ - mass concentration.
+- Dashed curves - given a stellar mass, describe where a certain fraction of total luminosity, say, $0.5/0.9 L$, is generated in the star, in mass coordinate - energy generation concentration.
+
+
+
+## Other Main Sequence Stars
+
+For a helium main sequence star ($Y=1$), the critical temperature for ignation is much higher. The critical mass of a helium main sequence is $0.3M_\odot$, below which the whole star would be degenerated at the termination of Kelvin-Helmholtz contraction, while no nulcear fusion is triggered. For a carbon main sequence, the critical mass reaches $0.8M_\odot$.
+
+Recall that luminosity strongly depends on the mean molecular weight,
+$$
+L\propto \mu^4
+$$
+so for a hydrogen main sequence, a helium main sequence, and a carbon main sequence of the same mass, the total luminosity $L$, as well as the effective temperature $T_\text{eff}$, increases. The HR diagram should look like below.
+
+<img src="./11_7.jpeg" style="zoom:66%;" />
+
+Helium and carbon stars are important progenitors for core-collapse supernovae. An evolved hydrogen main sequence star could harbor a steadily burning helium core. Once the hydrogen envelope is blown away, the helium core becomes a naked helium star, progenitors of Type Ib SNe (no hydrogen lines in spectra, helium rich). If the helium envelope is also blown away, a naked carbon star is probably born. They are progenitors of Type Ic SNe (neither hydrogen lines nor helium lines in spectra).
