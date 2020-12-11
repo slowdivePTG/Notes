@@ -23,6 +23,9 @@ Notes on several Mathematics & Astronomy undergraduate courses in Peking Univers
 1. 恒星结构与演化 (Stellar Evolution, Kohei Inayoshi)
 2. 天体物理吸积过程 (Accretion Processes, Kohei Inayoshi)
 
+## 关于公式显示
+这里的所有笔记都为 Markdown 格式。GitHub 并不原生支持 Markdown 笔记中 LaTeX 公式的显示。建议将笔记下载到本地，用 Markdown 编辑器查看。 
+
 ## Acknoledgement
 感谢[李嘉轩](https://astrojacobli.github.io)在我出访UCSC期间留下了天体物理观测实验的笔记！感谢[许峰玮](https://github.com/XFengwei)修改完善了理论天体物理的笔记！
 
