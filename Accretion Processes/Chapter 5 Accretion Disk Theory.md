@@ -184,3 +184,183 @@ For a typical efficiency $\eta\sim0.1$, when $\dot M\sim\dot M_{Edd}$, $\tau$ is
 $$
 Q^-_\text{rad}\sim\frac{\sigma_{SB}T^4}{\tau}
 $$
+
+
+
+## Angular Momentum Transfer and Viscosity
+
+In 1974, Lynden-Bell & Pringle claimed that rotating accretion disks should achieve minimum energy.
+
+Suppose a test particle with specific angular momentum $j$ in a potential $\psi=-\frac{GM}r$. The motion is Keplerian, thus the specific energy is
+$$
+\varepsilon(j)=-\frac{G^2M^2}{2j^2}(1-e^2)
+$$
+where $e$ is the orbital eccentricity. The minimum energy state achieves with a circular orbit, where
+$$
+\varepsilon(j)=-\frac{G^2M^2}{2j^2},\quad \frac{\text d\varepsilon}{\text dj}(j)=\frac{G^2M^2}{j^3}=\frac{G^2M^2}{\Omega_K^3r^6}=\Omega_K
+$$
+Now consider two particles orbiting around $M$. The total energy and angular momentum are,
+$$
+E=m_1\varepsilon(j_1)+m_2\varepsilon(j_2)\\
+J=m_1j_1+m_2j_2
+$$
+To conserve the total mass and angular momentum, we have
+$$
+\text dm_1+\text dm_2=0\\
+\text d(m_1j_1)+\text d(m_2j_2)=0
+$$
+The lowest energy state obviously requires circular orbits. The energy differential is thus
+$$
+\begin{align*}
+\text dE&=\varepsilon(j_1)\text dm_1+\varepsilon(j_2)\text dm_2+\frac{\text d\varepsilon}{\text dj}(j_1)\text d(m_1j_1)-\frac{\text d\varepsilon}{\text dj}(j_2)\text d(m_2j_2)\\
+&=[\varepsilon(j_1)-\varepsilon(j_2)]\text dm_1+\left[\frac{\text d\varepsilon}{\text dj}(j_1)-\frac{\text d\varepsilon}{\text dj}(j_2)\right]\text d(m_1j_1)\\
+&=[\varepsilon(j_1)-\varepsilon(j_2)]\text dm_1+(\Omega_1-\Omega_2)\text d(m_1j_1)\\
+&<0
+\end{align*}
+$$
+Without loss of generality, we assume $j_1>j_2$. Since
+$$
+\Omega_K\propto j^{-3},\quad -\varepsilon(j)\propto j^{-2}
+$$
+and
+$$
+\quad r=\frac j{\Omega_K r}\Rightarrow r\propto j^2
+$$
+we have $r_1>r_2$, $\varepsilon(j_1)>\varepsilon(j_2)$, and $\Omega_1<\Omega_2$. To ensure that $\text dE<0$, we have $\text dm_1<0$ and $\text d(m_1j_1)\equiv\text dJ_1>0$. Thus mass is transported inwards (to particle 2), while angular momentum is transported outwards (to particle 1).
+
+
+
+### Evolution of Disk Surface Density
+
+Let's now consider a real disk structure. Without viscosity, all materials follow Keplerian orbits, and no accretion actually happens, so viscosity is intrinsic in accretion disks. The most important non-diagonal component of the stress tensor is (especially out of the thin disk geometry) $\sigma_{r\phi}$. In cylindrical coordinate, it writes
+$$
+\sigma_{r\phi}=\rho\nu\left(\frac{\partial v_\phi}{\partial r}-\frac{v_\phi}{r}\right)=\rho\nu r\frac{\partial \Omega}{\partial r}
+$$
+The corresponding friction force is
+$$
+F_{r\phi}=\sigma_{r\phi}\cdot2\pi r\cdot2H
+$$
+Thus the net torque onto the belt within $r$ and $r+\text dr$ is
+$$
+\begin{align*}
+N&=(r+\text dr)F_{r\phi}(r+\text dr)-rF_{r\phi}(r)\\
+&=\frac{\partial}{\partial r}\left(rF_{r\phi}\right)\text dr\\
+&=\text dr\frac{\partial}{\partial r}\left(2\rho H\cdot2\pi r^3\nu\frac{\partial \Omega}{\partial r}\right)\\
+&=\text dr\frac{\partial}{\partial r}\left(2\pi r^3\Sigma\nu\frac{\partial \Omega}{\partial r}\right)
+\end{align*}
+$$
+while the angular momentum of the belt is
+$$
+J=2\pi r\text dr\Sigma j
+$$
+Therefore, the angular momentum conservation is
+$$
+\frac{\partial J}{\partial t}+\frac{\partial}{\partial r}\left(Jv_r\right)=N
+$$
+
+$$
+\iff\frac{\partial }{\partial t}(2\pi r\Sigma j)+\frac{\partial}{\partial r}\left(2\pi r\Sigma v_rj-2\pi r^3\Sigma\nu\frac{\partial \Omega}{\partial r}\right)
+$$
+
+Simply from the EoC, the accretion rate is
+$$
+\dot M=-2\pi r\Sigma v_r
+$$
+So we can define the advection flux
+$$
+F_{J,\text{adv}}=2\pi r\Sigma v_rj=-\dot Mj
+$$
+and the viscosity flux
+$$
+F_{J,\text{vis}}=-2\pi r^3\Sigma\nu\frac{\partial \Omega}{\partial r}
+$$
+By simply taking $\Omega=\Omega_K$ in the thin disk approximation,
+$$
+F_{J,\text{vis}}=3\pi r^2\Sigma\nu\Omega_K>0
+$$
+Again, angular momentum is transferred outwards.
+
+
+
+**Steady State Solution ($\partial/\partial t=0$)**
+$$
+\Rightarrow\frac{\partial}{\partial r}\left(\dot Mj\right)=\frac{\partial}{\partial r}\left(3\pi r^2\Sigma\nu\Omega_K\right)=\frac{\partial}{\partial r}\left(3\pi \Sigma\nu j\right)
+$$
+If $r_\text{in}$ is the innermost radius of the disk, we have
+$$
+\dot M(j-j_\text{in})=3\pi \Sigma\nu j-\left(3\pi \Sigma\nu j\right)_\text{in}
+$$
+Let's impose the torque-free boundary condition at $r=r_\text{in}$, which suggests no viscosity in the inner boundary of the disk. 
+
+> For black holes, $r_\text{in}\simeq r_\text{ISCO}\simeq6r_{Sch}$, inside which the GR effect suppresses any possible stable orbital motion, so the torque-free boundary condition holds. However, for accretion onto proton-stars / neutron stars, such condition is not justified.
+
+$$
+\Rightarrow \dot M=\frac{3\pi \Sigma\nu j}{j-j_\text{in}}=3\pi \Sigma\nu j\left(1-\sqrt{\frac{r_\text{in}}{r}}\right)^{-1}
+$$
+
+For $r\gg r_\text{in}$, $\dot M\simeq3\pi \Sigma\nu$. When we combine this solution with the EoC, we obtain
+$$
+v_r=-\frac32\frac\nu r
+$$
+We used to claim a viscous timescale
+$$
+t_\text{vis}=\frac{R^2}{\nu}
+$$
+out of the dimensional consideration. Now we prove it.
+
+
+
+**Non-Steady Solution**
+
+The EoC now gives
+$$
+\frac{\partial \Sigma}{\partial t}=\frac1{2\pi r}\frac{\partial \dot M}{\partial r},\quad\dot M=-2\pi r\Sigma v_r
+$$
+And the angular momentum conservation gives
+$$
+2\pi rj\frac{\partial \Sigma}{\partial t}+\frac{\partial}{\partial r}\left(-\dot Mj-2\pi r^3\Sigma\nu\frac{\partial \Omega}{\partial r}\right)=0
+$$
+
+$$
+\iff \dot M\frac{\partial j}{\partial r}=-\frac{\partial}{\partial r}\left(2\pi r^3\Sigma\nu\frac{\partial \Omega}{\partial r}\right)
+$$
+
+$$
+\begin{align*}
+\iff \frac{\partial \Sigma}{\partial t}&=\frac1{2\pi r}\frac{\partial \dot M}{\partial r}\\
+&=\frac1{2r}\frac{\partial }{\partial r}\left[-\frac{\partial}{\partial r}\left(2r^3\Sigma\nu\frac{\partial \Omega}{\partial r}\right)\frac{\partial r}{\partial (\Omega r^2)}\right]\\
+&=\frac1{2r}\frac{\partial }{\partial r}\left[\frac{\partial}{\partial r}\left(3r^2\Sigma\nu\Omega_K\right)\frac{2}{\Omega_K r}\right]\\
+&=\frac3{r}\frac{\partial }{\partial r}\left[\sqrt r\frac{\partial}{\partial r}\left(\sqrt r\Sigma\nu\right)\right]
+\end{align*}
+$$
+
+If we assume $\nu$ is roughly a constant throughout the disk, we can define
+$$
+\widetilde\Sigma=\sqrt r\Sigma
+$$
+so that
+$$
+\begin{align*}
+\frac{\partial\widetilde\Sigma}{\partial t}&=\frac{3\nu}{\sqrt r}\frac{\partial }{\partial r}\left[\sqrt r\frac{\partial \widetilde\Sigma}{\partial r}\right]=\frac{3\nu}{2 r}\frac{\partial \widetilde\Sigma}{\partial r}+3\nu\frac{\partial^2 \widetilde\Sigma}{\partial r^2}\\
+&=3\nu\frac{\partial \widetilde\Sigma}{\partial (r^2)}+3\nu\frac{\partial^2 \widetilde\Sigma}{\partial r^2}
+\end{align*}
+$$
+The first term,
+$$
+\frac{\partial\widetilde\Sigma}{\partial t}=3\nu\frac{\partial \widetilde\Sigma}{\partial (r^2)}
+$$
+is a **wave equation**. The general solution is $\widetilde \Sigma=f(r^2-3\nu t)$, where $f(\cdot)$ is an arbitrary function. As the system evolves with time, the wave propogates while the shape remains the same.
+
+The second term,
+$$
+\frac{\partial\widetilde\Sigma}{\partial t}=3\nu\frac{\partial^2 \widetilde\Sigma}{\partial r^2}
+$$
+is a **diffusion equation**. The general solution peaks at the same $r$, but the shape is gradually diluted. The overall solution behaves as a mixture of the two.
+
+<img src="./5_1.jpeg" style="zoom:67%;" />
+
+However, $\nu$ is in general not a constant. For a thin disk,
+$$
+\nu=\alpha c_sH=\alpha\frac{c_s^2}{\Omega_K}\propto T(r)r^{3/2}
+$$
+So we have to solve the equation numerically.
