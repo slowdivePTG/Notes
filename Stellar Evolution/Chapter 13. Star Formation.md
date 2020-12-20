@@ -134,7 +134,7 @@ $$
 \Rightarrow \frac{F_\text g}{F_P}\propto R^{2(\gamma-1)}
 $$
 
-So for the filamentary structure, the critical $\gamma_\text{crit}\equiv1$.
+So for the filamentary structure, the critical $\gamma_\text{cr}\equiv1$.
 
 Similarly we can also consider a gas **sheet** with a fixed surface density $\Sigma$. The collapse is one-dimensional (the thickness of the sheet $h$ decreases). The gravitational force is given by
 $$
@@ -149,5 +149,121 @@ $$
 \Rightarrow \frac{F_\text g}{F_P}\propto R^\gamma
 $$
 
-Surprisingly, the critical $\gamma$ is $0$.
+The critical $\gamma$ is $0$.
+
+Spherical clouds are inevitably slightly elongated, so the gravitational collapse is not fully spherically symmetric, leading to the formation of sheets and filaments. Similarly, once collapses, sheet-like structure will soon form filaments. In conclusion, all systems end up with forming filamentary structures.
+
+![](./13_1.jpeg)
+
+One of the best ways to understand the basic processes in star formation is to consider the $\rho-T$ plot. Before the protostar formation, there are roughly three different stages in the $\rho-T$ phase space.
+
+- Rapid cooling phase
+
+  Usually, near the onset of collapse, the pressure remains roughly a constant, thus $\gamma\sim0$. Spherical clouds definitely collapse, while sheets also marginally do so, thus filamentary structure forms. As $\gamma$ is still lower than $\gamma_\text{cr}$ for filaments, they can further collapse.
+
+- Isothermal phase
+
+  As the density goes up, the cooling is increasingly insufficient, and the system finally reaches a stage where the temperature reaches a minimum $T_\text{min}$. Around that time, the system is almost isothermal, thus $\gamma\sim1$. Filaments become hydrostatic so collapse stops. Another mode of instability, known as **fragmentation** whose timescale is much longer than collapse, dominates. Filaments slowly break into smaller, somehow spherical fragments.
+
+- Re-collapse
+
+  Temperature increases for higher density, when $\gamma>1$. Each fragments simply re-collapse, until $\gamma$ finally reaches $\sim4/3$, when spherical structures become hydrostatically stable.
+
+
+
+## Dynamical Collapse of Gas
+
+>Larson (1969) & Penstone (1969)
+
+Now we try to analytically model the dynamical collapse for isothermal gas in spherical symmetry. The basic equations are listed as follows,
+$$
+\frac{\partial\rho}{\partial t}+\frac1{r^2}\frac{\partial}{\partial r}\left(\rho r^2v\right)=0
+$$
+
+$$
+\frac{\partial v}{\partial t}+v\frac{\partial v}{\partial r}+\frac{c_0^2}\rho\frac{\partial \rho}{\partial r}+\frac{GM(r)}{r^2}=0
+$$
+
+where $M(r)$ denotes the total mass within radius $r$,
+$$
+M(r,t)=\int_0^r4\pi r^2\rho(r',t)\text dr'
+$$
+and $c_0$ is the isothermal sound speed. It is difficult to derive the general solution for these PDEs, but we can try to contruct one self-similar solution. Here we define a series of dimensionless radius,
+$$
+\xi\equiv\frac r{c_0|t-t_0|}
+$$
+and consider the self-similar forms
+$$
+v(r,t)=c_0V(\xi),\quad \rho(r,t)=\frac{\Omega(\xi)}{4\pi G|t-t_0|^2},\quad M(r,t)=\frac{c_0^3|t-t_0|}Gm(\xi)
+$$
+Here $V$, $\Omega$, and $m$ are all dimensionless. As a result,
+$$
+\frac{\partial}{\partial t}\Bigg|_r=-\frac r{c_0|t-t_0|^2}\frac{\text d}{\text d\xi},\quad \frac{\partial}{\partial r}\Bigg|_t=\frac 1{c_0|t-t_0|}\frac{\text d}{\text d\xi}
+$$
+and the PDEs are now transferred to ODEs, say,
+$$
+\left[(\xi-V)^2-1\right]V'=\left[\Omega(\xi-V)-\frac2\xi\right](\xi-V)
+$$
+
+$$
+\left[(\xi-V)^2-1\right]\frac{\Omega'}{\Omega}=\left[\Omega-\frac2\xi(\xi-V)\right](\xi-V)
+$$
+
+$$
+m=(\xi-V)\xi^2\Omega
+$$
+
+We first impose static boundary condition at the center,
+$$
+V(0)=0
+$$
+which simply means that there is no gravity at the center. In addition, we notice that when $(\xi-V)^2=1$, we must have
+$$
+\Omega(\xi-V)-\frac2\xi=\Omega-\frac2\xi(\xi-V)=0
+$$
+Otherwise $V'$ and $\Omega'$ diverge, which is unphysical. It requires that $\Omega=\pm\frac2\xi$ when $V=\xi\pm1$. This is really similar to the trans-sonic boundary condition when solving spherically symmetric accretion.
+
+The solution that satisfies these two boundary conditions is calculated numerically. At two ends, say $\xi\to0$ and $\xi\to\infty$, we have
+$$
+V(\xi)=0.667\xi,\ \Omega(\xi)=1.667 \text{ as }\xi\to 0
+$$
+and
+$$
+V(\xi)=3.28\xi,\ \Omega(\xi)=8.86\xi^{-2} \text{ as }\xi\to \infty
+$$
+respectively.
+
+**Notes**
+
+1. When $\xi\gg1$,
+   $$
+   \Omega=\frac A{\xi^2}=\frac A{r^2}c_0^2|t-t_0|^2
+   $$
+   So the density
+   $$
+   \rho = \frac{\Omega}{4\pi G|t-t_0|^2}=\frac{Ac_0^2}{4\pi G}r^{-2}
+   $$
+   has no time dependency. 
+
+2. When $\xi\to0$,
+   $$
+   \Omega=B\Rightarrow \rho=\frac{B}{4\pi G|t-t_0|^2}
+   $$
+   Interestingly, the density has no radius dependency, and is thus evenly distributed.
+
+3. At $\xi\sim1$, the radius $r$ is roughly $c_0|t-t_0|$. So as we have argued, at $L>c_0|t-t_0|$, the system is gravity dominated, and the density follows a power-law profile with index of $-2$. Within this critical radius, however, the density profile is somehow flat.
+
+   Note that during the gravitational collapse,
+   $$
+   \rho\sim\frac1{Gt_\text{ff}^2}
+   $$
+   that is, density diverges with free-fall timescale. Here, we claim that
+   $$
+   |t-t_0|\sim t_\text{ff}
+   $$
+   to ensure that when $\xi\to0$, $\rho$ diverges as we expect. Then we find
+   $$
+   L=c_0|t-t_0|\sim\lambda_J
+   $$
+   
 
