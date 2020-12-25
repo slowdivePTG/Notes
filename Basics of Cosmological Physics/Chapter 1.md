@@ -1,10 +1,7 @@
-# Basics of Cosmological Physics
+# Chapter 1 Introduction
 
-**Physical Processes in an Expanding Universe**
 
-*Yingjie Peng, KIAA 204, yjpeng@pku.edu.cn*
-
-## Chapter 0
+## Basic Ideas
 
 ### Isotropic & Homogeneous
 
@@ -25,17 +22,13 @@
 - Cepheids
 - Ia SN
 
-
-
-## Chapter 1 Introduction
-
-### Fundamental Observers
+## Fundamental Observers
 
 - Fluid (Plasma)
 - Substratum (相对宇宙静止)——comoving
 - **We are not fundamental observers!** (velocity relative to the sun, the Galactic center, M31, Virgo Cluster…) - subtract all the relative velocity - confirmed by highly isotropic CMB
 
-### Distances
+## Distances
 
 - 1 AU = 1.5e13 cm
 - 1 Parsec = 3.26 ly, mostly kpc or Mpc (8.7 kpc away from the Galactic center)
@@ -45,7 +38,7 @@
 
 - Solar mass $M_\odot$ = 2e33 g
 - Milky Way
-  - Stellar mass $\sim​$ 1e11 $M_\odot​$
+  - Stellar mass $\sim$ 1e11 $M_\odot$
   - Total mass $\sim$ 1e12 $M_\odot$
 
 ### Luminosity and Magnitudes

@@ -1,5 +1,10 @@
 # 物理宇宙学基础
 ### 讲授：彭影杰
+
+**Physical Processes in an Expanding Universe**
+
+*Yingjie Peng, KIAA 204, yjpeng@pku.edu.cn*
+
 ### 目录：
 1. Introduction
 2. Newtonion Cosmology

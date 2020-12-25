@@ -1,4 +1,4 @@
-# Fluid Dynamics
+# Chapter 2. Fluid Dynamics
 
 ## Fluid Approximation
 

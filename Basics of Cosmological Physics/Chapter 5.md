@@ -1,6 +1,6 @@
-## Chapter 5 Redshifts and Distances
+# Chapter 5 Redshifts and Distances
 
-### Cosmological Redshifts
+## Cosmological Redshifts
 
 $$
 1+z_e=\frac{a_0}{a(t=e)}
