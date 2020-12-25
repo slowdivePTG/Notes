@@ -1,4 +1,4 @@
-## Observational Astrophysics
+# 天体物理观测实验
 
 Homepage: http://kiaa.pku.edu.cn/~rwang/obsexp/
 
@@ -8,6 +8,6 @@ IP of cluster: 162.105.133.209
 
 
 
-### 实验3: 光谱
+## 实验3: 光谱
 
 关于Wolf-Rayet星的光谱：http://astro.physics.uiowa.edu/ITU/labs/professional-labs/spectra-of-wolf-rayet-stars/
