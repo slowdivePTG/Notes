@@ -1,6 +1,6 @@
 ## Chapter 2 Newtonian Cosmology
 
-<img src="./fig/IMG_0619.jpg" style="zoom:30%" />
+<img src="./IMG_0619.jpg" style="zoom:30%" />
 $$
 \vec v_A=H_0 \vec r_A,\ \vec v_B=H_0 \vec r_B
 $$

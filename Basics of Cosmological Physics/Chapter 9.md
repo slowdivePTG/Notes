@@ -158,7 +158,7 @@ $$
     $$
     Actually, the Milky Way $\sim10^{12}M_\odot$ has very high star formation efficiency
 
-![](./fig/SF efficiency.png)
+![](./SF efficiency.png)
 
 ### Hydrostatic Equilibrium
 
@@ -246,7 +246,7 @@ $$
 
 where $\tilde{\alpha}(\xi)$ is the deflection angle
 
-![](./fig/Lensing.png)
+![](./Lensing.png)
 
 - Reduced deflection angle
   $$

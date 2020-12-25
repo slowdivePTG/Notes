@@ -73,7 +73,7 @@
 
 - SR model - [the Milne Model](https://en.wikipedia.org/wiki/Milne_model) - **empty universe**
 
-  <img src="./fig/World_line.png" style="zoom:30%" />
+  <img src="./World_line.png" style="zoom:30%" />
   - Time dilution
     $$
     \tau=\gamma^{-1}t\\

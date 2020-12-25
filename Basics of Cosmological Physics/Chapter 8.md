@@ -118,7 +118,7 @@
     \eta_{10}=273.3 \Omega_{\mathrm{b}, 0} h^{2}\left(\frac{2.7255\ \mathrm{K}}{T_{\gamma, 0}}\right)^{3}
     $$
 
-![](./fig/8-1.png)
+![](./8-1.png)
 
 - $Y_\text{p}$ has a minor dependence on $\eta$
 
