@@ -102,7 +102,7 @@ $$
   a_{\max }=\frac{\Omega_{\mathrm{m}, 0}}{\left|\Omega_{\mathrm{k}, 0}\right|}
   $$
 
-![](/Users/chang/Desktop/宇宙学/fig/a_t.png)
+![](./a_t.png)
 
 |      | $\Omega_{m,0}$ | $\Omega_{\Lambda,0}$ | $\Omega_{k,0}$ |            Concordance cosmology             |
 | :--: | :------------: | :------------------: | :------------: | :-----------------------------------: |
