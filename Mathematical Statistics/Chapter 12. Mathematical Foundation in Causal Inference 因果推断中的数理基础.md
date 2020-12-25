@@ -1,4 +1,4 @@
-# Chapter 12 Mathematical Foundation in Causal Inference 因果推断中的数理基础
+# Chapter 11 Mathematical Foundation in Causal Inference 因果推断中的数理基础
 
 
 ## 因果性
@@ -508,8 +508,9 @@ $$
 ### 死亡影响下的因果推断
 
 - 试验对象可能在试验结束前离世
-  - 有人会把这些数据舍去——很可能有偏（这很大程度上相当于舍去了身体不好的对象）
-
+  
+- 有人会把这些数据舍去——很可能有偏（这很大程度上相当于舍去了身体不好的对象）
+  
 - 一些定义
 
   - $Z$ 代表随机试验
