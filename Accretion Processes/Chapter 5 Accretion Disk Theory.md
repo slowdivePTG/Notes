@@ -295,7 +295,7 @@ Let's impose the torque-free boundary condition at $r=r_\text{in}$, which sugges
 > For black holes, $r_\text{in}\simeq r_\text{ISCO}\simeq6r_{Sch}$, inside which the GR effect suppresses any possible stable orbital motion, so the torque-free boundary condition holds. However, for accretion onto proton-stars / neutron stars, such condition is not justified.
 
 $$
-\Rightarrow \dot M=\frac{3\pi \Sigma\nu j}{j-j_\text{in}}=3\pi \Sigma\nu j\left(1-\sqrt{\frac{r_\text{in}}{r}}\right)^{-1}
+\Rightarrow \dot M=\frac{3\pi \Sigma\nu j}{j-j_\text{in}}=3\pi \Sigma\nu \left(1-\sqrt{\frac{r_\text{in}}{r}}\right)^{-1}
 $$
 
 For $r\gg r_\text{in}$, $\dot M\simeq3\pi \Sigma\nu$. When we combine this solution with the EoC, we obtain
@@ -364,3 +364,96 @@ $$
 \nu=\alpha c_sH=\alpha\frac{c_s^2}{\Omega_K}\propto T(r)r^{3/2}
 $$
 So we have to solve the equation numerically.
+
+
+
+## Standard Disk Model
+
+>Shakura & Sunyaez 1973, 1976
+
+### Assumptions
+
+1. Axisymmetric disk ($\partial/\partial \phi=0$).
+
+2. Steady disk ($\partial/\partial t=0$). As a result,
+   $$
+   \dot M=2\pi rv_r\Sigma
+   $$
+   is a constant.
+
+   In the last section, we have proved that when this assumption is applied and the torque-free boundary condition is imposed, we have
+   $$
+   \nu\Sigma=\frac{\dot M}{3\pi}\left(1-\sqrt{\frac{r_\text{in}}{r}}\right)\simeq\frac{\dot M}{3\pi}
+   $$
+
+3. The gravity is dominated by the central object.
+
+4. Hydrostatic balance in the vertical direction.
+   $$
+   H=\frac{c_s}{\Omega_K}
+   $$
+
+   $$
+   \Omega_K=\sqrt{\frac{GM}{r^3}}
+   $$
+
+5. Geometrically thin disk ($H/r=c_s/v_K\ll1$).
+
+6. Rotation dominated ($|v_r|\ll v_\phi=v_K$).
+
+7. **Somehow the least reasonable assumption:** viscosity is given by the $\alpha$-viscosity model.
+   $$
+   \nu=\frac23\alpha c_sH
+   $$
+   where $\alpha=\mathcal O(0.01-1)$.
+
+8. The disk should be in thermal equilibrium ($T$ is well-defined throughout the disk) and optically thick, $Q^+_\text{vis}=Q^-_\text{rad}+Q^-_\text{adv}$.
+
+   For the thin disk model, the advection term is negligible, and we have proved that
+   $$
+   Q^+_\text{vis}\sim\nu\Sigma\left(\frac{\text d\Omega}{\text d\ln r}\right)^2\sim\frac94\nu\Sigma\Omega_K^2\simeq Q^-_\text{rad}\sim\frac{2\sigma_{SB}T^4}{\tau}=\frac{8ac T^4}{3\tau}
+   $$
+   The disk has two sides, thus we add a factor of two in the radiation term. The optical depth $\tau$ is given by
+   $$
+   \tau=\kappa\cdot\frac H2
+   $$
+
+9. The opacity is mainly given by the electron scattering and free-free transition.
+   $$
+   \kappa=\kappa_\text{es}+\kappa_\text{ff}=\kappa_\text{es}+\kappa_0\rho T^{-7/2}
+   $$
+   where the density $\rho$ is given by
+   $$
+   \rho=\Sigma H
+   $$
+
+10. Equation of state is given by
+    $$
+    P=P_\text{gas}+P_\text{rad}=\frac{\rho k_BT}{\mu m_\text p}+\frac13aT^4
+    $$
+    and the adiabatic sound speed is given by
+    $$
+    c_s=\sqrt{\gamma\frac P\rho}\sim\sqrt{\frac P\rho}
+    $$
+
+For fixed $M$, $\dot M$, and $\alpha$, we still have 11 unkown quantities ($v_r,\ \Sigma,\ \Omega_K,\ H,\ \rho,\ \nu,\ c_s,\ P,\ T,\ \kappa,\ \tau)$ and exactly 11 equations, so all the quantities can be solved as a function of $r$.
+
+The result gives a **broken power law** because the formula for $\kappa$ and $P$ include addition. The disk is thus divided into three regions.
+
+- **Region I**, $\kappa_\text{es}$ and $P_\text {rad}$ dominate.
+- **Region II**, $\kappa_\text{es}$ and $P_\text {gas}$ dominate.
+- **Region III**, $\kappa_\text{ff}$ and $P_\text {gas}$ dominate.
+
+In each region, the profile of each quantity has a individual slope, and is scale-free, by defining dimensionless quatities below
+$$
+m\equiv\frac M{M_\odot},\quad \dot m\equiv\frac{\dot M}{\dot M_\text{cr}},\quad \hat r\equiv \frac r{r_{Sch}}
+$$
+where
+$$
+\dot M_\text{cr}\equiv\frac{L_{Edd}}{c^2},\quad r_{Sch}\equiv\frac{2GM}{c^2}
+$$
+and $L_{Edd}$ is the Eddington luminosity,
+$$
+L_{Edd}\equiv \frac{4\pi cGM}{\kappa_\text{es}}
+$$
+Note that after solving the equation, one need to double check to make sure $|v_r|\ll c_s\ll v_K$ and $H/r\ll 1$ so that our assumpitions shall be valid. 
