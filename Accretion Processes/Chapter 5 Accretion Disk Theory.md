@@ -457,3 +457,23 @@ $$
 L_{Edd}\equiv \frac{4\pi cGM}{\kappa_\text{es}}
 $$
 Note that after solving the equation, one need to double check to make sure $|v_r|\ll c_s\ll v_K$ and $H/r\ll 1$ so that our assumpitions shall be valid. 
+
+
+
+## Disk Energetics and Radiation Spectra
+
+The energy equation is
+$$
+Q^+_\text{vis}= Q^-_\text{rad}
+$$
+So the one-side flux is
+$$
+F=\frac{1}{2}Q^-_\text{rad}=\frac98\nu\Sigma\Omega_K^2=\frac{3GM\dot M}{8\pi r^3}\left(1-\sqrt{\frac{r_\text{in}}{r}}\right)
+$$
+In an accretion disk, gravitational energy is released, and viscosity transports it to radiation. If there is significant advection, since $Q^+_\text{vis}=Q^-_\text{rad}+Q^-_\text{adv}$, the luminosity is reduced.
+
+The total disk luminosity is
+$$
+L=\int_{r_\text{in}}^\infty Q^-_\text{rad}\cdot2\pi r\text dr=\frac32 GM\dot M \int_{r_\text{in}}^\infty\frac1{r^2}\left(1-\sqrt{\frac{r_\text{in}}{r}}\right)\text dr=\frac{GM\dot M}{2r_\text{in}}
+$$
+If $r_\text{in}=r_\text{ISCO}=6GM/c^2$, $L=\dot Mc^2/12$.
